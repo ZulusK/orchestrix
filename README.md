@@ -2,7 +2,6 @@
 
 *' A revolutionary device destined to break the ice for the new era of electronic music '*
 
-![img](https://cs7058.vk.me/c604628/v604628378/35bfb/qvWKP6p7SS0.jpg)
 
 
 ###Developer : *ReservoirCode*
@@ -20,6 +19,8 @@
 
 
  *'The developers of this extraordinary apparatus assembled to exploit advanced software engineering skills in the field of sound design '*
+ 
+ ![img](https://cs7058.vk.me/c604628/v604628378/35bfb/qvWKP6p7SS0.jpg)
  
 
 ## Team Members
