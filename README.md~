@@ -2,7 +2,9 @@
 
 *' A revolutionary device destined to break the ice for the new era of electronic music '*
 
-![](/ProjectX/logoFixed.png)
+<p align="left">
+  <img src="/home/student/ProjectX/logoFixed.png" width="350"/>
+</p>
 
 ###Developer : *ReservoirCode*
 ###Release : *2017*
