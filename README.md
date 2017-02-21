@@ -2,6 +2,8 @@
 
 *' A revolutionary device destined to break the ice for the new era of electronic music '*
 
+![](/ProjectX/logoFixed.png)
+
 ###Developer : *ReservoirCode*
 ###Release : *2017*
 ###Platform : *Linux*
@@ -13,10 +15,10 @@
 ## Hardware components : 
 
 
-# Reservoir Code
+# Reservoir Code ()
 
 
- *' 'The developers of this extraordinary apparatus assembled to exploit advanced software engineering skills in the field of sound design ''*
+ *'The developers of this extraordinary apparatus assembled to exploit advanced software engineering skills in the field of sound design '*
  
 
 ## Team Members
