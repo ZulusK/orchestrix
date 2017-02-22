@@ -2,20 +2,20 @@
 
 *' A revolutionary device destined to break the ice for the new era of electronic music '*
 
-
+ ![img](https://cs7058.vk.me/c604628/v604628378/36002/pfC2TuEIqWw.jpg)
 
 ###Developer : *ReservoirCode*
 ###Release : *2017*
 ###Platform : *Linux*
 ###Thumbnail : 
 
-##### These days a great many people consider composing to be a threadbare craft mastered solely by the goldsmiths of music. Our team dared to prove them wrong and bestow a salvatory instrument upon pilgrims of music. In a nutshell, we introduce a gaming pad, rigged with motion and proximity sensors, which are designed to give the composer an illustratory method of expressing his artistic concepts. Every single relocation of your hand above the pad will grant you with infinite possibilities of sound's modulation. The frequency of signal, nature of sound, volume can be inflected by the swings of your bare hands. The wizardry is attained by assorted compond algorithms inside a computer as well as by meticulously integrated hardware. For comprehensive breakdown of technical groundwork check out the documentation in the *Artifacts* section below.
+##### These days a great many people consider composing to be a threadbare craft, mastered solely by the goldsmiths of music. Our team dared to prove them wrong and bestow a salvatory instrument upon both vigorous gamers and lonesome pilgrims, craving means of melody's concoction. In a nutshell, we introduce a gaming pad, rigged with motion and proximity sensors, which are designed to capture the movements of your hands and transmute real life dynamics into signal modulation. Hence, every single relocation of your palms above the pad will grant you with infinite possibilities  of sound's flexure. The frequency of audio, nature of sound, volume can be inflected by the swings of your bare hands. One of the most intriguing application of orchestrix technology is a marvelous game of ours, inspired by our rivals's numerous, yet abortive attempts to entagle physical interaction, fun gaming, and entire scale of musical exuberance in a holistic product. Be dexterous, smart, innovative and you just might be able to score ultimately and overpower your friends. The wizardry is attained by assorted compound algorithms inside a computer as well as by meticulously integrated hardware. For comprehensive breakdown of technical groundwork chech out the documentation in the *Artifacts* section below.
 
-##Technologies, libraries, programming languages : C, C++(openAL)
+##Technologies, libraries, programming languages : C, C++(openAL), Android
 ## Hardware components : 
 
 
-# Reservoir Code ()
+# Reservoir Code Inc.()
 
 
  *'The developers of this extraordinary apparatus assembled to exploit advanced software engineering skills in the field of sound design '*
