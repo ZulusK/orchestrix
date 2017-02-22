@@ -2,7 +2,7 @@
 
 *' A revolutionary device destined to break the ice for the new era of electronic music '*
 
- ![img](https://cs7058.vk.me/c604628/v604628378/36002/pfC2TuEIqWw.jpg)
+<img align="right" src="https://cs7058.vk.me/c604628/v604628378/36002/pfC2TuEIqWw.jpg">
 
 ###Developer : *ReservoirCode*
 ###Release : *2017*
@@ -15,7 +15,7 @@
 ## Hardware components : 
 
 
-# Reservoir Code Inc.()
+# Reservoir Code Inc.
 
 
  *'The developers of this extraordinary apparatus assembled to exploit advanced software engineering skills in the field of sound design '*
@@ -29,7 +29,7 @@
 * [Danil Kazimirov](https://vk.com/kazim_d) (Team Leader)
 * [Pavel Rukhaylo](https://vk.com/pashka_icebro) (Hardware Engineer)
 * [Nadya Chumak](https://vk.com/yournew_world) (QA Engineer )
-* [Elena Karpenko](https://vk.com/id_lenka270899)thg (Scrum Master)
+* [Elena Karpenko](https://vk.com/id_lenka270899) (Scrum Master)
 * [Artem Herasymov](https://vk.com/id379509378) (Lead QA)
 * [Alexey Pivnenko](https://vk.com/id160748956) (Software Engineer)
 
