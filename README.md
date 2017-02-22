@@ -4,7 +4,7 @@
 
 <img align="right" src="https://cs7058.vk.me/c604628/v604628378/36002/pfC2TuEIqWw.jpg">
 
-###Developer : *ReservoirCode*
+###Developer : *ReservoirCode Inc*
 ###Release : *2017*
 ###Platform : *Linux*
 ###Thumbnail : 
