@@ -38,5 +38,5 @@
 
 * [Trello Board](https://trello.com/b/wYCiqJlm/project-g)
 * [Project Documentation](https://drive.google.com/drive/folders/0BwhvZDamUuTLREdIdXpQbktvRlU)
-* [Backlog] (https://docs.google.com/spreadsheets/d/1CGTPGKU5ydsndaLlhleCA4-7bzNCsfhk_9pVEnQrE3o/edit?usp=drive_web)
+* [Backlog](https://docs.google.com/spreadsheets/d/1CGTPGKU5ydsndaLlhleCA4-7bzNCsfhk_9pVEnQrE3o/edit?usp=drive_web)
 
