@@ -15,7 +15,7 @@
 ## Hardware components : 
 
 
-# Reservoir Code Inc.
+#Reservoir Code Inc.
 
 
  *'The developers of this extraordinary apparatus assembled to exploit advanced software engineering skills in the field of sound design '*
