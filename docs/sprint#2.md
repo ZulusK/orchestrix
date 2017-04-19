@@ -7,7 +7,7 @@
 1. Karpenko Olena
 2. Kazimirov Danil
 3. Korunska Ann
-4. Ruhailo Pavlo
+4. Rukhailo Pavlo
 5. Pivnenko Alex
 6. Herasymov Artem
 7. Chumak Nadia
