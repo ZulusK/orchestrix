@@ -1,0 +1,3 @@
+/home/zulus/Projects/GitProj/orchestrix/src/audio/CMakeFiles/rebuild_cache.dir
+/home/zulus/Projects/GitProj/orchestrix/src/audio/CMakeFiles/edit_cache.dir
+/home/zulus/Projects/GitProj/orchestrix/src/audio/CMakeFiles/a.out.dir
