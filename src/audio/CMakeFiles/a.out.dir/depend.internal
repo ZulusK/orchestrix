@@ -21,4 +21,5 @@ CMakeFiles/a.out.dir/src/main.cpp.o
  /home/zulus/Projects/GitProj/orchestrix/src/audio/src/main.cpp
  include/AudioManagement/AudioData.h
  include/AudioManagement/AudioManager.h
+ include/AudioManagement/AudioPlayer.h
  include/AudioManagement/OpenAL.h

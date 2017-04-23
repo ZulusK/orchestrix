@@ -70,8 +70,27 @@ typedef struct {
     ALuint refID;
 } AudioSource;
 
+typedef struct {
+    ALenum state;
+    ALenum format;
+    ALsizei samples;
+    ALint frequency;
+} AudioInfo;
+typedef struct {
+    vector3f pos;
+    vector3f vel;
+    float pitch;
+    float gain;
+} PlayerInfo;
 
 void CheckOpenALError();
 
+enum {
+    MIN_BUFFER_COUNT = 24,
+    MIN_SOURCE_COUNT = 4,
+    MAX_BUFFER_COUNT = 512,
+    MAX_SOURCE_COUNT = 16,
+    MAX_BUFFER_PER_PLAYER = 5
+};
 
 #endif

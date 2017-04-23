@@ -20,5 +20,6 @@ CMakeFiles/a.out.dir/src/AudioManagement/play.cpp.o: src/AudioManagement/play.cp
 CMakeFiles/a.out.dir/src/main.cpp.o: src/main.cpp
 CMakeFiles/a.out.dir/src/main.cpp.o: include/AudioManagement/AudioData.h
 CMakeFiles/a.out.dir/src/main.cpp.o: include/AudioManagement/AudioManager.h
+CMakeFiles/a.out.dir/src/main.cpp.o: include/AudioManagement/AudioPlayer.h
 CMakeFiles/a.out.dir/src/main.cpp.o: include/AudioManagement/OpenAL.h
 

@@ -15,6 +15,7 @@ target_link_libraries(a.out openal)
 target_link_libraries(a.out alut)
 target_link_libraries(a.out fftw3)
 target_link_libraries(a.out progbase)
+target_link_libraries(a.out pthread)
 #gnome-terminal --tab -e "/bin/bash -c 'valgrind --leak-check=yes ./a.out; exec /bin/bash -i'"
 #add path to bin source
 #set(EXECUTABLE_OUTPUT_PATH "bin")

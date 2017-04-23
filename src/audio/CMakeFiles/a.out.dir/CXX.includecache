@@ -21,9 +21,15 @@ AudioManagement/AudioManager.h
 /home/zulus/Projects/GitProj/orchestrix/src/audio/src/AudioManagement/AudioManagement/AudioManager.h
 cstring
 -
+AudioManagement/OpenAL.h
+-
 
 /home/zulus/Projects/GitProj/orchestrix/src/audio/src/AudioManagement/AudioPlayer.cpp
 AudioManagement/AudioPlayer.h
+-
+AudioManagement/OpenAL.h
+-
+thread
 -
 
 /home/zulus/Projects/GitProj/orchestrix/src/audio/src/AudioManagement/play.cpp
@@ -34,6 +40,8 @@ iostream
 AudioManagement/AudioData.h
 -
 AudioManagement/AudioManager.h
+-
+AudioManagement/AudioPlayer.h
 -
 
 include/AudioManagement/AudioData.h
@@ -66,6 +74,8 @@ AudioManagement/AudioManager.h
 AudioManagement/AudioData.h
 -
 AudioManagement/OpenAL.h
+-
+thread
 -
 
 include/AudioManagement/OpenAL.h

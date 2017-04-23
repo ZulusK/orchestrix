@@ -4,30 +4,34 @@
 #include <AudioManagement/AudioManager.h>
 #include <AudioManagement/AudioData.h>
 #include <AudioManagement/OpenAL.h>
+#include <thread>
+
+#define BUFFER_SIZE 1024*256
 
 /**
  * Audio player, which stored info about source
  * and source, buffers and current state
 */
-
 class AudioPlayer {
     AudioManager *manager;
     AudioSource *source;
     ALvoid *sound;
     ALsizei currPos;
+    ALenum state;
     int remainBuffers;
     //al settings
-    ALenum state;
-    ALenum format;
-    ALsizei samples;
-    ALint frequency;
+    AudioInfo info;
     //source settings
-    vector3f pos;
-    vector3f vel;
-    float pitch;
-    float gain;
+    PlayerInfo settings;
+private:
+
+    bool fillBuffer(AudioBuffer *buffer);
+
+    void update();
+
+    void startPlaying(thread **runningThread);
 public:
-    AudioPlayer(AudioManager * manager, AudioData *sound, float volume);
+    AudioPlayer(AudioManager *manager, AudioData *sound, float volume);
 
     ~AudioPlayer();
 
@@ -38,6 +42,9 @@ public:
     void stop();
 
     bool isPlaying();
+
+    void updateState();
+
 };
 
 #endif //ORCHESTRIX_AUDIOPLAYER_H
