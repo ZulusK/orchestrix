@@ -54,10 +54,14 @@ AudioManager *AudioManager::init(int source, int buffer) {
     if (buffer < MIN_BUFFER_COUNT || buffer > MAX_BUFFER_COUNT) {
         buffer = MIN_BUFFER_COUNT;
     }
+    cout << "=================================================" << endl;
+    cout << "All devices:" << endl;
     print(getAllDevices());
+    cout << "=================================================" << endl;
     ALCdevice *deviceAL = alcOpenDevice(NULL);
     if (!deviceAL) {
         cout << "Failed to init OpenAL device." << endl;
+        return NULL;
     }
     ALCcontext *contextAL = alcCreateContext(deviceAL, NULL);
     AL_CHECK(alcMakeContextCurrent(contextAL));
@@ -134,9 +138,15 @@ void AudioManager::generateSource(AudioSource *source) {
  * @param buffer, which stored riID
  */
 void AudioManager::createBuffer(AudioBuffer *buffer) {
-    generateBuffer(buffer);
-    this->buffers.push_back(buffer);
-    this->freeBuffers.push_back(buffer);
+
+    if (buffer) {
+        _getBuffer.lock();
+        generateBuffer(buffer);
+        this->buffers.push_back(buffer);
+        this->freeBuffers.push_back(buffer);
+        _getBuffer.unlock();
+    }
+
 }
 
 /**
@@ -145,9 +155,13 @@ void AudioManager::createBuffer(AudioBuffer *buffer) {
  * @param source, which stored riID
  */
 void AudioManager::createSource(AudioSource *source) {
-    generateSource(source);
-    this->sources.push_back(source);
-    this->freeSources.push_back(source);
+    if(source) {
+        _getSource.lock();
+        generateSource(source);
+        this->sources.push_back(source);
+        this->freeSources.push_back(source);
+        _getSource.unlock();
+    }
 }
 
 /**
@@ -155,6 +169,17 @@ void AudioManager::createSource(AudioSource *source) {
  */
 void AudioManager::printBuffers() {
     for (auto it = buffers.begin(); it != buffers.end(); it++) {
+        cout << "b[" << (*it)->refID << "] ";
+    }
+    cout << endl;
+}
+
+/**
+ * print all registered buffers
+ */
+void AudioManager::printFreeBuffers() {
+    cout << "free buffers[" << freeBuffers.size() << "]" << endl;
+    for (auto it = freeBuffers.begin(); it != freeBuffers.end(); it++) {
         cout << "b[" << (*it)->refID << "] ";
     }
     cout << endl;
@@ -171,19 +196,30 @@ void AudioManager::printSources() {
 }
 
 /**
+ * print all registered sources
+ */
+void AudioManager::printFreeSources() {
+    for (auto it = freeSources.begin(); it != freeSources.end(); it++) {
+        cout << "s[" << (*it)->refID << "] ";
+    }
+    cout << endl;
+}
+
+/**
  * return free buffer, if can, or create ew buffer, and return it
  * @return free buffer
  */
 AudioBuffer *AudioManager::getFreeBuffer() {
+    AudioBuffer *freeBuff;
+    _getBuffer.lock();
     if (freeBuffers.size() == 0) {
-        AudioBuffer *buffer = new AudioBuffer();
-        createBuffer(buffer);
-        return getFreeBuffer();
-    } else {
-        AudioBuffer *buffer = freeBuffers[0];
-        freeBuffers.erase(freeBuffers.begin());
-        return buffer;
+        freeBuff = new AudioBuffer();
+        createBuffer(freeBuff);
     }
+    freeBuff = freeBuffers[0];
+    freeBuffers.erase(freeBuffers.begin());
+    _getBuffer.unlock();
+    return freeBuff;
 }
 
 /**
@@ -191,15 +227,17 @@ AudioBuffer *AudioManager::getFreeBuffer() {
  * @return free source
  */
 AudioSource *AudioManager::getFreeSource() {
+    AudioSource *freeSrc;
+    _getSource.lock();
     if (freeSources.size() == 0) {
-        AudioSource *source = new AudioSource();
-        createSource(source);
-        return getFreeSource();
-    } else {
-        AudioSource *source = freeSources[0];
-        freeSources.erase(freeSources.begin());
-        return source;
+        freeSrc = new AudioSource();
+        createSource(freeSrc);
     }
+    printFreeSources();
+    freeSrc = freeSources.at(0);
+    freeSources.erase(freeSources.begin());
+    _getSource.unlock();
+    return freeSrc;
 }
 
 /**

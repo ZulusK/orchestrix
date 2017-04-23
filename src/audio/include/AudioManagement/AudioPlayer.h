@@ -5,8 +5,8 @@
 #include <AudioManagement/AudioData.h>
 #include <AudioManagement/OpenAL.h>
 #include <thread>
+#include <mutex>
 
-#define BUFFER_SIZE 1024*256
 
 /**
  * Audio player, which stored info about source
@@ -23,13 +23,16 @@ class AudioPlayer {
     AudioInfo info;
     //source settings
     PlayerInfo settings;
+    //mutex to read data
+    recursive_mutex _readDataMutex;
+    recursive_mutex _setBuffCntMutex;
 private:
 
     bool fillBuffer(AudioBuffer *buffer);
 
     void update();
 
-    void startPlaying(thread **runningThread);
+    void exec(thread **runningThread);
 public:
     AudioPlayer(AudioManager *manager, AudioData *sound, float volume);
 
@@ -45,6 +48,9 @@ public:
 
     void updateState();
 
+    string toString();
+
+    void updateBuffer(AudioBuffer *buffer);
 };
 
 #endif //ORCHESTRIX_AUDIOPLAYER_H

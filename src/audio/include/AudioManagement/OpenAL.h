@@ -6,14 +6,10 @@
 #include <iostream>
 
 #ifndef AL_CHECK
-#ifdef _DEBUG
 #define AL_CHECK(stmt) do { \
             stmt; \
             CheckOpenALError(#stmt, __FILE__, __LINE__); \
         } while (0);
-#else
-#define AL_CHECK(stmt) stmt
-#endif
 #endif
 
 
@@ -42,7 +38,6 @@ inline string GetOpenALErrorString(int errID) {
 }
 
 inline void CheckOpenALError(const char *stmt, const char *fname, int line) {
-
     ALenum err = alGetError();
     if (err != AL_NO_ERROR) {
         std::cout << "OpenAL error " << err << " <" << GetOpenALErrorString(err) << " >";
@@ -84,13 +79,14 @@ typedef struct {
 } PlayerInfo;
 
 void CheckOpenALError();
-
+#define BUFFER_SIZE 400000
 enum {
-    MIN_BUFFER_COUNT = 24,
+    MIN_BUFFER_COUNT = 8,
     MIN_SOURCE_COUNT = 4,
     MAX_BUFFER_COUNT = 512,
     MAX_SOURCE_COUNT = 16,
-    MAX_BUFFER_PER_PLAYER = 5
+    MAX_BUFFER_PER_PLAYER = 3,
+
 };
 
 #endif

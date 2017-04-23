@@ -7,9 +7,13 @@
 #include <AudioManagement/OpenAL.h>
 #include <map>
 #include <vector>
+#include <mutex>
 
 class AudioManager {
 private:
+    recursive_mutex _getSource;
+    recursive_mutex _getBuffer;
+
     AudioData *sound;
     ALCdevice *device;
     ALCcontext *context;
@@ -56,6 +60,10 @@ public:
     void clearBuffer(AudioBuffer *buffer);
 
     void clearSource(AudioSource *source);
+
+    void printFreeBuffers();
+
+    void printFreeSources();
 };
 
 #endif //ORCHESTRIX_AUDIOPLAYER_H

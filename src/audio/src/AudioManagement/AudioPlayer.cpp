@@ -67,16 +67,21 @@ bool AudioPlayer::isPlaying() {
  */
 bool AudioPlayer::fillBuffer(AudioBuffer *buffer) {
     if (buffer) {
+        _readDataMutex.lock();
         if (currPos >= info.samples) {
             return false;
         }
         ALsizei nextChunk = min(BUFFER_SIZE, info.samples - currPos);
+        cout << "chunk " << nextChunk << " pos: " << currPos << " -> " << currPos + nextChunk + 1 << endl;
+        if (nextChunk % 2 != 0) nextChunk--;
         if (info.format == AL_FORMAT_STEREO16 || info.format == AL_FORMAT_MONO16) {
-            alBufferData(buffer->refID, info.format, (__int16_t *) sound + currPos, nextChunk, info.frequency);
+            AL_CHECK(
+                    alBufferData(buffer->refID, info.format, (ALvoid *) sound + currPos, nextChunk, info.frequency));
         } else {
-            alBufferData(buffer->refID, info.format, (__int8_t *) sound + currPos, nextChunk, info.frequency);
+            AL_CHECK(alBufferData(buffer->refID, info.format, (__int8_t *) sound + currPos, nextChunk, info.frequency));
         }
         currPos += nextChunk + 1;
+        _readDataMutex.unlock();
         return true;
     }
     return false;
@@ -96,31 +101,26 @@ void AudioPlayer::update() {
     AL_CHECK(alGetSourcei(this->source->refID, AL_BUFFERS_PROCESSED, &buffersProcessed));
     // check to see if we have a buffer to deQ
     if (buffersProcessed > 0) {
-        if (buffersProcessed > 1) {
-            //we have processed more than 1 buffer since last call of Update method
-            //we should probably reload more buffers than just the one (not supported yet)
-            //todo
-        }
-        // remove the buffer form the source
-        AudioBuffer processedBuffer;
-        AL_CHECK(alSourceUnqueueBuffers(this->source->refID, 1, &processedBuffer.refID));
-        // fill the buffer up and reQ!
-        // if we cant fill it up then we are finished
-        // in which case we dont need to re-Q
-        // return NO if we dont have more buffers to Q
-        updateState();
-        if (this->state == AL_STOPPED) {
-            //put it back - sound is not playing anymore
+        for (int i = 0; i < buffersProcessed; i++) {
+            // remove the buffer form the source
+            AudioBuffer processedBuffer;
+            AL_CHECK(alSourceUnqueueBuffers(this->source->refID, 1, &processedBuffer.refID));
+            // fill the buffer up and reQ!
+            // if we cant fill it up then we are finished
+            // in which case we dont need to re-Q
+            // return NO if we dont have more buffers to Q
+            updateState();
+            if (this->state == AL_STOPPED) {
+                //put it back - sound is not playing anymore
+                AL_CHECK(alSourceQueueBuffers(this->source->refID, 1, &processedBuffer.refID));
+                return;
+            }
+            //call method to load data to buffer
+            //see method in section - Creating sound
+            updateBuffer(&processedBuffer);
+            //put the newly filled buffer back (at the end of the queue)
             AL_CHECK(alSourceQueueBuffers(this->source->refID, 1, &processedBuffer.refID));
-            return;
         }
-        //call method to load data to buffer
-        //see method in section - Creating sound
-        if (this->fillBuffer(&processedBuffer) == false) {
-            this->remainBuffers--;
-        }
-        //put the newly filled buffer back (at the end of the queue)
-        AL_CHECK(alSourceQueueBuffers(this->source->refID, 1, &processedBuffer.refID));
     }
 
     if (this->remainBuffers <= 0) {
@@ -129,7 +129,13 @@ void AudioPlayer::update() {
     }
 }
 
-void AudioPlayer::startPlaying(thread ** runningThread) {
+void AudioPlayer::updateBuffer(AudioBuffer *buffer) {
+    if (fillBuffer(buffer) == false) {
+        remainBuffers--;
+    }
+}
+
+void AudioPlayer::exec(thread **runningThread) {
     AL_CHECK(alSourcef(this->source->refID, AL_PITCH, this->settings.pitch));
     AL_CHECK(alSourcef(this->source->refID, AL_GAIN, this->settings.gain));
     AL_CHECK(alSource3f(this->source->refID, AL_POSITION, this->settings.pos.x, this->settings.pos.y,
@@ -139,28 +145,28 @@ void AudioPlayer::startPlaying(thread ** runningThread) {
     {
         bool process = true;
         int i = 0;
-        for (AudioBuffer *buff = manager->getFreeBuffer();
-             process && i < MAX_BUFFER_PER_PLAYER && buff != NULL;
-             i++, buff = manager->getFreeBuffer()) {
-            process = fillBuffer(buff);
-            cout << "created " << buff->refID << endl;
-            alSourceQueueBuffers(this->source->refID, 1, &buff->refID);
-
+        while (i < MAX_BUFFER_PER_PLAYER && process) {
+        AudioBuffer *buff = manager->getFreeBuffer();
+        process = fillBuffer(buff);
+        if (process) {
+            AL_CHECK(alSourceQueueBuffers(this->source->refID, 1, &buff->refID));
+            i++;
         }
-        remainBuffers = i - 1;
+        };
+        remainBuffers = i ;
     }
     AL_CHECK(alSourcePlay(source->refID));
     alGetSourcei(source->refID, AL_SOURCE_STATE, &state);
-    cout << "checkable" << endl;
     while (state == AL_PLAYING) {
         update();
     }
+    (*runningThread)->join();
     delete *runningThread;
 }
 
 void AudioPlayer::play() {
-    thread * playerThread;
-    playerThread=new thread(&AudioPlayer::startPlaying, this, &playerThread);
+    thread *playerThread;
+    playerThread = new thread(&AudioPlayer::exec, this, &playerThread);
 }
 
 void AudioPlayer::stop() {
@@ -171,4 +177,34 @@ AudioPlayer::~AudioPlayer() {
     if (isPlaying()) {
         stop();
     }
+}
+
+string AudioPlayer::toString() {
+    string s = "AudioPlayer:\n";
+    s += "------------------------------\n";
+    s += "Samples: " + to_string(info.samples) + "\n";
+    s += "Frequency: " + to_string(info.frequency) + "\n";
+    s += "Format: ";
+    if (info.format == AL_FORMAT_STEREO16) {
+        s += "STEREO_16";
+    } else if (info.format == AL_FORMAT_STEREO8) {
+        s += "STEREO_8";
+    } else if (info.format == AL_FORMAT_MONO16) {
+        s += "MONO_16";
+    } else if (info.format == AL_FORMAT_MONO8) {
+        s += "MONO_8";;
+    }
+    s += "\n";
+    s += "State: ";
+    if (state == AL_PLAYING) {
+        s += "PLAYING";
+    } else if (state == AL_STOPPED) {
+        s += "STOPPED";
+    } else {
+        s += "PAUSED";
+    }
+    s += "\n";
+    s += "RemainingBuffers: " + to_string(remainBuffers) + "\n";
+    s += "------------------------------\n";
+    return s;
 }

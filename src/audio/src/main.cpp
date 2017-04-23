@@ -10,18 +10,18 @@
 using namespace std;
 
 int main(void) {
-    string filename = "res/ppl.wav";
-    AudioData *sound = AudioData::load(filename);
-    cout << sound->toString() << endl;
+    string filename1 = "res/mySound.wav";
+    AudioData *sound1 = AudioData::load(filename1);
+    string filename2 = "res/ppl.wav";
+    AudioData *sound2 = AudioData::load(filename2);
     AudioManager *manager = AudioManager::init(1, 8);
-//    manager->printBuffers();
-//    manager->printSources();
-    AudioPlayer player(manager, sound, 1);
-    player.play();
+//    manager->printFreeSources();
+    AudioPlayer player1(manager, sound1, 1);
+    cout << player1.toString() << endl;
+    player1.play();
     while (1) {
-        cout<<"llop"<<endl;
     }
 
     delete manager;
-    delete sound;
+    delete sound1;
 }
