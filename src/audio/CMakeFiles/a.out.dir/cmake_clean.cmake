@@ -3,6 +3,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/a.out.dir/src/AudioManagement/AudioData.cpp.o"
   "CMakeFiles/a.out.dir/src/AudioManagement/AudioManager.cpp.o"
   "CMakeFiles/a.out.dir/src/AudioManagement/AudioPlayer.cpp.o"
+  "CMakeFiles/a.out.dir/src/AudioManagement/play.cpp.o"
   "a.out.pdb"
   "a.out"
 )

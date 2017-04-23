@@ -25,7 +25,12 @@ const string &AudioData::get_name() const {
 
 AudioData::~AudioData() {
     if (_source) {
-        delete[] _source;
+        if(_bitsPerSample==16){
+            delete[] (__int16_t* )_source;
+        }else{
+            delete[] (__int8_t* )_source;
+        }
+
     }
 }
 
@@ -49,7 +54,7 @@ AudioData::AudioData(const string &name, ALvoid *source, ALsizei frames, size_t 
                      int bitsPerSample) {
     this->_source = source;
     this->_name = name;
-    this->_size = frames*channels*bitsPerSample/8;
+    this->_size = frames * channels * bitsPerSample / 8;
     this->_sampleRate = sampleRate;
     this->_bitsPerSample = bitsPerSample;
     this->_channels = channels;
@@ -94,7 +99,7 @@ ALsizei AudioData::get_size() const {
     return _size;
 }
 
-size_t AudioData::get_sampleRate() const {
+ALint AudioData::get_sampleRate() const {
     return _sampleRate;
 }
 

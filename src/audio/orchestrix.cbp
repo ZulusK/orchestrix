@@ -47,14 +47,14 @@
 					<Add directory="/home/zulus/Projects/GitProj/orchestrix/src/audio/include"/>
 					<Add directory="/home/zulus/Projects/GitProj/orchestrix/src/audio/include/AudioManagement"/>
 					<Add directory="/home/zulus/Projects/GitProj/orchestrix/src/audio/usr/local/include"/>
-					<Add directory="/usr/include/c++/6"/>
-					<Add directory="/usr/include/x86_64-linux-gnu/c++/6"/>
-					<Add directory="/usr/include/c++/6/backward"/>
 					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/6/include"/>
 					<Add directory="/usr/local/include"/>
 					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/6/include-fixed"/>
 					<Add directory="/usr/include/x86_64-linux-gnu"/>
 					<Add directory="/usr/include"/>
+					<Add directory="/usr/include/c++/6"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/6"/>
+					<Add directory="/usr/include/c++/6/backward"/>
 				</Compiler>
 				<MakeCommands>
 					<Build command="/usr/bin/make -j4 -f &quot;/home/zulus/Projects/GitProj/orchestrix/src/audio/Makefile&quot;  VERBOSE=1 a.out"/>
@@ -73,14 +73,14 @@
 					<Add directory="/home/zulus/Projects/GitProj/orchestrix/src/audio/include"/>
 					<Add directory="/home/zulus/Projects/GitProj/orchestrix/src/audio/include/AudioManagement"/>
 					<Add directory="/home/zulus/Projects/GitProj/orchestrix/src/audio/usr/local/include"/>
-					<Add directory="/usr/include/c++/6"/>
-					<Add directory="/usr/include/x86_64-linux-gnu/c++/6"/>
-					<Add directory="/usr/include/c++/6/backward"/>
 					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/6/include"/>
 					<Add directory="/usr/local/include"/>
 					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/6/include-fixed"/>
 					<Add directory="/usr/include/x86_64-linux-gnu"/>
 					<Add directory="/usr/include"/>
+					<Add directory="/usr/include/c++/6"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/6"/>
+					<Add directory="/usr/include/c++/6/backward"/>
 				</Compiler>
 				<MakeCommands>
 					<Build command="/usr/bin/make -j4 -f &quot;/home/zulus/Projects/GitProj/orchestrix/src/audio/Makefile&quot;  VERBOSE=1 a.out/fast"/>
@@ -99,7 +99,7 @@
 		<Unit filename="/home/zulus/Projects/GitProj/orchestrix/src/audio/include/AudioManagement/AudioPlayer.h">
 			<Option target="a.out"/>
 		</Unit>
-		<Unit filename="/home/zulus/Projects/GitProj/orchestrix/src/audio/include/AudioManagement/Entity.h">
+		<Unit filename="/home/zulus/Projects/GitProj/orchestrix/src/audio/include/AudioManagement/OpenAL.h">
 			<Option target="a.out"/>
 		</Unit>
 		<Unit filename="/home/zulus/Projects/GitProj/orchestrix/src/audio/src/AudioManagement/AudioData.cpp">
@@ -109,6 +109,9 @@
 			<Option target="a.out"/>
 		</Unit>
 		<Unit filename="/home/zulus/Projects/GitProj/orchestrix/src/audio/src/AudioManagement/AudioPlayer.cpp">
+			<Option target="a.out"/>
+		</Unit>
+		<Unit filename="/home/zulus/Projects/GitProj/orchestrix/src/audio/src/AudioManagement/play.cpp">
 			<Option target="a.out"/>
 		</Unit>
 		<Unit filename="/home/zulus/Projects/GitProj/orchestrix/src/audio/src/main.cpp">

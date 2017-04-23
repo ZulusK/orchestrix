@@ -1,41 +1,50 @@
 #ifndef ORCHESTRIX_AUDIOPMANAGER_H
 #define ORCHESTRIX_AUDIOPMANAGER_H
 
-
-#include "AudioData.h"
-#include "AudioPlayer.h"
-#include <AL/al.h>
 #include <AL/alc.h>
+#include <AL/al.h>
+#include <AudioManagement/AudioData.h>
+#include <AudioManagement/OpenAL.h>
+#include <map>
 #include <vector>
-#include <Entity.h>
 
 class AudioManager {
 private:
     AudioData *sound;
     ALCdevice *device;
     ALCcontext *context;
-    std::vector<SoundBuffer *> buffers;
-    std::vector<SoundSource *> sources;
-    std::vector<SoundBuffer *> freeBuffers;
-    std::vector<SoundSource *> freeSources;
+    float masterVolume;
 
-    vector3f lispos;
-    vector3f lisvel;
-    ALfloat *listenerOri;
+    vector3f listenerVel;
+    vector3f listenerPos;
+    float listenerOri[6];
+
+    std::vector<AudioBuffer> buffers;
+    std::vector<AudioSource> sources;
+    std::vector<AudioBuffer> freeBuffers;
+    std::vector<AudioSource> freeSources;
 
     AudioManager(ALCdevice *device, ALCcontext *contex, int source, int buffer);
 
+    void createBuffer(AudioBuffer &buffer);
+
+    void createSource(AudioSource &source);
+
+    void destroyBuffer(AudioBuffer &buffer);
+
+    void destroySource(AudioSource &source);
+
 public:
-    static AudioManager *init(int source, int buffer);
+    static AudioManager *init(int source=8, int buffer=64);
 
     virtual ~AudioManager();
 
-    AudioPlayer *getAudioPlayer(AudioData *data, int reservedBuffersCount = 3);
+    vector<string> getAllDevices();
 
-    void play(AudioPlayer *player);
+    void printSources();
 
-    void deletePlayer(AudioPlayer *player);
+    void printBuffers();
+
 };
-
 
 #endif //ORCHESTRIX_AUDIOPLAYER_H

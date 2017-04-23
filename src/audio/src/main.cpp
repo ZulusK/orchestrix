@@ -4,18 +4,17 @@
 #include <iostream>
 #include <AudioManagement/AudioData.h>
 #include <AudioManagement/AudioManager.h>
-
+#define _DEBUG
 using namespace std;
 
 int main(void) {
-    string filename = "res/21pilots.wav";
+    string filename = "res/ppl.wav";
     AudioData *sound = AudioData::load(filename);
     cout << sound->toString() << endl;
-    AudioManager *manager = AudioManager::init(1, 512);
-    AudioPlayer *player = manager->getAudioPlayer(sound);
-    manager->play(player);
+    AudioManager *manager = AudioManager::init(1, 8);
+    manager->printBuffers();
+    manager->printSources();
 
-    delete player;
     delete manager;
     delete sound;
 }

@@ -19,26 +19,14 @@ AL/al.h
 /home/zulus/Projects/GitProj/orchestrix/src/audio/src/AudioManagement/AudioManager.cpp
 AudioManagement/AudioManager.h
 /home/zulus/Projects/GitProj/orchestrix/src/audio/src/AudioManagement/AudioManagement/AudioManager.h
-iostream
--
-AudioManagement/AudioManager.h
--
-AudioManagement/Entity.h
--
 cstring
 -
 
 /home/zulus/Projects/GitProj/orchestrix/src/audio/src/AudioManagement/AudioPlayer.cpp
-AudioManagement/AudioManager.h
--
-AudioManagement/Entity.h
--
-iostream
--
 AudioManagement/AudioPlayer.h
-/home/zulus/Projects/GitProj/orchestrix/src/audio/src/AudioManagement/AudioManagement/AudioPlayer.h
-AL/alut.h
 -
+
+/home/zulus/Projects/GitProj/orchestrix/src/audio/src/AudioManagement/play.cpp
 
 /home/zulus/Projects/GitProj/orchestrix/src/audio/src/main.cpp
 iostream
@@ -59,30 +47,32 @@ AL/al.h
 -
 
 include/AudioManagement/AudioManager.h
-AudioData.h
-include/AudioManagement/AudioData.h
-AudioPlayer.h
-include/AudioManagement/AudioPlayer.h
-AL/al.h
--
 AL/alc.h
 -
-vector
--
-Entity.h
--
-
-include/AudioManagement/AudioPlayer.h
 AL/al.h
 -
 AudioManagement/AudioData.h
 -
+AudioManagement/OpenAL.h
+-
+map
+-
+vector
+-
+
+include/AudioManagement/AudioPlayer.h
 AudioManagement/AudioManager.h
 -
-jmorecfg.h
+AudioManagement/AudioData.h
 -
-Entity.h
-include/AudioManagement/Entity.h
+AudioManagement/OpenAL.h
+-
 
-include/AudioManagement/Entity.h
+include/AudioManagement/OpenAL.h
+AL/al.h
+-
+AL/alc.h
+-
+iostream
+-
 

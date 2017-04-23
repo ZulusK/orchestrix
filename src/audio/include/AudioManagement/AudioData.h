@@ -15,7 +15,7 @@ class AudioData {
 private:
     ALvoid *_source;              // source of audio data
     ALsizei _size;               // count of samples in sound
-    size_t _sampleRate;         // sampling rate (blocks per second)
+    ALint _sampleRate;          // sampling rate (blocks per second)
     int _channels;              //channel of audio
     int _bitsPerSample;         // bits per sample, 8- 8bits, 16- 16 bits etc
     std::string _name;
@@ -40,7 +40,7 @@ public:
 
     ALsizei get_size() const;
 
-    size_t get_sampleRate() const;
+    ALint get_sampleRate() const;
 
     int get_channels() const;
 
