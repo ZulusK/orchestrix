@@ -31,16 +31,16 @@ ALenum toALformat(int channels, int bitsPerSample) {
 /**
  * create new player
  * @param manager reference to AudioManager, which is stored AudioPlayer
- * @param sound reference to sound data
+ * @param audioData reference to sound data
  * @param volume volume of player
  * @param id id of player
  */
-AudioPlayer::AudioPlayer(AudioManager *manager, AudioData *sound, float volume) {
+AudioPlayer::AudioPlayer(AudioManager *manager, AudioData *audioData, float volume) {
     //copy references
-    this->sound = sound->get_source();
-    this->info.samples = sound->get_size();
-    this->info.format = toALformat(sound->get_channels(), sound->get_bitsPerSample());
-    this->info.frequency = sound->get_sampleRate();
+    this->rawSoundData = audioData->get_source();
+    this->info.samples = audioData->get_size();
+    this->info.format = toALformat(audioData->get_channels(), audioData->get_bitsPerSample());
+    this->info.frequency = audioData->get_sampleRate();
     this->settings.pos.x = 0;
     this->settings.pos.y = 0;
     this->settings.pos.z = 0;
@@ -56,127 +56,193 @@ AudioPlayer::AudioPlayer(AudioManager *manager, AudioData *sound, float volume) 
     this->source = manager->getFreeSource();
 }
 
+/**
+ * check is soundn playing
+ * @return true,if sound  is playing now
+ */
 bool AudioPlayer::isPlaying() {
     return state == AL_PLAYING;
 }
 
 /**
  * fills buffer by sound's data
- * @param buffer reference to AudioBuffer
- * @return is buffer filled
+ * @param buffer reference to buffer
+ * @return is all buffer filled
  */
-bool AudioPlayer::fillBuffer(AudioBuffer *buffer) {
-    if (buffer) {
-        _readDataMutex.lock();
-        if (currPos >= info.samples) {
+bool AudioPlayer::fillBuffer(ALuint buffer) {
+    if (buffer > 0) {
+        if (currPos < info.samples) {
+            _readDataMutex.lock();
+            ALsizei nextChunk = min(BUFFER_SIZE, info.samples - currPos);
+            cout << "chunk " << nextChunk << " pos: " << currPos << " -> " << currPos + nextChunk << endl;
+            if (info.format == AL_FORMAT_STEREO16 || info.format == AL_FORMAT_MONO16) {
+                AL_CHECK(alBufferData(buffer, info.format, (__int16_t *) rawSoundData + currPos, nextChunk, info.frequency));
+            } else {
+                AL_CHECK(alBufferData(buffer, info.format, (__int8_t *) rawSoundData + currPos, nextChunk, info.frequency));
+            }
+            cout << "filled" << endl;
+            currPos += nextChunk;
+            _readDataMutex.unlock();
             return false;
         }
-        ALsizei nextChunk = min(BUFFER_SIZE, info.samples - currPos);
-        cout << "chunk " << nextChunk << " pos: " << currPos << " -> " << currPos + nextChunk + 1 << endl;
-        if (nextChunk % 2 != 0) nextChunk--;
-        if (info.format == AL_FORMAT_STEREO16 || info.format == AL_FORMAT_MONO16) {
-            AL_CHECK(
-                    alBufferData(buffer->refID, info.format, (ALvoid *) sound + currPos, nextChunk, info.frequency));
-        } else {
-            AL_CHECK(alBufferData(buffer->refID, info.format, (__int8_t *) sound + currPos, nextChunk, info.frequency));
-        }
-        currPos += nextChunk + 1;
-        _readDataMutex.unlock();
-        return true;
     }
-    return false;
-}
-
-void AudioPlayer::updateState() {
-    alGetSourcei(source->refID, AL_SOURCE_STATE, &state);
+    return true;
 }
 
 void AudioPlayer::update() {
     updateState();
     if (this->state != AL_PLAYING) {
-        //sound is not playing  (PAUSED / STOPPED) do not update
+        /*
+         * sound is not playing  (PAUSED / STOPPED) do not update
+         */
         return;
     }
-    int buffersProcessed = 0;
-    AL_CHECK(alGetSourcei(this->source->refID, AL_BUFFERS_PROCESSED, &buffersProcessed));
-    // check to see if we have a buffer to deQ
-    if (buffersProcessed > 0) {
-        for (int i = 0; i < buffersProcessed; i++) {
-            // remove the buffer form the source
-            AudioBuffer processedBuffer;
-            AL_CHECK(alSourceUnqueueBuffers(this->source->refID, 1, &processedBuffer.refID));
-            // fill the buffer up and reQ!
-            // if we cant fill it up then we are finished
-            // in which case we dont need to re-Q
-            // return NO if we dont have more buffers to Q
-            updateState();
-            if (this->state == AL_STOPPED) {
-                //put it back - sound is not playing anymore
-                AL_CHECK(alSourceQueueBuffers(this->source->refID, 1, &processedBuffer.refID));
-                return;
-            }
-            //call method to load data to buffer
-            //see method in section - Creating sound
-            updateBuffer(&processedBuffer);
-            //put the newly filled buffer back (at the end of the queue)
-            AL_CHECK(alSourceQueueBuffers(this->source->refID, 1, &processedBuffer.refID));
+    int countOfProcessedBuffer = 0;
+    AL_CHECK(alGetSourcei(source, AL_BUFFERS_PROCESSED, &countOfProcessedBuffer));
+    cout << "_!Processed buffers!_ " << countOfProcessedBuffer << endl;
+    /*
+     * check to see if we have a buffer to deQ
+     */
+    for (int i = 0; i < countOfProcessedBuffer; i++) {
+        /*
+         * remove the buffer from the source
+        */
+        ALuint processedBuffer;
+        AL_CHECK(alSourceUnqueueBuffers(source, 1, &processedBuffer));
+        cout << "processed buffer " << processedBuffer << endl;
+        /*
+         * fill the buffer up and reQ!
+         * if we cant fill it up then we are finished
+         * in which case we dont need to re-Q
+         * return NO if we dont have more buffers to Q
+         */
+        updateState();
+        if (this->state == AL_STOPPED) {
+            AL_CHECK(alSourceQueueBuffers(source, 1, &processedBuffer));
+            return;
         }
-    }
-
-    if (this->remainBuffers <= 0) {
-        //no more buffers remain - stop sound automatically
-        stop();
+        /*
+         * call method to load data to buffer
+        */
+        manager->clearBuffer(processedBuffer);
+        ALuint newBuffer = manager->getFreeBuffer();
+        updateBuffer(newBuffer);
+        AL_CHECK(alSourceQueueBuffers(source, 1, &newBuffer));
+        if (this->remainBuffers <= 0) {
+            /**
+             * no more buffers, stop playing
+             */
+            stop();
+        }
     }
 }
 
-void AudioPlayer::updateBuffer(AudioBuffer *buffer) {
+void AudioPlayer::updateBuffer(ALuint buffer) {
     if (fillBuffer(buffer) == false) {
         remainBuffers--;
     }
 }
 
-void AudioPlayer::exec(thread **runningThread) {
-    AL_CHECK(alSourcef(this->source->refID, AL_PITCH, this->settings.pitch));
-    AL_CHECK(alSourcef(this->source->refID, AL_GAIN, this->settings.gain));
-    AL_CHECK(alSource3f(this->source->refID, AL_POSITION, this->settings.pos.x, this->settings.pos.y,
-                        this->settings.pos.z));
-    AL_CHECK(alSource3f(this->source->refID, AL_VELOCITY, this->settings.vel.x, this->settings.vel.y,
-                        this->settings.vel.z));
-    {
-        bool process = true;
-        int i = 0;
-        while (i < MAX_BUFFER_PER_PLAYER && process) {
-        AudioBuffer *buff = manager->getFreeBuffer();
-        process = fillBuffer(buff);
-        if (process) {
-            AL_CHECK(alSourceQueueBuffers(this->source->refID, 1, &buff->refID));
-            i++;
-        }
-        };
-        remainBuffers = i ;
-    }
-    AL_CHECK(alSourcePlay(source->refID));
-    alGetSourcei(source->refID, AL_SOURCE_STATE, &state);
-    while (state == AL_PLAYING) {
-        update();
-    }
-    (*runningThread)->join();
-    delete *runningThread;
+void AudioPlayer::updateState() {
+    _updateStateMutex.lock();
+    AL_CHECK(alGetSourcei(source, AL_SOURCE_STATE, &state));
+    _updateStateMutex.unlock();
 }
 
-void AudioPlayer::play() {
-    thread *playerThread;
-    playerThread = new thread(&AudioPlayer::exec, this, &playerThread);
+bool AudioPlayer::preload() {
+    _setBuffCntMutex.lock();
+    remainBuffers = 0;
+    bool isAllSoundLoaded = false;
+//    int cntOfReservedBuffers = 0;
+    vector<ALuint> loadedBuffers;
+    while (loadedBuffers.size() < MAX_BUFFER_PER_PLAYER && !isAllSoundLoaded) {
+        ALuint buff = manager->getFreeBuffer();
+        isAllSoundLoaded = fillBuffer(buff);
+        if (!isAllSoundLoaded) {
+            loadedBuffers.push_back(buff);
+        }
+    };
+    remainBuffers = loadedBuffers.size();
+    ALuint buff[remainBuffers];
+    for (int i = 0; i < remainBuffers; i++) {
+        buff[i] = loadedBuffers[i + 1];
+    }
+    AL_CHECK(alSourceQueueBuffers(source, loadedBuffers.size(), buff));
+    _setBuffCntMutex.unlock();
+    return remainBuffers;
+}
+
+bool AudioPlayer::isPaused() {
+    updateState();
+    return state == AL_PAUSED;
+}
+
+bool AudioPlayer::isStopped() {
+    updateState();
+    return state == AL_STOPPED;
+}
+
+/**
+ * free used resources and buffers
+ */
+void AudioPlayer::freeResources() {
+    _setBuffCntMutex.lock();
+    updateState();
+    if (state == AL_PLAYING) {
+        stop();
+    }
+    int buffersProcessed = 0;
+    AL_CHECK(alGetSourcei(source, AL_BUFFERS_PROCESSED, &buffersProcessed));
+    ALuint processedBuffer;
+    for (int i = 0; i < buffersProcessed; i++) {
+        AL_CHECK(alSourceUnqueueBuffers(source, 1, &processedBuffer));
+        manager->clearBuffer(processedBuffer);
+    }
+    manager->clearSource(source);
+    rawSoundData = NULL;
+    _setBuffCntMutex.unlock();
+}
+
+void AudioPlayer::exec() {
+    AL_CHECK(alSourcef(source, AL_PITCH, settings.pitch));
+    AL_CHECK(alSourcef(source, AL_GAIN, settings.gain));
+    AL_CHECK(alSource3f(source, AL_POSITION, settings.pos.x, settings.pos.y, settings.pos.z));
+    AL_CHECK(alSource3f(source, AL_VELOCITY, settings.vel.x, settings.vel.y, settings.vel.z));
+    if (!preload()) {
+        freeResources();
+        return;
+    }
+    AL_CHECK(alSourcePlay(source));
+    while (state == AL_PLAYING) {
+        update();
+//        cout << "update" << endl;
+        this_thread::sleep_for(chrono::seconds(1));
+    }
+}
+
+thread *AudioPlayer::play() {
+    if (this->state != AL_PLAYING && this->rawSoundData) {
+        this->state = AL_PLAYING;
+        return new thread(&AudioPlayer::exec, this);
+    } else return NULL;
+}
+
+void AudioPlayer::pause() {
+    if (isPlaying()) {
+        AL_CHECK(alSourcePause(source));
+        updateState();
+    }
 }
 
 void AudioPlayer::stop() {
-    AL_CHECK(alSourceStop(source->refID));
+    if (isPlaying()) {
+        AL_CHECK(alSourceStop(source));
+        updateState();
+    }
 }
 
 AudioPlayer::~AudioPlayer() {
-    if (isPlaying()) {
-        stop();
-    }
+    freeResources();
 }
 
 string AudioPlayer::toString() {

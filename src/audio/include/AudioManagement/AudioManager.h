@@ -8,11 +8,12 @@
 #include <map>
 #include <vector>
 #include <mutex>
+#include <set>
 
 class AudioManager {
 private:
-    recursive_mutex _getSource;
-    recursive_mutex _getBuffer;
+    recursive_mutex _sourceMutex;
+    recursive_mutex _bufferMutex;
 
     AudioData *sound;
     ALCdevice *device;
@@ -23,47 +24,45 @@ private:
     vector3f listenerPos;
     float listenerOri[6];
 
-    std::vector<AudioBuffer *> buffers;
-    std::vector<AudioSource *> sources;
-    std::vector<AudioBuffer *> freeBuffers;
-    std::vector<AudioSource *> freeSources;
+    std::set<ALuint> buffers;
+    std::set<ALuint> sources;
+    std::vector<ALuint> freeBuffers;
+    std::vector<ALuint> freeSources;
 
     AudioManager(ALCdevice *device, ALCcontext *contex, int source, int buffer);
 
-    void destroyBuffer(AudioBuffer *buffer);
+    static void print(const std::vector<std::string> vec);
 
-    void destroySource(AudioSource *source);
+    static void print(const set<ALuint> buffer);
+
+    static vector<string> getAllDevices();
+
+    ALuint generateBuffer();
+
+    ALuint generateSource();
+
+    void deleteBuffer(ALuint buffer);
+
+    void deleteSource(ALuint source);
+
+    void createBuffer();
+
+    void createSource();
 
 public:
     static AudioManager *init(int source = 8, int buffer = 64);
 
     virtual ~AudioManager();
 
-    static vector<string> getAllDevices();
+    ALuint getFreeBuffer();
 
-    void printSources();
+    ALuint getFreeSource();
 
-    void printBuffers();
+    void clearBuffer(ALuint buffer);
 
-    AudioBuffer *getFreeBuffer();
+    void clearSource(ALuint source);
 
-    AudioSource *getFreeSource();
-
-    void generateBuffer(AudioBuffer *buffer);
-
-    void generateSource(AudioSource *source);
-
-    void createBuffer(AudioBuffer *buffer);
-
-    void createSource(AudioSource *source);
-
-    void clearBuffer(AudioBuffer *buffer);
-
-    void clearSource(AudioSource *source);
-
-    void printFreeBuffers();
-
-    void printFreeSources();
+    void print(const vector<ALuint> buffer);
 };
 
 #endif //ORCHESTRIX_AUDIOPLAYER_H

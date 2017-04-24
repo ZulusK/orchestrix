@@ -43,6 +43,8 @@ AudioManagement/AudioManager.h
 -
 AudioManagement/AudioPlayer.h
 -
+thread
+-
 
 include/AudioManagement/AudioData.h
 bits/types.h
@@ -68,6 +70,8 @@ map
 vector
 -
 mutex
+-
+set
 -
 
 include/AudioManagement/AudioPlayer.h

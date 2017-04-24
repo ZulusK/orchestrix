@@ -8,14 +8,6 @@
 
 using namespace std;
 
-
-void print(const vector<string> &vec) {
-    for (auto it = vec.begin(); it != vec.end(); it++) {
-        cout << *it << " ";
-    }
-    cout << endl;
-}
-
 /**
  * print all registered in system devices
  * @return vector with string
@@ -37,8 +29,44 @@ std::vector<string> AudioManager::getAllDevices() {
     return devicesNames;
 }
 
-AudioManager::~AudioManager() {
+void AudioManager::deleteBuffer(ALuint buffer) {
+    AL_CHECK(alDeleteBuffers(1, &buffer));
+}
 
+void AudioManager::deleteSource(ALuint source) {
+    ALenum state;
+    AL_CHECK(alGetSourcei(source, AL_SOURCE_STATE, &state));
+    if (state != AL_PLAYING) {
+        AL_CHECK(alSourceStop(source));
+    }
+    AL_CHECK(alDeleteSources(1, &source));
+}
+
+AudioManager::~AudioManager() {
+    _bufferMutex.lock();
+    _sourceMutex.lock();
+    for (auto it = freeSources.begin(); it != freeBuffers.end(); it++) {
+        AL_CHECK(alDeleteSources(1, &(*it)));
+        freeSources.erase(it);
+    }
+    for (auto it = freeBuffers.begin(); it != freeBuffers.end(); it++) {
+        AL_CHECK(alDeleteBuffers(1, &(*it)));
+        freeBuffers.erase(it);
+    }
+    for (auto it = sources.begin(); it != sources.begin(); it++) {
+        deleteSource(*it);
+        sources.erase(it);
+    }
+
+    for (auto it = buffers.begin(); it != buffers.end(); it++) {
+        deleteBuffer(*it);
+        buffers.erase(it);
+    }
+    AL_CHECK(alcMakeContextCurrent(NULL));
+    AL_CHECK(alcDestroyContext(context));
+    AL_CHECK(alcCloseDevice(device));
+    _bufferMutex.unlock();
+    _sourceMutex.unlock();
 }
 
 /**
@@ -54,10 +82,10 @@ AudioManager *AudioManager::init(int source, int buffer) {
     if (buffer < MIN_BUFFER_COUNT || buffer > MAX_BUFFER_COUNT) {
         buffer = MIN_BUFFER_COUNT;
     }
-    cout << "=================================================" << endl;
-    cout << "All devices:" << endl;
+    cout << "==============================================" << endl;
+    cout << "               All devices:" << endl;
     print(getAllDevices());
-    cout << "=================================================" << endl;
+    cout << "=============================================" << endl;
     ALCdevice *deviceAL = alcOpenDevice(NULL);
     if (!deviceAL) {
         cout << "Failed to init OpenAL device." << endl;
@@ -98,13 +126,11 @@ AudioManager::AudioManager(ALCdevice *device, ALCcontext *contex, int sourceCnt,
 
     //create buffers
     for (int i = 0; i < bufferCnt; i++) {
-        AudioBuffer *buffer = new AudioBuffer;
-        createBuffer(buffer);
+        createBuffer();
     }
     //create sources
     for (int i = 0; i < sourceCnt; i++) {
-        AudioSource *source = new AudioSource;
-        createSource(source);
+        createSource();
     }
     AL_CHECK(alcMakeContextCurrent(context));
     // check for errros
@@ -113,112 +139,65 @@ AudioManager::AudioManager(ALCdevice *device, ALCcontext *contex, int sourceCnt,
     AL_CHECK(alListener3f(AL_VELOCITY, listenerVel.x, listenerVel.y, listenerVel.z));
     // check for errors
     AL_CHECK(alListenerfv(AL_ORIENTATION, listenerOri));
-
 }
 
 /**
  * generate new buffer
- * @param buffer ref to AudioBuffer to store generated buffer
+ * @return created buffer
  */
-void AudioManager::generateBuffer(AudioBuffer *buffer) {
-    AL_CHECK(alGenBuffers((ALuint) 1, &buffer->refID));
+ALuint AudioManager::generateBuffer() {
+    ALuint buff;
+    AL_CHECK(alGenBuffers((ALuint) 1, &buff));
+    return buff;
 }
 
 /**
  * generate new source
- * @param source ref to AudioSource to store generated source
+ * @return created source
  */
-void AudioManager::generateSource(AudioSource *source) {
-    AL_CHECK(alGenSources((ALuint) 1, &source->refID));;
+ALuint AudioManager::generateSource() {
+    ALuint src;
+    AL_CHECK(alGenSources((ALuint) 1, &src));
+    return src;
 }
 
 /**
  * create new buffer, and register it in AL system
  * and add it to freeBuffer and buffers
- * @param buffer, which stored riID
  */
-void AudioManager::createBuffer(AudioBuffer *buffer) {
-
-    if (buffer) {
-        _getBuffer.lock();
-        generateBuffer(buffer);
-        this->buffers.push_back(buffer);
-        this->freeBuffers.push_back(buffer);
-        _getBuffer.unlock();
-    }
-
+void AudioManager::createBuffer() {
+    _bufferMutex.lock();
+    ALuint newBuff = generateBuffer();
+    this->buffers.insert(newBuff);
+    this->freeBuffers.push_back(newBuff);
+    _bufferMutex.unlock();
 }
 
 /**
  * create new source, and register it in AL system
  * and add it to freeSource and sources
- * @param source, which stored riID
  */
-void AudioManager::createSource(AudioSource *source) {
-    if(source) {
-        _getSource.lock();
-        generateSource(source);
-        this->sources.push_back(source);
-        this->freeSources.push_back(source);
-        _getSource.unlock();
-    }
+void AudioManager::createSource() {
+    _sourceMutex.lock();
+    ALuint newSrc = generateSource();
+    this->sources.insert(newSrc);
+    this->freeSources.push_back(newSrc);
+    _sourceMutex.unlock();
 }
 
 /**
- * print all registered buffers
- */
-void AudioManager::printBuffers() {
-    for (auto it = buffers.begin(); it != buffers.end(); it++) {
-        cout << "b[" << (*it)->refID << "] ";
-    }
-    cout << endl;
-}
-
-/**
- * print all registered buffers
- */
-void AudioManager::printFreeBuffers() {
-    cout << "free buffers[" << freeBuffers.size() << "]" << endl;
-    for (auto it = freeBuffers.begin(); it != freeBuffers.end(); it++) {
-        cout << "b[" << (*it)->refID << "] ";
-    }
-    cout << endl;
-}
-
-/**
- * print all registered sources
- */
-void AudioManager::printSources() {
-    for (auto it = sources.begin(); it != sources.end(); it++) {
-        cout << "s[" << (*it)->refID << "] ";
-    }
-    cout << endl;
-}
-
-/**
- * print all registered sources
- */
-void AudioManager::printFreeSources() {
-    for (auto it = freeSources.begin(); it != freeSources.end(); it++) {
-        cout << "s[" << (*it)->refID << "] ";
-    }
-    cout << endl;
-}
-
-/**
- * return free buffer, if can, or create ew buffer, and return it
+ * return free buffer, if can, or create new buffer, and return it
  * @return free buffer
  */
-AudioBuffer *AudioManager::getFreeBuffer() {
-    AudioBuffer *freeBuff;
-    _getBuffer.lock();
+ALuint AudioManager::getFreeBuffer() {
+    _bufferMutex.lock();
     if (freeBuffers.size() == 0) {
-        freeBuff = new AudioBuffer();
-        createBuffer(freeBuff);
+        createBuffer();
     }
-    freeBuff = freeBuffers[0];
+    ALuint freeBuff = freeBuffers[0];
     freeBuffers.erase(freeBuffers.begin());
-    _getBuffer.unlock();
+    _bufferMutex.unlock();
+    cout << "return free buffer <" << freeBuff << ">" << endl;
     return freeBuff;
 }
 
@@ -226,40 +205,67 @@ AudioBuffer *AudioManager::getFreeBuffer() {
  * return free source, if can, or create ew source, and return it
  * @return free source
  */
-AudioSource *AudioManager::getFreeSource() {
-    AudioSource *freeSrc;
-    _getSource.lock();
+ALuint AudioManager::getFreeSource() {
+    _sourceMutex.lock();
     if (freeSources.size() == 0) {
-        freeSrc = new AudioSource();
-        createSource(freeSrc);
+        createSource();
     }
-    printFreeSources();
-    freeSrc = freeSources.at(0);
+    ALuint freeSrc = freeSources.at(0);
     freeSources.erase(freeSources.begin());
-    _getSource.unlock();
+    _sourceMutex.unlock();
+    cout << "return free source <" << freeSrc << ">" << endl;
     return freeSrc;
 }
 
 /**
  * clear buffer and replace it refID by new generated buffer
- * @param buffer
+ * @param buffer id of buffer
  */
-void AudioManager::clearBuffer(AudioBuffer *buffer) {
-    if (buffer) {
-        AL_CHECK(alDeleteBuffers(1, &buffer->refID));
-        generateBuffer(buffer);
+void AudioManager::clearBuffer(ALuint buffer) {
+    if (buffer > 0) {
+        _bufferMutex.lock();
+//        AL_CHECK(alDeleteBuffers(1, &buffer));
+//        buffers.erase(buffer);
         freeBuffers.push_back(buffer);
+//        createBuffer();
+        _bufferMutex.unlock();
     }
 }
 
 /**
  * clear source and replace it refID by new generated source
- * @param source
+ * @param source id of source to clear
  */
-void AudioManager::clearSource(AudioSource *source) {
-    if (source) {
-        AL_CHECK(alDeleteSources(1, &source->refID));
-        generateSource(source);
-        freeSources.push_back(source);
+void AudioManager::clearSource(ALuint source) {
+    if (source > 0) {
+        _sourceMutex.lock();
+        AL_CHECK(alDeleteSources(1, &source));
+        sources.erase(source);
+        createBuffer();
+        _sourceMutex.unlock();
     }
+}
+
+
+void AudioManager::print(const set<ALuint> buffer) {
+    for (auto it = buffer.begin(); it != buffer.end(); it++) {
+        cout << *it << " ";
+    }
+    cout << endl;
+}
+
+
+void AudioManager::print(const vector<ALuint> buffer) {
+    for (auto it = buffer.begin(); it != buffer.end(); it++) {
+        cout << *it << " ";
+    }
+    cout << endl;
+}
+
+
+void AudioManager::print(const std::vector<std::string> vec) {
+    for (auto it = vec.begin(); it != vec.end(); it++) {
+        cout << *it << " ";
+    }
+    cout << endl;
 }

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/src/AudioManagement/AudioPlayer.cpp" line="73" />
+    <bookmark url="file://$PROJECT_DIR$/src/AudioManagement/AudioPlayer.cpp" line="75" />
   </component>
   <component name="CMakeRunConfigurationManager" shouldGenerate="true" buildAllGenerated="true">
     <generated>
@@ -30,67 +30,71 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="AudioManager.cpp" pinned="false" current-in-tab="true">
+      <file leaf-file-name="AudioManager.cpp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/AudioManagement/AudioManager.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-818">
-              <caret line="142" column="18" lean-forward="false" selection-start-line="142" selection-start-column="18" selection-end-line="142" selection-end-column="18" />
+            <state relative-caret-position="312">
+              <caret line="44" column="30" lean-forward="false" selection-start-line="44" selection-start-column="30" selection-end-line="44" selection-end-column="30" />
               <folding>
                 <element signature="e#0#2#0" expanded="false" />
-                <element signature="e#161#311#0" expanded="false" />
-                <element signature="e#313#392#0" expanded="false" />
-                <element signature="e#313#867#0" expanded="false" />
-                <element signature="e#869#903#0" expanded="false" />
-                <element signature="e#905#1075#0" expanded="false" />
-                <element signature="e#905#1888#0" expanded="false" />
-                <element signature="e#1890#1999#0" expanded="false" />
-                <element signature="e#1890#3207#0" expanded="false" />
-                <element signature="e#3209#3301#0" expanded="false" />
-                <element signature="e#3209#3416#0" expanded="false" />
-                <element signature="e#3418#3510#0" expanded="false" />
-                <element signature="e#3418#3626#0" expanded="false" />
-                <element signature="e#3628#3762#0" expanded="false" />
-                <element signature="e#4021#4155#0" expanded="false" />
-                <element signature="e#4411#4450#0" expanded="false" />
-                <element signature="e#4411#4623#0" expanded="false" />
-                <element signature="e#4625#4664#0" expanded="false" />
-                <element signature="e#4625#4915#0" expanded="false" />
-                <element signature="e#4917#4956#0" expanded="false" />
-                <element signature="e#4917#5129#0" expanded="false" />
-                <element signature="e#5131#5170#0" expanded="false" />
-                <element signature="e#5131#5355#0" expanded="false" />
-                <element signature="e#5357#5453#0" expanded="false" />
-                <element signature="e#5784#5880#0" expanded="false" />
-                <element signature="e#5784#6231#0" expanded="false" />
-                <element signature="e#6233#6318#0" expanded="false" />
-                <element signature="e#6233#6523#0" expanded="false" />
-                <element signature="e#6525#6610#0" expanded="false" />
-                <element signature="e#6525#6815#0" expanded="false" />
+                <element signature="e#160#239#0" expanded="false" />
+                <element signature="e#160#714#0" expanded="false" />
+                <element signature="e#716#809#0" expanded="false" />
+                <element signature="e#811#1060#0" expanded="false" />
+                <element signature="e#1062#1887#0" expanded="false" />
+                <element signature="e#1889#2059#0" expanded="false" />
+                <element signature="e#1889#2880#0" expanded="false" />
+                <element signature="e#2882#2991#0" expanded="false" />
+                <element signature="e#2882#4092#0" expanded="false" />
+                <element signature="e#4094#4150#0" expanded="false" />
+                <element signature="e#4094#4273#0" expanded="false" />
+                <element signature="e#4275#4331#0" expanded="false" />
+                <element signature="e#4275#4451#0" expanded="false" />
+                <element signature="e#4453#4551#0" expanded="false" />
+                <element signature="e#4453#4757#0" expanded="false" />
+                <element signature="e#4759#4857#0" expanded="false" />
+                <element signature="e#4759#5060#0" expanded="false" />
+                <element signature="e#5062#5159#0" expanded="false" />
+                <element signature="e#5062#5483#0" expanded="false" />
+                <element signature="e#5485#5581#0" expanded="false" />
+                <element signature="e#5485#5905#0" expanded="false" />
+                <element signature="e#5907#6005#0" expanded="false" />
+                <element signature="e#5907#6290#0" expanded="false" />
+                <element signature="e#6292#6399#0" expanded="false" />
+                <element signature="e#6642#6811#0" expanded="false" />
+                <element signature="e#6989#7162#0" expanded="false" />
+                <marker date="1493074387756" expanded="false" signature="6446:6639" ph="{...}" />
+                <marker date="1493074387756" expanded="false" signature="6868:6986" ph="{...}" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AudioPlayer.cpp" pinned="false" current-in-tab="false">
+      <file leaf-file-name="AudioPlayer.cpp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/AudioManagement/AudioPlayer.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="219">
-              <caret line="69" column="22" lean-forward="false" selection-start-line="69" selection-start-column="8" selection-end-line="69" selection-end-column="22" />
+            <state relative-caret-position="216">
+              <caret line="39" column="16" lean-forward="false" selection-start-line="39" selection-start-column="10" selection-end-line="39" selection-end-column="16" />
               <folding>
                 <element signature="e#0#2#0" expanded="false" />
                 <element signature="e#135#312#0" expanded="false" />
                 <element signature="e#135#780#0" expanded="false" />
-                <element signature="e#782#983#0" expanded="false" />
-                <element signature="e#782#1711#0" expanded="false" />
-                <element signature="e#1713#1778#0" expanded="false" />
-                <element signature="e#1780#1889#0" expanded="false" />
-                <element signature="e#2775#2868#0" expanded="false" />
-                <element signature="e#4404#4529#0" expanded="false" />
-                <element signature="e#4531#5627#0" expanded="false" />
-                <element signature="e#5629#5755#0" expanded="false" />
-                <element signature="e#5757#5828#0" expanded="false" />
-                <element signature="e#5830#5906#0" expanded="false" />
-                <element signature="e#5908#6788#0" expanded="false" />
+                <element signature="e#782#987#0" expanded="false" />
+                <element signature="e#1748#1823#0" expanded="false" />
+                <element signature="e#1748#1889#0" expanded="false" />
+                <element signature="e#1891#1999#0" expanded="false" />
+                <element signature="e#2867#4407#0" expanded="false" />
+                <element signature="e#4409#4528#0" expanded="false" />
+                <element signature="e#4530#4688#0" expanded="false" />
+                <element signature="e#5441#5523#0" expanded="false" />
+                <element signature="e#5525#5609#0" expanded="false" />
+                <element signature="e#5611#5653#0" expanded="false" />
+                <element signature="e#6192#6777#0" expanded="false" />
+                <element signature="e#6779#6980#0" expanded="false" />
+                <element signature="e#6982#7104#0" expanded="false" />
+                <element signature="e#7106#7226#0" expanded="false" />
+                <element signature="e#7228#7280#0" expanded="false" />
+                <element signature="e#7282#8162#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -99,28 +103,12 @@
       <file leaf-file-name="OpenAL.h" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/include/AudioManagement/OpenAL.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="212">
-              <caret line="81" column="26" lean-forward="false" selection-start-line="81" selection-start-column="26" selection-end-line="81" selection-end-column="26" />
+            <state relative-caret-position="356">
+              <caret line="81" column="22" lean-forward="false" selection-start-line="81" selection-start-column="22" selection-end-line="81" selection-end-column="22" />
               <folding>
                 <element signature="e#37#55#0" expanded="true" />
-                <element signature="e#387#917#0" expanded="false" />
-                <element signature="e#1272#1321#0" expanded="false" />
-                <element signature="e#1333#1366#0" expanded="false" />
-                <element signature="e#1375#1403#0" expanded="false" />
-                <element signature="e#1417#1446#0" expanded="false" />
-                <element signature="e#1455#1483#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AudioManager.h" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/include/AudioManagement/AudioManager.h">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="198">
-              <caret line="14" column="20" lean-forward="false" selection-start-line="14" selection-start-column="20" selection-end-line="14" selection-end-column="20" />
-              <folding>
-                <element signature="e#71#90#0" expanded="true" />
+                <element signature="e#354#884#0" expanded="false" />
+                <element signature="e#1194#1243#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -129,8 +117,8 @@
       <file leaf-file-name="AudioPlayer.h" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/include/AudioManagement/AudioPlayer.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="24" column="24" lean-forward="true" selection-start-line="24" selection-start-column="24" selection-end-line="24" selection-end-column="24" />
+            <state relative-caret-position="198">
+              <caret line="16" column="11" lean-forward="false" selection-start-line="16" selection-start-column="11" selection-end-line="16" selection-end-column="11" />
               <folding>
                 <element signature="e#67#108#0" expanded="true" />
               </folding>
@@ -141,9 +129,11 @@
       <file leaf-file-name="main.cpp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-4">
-              <caret line="4" column="38" lean-forward="false" selection-start-line="4" selection-start-column="38" selection-end-line="4" selection-end-column="38" />
-              <folding />
+            <state relative-caret-position="288">
+              <caret line="21" column="31" lean-forward="true" selection-start-line="21" selection-start-column="31" selection-end-line="21" selection-end-column="31" />
+              <folding>
+                <element signature="e#39#58#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -164,6 +154,11 @@
       <find>lock()</find>
       <find>progb</find>
       <find>lock</find>
+      <find>print</find>
+      <find>getFreeSource</find>
+      <find>updateState</find>
+      <find>sound</find>
+      <find>rawSou</find>
     </findStrings>
     <replaceStrings>
       <replace>this</replace>
@@ -192,11 +187,11 @@
         <option value="$PROJECT_DIR$/src/AudioManagement/play.cpp" />
         <option value="$PROJECT_DIR$/src/AudioManagement/AudioPlayer.h" />
         <option value="$PROJECT_DIR$/src/AudioManagement/AudioData.cpp" />
-        <option value="$PROJECT_DIR$/src/main.cpp" />
         <option value="$PROJECT_DIR$/CMakeLists.txt" />
-        <option value="$PROJECT_DIR$/src/AudioManagement/AudioManager.cpp" />
         <option value="$PROJECT_DIR$/include/AudioManagement/AudioManager.h" />
         <option value="$PROJECT_DIR$/include/AudioManagement/AudioPlayer.h" />
+        <option value="$PROJECT_DIR$/src/AudioManagement/AudioManager.cpp" />
+        <option value="$PROJECT_DIR$/src/main.cpp" />
         <option value="$PROJECT_DIR$/include/AudioManagement/OpenAL.h" />
         <option value="$PROJECT_DIR$/src/AudioManagement/AudioPlayer.cpp" />
       </list>
@@ -510,11 +505,13 @@
       <workItem from="1492823239241" duration="11391000" />
       <workItem from="1492835270712" duration="9397000" />
       <workItem from="1492931544112" duration="29785000" />
+      <workItem from="1492965961050" duration="1047000" />
+      <workItem from="1493065909945" duration="9222000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="68987000" />
+    <option name="totallyTimeSpent" value="79256000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="24" width="1366" height="699" extended-state="6" />
@@ -522,14 +519,14 @@
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14421669" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4392971" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="CMake" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3290735" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4392971" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="CMake" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3290735" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3290735" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.6230032" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.8083067" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.701278" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.68370605" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -539,26 +536,6 @@
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
-    <layout-to-restore>
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4392971" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="CMake" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3290735" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.6230032" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.8578275" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14421669" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32916668" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39776358" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="processedProjectFiles" value="true" />
@@ -568,7 +545,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="20" />
+      <option name="time" value="24" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -578,7 +555,7 @@
         <state relative-caret-position="960">
           <caret line="40" column="33" lean-forward="true" selection-start-line="40" selection-start-column="4" selection-end-line="40" selection-end-column="33" />
           <folding>
-            <element signature="e#71#90#0" expanded="true" />
+            <element signature="e#71#90#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -587,7 +564,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
           <caret line="10" column="30" lean-forward="false" selection-start-line="10" selection-start-column="30" selection-end-line="10" selection-end-column="30" />
-          <folding />
+          <folding>
+            <element signature="e#39#58#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -597,35 +576,34 @@
           <caret line="132" column="21" lean-forward="true" selection-start-line="132" selection-start-column="21" selection-end-line="132" selection-end-column="21" />
           <folding>
             <element signature="e#0#2#0" expanded="false" />
-            <element signature="e#161#311#0" expanded="false" />
-            <element signature="e#313#392#0" expanded="false" />
-            <element signature="e#313#867#0" expanded="false" />
-            <element signature="e#869#903#0" expanded="false" />
-            <element signature="e#905#1075#0" expanded="false" />
-            <element signature="e#905#1888#0" expanded="false" />
-            <element signature="e#1890#1999#0" expanded="false" />
-            <element signature="e#1890#3207#0" expanded="false" />
-            <element signature="e#3209#3301#0" expanded="false" />
-            <element signature="e#3209#3416#0" expanded="false" />
-            <element signature="e#3418#3510#0" expanded="false" />
-            <element signature="e#3418#3626#0" expanded="false" />
-            <element signature="e#3628#3762#0" expanded="false" />
-            <element signature="e#4021#4155#0" expanded="false" />
-            <element signature="e#4411#4450#0" expanded="false" />
-            <element signature="e#4411#4623#0" expanded="false" />
-            <element signature="e#4625#4664#0" expanded="false" />
-            <element signature="e#4625#4915#0" expanded="false" />
-            <element signature="e#4917#4956#0" expanded="false" />
-            <element signature="e#4917#5129#0" expanded="false" />
-            <element signature="e#5131#5170#0" expanded="false" />
-            <element signature="e#5131#5355#0" expanded="false" />
-            <element signature="e#5357#5453#0" expanded="false" />
-            <element signature="e#5784#5880#0" expanded="false" />
-            <element signature="e#5784#6231#0" expanded="false" />
-            <element signature="e#6233#6318#0" expanded="false" />
-            <element signature="e#6233#6523#0" expanded="false" />
-            <element signature="e#6525#6610#0" expanded="false" />
-            <element signature="e#6525#6815#0" expanded="false" />
+            <element signature="e#160#239#0" expanded="false" />
+            <element signature="e#160#714#0" expanded="false" />
+            <element signature="e#716#809#0" expanded="false" />
+            <element signature="e#811#1060#0" expanded="false" />
+            <element signature="e#1062#1887#0" expanded="false" />
+            <element signature="e#1889#2059#0" expanded="false" />
+            <element signature="e#1889#2880#0" expanded="false" />
+            <element signature="e#2882#2991#0" expanded="false" />
+            <element signature="e#2882#4092#0" expanded="false" />
+            <element signature="e#4094#4150#0" expanded="false" />
+            <element signature="e#4094#4273#0" expanded="false" />
+            <element signature="e#4275#4331#0" expanded="false" />
+            <element signature="e#4275#4451#0" expanded="false" />
+            <element signature="e#4453#4551#0" expanded="false" />
+            <element signature="e#4453#4757#0" expanded="false" />
+            <element signature="e#4759#4857#0" expanded="false" />
+            <element signature="e#4759#5060#0" expanded="false" />
+            <element signature="e#5062#5159#0" expanded="false" />
+            <element signature="e#5062#5483#0" expanded="false" />
+            <element signature="e#5485#5581#0" expanded="false" />
+            <element signature="e#5485#5905#0" expanded="false" />
+            <element signature="e#5907#6005#0" expanded="false" />
+            <element signature="e#5907#6290#0" expanded="false" />
+            <element signature="e#6292#6399#0" expanded="false" />
+            <element signature="e#6642#6811#0" expanded="false" />
+            <element signature="e#6989#7162#0" expanded="false" />
+            <marker date="1493074387756" expanded="false" signature="6446:6639" ph="{...}" />
+            <marker date="1493074387756" expanded="false" signature="6868:6986" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -642,14 +620,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1680">
           <caret line="70" column="13" lean-forward="true" selection-start-line="70" selection-start-column="13" selection-end-line="70" selection-end-column="13" />
-          <folding>
-            <element signature="e#0#38#0" expanded="false" />
-            <element signature="e#441#504#0" expanded="false" />
-            <element signature="e#711#1035#0" expanded="false" />
-            <element signature="e#1037#1117#0" expanded="false" />
-            <element signature="e#2385#2465#0" expanded="false" />
-            <element signature="e#2467#2769#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -657,24 +628,19 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="912">
           <caret line="38" column="0" lean-forward="true" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#67#108#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/include/AudioManagement/Entity.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/include/AudioManagement/Entity.h" />
     <entry file="file://$PROJECT_DIR$/include/AudioManagement/AudioManager.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="552">
           <caret line="23" column="25" lean-forward="false" selection-start-line="23" selection-start-column="25" selection-end-line="23" selection-end-column="25" />
           <folding>
-            <element signature="e#71#90#0" expanded="true" />
+            <element signature="e#71#90#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -685,35 +651,34 @@
           <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
           <folding>
             <element signature="e#0#2#0" expanded="false" />
-            <element signature="e#161#311#0" expanded="false" />
-            <element signature="e#313#392#0" expanded="false" />
-            <element signature="e#313#867#0" expanded="false" />
-            <element signature="e#869#903#0" expanded="false" />
-            <element signature="e#905#1075#0" expanded="false" />
-            <element signature="e#905#1888#0" expanded="false" />
-            <element signature="e#1890#1999#0" expanded="false" />
-            <element signature="e#1890#3207#0" expanded="false" />
-            <element signature="e#3209#3301#0" expanded="false" />
-            <element signature="e#3209#3416#0" expanded="false" />
-            <element signature="e#3418#3510#0" expanded="false" />
-            <element signature="e#3418#3626#0" expanded="false" />
-            <element signature="e#3628#3762#0" expanded="false" />
-            <element signature="e#4021#4155#0" expanded="false" />
-            <element signature="e#4411#4450#0" expanded="false" />
-            <element signature="e#4411#4623#0" expanded="false" />
-            <element signature="e#4625#4664#0" expanded="false" />
-            <element signature="e#4625#4915#0" expanded="false" />
-            <element signature="e#4917#4956#0" expanded="false" />
-            <element signature="e#4917#5129#0" expanded="false" />
-            <element signature="e#5131#5170#0" expanded="false" />
-            <element signature="e#5131#5355#0" expanded="false" />
-            <element signature="e#5357#5453#0" expanded="false" />
-            <element signature="e#5784#5880#0" expanded="false" />
-            <element signature="e#5784#6231#0" expanded="false" />
-            <element signature="e#6233#6318#0" expanded="false" />
-            <element signature="e#6233#6523#0" expanded="false" />
-            <element signature="e#6525#6610#0" expanded="false" />
-            <element signature="e#6525#6815#0" expanded="false" />
+            <element signature="e#160#239#0" expanded="false" />
+            <element signature="e#160#714#0" expanded="false" />
+            <element signature="e#716#809#0" expanded="false" />
+            <element signature="e#811#1060#0" expanded="false" />
+            <element signature="e#1062#1887#0" expanded="false" />
+            <element signature="e#1889#2059#0" expanded="false" />
+            <element signature="e#1889#2880#0" expanded="false" />
+            <element signature="e#2882#2991#0" expanded="false" />
+            <element signature="e#2882#4092#0" expanded="false" />
+            <element signature="e#4094#4150#0" expanded="false" />
+            <element signature="e#4094#4273#0" expanded="false" />
+            <element signature="e#4275#4331#0" expanded="false" />
+            <element signature="e#4275#4451#0" expanded="false" />
+            <element signature="e#4453#4551#0" expanded="false" />
+            <element signature="e#4453#4757#0" expanded="false" />
+            <element signature="e#4759#4857#0" expanded="false" />
+            <element signature="e#4759#5060#0" expanded="false" />
+            <element signature="e#5062#5159#0" expanded="false" />
+            <element signature="e#5062#5483#0" expanded="false" />
+            <element signature="e#5485#5581#0" expanded="false" />
+            <element signature="e#5485#5905#0" expanded="false" />
+            <element signature="e#5907#6005#0" expanded="false" />
+            <element signature="e#5907#6290#0" expanded="false" />
+            <element signature="e#6292#6399#0" expanded="false" />
+            <element signature="e#6642#6811#0" expanded="false" />
+            <element signature="e#6989#7162#0" expanded="false" />
+            <marker date="1493074387756" expanded="false" signature="6446:6639" ph="{...}" />
+            <marker date="1493074387756" expanded="false" signature="6868:6986" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -730,7 +695,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#67#108#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -738,14 +705,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="480">
           <caret line="20" column="5" lean-forward="false" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="5" />
-          <folding>
-            <element signature="e#0#38#0" expanded="false" />
-            <element signature="e#441#504#0" expanded="false" />
-            <element signature="e#711#1035#0" expanded="false" />
-            <element signature="e#1037#1117#0" expanded="false" />
-            <element signature="e#2385#2465#0" expanded="false" />
-            <element signature="e#2467#2769#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -754,7 +714,7 @@
         <state relative-caret-position="216">
           <caret line="9" column="17" lean-forward="false" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
           <folding>
-            <element signature="e#107#130#0" expanded="false" />
+            <marker date="1492934606681" expanded="true" signature="207:1224" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -764,7 +724,7 @@
         <state relative-caret-position="24">
           <caret line="1" column="32" lean-forward="false" selection-start-line="1" selection-start-column="32" selection-end-line="1" selection-end-column="32" />
           <folding>
-            <element signature="e#71#90#0" expanded="true" />
+            <element signature="e#71#90#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -781,14 +741,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="899">
           <caret line="31" column="5" lean-forward="true" selection-start-line="31" selection-start-column="5" selection-end-line="31" selection-end-column="5" />
-          <folding>
-            <element signature="e#0#38#0" expanded="false" />
-            <element signature="e#441#504#0" expanded="false" />
-            <element signature="e#711#1035#0" expanded="false" />
-            <element signature="e#1037#1117#0" expanded="false" />
-            <element signature="e#2385#2465#0" expanded="false" />
-            <element signature="e#2467#2769#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -797,7 +750,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#107#130#0" expanded="false" />
+            <marker date="1492934606681" expanded="true" signature="207:1224" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -814,7 +767,7 @@
         <state relative-caret-position="58">
           <caret line="2" column="0" lean-forward="true" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
           <folding>
-            <element signature="e#71#90#0" expanded="true" />
+            <element signature="e#71#90#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -830,7 +783,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#39#58#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -839,7 +794,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#107#130#0" expanded="false" />
+            <marker date="1492934606681" expanded="true" signature="207:1224" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -849,7 +804,7 @@
         <state relative-caret-position="406">
           <caret line="14" column="0" lean-forward="true" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
           <folding>
-            <element signature="e#71#90#0" expanded="true" />
+            <element signature="e#71#90#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -898,15 +853,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="107">
           <caret line="711" column="12" lean-forward="false" selection-start-line="711" selection-start-column="12" selection-end-line="711" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/local/include/AL/al.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="553" column="24" lean-forward="false" selection-start-line="553" selection-start-column="24" selection-end-line="553" selection-end-column="24" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -914,18 +860,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="336">
           <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#67#108#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/include/AudioManagement/Entity.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="5" column="32" lean-forward="false" selection-start-line="5" selection-start-column="32" selection-end-line="5" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/include/AudioManagement/Entity.h" />
     <entry file="file://$PROJECT_DIR$/include/AudioManagement/AudioData.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="336">
@@ -956,7 +897,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="747" column="0" lean-forward="false" selection-start-line="747" selection-start-column="0" selection-end-line="747" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -964,7 +904,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="56">
           <caret line="102" column="0" lean-forward="false" selection-start-line="102" selection-start-column="0" selection-end-line="102" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -992,67 +931,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/include/AudioManagement/OpenAL.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="212">
-          <caret line="81" column="26" lean-forward="false" selection-start-line="81" selection-start-column="26" selection-end-line="81" selection-end-column="26" />
-          <folding>
-            <element signature="e#37#55#0" expanded="true" />
-            <element signature="e#387#917#0" expanded="false" />
-            <element signature="e#1272#1321#0" expanded="false" />
-            <element signature="e#1333#1366#0" expanded="false" />
-            <element signature="e#1375#1403#0" expanded="false" />
-            <element signature="e#1417#1446#0" expanded="false" />
-            <element signature="e#1455#1483#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/include/AudioManagement/AudioManager.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="14" column="20" lean-forward="false" selection-start-line="14" selection-start-column="20" selection-end-line="14" selection-end-column="20" />
+        <state relative-caret-position="236">
+          <caret line="35" column="28" lean-forward="false" selection-start-line="35" selection-start-column="28" selection-end-line="35" selection-end-column="28" />
           <folding>
-            <element signature="e#71#90#0" expanded="true" />
+            <element signature="e#71#90#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AudioManagement/AudioPlayer.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="219">
-          <caret line="69" column="22" lean-forward="false" selection-start-line="69" selection-start-column="8" selection-end-line="69" selection-end-column="22" />
-          <folding>
-            <element signature="e#0#2#0" expanded="false" />
-            <element signature="e#135#312#0" expanded="false" />
-            <element signature="e#135#780#0" expanded="false" />
-            <element signature="e#782#983#0" expanded="false" />
-            <element signature="e#782#1711#0" expanded="false" />
-            <element signature="e#1713#1778#0" expanded="false" />
-            <element signature="e#1780#1889#0" expanded="false" />
-            <element signature="e#2775#2868#0" expanded="false" />
-            <element signature="e#4404#4529#0" expanded="false" />
-            <element signature="e#4531#5627#0" expanded="false" />
-            <element signature="e#5629#5755#0" expanded="false" />
-            <element signature="e#5757#5828#0" expanded="false" />
-            <element signature="e#5830#5906#0" expanded="false" />
-            <element signature="e#5908#6788#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-4">
-          <caret line="4" column="38" lean-forward="false" selection-start-line="4" selection-start-column="38" selection-end-line="4" selection-end-column="38" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/include/AudioManagement/AudioPlayer.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="24" column="24" lean-forward="true" selection-start-line="24" selection-start-column="24" selection-end-line="24" selection-end-column="24" />
+        <state relative-caret-position="198">
+          <caret line="16" column="11" lean-forward="false" selection-start-line="16" selection-start-column="11" selection-end-line="16" selection-end-column="11" />
           <folding>
             <element signature="e#67#108#0" expanded="true" />
           </folding>
@@ -1061,39 +953,96 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/AudioManagement/AudioManager.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-818">
-          <caret line="142" column="18" lean-forward="false" selection-start-line="142" selection-start-column="18" selection-end-line="142" selection-end-column="18" />
+        <state relative-caret-position="312">
+          <caret line="44" column="30" lean-forward="false" selection-start-line="44" selection-start-column="30" selection-end-line="44" selection-end-column="30" />
           <folding>
             <element signature="e#0#2#0" expanded="false" />
-            <element signature="e#161#311#0" expanded="false" />
-            <element signature="e#313#392#0" expanded="false" />
-            <element signature="e#313#867#0" expanded="false" />
-            <element signature="e#869#903#0" expanded="false" />
-            <element signature="e#905#1075#0" expanded="false" />
-            <element signature="e#905#1888#0" expanded="false" />
-            <element signature="e#1890#1999#0" expanded="false" />
-            <element signature="e#1890#3207#0" expanded="false" />
-            <element signature="e#3209#3301#0" expanded="false" />
-            <element signature="e#3209#3416#0" expanded="false" />
-            <element signature="e#3418#3510#0" expanded="false" />
-            <element signature="e#3418#3626#0" expanded="false" />
-            <element signature="e#3628#3762#0" expanded="false" />
-            <element signature="e#4021#4155#0" expanded="false" />
-            <element signature="e#4411#4450#0" expanded="false" />
-            <element signature="e#4411#4623#0" expanded="false" />
-            <element signature="e#4625#4664#0" expanded="false" />
-            <element signature="e#4625#4915#0" expanded="false" />
-            <element signature="e#4917#4956#0" expanded="false" />
-            <element signature="e#4917#5129#0" expanded="false" />
-            <element signature="e#5131#5170#0" expanded="false" />
-            <element signature="e#5131#5355#0" expanded="false" />
-            <element signature="e#5357#5453#0" expanded="false" />
-            <element signature="e#5784#5880#0" expanded="false" />
-            <element signature="e#5784#6231#0" expanded="false" />
-            <element signature="e#6233#6318#0" expanded="false" />
-            <element signature="e#6233#6523#0" expanded="false" />
-            <element signature="e#6525#6610#0" expanded="false" />
-            <element signature="e#6525#6815#0" expanded="false" />
+            <element signature="e#160#239#0" expanded="false" />
+            <element signature="e#160#714#0" expanded="false" />
+            <element signature="e#716#809#0" expanded="false" />
+            <element signature="e#811#1060#0" expanded="false" />
+            <element signature="e#1062#1887#0" expanded="false" />
+            <element signature="e#1889#2059#0" expanded="false" />
+            <element signature="e#1889#2880#0" expanded="false" />
+            <element signature="e#2882#2991#0" expanded="false" />
+            <element signature="e#2882#4092#0" expanded="false" />
+            <element signature="e#4094#4150#0" expanded="false" />
+            <element signature="e#4094#4273#0" expanded="false" />
+            <element signature="e#4275#4331#0" expanded="false" />
+            <element signature="e#4275#4451#0" expanded="false" />
+            <element signature="e#4453#4551#0" expanded="false" />
+            <element signature="e#4453#4757#0" expanded="false" />
+            <element signature="e#4759#4857#0" expanded="false" />
+            <element signature="e#4759#5060#0" expanded="false" />
+            <element signature="e#5062#5159#0" expanded="false" />
+            <element signature="e#5062#5483#0" expanded="false" />
+            <element signature="e#5485#5581#0" expanded="false" />
+            <element signature="e#5485#5905#0" expanded="false" />
+            <element signature="e#5907#6005#0" expanded="false" />
+            <element signature="e#5907#6290#0" expanded="false" />
+            <element signature="e#6292#6399#0" expanded="false" />
+            <element signature="e#6642#6811#0" expanded="false" />
+            <element signature="e#6989#7162#0" expanded="false" />
+            <marker date="1493074387756" expanded="false" signature="6446:6639" ph="{...}" />
+            <marker date="1493074387756" expanded="false" signature="6868:6986" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/include/AL/al.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="536" column="24" lean-forward="false" selection-start-line="536" selection-start-column="24" selection-end-line="536" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="21" column="31" lean-forward="true" selection-start-line="21" selection-start-column="31" selection-end-line="21" selection-end-column="31" />
+          <folding>
+            <element signature="e#39#58#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/include/AudioManagement/OpenAL.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="356">
+          <caret line="81" column="22" lean-forward="false" selection-start-line="81" selection-start-column="22" selection-end-line="81" selection-end-column="22" />
+          <folding>
+            <element signature="e#37#55#0" expanded="true" />
+            <element signature="e#354#884#0" expanded="false" />
+            <element signature="e#1194#1243#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AudioManagement/AudioPlayer.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="39" column="16" lean-forward="false" selection-start-line="39" selection-start-column="10" selection-end-line="39" selection-end-column="16" />
+          <folding>
+            <element signature="e#0#2#0" expanded="false" />
+            <element signature="e#135#312#0" expanded="false" />
+            <element signature="e#135#780#0" expanded="false" />
+            <element signature="e#782#987#0" expanded="false" />
+            <element signature="e#1748#1823#0" expanded="false" />
+            <element signature="e#1748#1889#0" expanded="false" />
+            <element signature="e#1891#1999#0" expanded="false" />
+            <element signature="e#2867#4407#0" expanded="false" />
+            <element signature="e#4409#4528#0" expanded="false" />
+            <element signature="e#4530#4688#0" expanded="false" />
+            <element signature="e#5441#5523#0" expanded="false" />
+            <element signature="e#5525#5609#0" expanded="false" />
+            <element signature="e#5611#5653#0" expanded="false" />
+            <element signature="e#6192#6777#0" expanded="false" />
+            <element signature="e#6779#6980#0" expanded="false" />
+            <element signature="e#6982#7104#0" expanded="false" />
+            <element signature="e#7106#7226#0" expanded="false" />
+            <element signature="e#7228#7280#0" expanded="false" />
+            <element signature="e#7282#8162#0" expanded="false" />
           </folding>
         </state>
       </provider>

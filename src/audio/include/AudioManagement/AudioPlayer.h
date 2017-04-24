@@ -14,8 +14,8 @@
 */
 class AudioPlayer {
     AudioManager *manager;
-    AudioSource *source;
-    ALvoid *sound;
+    ALuint source;
+    ALvoid *rawSoundData;
     ALsizei currPos;
     ALenum state;
     int remainBuffers;
@@ -26,19 +26,28 @@ class AudioPlayer {
     //mutex to read data
     recursive_mutex _readDataMutex;
     recursive_mutex _setBuffCntMutex;
+    recursive_mutex _updateStateMutex;
 private:
 
-    bool fillBuffer(AudioBuffer *buffer);
+    bool fillBuffer(ALuint buffer);
 
     void update();
 
-    void exec(thread **runningThread);
+    void exec();
+
+    void updateBuffer(ALuint buffer);
+
+    bool preload();
+
+    void freeResources();
+
+    void updateState();
 public:
-    AudioPlayer(AudioManager *manager, AudioData *sound, float volume);
+    AudioPlayer(AudioManager *manager, AudioData *audioData, float volume);
 
     ~AudioPlayer();
 
-    void play();
+    thread *play();
 
     void pause();
 
@@ -46,11 +55,11 @@ public:
 
     bool isPlaying();
 
-    void updateState();
-
     string toString();
 
-    void updateBuffer(AudioBuffer *buffer);
+    bool isStopped();
+
+    bool isPaused();
 };
 
 #endif //ORCHESTRIX_AUDIOPLAYER_H
