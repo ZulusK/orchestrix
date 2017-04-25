@@ -60,7 +60,7 @@ void exampleSound() {
 
 int main(void) {
 //    exampleSound();
-    string filename1 = "res/21pilots.wav";
+    string filename1 = "res/mySound.wav";
     AudioData *sound1 = AudioData::load(filename1);
     cout<<sound1->toString()<<endl;
     SpectrumAnalyzer analyzer(sound1, 10000, 20);
