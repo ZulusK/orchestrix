@@ -9,7 +9,7 @@ using namespace std;
 
 SpectrumAnalyzer::SpectrumAnalyzer(AudioData *data, size_t chunks, int bars) {
     if (data) {
-        /**x
+        /**
          * copy references
          */
         this->rawBytes = data->get_source();
@@ -31,12 +31,47 @@ SpectrumAnalyzer::SpectrumAnalyzer(AudioData *data, size_t chunks, int bars) {
  * calculate spectrums to source
  */
 void SpectrumAnalyzer::exec() {
-    int countOfSpectrums = this->samples / (elementsInChunk*channels) + 1;
-
-    size_t offsetStep=elementsInChunk*channels;
+    int countOfSpectrums = this->samples / (elementsInChunk * channels) + 1;
+    size_t offsetStep = elementsInChunk * channels;
     for (size_t offset = 0, i = 0; i < countOfSpectrums; i++, offset += offsetStep) {
-//        offset=1000000;
-        spectrums.push_back(new Spectrum(rawBytes, offset, elementsInChunk, bars, samples,
-                                         channels, bitsPerSample));
+        Spectrum * s=new Spectrum(rawBytes, offset, elementsInChunk, bars, samples,
+                                  channels, bitsPerSample);
+        spectrums.push_back(s);
     }
+}
+
+const vector<Spectrum *> &SpectrumAnalyzer::getSpectrums() const {
+    return spectrums;
+}
+
+size_t SpectrumAnalyzer::getBars() const {
+    return bars;
+}
+
+size_t SpectrumAnalyzer::getElementsInChunk() const {
+    return elementsInChunk;
+}
+
+float SpectrumAnalyzer::getTimeBound() const {
+    return timeBound;
+}
+
+void *SpectrumAnalyzer::getRawBytes() const {
+    return rawBytes;
+}
+
+size_t SpectrumAnalyzer::getSamples() const {
+    return samples;
+}
+
+int SpectrumAnalyzer::getChannels() const {
+    return channels;
+}
+
+int SpectrumAnalyzer::getFrequency() const {
+    return frequency;
+}
+
+int SpectrumAnalyzer::getBitsPerSample() const {
+    return bitsPerSample;
 }

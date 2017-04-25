@@ -27,6 +27,23 @@ private:
 public:
     SpectrumAnalyzer(AudioData *data, size_t chunks, int bars);
 
+    const vector<Spectrum *> &getSpectrums() const;
+
+    size_t getBars() const;
+
+    size_t getElementsInChunk() const;
+
+    float getTimeBound() const;
+
+    void *getRawBytes() const;
+
+    size_t getSamples() const;
+
+    int getChannels() const;
+
+    int getFrequency() const;
+
+    int getBitsPerSample() const;
 };
 
 
