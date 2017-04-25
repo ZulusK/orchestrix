@@ -1,15 +1,15 @@
 #-------------------------------------------------
 #
-# Project created by QtCreator 2017-04-25T17:14:01
+# Project created by QtCreator 2017-04-25T20:48:54
 #
 #-------------------------------------------------
 
 QT       += core gui
-QT       += charts
+QT       +=charts
 
-greaterThan(QT_MAJOR_VERSION, 5): QT += widgets
+greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
-TARGET = orchestrix_sample
+TARGET = chartsExample
 TEMPLATE = app
 
 # The following define makes your compiler emit warnings if you use
@@ -30,13 +30,10 @@ SOURCES += main.cpp\
 HEADERS  += GameplayWindow.h
 
 FORMS    += GameplayWindow.ui
+LIBS+= -L/usr/local/lib -laut
+LIBS+= -L/usr/local/lib -lopenal
+LIBS+= -L/usr/local/lib -lalut
+LIBS+= -L/usr/local/lib -lfftw3
+LIBS+= -L/usr/local/lib -lsndfile
+LIBS+= -L/usr/local/lib -lpthread
 
-
-INCLUDEPATH += /usr/local/include
-DEPENDPATH += /usr/local/include
-LIBS += -L/usr/local/lib/audio/ -laut
-LIBS += -L/usr/local/lib/audio/ -lsndfile
-LIBS += -L/usr/local/lib/audio/ -lfftw3
-LIBS += -L/usr/local/lib/audio/ -lpthread
-LIBS += -L/usr/local/lib/ -lalut
-LIBS += -L/usr/local/lib/ -lopenal

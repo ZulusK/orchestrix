@@ -19,7 +19,7 @@ SpectrumAnalyzer::SpectrumAnalyzer(AudioData *data, size_t chunks, int bars) {
         this->frequency = data->get_sampleRate();
         this->bars = bars;
         this->elementsInChunk = chunks;
-        this->timeBound = this->frequency / (float) this->elementsInChunk;
+        this->timeBound = (float) this->elementsInChunk / this->frequency;
         /**
          * process spectrums
          */
@@ -34,8 +34,8 @@ void SpectrumAnalyzer::exec() {
     int countOfSpectrums = this->samples / (elementsInChunk * channels) + 1;
     size_t offsetStep = elementsInChunk * channels;
     for (size_t offset = 0, i = 0; i < countOfSpectrums; i++, offset += offsetStep) {
-        Spectrum * s=new Spectrum(rawBytes, offset, elementsInChunk, bars, samples,
-                                  channels, bitsPerSample);
+        Spectrum *s = new Spectrum(rawBytes, offset, elementsInChunk, bars, samples,
+                                   channels, bitsPerSample);
         spectrums.push_back(s);
     }
 }

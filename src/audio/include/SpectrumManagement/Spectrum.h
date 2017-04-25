@@ -13,16 +13,18 @@ class Spectrum {
     float *spectrums;
     int length;
 
-    float *createBars(float *frequenceBuffer, int output_buffer);
+    float *createBars(float *frequenceBuffer, int size);
 
     void exec(double *input_buffer, size_t input_size);
+
+    void fillBuffer(const __int16_t *A, double *B, size_t lenA, size_t lenB, int channel);
+
+    void fillBuffer(const __int8_t *A, double *B, size_t lenA, size_t lenB, int channel);
 
 public:
     void normalize();
 
     float *getSpectrums() const;
-
-    float *getSpecrtums() const;
 
     int getLength() const;
 

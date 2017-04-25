@@ -6,7 +6,10 @@
 #include <AudioManagement/OpenAL.h>
 #include <fftw3.h>
 #include <cmath>
-#define MAX_DB 20
+#include <AudioManagement/AudioManager.h>
+
+#define MAX_DB 100
+
 int Spectrum::getLength() const {
     return length;
 }
@@ -19,27 +22,16 @@ int Spectrum::getLength() const {
  * @param lenB count of elements in B
  * @param channel count of channel in A
  */
-void fillBuffer(const __int16_t *A, double *B, size_t lenA, size_t lenB, int channel) {
-    //find max element in A
-    B[0] = A[0];
-    double max = abs(A[0]);
-    size_t iA = channel;
-    size_t iB = 1;
+void Spectrum::fillBuffer(const __int16_t *A, double *B, size_t lenA, size_t lenB, int channel) {
+    size_t iA = 0;
+    size_t iB = 0;
     for (; iA < lenA && iB < lenB; iA += channel, iB++) {
-        int a = A[iA];
-        B[iB] = a;
-        if (max < abs(A[iA])) {
-            max = abs(A[iA]);
+        B[iB] = 0;
+        for (int i = 0; i < channel; i++) {
+            B[iB] += A[iA];
         }
+        B[iB] /= channel * INT16_MAX;
     }
-//    cout << iA << endl;
-    if (max > 1) {
-        //normalize elements and put it to B
-        for (iB = 0, iA = 0; iA < lenA && iB < lenB; iA += channel, iB++) {
-            B[iB] /= max;
-        }
-    }
-    //add zero to end of B
     for (; iB < lenB; iB++) {
         B[iB] = 0;
     }
@@ -53,27 +45,16 @@ void fillBuffer(const __int16_t *A, double *B, size_t lenA, size_t lenB, int cha
  * @param lenB count of elements in B
  * @param channel count of channel in A
  */
-void fillBuffer(const __int8_t *A, double *B, size_t lenA, size_t lenB, int channel) {
-    //find max element in A
-    B[0] = A[0];
-    double max = abs(A[0]);
-    size_t iA = channel;
-    size_t iB = 1;
+void Spectrum::fillBuffer(const __int8_t *A, double *B, size_t lenA, size_t lenB, int channel) {
+    size_t iA = 0;
+    size_t iB = 0;
     for (; iA < lenA && iB < lenB; iA += channel, iB++) {
-        int a = A[iA];
-        B[iB] = a;
-        if (max < abs(A[iA])) {
-            max = abs(A[iA]);
+        B[iB] = 0;
+        for (int i = 0; i < channel; i++) {
+            B[iB] += A[iA];
         }
+        B[iB] /= channel * INT8_MAX;
     }
-//    cout << iA << endl;
-    if (max > 1) {
-        //normalize elements and put it to B
-        for (iB = 0, iA = 0; iA < lenA && iB < lenB; iA += channel, iB++) {
-            B[iB] /= max;
-        }
-    }
-    //add zero to end of B
     for (; iB < lenB; iB++) {
         B[iB] = 0;
     }
@@ -82,7 +63,7 @@ void fillBuffer(const __int8_t *A, double *B, size_t lenA, size_t lenB, int chan
 float *normalizeFFTBuffer(fftw_complex *inputBuffer, size_t size) {
     float *outputBuffer = new float[size];
     for (size_t i = 0; i < size; i++) {
-        outputBuffer[i] = abs(10 * log10(hypot(inputBuffer[i][0], inputBuffer[i][1])));
+        outputBuffer[i] = 10 * log10(hypot(inputBuffer[i][0], inputBuffer[i][1]));
     }
     return outputBuffer;
 }
@@ -100,6 +81,7 @@ float *normalizeFFTBuffer(fftw_complex *inputBuffer, size_t size) {
 Spectrum::Spectrum(const void *data, size_t offset, size_t chunkLength, int bars, size_t inputDataLength,
                    int channel, int bits) {
     this->length = bars;
+
     //create new buffer
     double *chunkBuffer = new double[chunkLength];
     //fill it by normalized data
@@ -115,29 +97,26 @@ Spectrum::Spectrum(const void *data, size_t offset, size_t chunkLength, int bars
 /**
  * calculate bars by average value of soe range of elements
  * @param buffer
- * @param output_buffer
+ * @param size
  * @return
  */
-float *Spectrum::createBars(float *frequenceBuffer, int output_buffer) {
-    int range = output_buffer / this->length;
+float *Spectrum::createBars(float *frequenceBuffer, int size) {
+    int range = size / this->length;
     float *barVal = new float[length];
-    double max = -1;
     for (int i = 0; i < length; i++) {
         int rigthBound = (i + 1) * range;
         int leftBound = i * range;
         double average = 0;
         for (int j = leftBound; j < rigthBound; j++) {
-            average += frequenceBuffer[j];
+            if (frequenceBuffer[j] > 0)
+                average += frequenceBuffer[j];
         }
         average /= range;
-//        if (average > max) {
-//            max = average;
-//        }
         barVal[i] = average;
     }
     //normalize bars
     for (int i = 0; i < length; i++) {
-        barVal[i] /= MAX_DB;
+        barVal[i] /= (double) MAX_DB;
     }
     return barVal;
 }

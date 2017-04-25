@@ -19,6 +19,7 @@ AudioPlayer::AudioPlayer(AudioManager *manager, AudioData *audioData, float volu
     this->info.samples = audioData->get_size();
     this->info.format = toALformat(audioData->get_channels(), audioData->get_bitsPerSample());
     this->info.frequency = audioData->get_sampleRate();
+    this->runningThread = NULL;
     this->settings.pos.x = 0;
     this->settings.pos.y = 0;
     this->settings.pos.z = 0;
@@ -61,15 +62,6 @@ bool AudioPlayer::fillBuffer(ALuint buffer) {
     return true;
 }
 
-thread *AudioPlayer::rewind() {
-    if (isPaused()) {
-        AL_CHECK(alSourceRewind(source));
-        this->currState = PLAYING;
-        return new thread(&AudioPlayer::exec, this);
-    }
-    return NULL;
-}
-
 void AudioPlayer::update() {
     updateState();
     if (this->state != AL_PLAYING) {
@@ -80,7 +72,7 @@ void AudioPlayer::update() {
     }
     int countOfProcessedBuffer = 0;
     AL_CHECK(alGetSourcei(source, AL_BUFFERS_PROCESSED, &countOfProcessedBuffer));
-    cout << "_!Processed buffers!_ " << countOfProcessedBuffer << endl;
+//    cout << "_!Processed buffers!_ " << countOfProcessedBuffer << endl;
     /*
      * check to see if we have a buffer to deQ
      */
@@ -170,12 +162,14 @@ void AudioPlayer::freeResources() {
     _setBuffCntMutex.unlock();
 }
 
-void AudioPlayer::exec() {
+void AudioPlayer::useSettigs() {
     AL_CHECK(alSourcef(source, AL_PITCH, settings.pitch));
     AL_CHECK(alSourcef(source, AL_GAIN, settings.gain));
     AL_CHECK(alSource3f(source, AL_POSITION, settings.pos.x, settings.pos.y, settings.pos.z));
     AL_CHECK(alSource3f(source, AL_VELOCITY, settings.vel.x, settings.vel.y, settings.vel.z));
-    AL_CHECK(alSourcePlay(source));
+}
+
+void AudioPlayer::exec() {
     updateState();
     while (currState == PLAYING && state == AL_PLAYING) {
         update();
@@ -184,35 +178,69 @@ void AudioPlayer::exec() {
     updateState();
 }
 
-thread *AudioPlayer::play() {
+/**
+ * try to run playing sound, if it's not playing yet
+ * @return true, if success
+ */
+bool AudioPlayer::play() {
     if (this->state != AL_PLAYING && this->rawSoundData) {
         this->currState = PLAYING;
-        this->state = AL_PLAYING;
+        this->currPos = 0;
         if (!preload()) {
-            freeResources();
-            return NULL;
+            return false;
         }
-        return new thread(&AudioPlayer::exec, this);
-    } else return NULL;
+        useSettigs();
+        AL_CHECK(alSourcePlay(source));
+        this->runningThread = new thread(&AudioPlayer::exec, this);
+        return true;
+    } else return false;
+}
+
+bool AudioPlayer::rewind() {
+    if (isPaused()) {
+        cout<<"rewind"<<endl;
+        this->currState = PLAYING;
+        AL_CHECK(alSourcePlay(source));
+        updateState();
+        cout<<"try to rewind "<<(state==AL_PLAYING)<<endl;
+        this->runningThread = new thread(&AudioPlayer::exec, this);
+        return true;
+    }
+    return false;
 }
 
 void AudioPlayer::pause() {
-    if (isPlaying()) {
+    if (isPlaying() && this->runningThread) {
         AL_CHECK(alSourcePause(source));
         currState = PAUSED;
         updateState();
+        this->runningThread->join();
+        delete runningThread;
+        runningThread = NULL;
     }
 }
 
 void AudioPlayer::stop() {
-    if (isPlaying()) {
+    if (!isStopped()) {
         AL_CHECK(alSourceStop(source));
+        ALint processedBuffers;
+        AL_CHECK(alGetSourcei(source, AL_BUFFERS_PROCESSED, &processedBuffers));
+        cout<<"processed buffers "<<processedBuffers<<endl;
+        for(int i=0; i<processedBuffers;i++){
+            ALuint buffer;
+            AL_CHECK(alSourceUnqueueBuffers(source, 1, &buffer));
+            manager->clearBuffer(buffer);
+        }
         currState = STOPPED;
         updateState();
+        this->runningThread->join();
+        delete runningThread;
+        runningThread = NULL;
     }
 }
 
 AudioPlayer::~AudioPlayer() {
+    stop();
     freeResources();
 }
 
