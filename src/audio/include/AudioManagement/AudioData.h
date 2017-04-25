@@ -14,7 +14,7 @@ class AudioData {
 
 private:
     ALvoid *_source;              // source of audio data
-    ALsizei _size;               // count of samples in sound
+    ALsizei _size;               // count of samples in rawBytes
     ALint _sampleRate;          // sampling rate (blocks per second)
     int _channels;              //channel of audio
     int _bitsPerSample;         // bits per sample, 8- 8bits, 16- 16 bits etc

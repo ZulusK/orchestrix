@@ -67,7 +67,7 @@ AudioData *AudioData::load_wav(const std::string &filename) {
     SF_INFO info;
     SNDFILE *file = sf_open(filename.c_str(), SFM_READ, &info);
     if (file) {
-        //switch file's format 16 or 8 bit and read raw sound data
+        //switch file's format 16 or 8 bit and read raw rawBytes data
         if (SF_FORMAT_PCM_16 & info.format) {
             __int16_t *data = new __int16_t[info.frames * info.channels];
             sf_read_short(file, data, info.frames * info.channels);

@@ -8,8 +8,8 @@ include_directories(include/AudioManagement)
 include_directories(usr/local/include)
 
 file(GLOB AUDIO_PLAYER_SOURCE "src/AudioManagement/*.cpp" "include/AudioManagement/*.h")
-
-add_executable(a.out src/main.cpp ${HEADERS} ${AUDIO_PLAYER_SOURCE})
+file(GLOB SPECTRUM_SOURCE "src/SpectrumManagement/*.cpp" "include/SpectrumManagement/*.h")
+add_executable(a.out src/main.cpp ${HEADERS} ${AUDIO_PLAYER_SOURCE} ${SPECTRUM_SOURCE})
 
 target_link_libraries(a.out sndfile)
 target_link_libraries(a.out openal)

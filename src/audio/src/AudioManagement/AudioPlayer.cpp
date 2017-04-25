@@ -5,28 +5,6 @@
 #include <AudioManagement/OpenAL.h>
 #include <thread>
 
-/**
- * convert not Al-format data to ALenum
- * @param channels count of channels
- * @param bitsPerSample bitser sample (eq. 16 or 8)
- * @return ALenum for presentetive foram
- */
-ALenum toALformat(int channels, int bitsPerSample) {
-    if (channels == 2) {
-        if (bitsPerSample == 16) {
-            return AL_FORMAT_STEREO16;
-        } else if (bitsPerSample == 8) {
-            return AL_FORMAT_STEREO8;
-        }
-    } else if (channels == 1) {
-        if (bitsPerSample == 16) {
-            return AL_FORMAT_MONO16;
-        } else if (bitsPerSample == 8) {
-            return AL_FORMAT_MONO8;
-        }
-    }
-    return AL_ILLEGAL_ENUM;
-}
 
 /**
  * create new player
@@ -86,7 +64,7 @@ bool AudioPlayer::fillBuffer(ALuint buffer) {
 thread *AudioPlayer::rewind() {
     if (isPaused()) {
         AL_CHECK(alSourceRewind(source));
-        this->currState=PLAYING;
+        this->currState = PLAYING;
         return new thread(&AudioPlayer::exec, this);
     }
     return NULL;
@@ -96,7 +74,7 @@ void AudioPlayer::update() {
     updateState();
     if (this->state != AL_PLAYING) {
         /*
-         * sound is not playing  (PAUSED / STOPPED) do not update
+         * rawBytes is not playing  (PAUSED / STOPPED) do not update
          */
         return;
     }

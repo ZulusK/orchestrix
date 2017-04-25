@@ -177,13 +177,63 @@ CMakeFiles/a.out.dir/src/AudioManagement/play.cpp.o.provides: CMakeFiles/a.out.d
 CMakeFiles/a.out.dir/src/AudioManagement/play.cpp.o.provides.build: CMakeFiles/a.out.dir/src/AudioManagement/play.cpp.o
 
 
+CMakeFiles/a.out.dir/src/SpectrumManagement/Spectrum.cpp.o: CMakeFiles/a.out.dir/flags.make
+CMakeFiles/a.out.dir/src/SpectrumManagement/Spectrum.cpp.o: src/SpectrumManagement/Spectrum.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zulus/Projects/GitProj/orchestrix/src/audio/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/a.out.dir/src/SpectrumManagement/Spectrum.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/a.out.dir/src/SpectrumManagement/Spectrum.cpp.o -c /home/zulus/Projects/GitProj/orchestrix/src/audio/src/SpectrumManagement/Spectrum.cpp
+
+CMakeFiles/a.out.dir/src/SpectrumManagement/Spectrum.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/a.out.dir/src/SpectrumManagement/Spectrum.cpp.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/zulus/Projects/GitProj/orchestrix/src/audio/src/SpectrumManagement/Spectrum.cpp > CMakeFiles/a.out.dir/src/SpectrumManagement/Spectrum.cpp.i
+
+CMakeFiles/a.out.dir/src/SpectrumManagement/Spectrum.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/a.out.dir/src/SpectrumManagement/Spectrum.cpp.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/zulus/Projects/GitProj/orchestrix/src/audio/src/SpectrumManagement/Spectrum.cpp -o CMakeFiles/a.out.dir/src/SpectrumManagement/Spectrum.cpp.s
+
+CMakeFiles/a.out.dir/src/SpectrumManagement/Spectrum.cpp.o.requires:
+
+.PHONY : CMakeFiles/a.out.dir/src/SpectrumManagement/Spectrum.cpp.o.requires
+
+CMakeFiles/a.out.dir/src/SpectrumManagement/Spectrum.cpp.o.provides: CMakeFiles/a.out.dir/src/SpectrumManagement/Spectrum.cpp.o.requires
+	$(MAKE) -f CMakeFiles/a.out.dir/build.make CMakeFiles/a.out.dir/src/SpectrumManagement/Spectrum.cpp.o.provides.build
+.PHONY : CMakeFiles/a.out.dir/src/SpectrumManagement/Spectrum.cpp.o.provides
+
+CMakeFiles/a.out.dir/src/SpectrumManagement/Spectrum.cpp.o.provides.build: CMakeFiles/a.out.dir/src/SpectrumManagement/Spectrum.cpp.o
+
+
+CMakeFiles/a.out.dir/src/SpectrumManagement/SpectrumAnalyzer.cpp.o: CMakeFiles/a.out.dir/flags.make
+CMakeFiles/a.out.dir/src/SpectrumManagement/SpectrumAnalyzer.cpp.o: src/SpectrumManagement/SpectrumAnalyzer.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zulus/Projects/GitProj/orchestrix/src/audio/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/a.out.dir/src/SpectrumManagement/SpectrumAnalyzer.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/a.out.dir/src/SpectrumManagement/SpectrumAnalyzer.cpp.o -c /home/zulus/Projects/GitProj/orchestrix/src/audio/src/SpectrumManagement/SpectrumAnalyzer.cpp
+
+CMakeFiles/a.out.dir/src/SpectrumManagement/SpectrumAnalyzer.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/a.out.dir/src/SpectrumManagement/SpectrumAnalyzer.cpp.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/zulus/Projects/GitProj/orchestrix/src/audio/src/SpectrumManagement/SpectrumAnalyzer.cpp > CMakeFiles/a.out.dir/src/SpectrumManagement/SpectrumAnalyzer.cpp.i
+
+CMakeFiles/a.out.dir/src/SpectrumManagement/SpectrumAnalyzer.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/a.out.dir/src/SpectrumManagement/SpectrumAnalyzer.cpp.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/zulus/Projects/GitProj/orchestrix/src/audio/src/SpectrumManagement/SpectrumAnalyzer.cpp -o CMakeFiles/a.out.dir/src/SpectrumManagement/SpectrumAnalyzer.cpp.s
+
+CMakeFiles/a.out.dir/src/SpectrumManagement/SpectrumAnalyzer.cpp.o.requires:
+
+.PHONY : CMakeFiles/a.out.dir/src/SpectrumManagement/SpectrumAnalyzer.cpp.o.requires
+
+CMakeFiles/a.out.dir/src/SpectrumManagement/SpectrumAnalyzer.cpp.o.provides: CMakeFiles/a.out.dir/src/SpectrumManagement/SpectrumAnalyzer.cpp.o.requires
+	$(MAKE) -f CMakeFiles/a.out.dir/build.make CMakeFiles/a.out.dir/src/SpectrumManagement/SpectrumAnalyzer.cpp.o.provides.build
+.PHONY : CMakeFiles/a.out.dir/src/SpectrumManagement/SpectrumAnalyzer.cpp.o.provides
+
+CMakeFiles/a.out.dir/src/SpectrumManagement/SpectrumAnalyzer.cpp.o.provides.build: CMakeFiles/a.out.dir/src/SpectrumManagement/SpectrumAnalyzer.cpp.o
+
+
 # Object files for target a.out
 a_out_OBJECTS = \
 "CMakeFiles/a.out.dir/src/main.cpp.o" \
 "CMakeFiles/a.out.dir/src/AudioManagement/AudioData.cpp.o" \
 "CMakeFiles/a.out.dir/src/AudioManagement/AudioManager.cpp.o" \
 "CMakeFiles/a.out.dir/src/AudioManagement/AudioPlayer.cpp.o" \
-"CMakeFiles/a.out.dir/src/AudioManagement/play.cpp.o"
+"CMakeFiles/a.out.dir/src/AudioManagement/play.cpp.o" \
+"CMakeFiles/a.out.dir/src/SpectrumManagement/Spectrum.cpp.o" \
+"CMakeFiles/a.out.dir/src/SpectrumManagement/SpectrumAnalyzer.cpp.o"
 
 # External object files for target a.out
 a_out_EXTERNAL_OBJECTS =
@@ -193,9 +243,11 @@ a.out: CMakeFiles/a.out.dir/src/AudioManagement/AudioData.cpp.o
 a.out: CMakeFiles/a.out.dir/src/AudioManagement/AudioManager.cpp.o
 a.out: CMakeFiles/a.out.dir/src/AudioManagement/AudioPlayer.cpp.o
 a.out: CMakeFiles/a.out.dir/src/AudioManagement/play.cpp.o
+a.out: CMakeFiles/a.out.dir/src/SpectrumManagement/Spectrum.cpp.o
+a.out: CMakeFiles/a.out.dir/src/SpectrumManagement/SpectrumAnalyzer.cpp.o
 a.out: CMakeFiles/a.out.dir/build.make
 a.out: CMakeFiles/a.out.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/zulus/Projects/GitProj/orchestrix/src/audio/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable a.out"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/zulus/Projects/GitProj/orchestrix/src/audio/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Linking CXX executable a.out"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/a.out.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -208,6 +260,8 @@ CMakeFiles/a.out.dir/requires: CMakeFiles/a.out.dir/src/AudioManagement/AudioDat
 CMakeFiles/a.out.dir/requires: CMakeFiles/a.out.dir/src/AudioManagement/AudioManager.cpp.o.requires
 CMakeFiles/a.out.dir/requires: CMakeFiles/a.out.dir/src/AudioManagement/AudioPlayer.cpp.o.requires
 CMakeFiles/a.out.dir/requires: CMakeFiles/a.out.dir/src/AudioManagement/play.cpp.o.requires
+CMakeFiles/a.out.dir/requires: CMakeFiles/a.out.dir/src/SpectrumManagement/Spectrum.cpp.o.requires
+CMakeFiles/a.out.dir/requires: CMakeFiles/a.out.dir/src/SpectrumManagement/SpectrumAnalyzer.cpp.o.requires
 
 .PHONY : CMakeFiles/a.out.dir/requires
 
