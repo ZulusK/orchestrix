@@ -1,55 +1,58 @@
-#include <wavFile.h>
-#include <audioSpectrum.h>
-#include <playerWav.h>
+//
+// Created by zulus on 21.04.17.
+//
 #include <iostream>
-#include <equalizer.h>
-
-#if defined (__cplusplus)
-extern "C" {
-#endif
-#include <progbase.h>
+#include <AudioManagement/AudioData.h>
+#include <AudioManagement/AudioManager.h>
+#include <AudioManagement/AudioPlayer.h>
+#include <thread>
 #include <pbconsole.h>
-#if defined (__cplusplus)
-}
-#endif
 
-#define MAX_DB 20
+#define _DEBUG
 using namespace std;
 
-
 int main(void) {
-    WavFile *wav = WavFile_read("res/ass.wav");
-//    WavFile *wav = WavFile_read("res/ppl.wav");
-    if (wav != NULL) {
-        WavFile_print(wav);
-//        int N = 32768;
-        int N = 2048;
-        double *subChunk = (double *) malloc(sizeof(double) * N);
-        long left = 0;
-//        Player * player=Player_create(wav->datai,wav->samples,wav->header.numChannels,wav->header.sampleRate,wav->header.bitsPerSample);
-        for (; left < wav->samples; left += N) {
-            for (long i = 0; i < N; i++) {
-                subChunk[i] = wav->datad[left + i * wav->header.numChannels];
+    string filename1 = "res/21pilots.wav";
+    AudioData *sound1 = AudioData::load(filename1);
+    string filename2 = "res/ppl.wav";
+    AudioData *sound2 = AudioData::load(filename2);
+    AudioManager *manager = AudioManager::init(1, 8);
+    AudioPlayer *player1 = new AudioPlayer(manager, sound1, 1);
+    AudioPlayer *player2 = new AudioPlayer(manager, sound2, 3);
+    cout << player1->toString() << endl;
+    thread *t1 = player1->play();
+    thread *t2 = player2->play();
+    while (player2->isPlaying() || player1->isPlaying()) {
+        cout<<"input<<"<<endl;
+        if(conIsKeyDown()) {
+            char input = conGetChar();
+            if (input == '1') {
+                if (player1->isPaused()) {
+                    cout << "try to rewind 1" << endl;
+                    t1 = player1->rewind();
+                } else {
+                    cout << "try to pause 1" << endl;
+                    player1->pause();
+                    t1->join();
+                delete (t1);
+                }
+            } else if (input == '2') {
+                if (player2->isPaused()) {
+                    t2 = player2->rewind();
+                } else {
+                    player2->pause();
+                    delete (t1);
+                }
             }
-            double *spectrum = getSpectrum(subChunk, N, 1);
-            double *frames = getSpectrumFrame(spectrum, N / 2, 64, 0);
-            Equalizer_startEqualizer(frames, 64, 10);
-
-//            Player_play(player);
-            free(spectrum);
-            free(frames);
-            sleepMillis(100);
         }
-        WavFile_free(wav);
     }
-    return 0;
+    t1->join();
+    t2->join();
+    cout << "don't wait" << endl;
+    while (player1->isPlaying());
+
+    delete t1;
+    delete player1;
+    delete manager;
+    delete sound1;
 }
-
-
-
-/*
- Player * player=Player_create(wav->datai, wav->samples, wav->header.numChannels, wav->header.sampleRate,
-                                      wav->header.bitsPerSample);
-        Player_play(player);
-        Player_free(player);
- */
