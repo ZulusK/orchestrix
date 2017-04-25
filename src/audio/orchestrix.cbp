@@ -209,9 +209,6 @@
 		<Unit filename="/home/zulus/Projects/GitProj/orchestrix/src/audio/src/AudioManagement/AudioPlayer.cpp">
 			<Option target="aut"/>
 		</Unit>
-		<Unit filename="/home/zulus/Projects/GitProj/orchestrix/src/audio/src/AudioManagement/play.cpp">
-			<Option target="aut"/>
-		</Unit>
 		<Unit filename="/home/zulus/Projects/GitProj/orchestrix/src/audio/src/SpectrumManagement/Spectrum.cpp">
 			<Option target="aut"/>
 		</Unit>

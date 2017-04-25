@@ -15,9 +15,9 @@ CMakeFiles/aut.dir/src/AudioManagement/AudioPlayer.cpp.o: include/AudioManagemen
 CMakeFiles/aut.dir/src/AudioManagement/AudioPlayer.cpp.o: include/AudioManagement/AudioPlayer.h
 CMakeFiles/aut.dir/src/AudioManagement/AudioPlayer.cpp.o: include/AudioManagement/OpenAL.h
 
-CMakeFiles/aut.dir/src/AudioManagement/play.cpp.o: src/AudioManagement/play.cpp
-
 CMakeFiles/aut.dir/src/SpectrumManagement/Spectrum.cpp.o: src/SpectrumManagement/Spectrum.cpp
+CMakeFiles/aut.dir/src/SpectrumManagement/Spectrum.cpp.o: include/AudioManagement/AudioData.h
+CMakeFiles/aut.dir/src/SpectrumManagement/Spectrum.cpp.o: include/AudioManagement/AudioManager.h
 CMakeFiles/aut.dir/src/SpectrumManagement/Spectrum.cpp.o: include/AudioManagement/OpenAL.h
 CMakeFiles/aut.dir/src/SpectrumManagement/Spectrum.cpp.o: include/SpectrumManagement/Spectrum.h
 

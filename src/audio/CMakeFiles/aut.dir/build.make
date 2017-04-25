@@ -129,33 +129,9 @@ CMakeFiles/aut.dir/src/AudioManagement/AudioPlayer.cpp.o.provides: CMakeFiles/au
 CMakeFiles/aut.dir/src/AudioManagement/AudioPlayer.cpp.o.provides.build: CMakeFiles/aut.dir/src/AudioManagement/AudioPlayer.cpp.o
 
 
-CMakeFiles/aut.dir/src/AudioManagement/play.cpp.o: CMakeFiles/aut.dir/flags.make
-CMakeFiles/aut.dir/src/AudioManagement/play.cpp.o: src/AudioManagement/play.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zulus/Projects/GitProj/orchestrix/src/audio/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/aut.dir/src/AudioManagement/play.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/aut.dir/src/AudioManagement/play.cpp.o -c /home/zulus/Projects/GitProj/orchestrix/src/audio/src/AudioManagement/play.cpp
-
-CMakeFiles/aut.dir/src/AudioManagement/play.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/aut.dir/src/AudioManagement/play.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/zulus/Projects/GitProj/orchestrix/src/audio/src/AudioManagement/play.cpp > CMakeFiles/aut.dir/src/AudioManagement/play.cpp.i
-
-CMakeFiles/aut.dir/src/AudioManagement/play.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/aut.dir/src/AudioManagement/play.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/zulus/Projects/GitProj/orchestrix/src/audio/src/AudioManagement/play.cpp -o CMakeFiles/aut.dir/src/AudioManagement/play.cpp.s
-
-CMakeFiles/aut.dir/src/AudioManagement/play.cpp.o.requires:
-
-.PHONY : CMakeFiles/aut.dir/src/AudioManagement/play.cpp.o.requires
-
-CMakeFiles/aut.dir/src/AudioManagement/play.cpp.o.provides: CMakeFiles/aut.dir/src/AudioManagement/play.cpp.o.requires
-	$(MAKE) -f CMakeFiles/aut.dir/build.make CMakeFiles/aut.dir/src/AudioManagement/play.cpp.o.provides.build
-.PHONY : CMakeFiles/aut.dir/src/AudioManagement/play.cpp.o.provides
-
-CMakeFiles/aut.dir/src/AudioManagement/play.cpp.o.provides.build: CMakeFiles/aut.dir/src/AudioManagement/play.cpp.o
-
-
 CMakeFiles/aut.dir/src/SpectrumManagement/Spectrum.cpp.o: CMakeFiles/aut.dir/flags.make
 CMakeFiles/aut.dir/src/SpectrumManagement/Spectrum.cpp.o: src/SpectrumManagement/Spectrum.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zulus/Projects/GitProj/orchestrix/src/audio/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/aut.dir/src/SpectrumManagement/Spectrum.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zulus/Projects/GitProj/orchestrix/src/audio/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/aut.dir/src/SpectrumManagement/Spectrum.cpp.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/aut.dir/src/SpectrumManagement/Spectrum.cpp.o -c /home/zulus/Projects/GitProj/orchestrix/src/audio/src/SpectrumManagement/Spectrum.cpp
 
 CMakeFiles/aut.dir/src/SpectrumManagement/Spectrum.cpp.i: cmake_force
@@ -179,7 +155,7 @@ CMakeFiles/aut.dir/src/SpectrumManagement/Spectrum.cpp.o.provides.build: CMakeFi
 
 CMakeFiles/aut.dir/src/SpectrumManagement/SpectrumAnalyzer.cpp.o: CMakeFiles/aut.dir/flags.make
 CMakeFiles/aut.dir/src/SpectrumManagement/SpectrumAnalyzer.cpp.o: src/SpectrumManagement/SpectrumAnalyzer.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zulus/Projects/GitProj/orchestrix/src/audio/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/aut.dir/src/SpectrumManagement/SpectrumAnalyzer.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zulus/Projects/GitProj/orchestrix/src/audio/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/aut.dir/src/SpectrumManagement/SpectrumAnalyzer.cpp.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/aut.dir/src/SpectrumManagement/SpectrumAnalyzer.cpp.o -c /home/zulus/Projects/GitProj/orchestrix/src/audio/src/SpectrumManagement/SpectrumAnalyzer.cpp
 
 CMakeFiles/aut.dir/src/SpectrumManagement/SpectrumAnalyzer.cpp.i: cmake_force
@@ -206,7 +182,6 @@ aut_OBJECTS = \
 "CMakeFiles/aut.dir/src/AudioManagement/AudioData.cpp.o" \
 "CMakeFiles/aut.dir/src/AudioManagement/AudioManager.cpp.o" \
 "CMakeFiles/aut.dir/src/AudioManagement/AudioPlayer.cpp.o" \
-"CMakeFiles/aut.dir/src/AudioManagement/play.cpp.o" \
 "CMakeFiles/aut.dir/src/SpectrumManagement/Spectrum.cpp.o" \
 "CMakeFiles/aut.dir/src/SpectrumManagement/SpectrumAnalyzer.cpp.o"
 
@@ -216,12 +191,11 @@ aut_EXTERNAL_OBJECTS =
 libaut.a: CMakeFiles/aut.dir/src/AudioManagement/AudioData.cpp.o
 libaut.a: CMakeFiles/aut.dir/src/AudioManagement/AudioManager.cpp.o
 libaut.a: CMakeFiles/aut.dir/src/AudioManagement/AudioPlayer.cpp.o
-libaut.a: CMakeFiles/aut.dir/src/AudioManagement/play.cpp.o
 libaut.a: CMakeFiles/aut.dir/src/SpectrumManagement/Spectrum.cpp.o
 libaut.a: CMakeFiles/aut.dir/src/SpectrumManagement/SpectrumAnalyzer.cpp.o
 libaut.a: CMakeFiles/aut.dir/build.make
 libaut.a: CMakeFiles/aut.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/zulus/Projects/GitProj/orchestrix/src/audio/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX static library libaut.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/zulus/Projects/GitProj/orchestrix/src/audio/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX static library libaut.a"
 	$(CMAKE_COMMAND) -P CMakeFiles/aut.dir/cmake_clean_target.cmake
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/aut.dir/link.txt --verbose=$(VERBOSE)
 
@@ -233,7 +207,6 @@ CMakeFiles/aut.dir/build: libaut.a
 CMakeFiles/aut.dir/requires: CMakeFiles/aut.dir/src/AudioManagement/AudioData.cpp.o.requires
 CMakeFiles/aut.dir/requires: CMakeFiles/aut.dir/src/AudioManagement/AudioManager.cpp.o.requires
 CMakeFiles/aut.dir/requires: CMakeFiles/aut.dir/src/AudioManagement/AudioPlayer.cpp.o.requires
-CMakeFiles/aut.dir/requires: CMakeFiles/aut.dir/src/AudioManagement/play.cpp.o.requires
 CMakeFiles/aut.dir/requires: CMakeFiles/aut.dir/src/SpectrumManagement/Spectrum.cpp.o.requires
 CMakeFiles/aut.dir/requires: CMakeFiles/aut.dir/src/SpectrumManagement/SpectrumAnalyzer.cpp.o.requires
 

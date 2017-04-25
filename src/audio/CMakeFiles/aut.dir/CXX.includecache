@@ -32,8 +32,6 @@ AudioManagement/OpenAL.h
 thread
 -
 
-/home/zulus/Projects/GitProj/orchestrix/src/audio/src/AudioManagement/play.cpp
-
 /home/zulus/Projects/GitProj/orchestrix/src/audio/src/SpectrumManagement/Spectrum.cpp
 SpectrumManagement/Spectrum.h
 -
@@ -42,6 +40,8 @@ AudioManagement/OpenAL.h
 fftw3.h
 -
 cmath
+-
+AudioManagement/AudioManager.h
 -
 
 /home/zulus/Projects/GitProj/orchestrix/src/audio/src/SpectrumManagement/SpectrumAnalyzer.cpp

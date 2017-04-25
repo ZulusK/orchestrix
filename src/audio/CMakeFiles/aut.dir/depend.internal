@@ -15,10 +15,10 @@ CMakeFiles/aut.dir/src/AudioManagement/AudioPlayer.cpp.o
  include/AudioManagement/AudioManager.h
  include/AudioManagement/AudioPlayer.h
  include/AudioManagement/OpenAL.h
-CMakeFiles/aut.dir/src/AudioManagement/play.cpp.o
- /home/zulus/Projects/GitProj/orchestrix/src/audio/src/AudioManagement/play.cpp
 CMakeFiles/aut.dir/src/SpectrumManagement/Spectrum.cpp.o
  /home/zulus/Projects/GitProj/orchestrix/src/audio/src/SpectrumManagement/Spectrum.cpp
+ include/AudioManagement/AudioData.h
+ include/AudioManagement/AudioManager.h
  include/AudioManagement/OpenAL.h
  include/SpectrumManagement/Spectrum.h
 CMakeFiles/aut.dir/src/SpectrumManagement/SpectrumAnalyzer.cpp.o
