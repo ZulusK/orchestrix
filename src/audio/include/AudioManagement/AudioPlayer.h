@@ -7,6 +7,11 @@
 #include <thread>
 #include <mutex>
 
+enum {
+    PLAYING,
+    STOPPED,
+    PAUSED
+};
 
 /**
  * Audio player, which stored info about source
@@ -16,6 +21,7 @@ class AudioPlayer {
     AudioManager *manager;
     ALuint source;
     ALvoid *rawSoundData;
+    int currState;
     ALsizei currPos;
     ALenum state;
     int remainBuffers;
@@ -42,6 +48,7 @@ private:
     void freeResources();
 
     void updateState();
+
 public:
     AudioPlayer(AudioManager *manager, AudioData *audioData, float volume);
 
@@ -50,6 +57,8 @@ public:
     thread *play();
 
     void pause();
+
+    thread *rewind();
 
     void stop();
 

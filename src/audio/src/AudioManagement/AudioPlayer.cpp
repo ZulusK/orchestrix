@@ -51,17 +51,10 @@ AudioPlayer::AudioPlayer(AudioManager *manager, AudioData *audioData, float volu
     this->settings.gain = volume;
     this->manager = manager;
     this->state = AL_STOPPED;
+    this->currState = STOPPED;
     this->remainBuffers = 0;
     this->currPos = 0;
     this->source = manager->getFreeSource();
-}
-
-/**
- * check is soundn playing
- * @return true,if sound  is playing now
- */
-bool AudioPlayer::isPlaying() {
-    return state == AL_PLAYING;
 }
 
 /**
@@ -74,19 +67,29 @@ bool AudioPlayer::fillBuffer(ALuint buffer) {
         if (currPos < info.samples) {
             _readDataMutex.lock();
             ALsizei nextChunk = min(BUFFER_SIZE, info.samples - currPos);
-            cout << "chunk " << nextChunk << " pos: " << currPos << " -> " << currPos + nextChunk << endl;
+//            cout << "chunk " << nextChunk << " pos: " << currPos << " -> " << info.samples << endl;
             if (info.format == AL_FORMAT_STEREO16 || info.format == AL_FORMAT_MONO16) {
-                AL_CHECK(alBufferData(buffer, info.format, (__int16_t *) rawSoundData + currPos, nextChunk, info.frequency));
+                AL_CHECK(alBufferData(buffer, info.format, (ALbyte *) rawSoundData + currPos, nextChunk,
+                                      info.frequency));
             } else {
-                AL_CHECK(alBufferData(buffer, info.format, (__int8_t *) rawSoundData + currPos, nextChunk, info.frequency));
+                AL_CHECK(alBufferData(buffer, info.format, (ALbyte *) rawSoundData + currPos, nextChunk,
+                                      info.frequency));
             }
-            cout << "filled" << endl;
             currPos += nextChunk;
             _readDataMutex.unlock();
             return false;
         }
     }
     return true;
+}
+
+thread *AudioPlayer::rewind() {
+    if (isPaused()) {
+        AL_CHECK(alSourceRewind(source));
+        this->currState=PLAYING;
+        return new thread(&AudioPlayer::exec, this);
+    }
+    return NULL;
 }
 
 void AudioPlayer::update() {
@@ -109,7 +112,6 @@ void AudioPlayer::update() {
         */
         ALuint processedBuffer;
         AL_CHECK(alSourceUnqueueBuffers(source, 1, &processedBuffer));
-        cout << "processed buffer " << processedBuffer << endl;
         /*
          * fill the buffer up and reQ!
          * if we cant fill it up then we are finished
@@ -126,21 +128,17 @@ void AudioPlayer::update() {
         */
         manager->clearBuffer(processedBuffer);
         ALuint newBuffer = manager->getFreeBuffer();
-        updateBuffer(newBuffer);
-        AL_CHECK(alSourceQueueBuffers(source, 1, &newBuffer));
-        if (this->remainBuffers <= 0) {
-            /**
-             * no more buffers, stop playing
-             */
-            stop();
+        if (fillBuffer(newBuffer)) {
+            remainBuffers--;
+            if (this->remainBuffers <= 0) {
+                stop();
+            }
+        } else {
+            AL_CHECK(alSourceQueueBuffers(source, 1, &newBuffer));
         }
-    }
-}
 
-void AudioPlayer::updateBuffer(ALuint buffer) {
-    if (fillBuffer(buffer) == false) {
-        remainBuffers--;
     }
+
 }
 
 void AudioPlayer::updateState() {
@@ -152,6 +150,7 @@ void AudioPlayer::updateState() {
 bool AudioPlayer::preload() {
     _setBuffCntMutex.lock();
     remainBuffers = 0;
+    currPos = 0;
     bool isAllSoundLoaded = false;
 //    int cntOfReservedBuffers = 0;
     vector<ALuint> loadedBuffers;
@@ -163,23 +162,13 @@ bool AudioPlayer::preload() {
         }
     };
     remainBuffers = loadedBuffers.size();
-    ALuint buff[remainBuffers];
+    ALuint buffArr[remainBuffers];
     for (int i = 0; i < remainBuffers; i++) {
-        buff[i] = loadedBuffers[i + 1];
+        buffArr[i] = loadedBuffers[i];
     }
-    AL_CHECK(alSourceQueueBuffers(source, loadedBuffers.size(), buff));
+    AL_CHECK(alSourceQueueBuffers(source, remainBuffers, buffArr));
     _setBuffCntMutex.unlock();
     return remainBuffers;
-}
-
-bool AudioPlayer::isPaused() {
-    updateState();
-    return state == AL_PAUSED;
-}
-
-bool AudioPlayer::isStopped() {
-    updateState();
-    return state == AL_STOPPED;
 }
 
 /**
@@ -208,21 +197,23 @@ void AudioPlayer::exec() {
     AL_CHECK(alSourcef(source, AL_GAIN, settings.gain));
     AL_CHECK(alSource3f(source, AL_POSITION, settings.pos.x, settings.pos.y, settings.pos.z));
     AL_CHECK(alSource3f(source, AL_VELOCITY, settings.vel.x, settings.vel.y, settings.vel.z));
-    if (!preload()) {
-        freeResources();
-        return;
-    }
     AL_CHECK(alSourcePlay(source));
-    while (state == AL_PLAYING) {
+    updateState();
+    while (currState == PLAYING && state == AL_PLAYING) {
         update();
-//        cout << "update" << endl;
         this_thread::sleep_for(chrono::seconds(1));
     }
+    updateState();
 }
 
 thread *AudioPlayer::play() {
     if (this->state != AL_PLAYING && this->rawSoundData) {
+        this->currState = PLAYING;
         this->state = AL_PLAYING;
+        if (!preload()) {
+            freeResources();
+            return NULL;
+        }
         return new thread(&AudioPlayer::exec, this);
     } else return NULL;
 }
@@ -230,6 +221,7 @@ thread *AudioPlayer::play() {
 void AudioPlayer::pause() {
     if (isPlaying()) {
         AL_CHECK(alSourcePause(source));
+        currState = PAUSED;
         updateState();
     }
 }
@@ -237,6 +229,7 @@ void AudioPlayer::pause() {
 void AudioPlayer::stop() {
     if (isPlaying()) {
         AL_CHECK(alSourceStop(source));
+        currState = STOPPED;
         updateState();
     }
 }
@@ -273,4 +266,22 @@ string AudioPlayer::toString() {
     s += "RemainingBuffers: " + to_string(remainBuffers) + "\n";
     s += "------------------------------\n";
     return s;
+}
+
+/**
+ * check is soundn playing
+ * @return true,if sound  is playing now
+ */
+bool AudioPlayer::isPlaying() {
+    return state == AL_PLAYING && currState == PLAYING;
+}
+
+bool AudioPlayer::isPaused() {
+    updateState();
+    return state == AL_PAUSED;
+}
+
+bool AudioPlayer::isStopped() {
+    updateState();
+    return state == AL_STOPPED;
 }

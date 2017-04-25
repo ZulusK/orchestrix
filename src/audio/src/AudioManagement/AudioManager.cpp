@@ -34,10 +34,12 @@ void AudioManager::deleteBuffer(ALuint buffer) {
 }
 
 void AudioManager::deleteSource(ALuint source) {
-    ALenum state;
-    AL_CHECK(alGetSourcei(source, AL_SOURCE_STATE, &state));
-    if (state != AL_PLAYING) {
-        AL_CHECK(alSourceStop(source));
+    AL_CHECK(alSourceStop(source));
+    ALint processedBuffers;
+    AL_CHECK(alGetSourcei(source, AL_BUFFERS_PROCESSED, &processedBuffers));
+    if (processedBuffers > 0) {
+        ALuint buff[processedBuffers];
+        AL_CHECK(alSourceUnqueueBuffers(source, processedBuffers, buff));
     }
     AL_CHECK(alDeleteSources(1, &source));
 }
@@ -45,23 +47,17 @@ void AudioManager::deleteSource(ALuint source) {
 AudioManager::~AudioManager() {
     _bufferMutex.lock();
     _sourceMutex.lock();
-    for (auto it = freeSources.begin(); it != freeBuffers.end(); it++) {
-        AL_CHECK(alDeleteSources(1, &(*it)));
-        freeSources.erase(it);
-    }
-    for (auto it = freeBuffers.begin(); it != freeBuffers.end(); it++) {
-        AL_CHECK(alDeleteBuffers(1, &(*it)));
-        freeBuffers.erase(it);
-    }
-    for (auto it = sources.begin(); it != sources.begin(); it++) {
+    print(sources);
+    for (auto it = sources.begin(); it != sources.end(); it++) {
         deleteSource(*it);
         sources.erase(it);
     }
-
+    print(buffers);
     for (auto it = buffers.begin(); it != buffers.end(); it++) {
         deleteBuffer(*it);
         buffers.erase(it);
     }
+//    AL_CHECK(alcSuspendContext(context));
     AL_CHECK(alcMakeContextCurrent(NULL));
     AL_CHECK(alcDestroyContext(context));
     AL_CHECK(alcCloseDevice(device));
@@ -197,7 +193,7 @@ ALuint AudioManager::getFreeBuffer() {
     ALuint freeBuff = freeBuffers[0];
     freeBuffers.erase(freeBuffers.begin());
     _bufferMutex.unlock();
-    cout << "return free buffer <" << freeBuff << ">" << endl;
+//    cout << "return free buffer <" << freeBuff << ">" << endl;
     return freeBuff;
 }
 
@@ -213,7 +209,7 @@ ALuint AudioManager::getFreeSource() {
     ALuint freeSrc = freeSources.at(0);
     freeSources.erase(freeSources.begin());
     _sourceMutex.unlock();
-    cout << "return free source <" << freeSrc << ">" << endl;
+//    cout << "return free source <" << freeSrc << ">" << endl;
     return freeSrc;
 }
 
@@ -224,10 +220,9 @@ ALuint AudioManager::getFreeSource() {
 void AudioManager::clearBuffer(ALuint buffer) {
     if (buffer > 0) {
         _bufferMutex.lock();
-//        AL_CHECK(alDeleteBuffers(1, &buffer));
-//        buffers.erase(buffer);
-        freeBuffers.push_back(buffer);
-//        createBuffer();
+        AL_CHECK(alDeleteBuffers(1, &buffer));
+        buffers.erase(buffer);
+        createBuffer();
         _bufferMutex.unlock();
     }
 }
@@ -241,7 +236,7 @@ void AudioManager::clearSource(ALuint source) {
         _sourceMutex.lock();
         AL_CHECK(alDeleteSources(1, &source));
         sources.erase(source);
-        createBuffer();
+        createSource();
         _sourceMutex.unlock();
     }
 }

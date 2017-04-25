@@ -45,6 +45,8 @@ AudioManagement/AudioPlayer.h
 -
 thread
 -
+pbconsole.h
+-
 
 include/AudioManagement/AudioData.h
 bits/types.h
