@@ -17,9 +17,23 @@ CMakeFiles/a.out.dir/src/AudioManagement/AudioPlayer.cpp.o: include/AudioManagem
 
 CMakeFiles/a.out.dir/src/AudioManagement/play.cpp.o: src/AudioManagement/play.cpp
 
+CMakeFiles/a.out.dir/src/SpectrumManagement/Spectrum.cpp.o: src/SpectrumManagement/Spectrum.cpp
+CMakeFiles/a.out.dir/src/SpectrumManagement/Spectrum.cpp.o: include/AudioManagement/OpenAL.h
+CMakeFiles/a.out.dir/src/SpectrumManagement/Spectrum.cpp.o: include/SpectrumManagement/Spectrum.h
+
+CMakeFiles/a.out.dir/src/SpectrumManagement/SpectrumAnalyzer.cpp.o: src/SpectrumManagement/SpectrumAnalyzer.cpp
+CMakeFiles/a.out.dir/src/SpectrumManagement/SpectrumAnalyzer.cpp.o: include/AudioManagement/AudioData.h
+CMakeFiles/a.out.dir/src/SpectrumManagement/SpectrumAnalyzer.cpp.o: include/AudioManagement/AudioManager.h
+CMakeFiles/a.out.dir/src/SpectrumManagement/SpectrumAnalyzer.cpp.o: include/AudioManagement/AudioPlayer.h
+CMakeFiles/a.out.dir/src/SpectrumManagement/SpectrumAnalyzer.cpp.o: include/AudioManagement/OpenAL.h
+CMakeFiles/a.out.dir/src/SpectrumManagement/SpectrumAnalyzer.cpp.o: include/SpectrumManagement/Spectrum.h
+CMakeFiles/a.out.dir/src/SpectrumManagement/SpectrumAnalyzer.cpp.o: include/SpectrumManagement/SpectrumAnalyzer.h
+
 CMakeFiles/a.out.dir/src/main.cpp.o: src/main.cpp
 CMakeFiles/a.out.dir/src/main.cpp.o: include/AudioManagement/AudioData.h
 CMakeFiles/a.out.dir/src/main.cpp.o: include/AudioManagement/AudioManager.h
 CMakeFiles/a.out.dir/src/main.cpp.o: include/AudioManagement/AudioPlayer.h
 CMakeFiles/a.out.dir/src/main.cpp.o: include/AudioManagement/OpenAL.h
+CMakeFiles/a.out.dir/src/main.cpp.o: include/SpectrumManagement/Spectrum.h
+CMakeFiles/a.out.dir/src/main.cpp.o: include/SpectrumManagement/SpectrumAnalyzer.h
 

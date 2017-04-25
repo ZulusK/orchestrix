@@ -13,13 +13,20 @@
 class SpectrumAnalyzer {
 private:
     vector<Spectrum *> spectrums;
-    size_t elementsInSpectrum;
+    size_t bars;
+    size_t elementsInChunk;
     float timeBound;
     void *rawBytes;
-    AudioInfo info;
-public:
-    SpectrumAnalyzer(AudioData *data, size_t elementsInSpectrum);
+    size_t samples;
+    int channels;
+    int frequency;
+    int bitsPerSample;
+
     void exec();
+
+public:
+    SpectrumAnalyzer(AudioData *data, size_t chunks, int bars);
+
 };
 
 

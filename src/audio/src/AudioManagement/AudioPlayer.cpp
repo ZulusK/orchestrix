@@ -45,7 +45,7 @@ bool AudioPlayer::fillBuffer(ALuint buffer) {
         if (currPos < info.samples) {
             _readDataMutex.lock();
             ALsizei nextChunk = min(BUFFER_SIZE, info.samples - currPos);
-//            cout << "chunk " << nextChunk << " pos: " << currPos << " -> " << info.samples << endl;
+//            cout << "chunk " << nextChunk << " pos: " << currPos << " -> " << info._samples << endl;
             if (info.format == AL_FORMAT_STEREO16 || info.format == AL_FORMAT_MONO16) {
                 AL_CHECK(alBufferData(buffer, info.format, (ALbyte *) rawSoundData + currPos, nextChunk,
                                       info.frequency));

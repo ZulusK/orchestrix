@@ -89,7 +89,7 @@ typedef struct {
 void CheckOpenALError();
 
 #define BUFFER_SIZE 524288
-//#define BUFFER_SIZE 100000
+//#define BUFFER_SIZE 10000
 enum {
     MIN_BUFFER_COUNT = 8,
     MIN_SOURCE_COUNT = 4,

@@ -7,17 +7,19 @@
 
 using namespace std;
 
-SpectrumAnalyzer::SpectrumAnalyzer(AudioData *data, size_t elementsInSpctrum) {
+SpectrumAnalyzer::SpectrumAnalyzer(AudioData *data, size_t chunks, int bars) {
     if (data) {
-        /**
+        /**x
          * copy references
          */
         this->rawBytes = data->get_source();
-        this->info.samples = data->get_size();
-        this->info.format = toALformat(data->get_channels(), data->get_bitsPerSample());
-        this->info.frequency = data->get_sampleRate();
-        this->elementsInSpectrum = elementsInSpctrum;
-        this->timeBound = info.frequency / (float) this->elementsInSpectrum;
+        this->samples = data->get_samples();
+        this->bitsPerSample = data->get_bitsPerSample();
+        this->channels = data->get_channels();
+        this->frequency = data->get_sampleRate();
+        this->bars = bars;
+        this->elementsInChunk = chunks;
+        this->timeBound = this->frequency / (float) this->elementsInChunk;
         /**
          * process spectrums
          */
@@ -29,10 +31,12 @@ SpectrumAnalyzer::SpectrumAnalyzer(AudioData *data, size_t elementsInSpctrum) {
  * calculate spectrums to source
  */
 void SpectrumAnalyzer::exec() {
-    int countOfSpectrums = info.samples / elementsInSpectrum + 1;
+    int countOfSpectrums = this->samples / (elementsInChunk*channels) + 1;
 
-
-    for (size_t offset = 0, i = 0; i < countOfSpectrums; i++, offset += elementsInSpectrum) {
-        spectrums.push_back(new Spectrum(rawBytes, offset, elementsInSpectrum, info));
+    size_t offsetStep=elementsInChunk*channels;
+    for (size_t offset = 0, i = 0; i < countOfSpectrums; i++, offset += offsetStep) {
+//        offset=1000000;
+        spectrums.push_back(new Spectrum(rawBytes, offset, elementsInChunk, bars, samples,
+                                         channels, bitsPerSample));
     }
 }
