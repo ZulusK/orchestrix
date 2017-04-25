@@ -34,6 +34,22 @@ thread
 
 /home/zulus/Projects/GitProj/orchestrix/src/audio/src/AudioManagement/play.cpp
 
+/home/zulus/Projects/GitProj/orchestrix/src/audio/src/SpectrumManagement/Spectrum.cpp
+SpectrumManagement/Spectrum.h
+-
+AudioManagement/OpenAL.h
+-
+fftw3.h
+-
+cmath
+-
+
+/home/zulus/Projects/GitProj/orchestrix/src/audio/src/SpectrumManagement/SpectrumAnalyzer.cpp
+SpectrumManagement/SpectrumAnalyzer.h
+-
+AudioManagement/OpenAL.h
+-
+
 /home/zulus/Projects/GitProj/orchestrix/src/audio/src/main.cpp
 iostream
 -
@@ -46,6 +62,8 @@ AudioManagement/AudioPlayer.h
 thread
 -
 pbconsole.h
+-
+SpectrumManagement/SpectrumAnalyzer.h
 -
 
 include/AudioManagement/AudioData.h
@@ -94,5 +112,21 @@ AL/al.h
 AL/alc.h
 -
 iostream
+-
+
+include/SpectrumManagement/Spectrum.h
+cstddef
+-
+AudioManagement/OpenAL.h
+-
+
+include/SpectrumManagement/SpectrumAnalyzer.h
+vector
+-
+AudioManagement/AudioData.h
+-
+AudioManagement/AudioPlayer.h
+-
+SpectrumManagement/Spectrum.h
 -
 

@@ -152,7 +152,7 @@
 //void AudioPlayer::update() {
 //    alGetSourcei(source->refID, AL_SOURCE_STATE, &state);
 //    if (this->state != AL_PLAYING) {
-//        //sound is not playing  (PAUSED / STOPPED) do not update
+//        //rawBytes is not playing  (PAUSED / STOPPED) do not update
 //        return;
 //    }
 //    int buffersProcessed = 0;
@@ -169,12 +169,12 @@
 //        // return NO if we dont have more buffers to Q
 //        alGetSourcei(source->refID, AL_SOURCE_STATE, &state);
 //        if (this->state == AL_STOPPED) {
-//            //put it back - sound is not playing anymore
+//            //put it back - rawBytes is not playing anymore
 //            alSourceQueueBuffers(this->source->refID, 1, &bufferID);
 //            return;
 //        }
 //        //call method to load data to buffer
-//        //see method in section - Creating sound
+//        //see method in section - Creating rawBytes
 //        if (this->preloadBuffer(bufferID) == false) {
 //            this->remainBuffers--;
 //        }
@@ -183,7 +183,7 @@
 //    }
 //    if (this->remainBuffers <= 0) {
 //        cout << "stop" << endl;
-//        //no more buffers remain - stop sound automatically
+//        //no more buffers remain - stop rawBytes automatically
 //        this->stop();
 //    }
 //}

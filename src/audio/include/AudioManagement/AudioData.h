@@ -14,12 +14,12 @@ class AudioData {
 
 private:
     ALvoid *_source;              // source of audio data
-    ALsizei _size;               // count of samples in sound
+    ALsizei _size;               // count of bytes in rawBytes
     ALint _sampleRate;          // sampling rate (blocks per second)
     int _channels;              //channel of audio
     int _bitsPerSample;         // bits per sample, 8- 8bits, 16- 16 bits etc
     std::string _name;
-
+    ALsizei _samples;             //count of _samples
 
 private:
     AudioData(const std::string &name, ALvoid *source, ALsizei size, size_t sampleRate, int channels,
@@ -33,6 +33,8 @@ private:
 
 public:
     virtual ~AudioData();
+
+    ALsizei get_samples() const;
 
     static AudioData *load(const std::string &filename);
 
@@ -49,6 +51,7 @@ public:
     const std::string &get_name() const;
 
     std::string toString();
+
 };
 
 #endif //ORCHESTRIX_AUDIOSOURCE_H

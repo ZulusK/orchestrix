@@ -8,6 +8,8 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/zulus/Projects/GitProj/orchestrix/src/audio/src/AudioManagement/AudioManager.cpp" "/home/zulus/Projects/GitProj/orchestrix/src/audio/CMakeFiles/a.out.dir/src/AudioManagement/AudioManager.cpp.o"
   "/home/zulus/Projects/GitProj/orchestrix/src/audio/src/AudioManagement/AudioPlayer.cpp" "/home/zulus/Projects/GitProj/orchestrix/src/audio/CMakeFiles/a.out.dir/src/AudioManagement/AudioPlayer.cpp.o"
   "/home/zulus/Projects/GitProj/orchestrix/src/audio/src/AudioManagement/play.cpp" "/home/zulus/Projects/GitProj/orchestrix/src/audio/CMakeFiles/a.out.dir/src/AudioManagement/play.cpp.o"
+  "/home/zulus/Projects/GitProj/orchestrix/src/audio/src/SpectrumManagement/Spectrum.cpp" "/home/zulus/Projects/GitProj/orchestrix/src/audio/CMakeFiles/a.out.dir/src/SpectrumManagement/Spectrum.cpp.o"
+  "/home/zulus/Projects/GitProj/orchestrix/src/audio/src/SpectrumManagement/SpectrumAnalyzer.cpp" "/home/zulus/Projects/GitProj/orchestrix/src/audio/CMakeFiles/a.out.dir/src/SpectrumManagement/SpectrumAnalyzer.cpp.o"
   "/home/zulus/Projects/GitProj/orchestrix/src/audio/src/main.cpp" "/home/zulus/Projects/GitProj/orchestrix/src/audio/CMakeFiles/a.out.dir/src/main.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")

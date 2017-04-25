@@ -11,7 +11,6 @@
         } while (0);
 
 
-
 using namespace std;
 
 void CheckOpenALError(const char *stmt, const char *fname, int line);
@@ -45,27 +44,37 @@ inline void CheckOpenALError(const char *stmt, int line) {
     }
 };
 
+
+/**
+ * convert not Al-format data to ALenum
+ * @param channels count of channels
+ * @param bitsPerSample bitser sample (eq. 16 or 8)
+ * @return ALenum for presentetive foram
+ */
+inline ALenum toALformat(int channels, int bitsPerSample) {
+    if (channels == 2) {
+        if (bitsPerSample == 16) {
+            return AL_FORMAT_STEREO16;
+        } else if (bitsPerSample == 8) {
+            return AL_FORMAT_STEREO8;
+        }
+    } else if (channels == 1) {
+        if (bitsPerSample == 16) {
+            return AL_FORMAT_MONO16;
+        } else if (bitsPerSample == 8) {
+            return AL_FORMAT_MONO8;
+        }
+    }
+    return AL_ILLEGAL_ENUM;
+}
+
 typedef struct {
     float x;
     float y;
     float z;
 } vector3f;
 
-///**
-//   * store id of buffer
-//   */
-//typedef struct {
-//    ALuint refID;
-//} AudioBuffer;
-///**
-// * store id of source
-// */
-//typedef struct {
-//    ALuint refID;
-//} AudioSource;
-
 typedef struct {
-    ALenum state;
     ALenum format;
     ALsizei samples;
     ALint frequency;
@@ -78,8 +87,9 @@ typedef struct {
 } PlayerInfo;
 
 void CheckOpenALError();
+
 #define BUFFER_SIZE 524288
-//#define BUFFER_SIZE 100000
+//#define BUFFER_SIZE 10000
 enum {
     MIN_BUFFER_COUNT = 8,
     MIN_SOURCE_COUNT = 4,

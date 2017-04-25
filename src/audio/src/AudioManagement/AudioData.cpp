@@ -55,6 +55,8 @@ AudioData::AudioData(const string &name, ALvoid *source, ALsizei frames, size_t 
     this->_source = source;
     this->_name = name;
     this->_size = frames * channels * bitsPerSample / 8;
+    this->_samples = frames;
+//    this->_size = frames*channels;
     this->_sampleRate = sampleRate;
     this->_bitsPerSample = bitsPerSample;
     this->_channels = channels;
@@ -67,10 +69,11 @@ AudioData *AudioData::load_wav(const std::string &filename) {
     SF_INFO info;
     SNDFILE *file = sf_open(filename.c_str(), SFM_READ, &info);
     if (file) {
-        //switch file's format 16 or 8 bit and read raw sound data
+        //switch file's format 16 or 8 bit and read raw rawBytes data
         if (SF_FORMAT_PCM_16 & info.format) {
             __int16_t *data = new __int16_t[info.frames * info.channels];
             sf_read_short(file, data, info.frames * info.channels);
+            cout << "Frames " << info.frames << endl;
             sound = new AudioData(filename, data, info.frames, info.samplerate, info.channels, 16);
         } else if (SF_FORMAT_PCM_S8 & info.format) {
             __int8_t *data = new __int8_t[info.frames * info.channels];
@@ -88,7 +91,8 @@ AudioData *AudioData::load_ogg(const std::string &filename) {
 
 string AudioData::toString() {
     string s = "name: " + _name + "\n";
-    s += "frames: " + to_string(_size) + "\n";
+    s += "size in bytes: " + to_string(_size) + "\n";
+    s += "frames: " + to_string(_samples) + "\n";
     s += "sample rate: " + to_string(_sampleRate) + "\n";
     s += "bits per sample: " + to_string(_bitsPerSample) + "\n";
     s += "channels: " + to_string(_channels);
@@ -113,4 +117,8 @@ int AudioData::get_bitsPerSample() const {
 
 ALvoid *AudioData::get_source() const {
     return _source;
+}
+
+ALsizei AudioData::get_samples() const {
+    return _samples;
 }

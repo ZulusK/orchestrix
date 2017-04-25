@@ -7,12 +7,13 @@
 #include <AudioManagement/AudioPlayer.h>
 #include <thread>
 #include <pbconsole.h>
+#include <SpectrumManagement/SpectrumAnalyzer.h>
 
 #define _DEBUG
 using namespace std;
 
-int main(void) {
-    string filename1 = "res/21pilots.wav";
+void exampleSound() {
+    string filename1 = "res/mySound.wav";
     AudioData *sound1 = AudioData::load(filename1);
     string filename2 = "res/ppl.wav";
     AudioData *sound2 = AudioData::load(filename2);
@@ -23,8 +24,8 @@ int main(void) {
     thread *t1 = player1->play();
     thread *t2 = player2->play();
     while (player2->isPlaying() || player1->isPlaying()) {
-        cout<<"input<<"<<endl;
-        if(conIsKeyDown()) {
+        cout << "input<<" << endl;
+        if (conIsKeyDown()) {
             char input = conGetChar();
             if (input == '1') {
                 if (player1->isPaused()) {
@@ -34,7 +35,7 @@ int main(void) {
                     cout << "try to pause 1" << endl;
                     player1->pause();
                     t1->join();
-                delete (t1);
+                    delete (t1);
                 }
             } else if (input == '2') {
                 if (player2->isPaused()) {
@@ -55,4 +56,13 @@ int main(void) {
     delete player1;
     delete manager;
     delete sound1;
+}
+
+int main(void) {
+//    exampleSound();
+    string filename1 = "res/21pilots.wav";
+    AudioData *sound1 = AudioData::load(filename1);
+    cout<<sound1->toString()<<endl;
+    SpectrumAnalyzer analyzer(sound1, 10000, 20);
+
 }
