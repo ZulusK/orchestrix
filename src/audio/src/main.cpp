@@ -13,46 +13,27 @@
 using namespace std;
 
 void exampleSound() {
-    string filename1 = "res/mySound.wav";
+    string filename1 = "res/21pilots.wav";
     AudioData *sound1 = AudioData::load(filename1);
-    string filename2 = "res/ppl.wav";
-    AudioData *sound2 = AudioData::load(filename2);
     AudioManager *manager = AudioManager::init(1, 8);
     AudioPlayer *player1 = new AudioPlayer(manager, sound1, 1);
-    AudioPlayer *player2 = new AudioPlayer(manager, sound2, 3);
     cout << player1->toString() << endl;
-    thread *t1 = player1->play();
-    thread *t2 = player2->play();
-    while (player2->isPlaying() || player1->isPlaying()) {
-        cout << "input<<" << endl;
-        if (conIsKeyDown()) {
-            char input = conGetChar();
-            if (input == '1') {
-                if (player1->isPaused()) {
-                    cout << "try to rewind 1" << endl;
-                    t1 = player1->rewind();
-                } else {
-                    cout << "try to pause 1" << endl;
-                    player1->pause();
-                    t1->join();
-                    delete (t1);
-                }
-            } else if (input == '2') {
-                if (player2->isPaused()) {
-                    t2 = player2->rewind();
-                } else {
-                    player2->pause();
-                    delete (t1);
-                }
-            }
+    player1->play();
+    while (true) {
+        char input;
+        cin >> input;
+        if (input == '1') {
+            player1->play();
+        } else if (input == '2') {
+            player1->pause();
+        } else if (input == '3') {
+            player1->rewind();
+        } else if (input == '4') {
+            player1->stop();
+        } else if (input == '5') {
+            break;
         }
     }
-    t1->join();
-    t2->join();
-    cout << "don't wait" << endl;
-    while (player1->isPlaying());
-
-    delete t1;
     delete player1;
     delete manager;
     delete sound1;
@@ -60,9 +41,9 @@ void exampleSound() {
 
 int main(void) {
 //    exampleSound();
-    string filename1 = "res/21pilots.wav";
+    string filename1 = "res/mySound.wav";
     AudioData *sound1 = AudioData::load(filename1);
     cout<<sound1->toString()<<endl;
-    SpectrumAnalyzer analyzer(sound1, 10000, 20);
-
+    SpectrumAnalyzer analyzer(sound1, 1024, 20);
+    cout<<"time: "<<analyzer.getTimeBound()<<endl;
 }

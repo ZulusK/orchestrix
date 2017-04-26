@@ -1,11 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/src/AudioManagement/AudioPlayer.cpp" line="46" />
+    <bookmark url="file://$PROJECT_DIR$/src/AudioManagement/AudioPlayer.cpp" line="47" />
   </component>
   <component name="CMakeRunConfigurationManager" shouldGenerate="true" buildAllGenerated="true">
     <generated>
+      <config projectName="orchestrix" targetName="audio" />
+      <config projectName="orchestrix" targetName="ut" />
+      <config projectName="orchestrix" targetName="sut" />
       <config projectName="orchestrix" targetName="a.out" />
+      <config projectName="orchestrix" targetName="aut" />
+      <config projectName="orchestrix" targetName="orchestrix" />
     </generated>
   </component>
   <component name="CMakeSettings" AUTO_RELOAD="true">
@@ -30,12 +35,28 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="SpectrumAnalyzer.cpp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/SpectrumManagement/SpectrumAnalyzer.cpp">
+      <file leaf-file-name="Spectrum.cpp" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/SpectrumManagement/Spectrum.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="548">
-              <caret line="41" column="1" lean-forward="true" selection-start-line="41" selection-start-column="1" selection-end-line="41" selection-end-column="1" />
-              <folding />
+            <state relative-caret-position="347">
+              <caret line="110" column="38" lean-forward="false" selection-start-line="110" selection-start-column="38" selection-end-line="110" selection-end-column="38" />
+              <folding>
+                <element signature="e#0#2#0" expanded="false" />
+                <element signature="e#40#80#0" expanded="true" />
+                <element signature="e#216#270#0" expanded="false" />
+                <element signature="e#272#507#0" expanded="false" />
+                <element signature="e#272#903#0" expanded="false" />
+                <element signature="e#905#1140#0" expanded="false" />
+                <element signature="e#905#1534#0" expanded="false" />
+                <element signature="e#1536#1802#0" expanded="false" />
+                <element signature="e#1804#2155#0" expanded="false" />
+                <element signature="e#1804#2768#0" expanded="false" />
+                <element signature="e#2770#2880#0" expanded="false" />
+                <element signature="e#3504#3617#0" expanded="false" />
+                <element signature="e#3841#3871#0" expanded="false" />
+                <element signature="e#4157#4190#0" expanded="false" />
+                <element signature="e#4280#4470#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -44,24 +65,8 @@
         <entry file="file://$PROJECT_DIR$/include/SpectrumManagement/Spectrum.h">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="332">
-              <caret line="30" column="0" lean-forward="true" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
-              <folding>
-                <element signature="e#101#119#0" expanded="true" />
-                <marker date="1493122121436" expanded="true" signature="172:639" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Spectrum.cpp" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/SpectrumManagement/Spectrum.cpp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="92">
-              <caret line="44" column="18" lean-forward="true" selection-start-line="44" selection-start-column="18" selection-end-line="44" selection-end-column="18" />
-              <folding>
-                <element signature="e#40#80#0" expanded="true" />
-                <element signature="e#1228#1463#0" expanded="false" />
-              </folding>
+              <caret line="21" column="89" lean-forward="false" selection-start-line="21" selection-start-column="89" selection-end-line="21" selection-end-column="89" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -69,21 +74,87 @@
       <file leaf-file-name="main.cpp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="356">
-              <caret line="64" column="23" lean-forward="false" selection-start-line="64" selection-start-column="23" selection-end-line="64" selection-end-column="23" />
+            <state relative-caret-position="380">
+              <caret line="46" column="42" lean-forward="false" selection-start-line="46" selection-start-column="42" selection-end-line="46" selection-end-column="42" />
               <folding>
                 <element signature="e#39#58#0" expanded="true" />
-                <element signature="e#309#1789#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AudioData.cpp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/AudioManagement/AudioData.cpp">
+      <file leaf-file-name="AudioManager.cpp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/AudioManagement/AudioManager.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="246">
-              <caret line="93" column="16" lean-forward="false" selection-start-line="93" selection-start-column="16" selection-end-line="93" selection-end-column="16" />
+            <state relative-caret-position="792">
+              <caret line="53" column="0" lean-forward="false" selection-start-line="53" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
+              <folding>
+                <element signature="e#0#2#0" expanded="false" />
+                <element signature="e#40#81#0" expanded="true" />
+                <element signature="e#160#239#0" expanded="false" />
+                <element signature="e#160#714#0" expanded="false" />
+                <element signature="e#1754#1924#0" expanded="false" />
+                <element signature="e#2747#2856#0" expanded="false" />
+                <element signature="e#2747#3957#0" expanded="false" />
+                <element signature="e#3959#4015#0" expanded="false" />
+                <element signature="e#3959#4138#0" expanded="false" />
+                <element signature="e#4140#4196#0" expanded="false" />
+                <element signature="e#4140#4316#0" expanded="false" />
+                <element signature="e#4318#4416#0" expanded="false" />
+                <element signature="e#4318#4622#0" expanded="false" />
+                <element signature="e#4624#4722#0" expanded="false" />
+                <element signature="e#4624#4925#0" expanded="false" />
+                <element signature="e#4927#5024#0" expanded="false" />
+                <element signature="e#5352#5448#0" expanded="false" />
+                <element signature="e#5352#5774#0" expanded="false" />
+                <element signature="e#5776#5874#0" expanded="false" />
+                <element signature="e#5776#6114#0" expanded="false" />
+                <element signature="e#6116#6223#0" expanded="false" />
+                <element signature="e#6116#6463#0" expanded="false" />
+                <element signature="e#6638#6810#0" expanded="false" />
+                <element signature="e#6813#6986#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AudioPlayer.cpp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/AudioManagement/AudioPlayer.cpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="288">
+              <caret line="115" column="58" lean-forward="true" selection-start-line="115" selection-start-column="13" selection-end-line="115" selection-end-column="58" />
+              <folding>
+                <element signature="e#0#2#0" expanded="false" />
+                <element signature="e#136#341#0" expanded="false" />
+                <element signature="e#136#1163#0" expanded="false" />
+                <element signature="e#1165#1273#0" expanded="false" />
+                <element signature="e#2170#3652#0" expanded="false" />
+                <element signature="e#2263#2346#0" expanded="false" />
+                <element signature="e#2566#2623#0" expanded="false" />
+                <element signature="e#2687#2745#0" expanded="false" />
+                <element signature="e#2857#3065#0" expanded="false" />
+                <element signature="e#3241#3300#0" expanded="false" />
+                <element signature="e#3814#4578#0" expanded="false" />
+                <element signature="e#4580#4622#0" expanded="false" />
+                <element signature="e#4580#5159#0" expanded="false" />
+                <element signature="e#5161#5501#0" expanded="false" />
+                <element signature="e#5503#5703#0" expanded="false" />
+                <element signature="e#5705#5793#0" expanded="false" />
+                <element signature="e#7488#8368#0" expanded="false" />
+                <element signature="e#8370#8445#0" expanded="false" />
+                <element signature="e#8370#8535#0" expanded="false" />
+                <element signature="e#8537#8619#0" expanded="false" />
+                <element signature="e#8621#8705#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AudioPlayer.h" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/include/AudioManagement/AudioPlayer.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="222">
+              <caret line="21" column="25" lean-forward="false" selection-start-line="21" selection-start-column="25" selection-end-line="21" selection-end-column="25" />
               <folding />
             </state>
           </provider>
@@ -104,7 +175,6 @@
       <find>lock()</find>
       <find>progb</find>
       <find>lock</find>
-      <find>print</find>
       <find>getFreeSource</find>
       <find>updateState</find>
       <find>sound</find>
@@ -112,9 +182,11 @@
       <find>generateBuffer</find>
       <find>context</find>
       <find>prin</find>
-      <find>cout</find>
       <find>~</find>
       <find>size</find>
+      <find>cout</find>
+      <find>print</find>
+      <find>createBars</find>
     </findStrings>
     <replaceStrings>
       <replace>this</replace>
@@ -142,17 +214,17 @@
         <option value="$PROJECT_DIR$/src/AudioManagement/play.cpp" />
         <option value="$PROJECT_DIR$/src/AudioManagement/AudioPlayer.h" />
         <option value="$PROJECT_DIR$/include/AudioManagement/AudioManager.h" />
-        <option value="$PROJECT_DIR$/src/AudioManagement/AudioManager.cpp" />
-        <option value="$PROJECT_DIR$/include/AudioManagement/AudioPlayer.h" />
-        <option value="$PROJECT_DIR$/CMakeLists.txt" />
-        <option value="$PROJECT_DIR$/include/SpectrumManagement/Spectrum.h" />
-        <option value="$PROJECT_DIR$/include/SpectrumManagement/SpectrumAnalyzer.h" />
-        <option value="$PROJECT_DIR$/src/AudioManagement/AudioPlayer.cpp" />
         <option value="$PROJECT_DIR$/include/AudioManagement/OpenAL.h" />
         <option value="$PROJECT_DIR$/include/AudioManagement/AudioData.h" />
-        <option value="$PROJECT_DIR$/src/SpectrumManagement/SpectrumAnalyzer.cpp" />
-        <option value="$PROJECT_DIR$/src/main.cpp" />
         <option value="$PROJECT_DIR$/src/AudioManagement/AudioData.cpp" />
+        <option value="$PROJECT_DIR$/CMakeLists.txt" />
+        <option value="$PROJECT_DIR$/include/SpectrumManagement/SpectrumAnalyzer.h" />
+        <option value="$PROJECT_DIR$/include/AudioManagement/AudioPlayer.h" />
+        <option value="$PROJECT_DIR$/src/AudioManagement/AudioPlayer.cpp" />
+        <option value="$PROJECT_DIR$/src/AudioManagement/AudioManager.cpp" />
+        <option value="$PROJECT_DIR$/include/SpectrumManagement/Spectrum.h" />
+        <option value="$PROJECT_DIR$/src/main.cpp" />
+        <option value="$PROJECT_DIR$/src/SpectrumManagement/SpectrumAnalyzer.cpp" />
         <option value="$PROJECT_DIR$/src/SpectrumManagement/Spectrum.cpp" />
       </list>
     </option>
@@ -496,9 +568,34 @@
       <envs />
       <method />
     </configuration>
-    <list size="2">
+    <configuration default="false" name="orchestrix" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="orchestrix" TARGET_NAME="orchestrix" CONFIG_NAME="Debug">
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="audio" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="orchestrix" TARGET_NAME="audio" CONFIG_NAME="Debug">
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="aut" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="orchestrix" TARGET_NAME="aut" CONFIG_NAME="Debug">
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="ut" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="orchestrix" TARGET_NAME="ut" CONFIG_NAME="Debug">
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="sut" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="orchestrix" TARGET_NAME="sut" CONFIG_NAME="Debug">
+      <envs />
+      <method />
+    </configuration>
+    <list size="7">
       <item index="0" class="java.lang.String" itemvalue="Application.a.out" />
       <item index="1" class="java.lang.String" itemvalue="Application.Build All" />
+      <item index="2" class="java.lang.String" itemvalue="Application.orchestrix" />
+      <item index="3" class="java.lang.String" itemvalue="Application.audio" />
+      <item index="4" class="java.lang.String" itemvalue="Application.aut" />
+      <item index="5" class="java.lang.String" itemvalue="Application.ut" />
+      <item index="6" class="java.lang.String" itemvalue="Application.sut" />
     </list>
   </component>
   <component name="ShelveChangesManager" show_recycled="false">
@@ -519,16 +616,17 @@
       <workItem from="1492965961050" duration="1047000" />
       <workItem from="1493065909945" duration="15863000" />
       <workItem from="1493083183844" duration="4424000" />
-      <workItem from="1493119733380" duration="4917000" />
+      <workItem from="1493119733380" duration="11512000" />
+      <workItem from="1493135704280" duration="17599000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="95238000" />
+    <option name="totallyTimeSpent" value="119432000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="24" width="1366" height="699" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20131771" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -537,9 +635,9 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3290735" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.6230032" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.80990416" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.66773164" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.66773164" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5223642" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -561,21 +659,11 @@
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="31" />
+      <option name="time" value="34" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/include/AudioManagement/AudioPlayer.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="912">
-          <caret line="38" column="0" lean-forward="true" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
-          <folding>
-            <element signature="e#67#108#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/include/AudioManagement/Entity.h" />
     <entry file="file://$PROJECT_DIR$/include/AudioManagement/AudioManager.h">
       <provider selected="true" editor-type-id="text-editor">
@@ -590,34 +678,29 @@
           <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
           <folding>
             <element signature="e#0#2#0" expanded="false" />
+            <element signature="e#40#81#0" expanded="true" />
             <element signature="e#160#239#0" expanded="false" />
             <element signature="e#160#714#0" expanded="false" />
-            <element signature="e#716#809#0" expanded="false" />
-            <element signature="e#811#1196#0" expanded="false" />
-            <element signature="e#1198#1792#0" expanded="false" />
-            <element signature="e#1794#1964#0" expanded="false" />
-            <element signature="e#1794#2785#0" expanded="false" />
-            <element signature="e#2787#2896#0" expanded="false" />
-            <element signature="e#2787#3997#0" expanded="false" />
-            <element signature="e#3999#4055#0" expanded="false" />
-            <element signature="e#3999#4178#0" expanded="false" />
-            <element signature="e#4180#4236#0" expanded="false" />
-            <element signature="e#4180#4356#0" expanded="false" />
-            <element signature="e#4358#4456#0" expanded="false" />
-            <element signature="e#4358#4662#0" expanded="false" />
-            <element signature="e#4664#4762#0" expanded="false" />
-            <element signature="e#4664#4965#0" expanded="false" />
-            <element signature="e#4967#5064#0" expanded="false" />
-            <element signature="e#4967#5390#0" expanded="false" />
-            <element signature="e#5392#5488#0" expanded="false" />
-            <element signature="e#5392#5814#0" expanded="false" />
-            <element signature="e#5816#5914#0" expanded="false" />
-            <element signature="e#5816#6154#0" expanded="false" />
-            <element signature="e#6156#6263#0" expanded="false" />
-            <element signature="e#6156#6503#0" expanded="false" />
-            <element signature="e#6506#6675#0" expanded="false" />
-            <element signature="e#6678#6850#0" expanded="false" />
-            <element signature="e#6853#7026#0" expanded="false" />
+            <element signature="e#1754#1924#0" expanded="false" />
+            <element signature="e#2747#2856#0" expanded="false" />
+            <element signature="e#2747#3957#0" expanded="false" />
+            <element signature="e#3959#4015#0" expanded="false" />
+            <element signature="e#3959#4138#0" expanded="false" />
+            <element signature="e#4140#4196#0" expanded="false" />
+            <element signature="e#4140#4316#0" expanded="false" />
+            <element signature="e#4318#4416#0" expanded="false" />
+            <element signature="e#4318#4622#0" expanded="false" />
+            <element signature="e#4624#4722#0" expanded="false" />
+            <element signature="e#4624#4925#0" expanded="false" />
+            <element signature="e#4927#5024#0" expanded="false" />
+            <element signature="e#5352#5448#0" expanded="false" />
+            <element signature="e#5352#5774#0" expanded="false" />
+            <element signature="e#5776#5874#0" expanded="false" />
+            <element signature="e#5776#6114#0" expanded="false" />
+            <element signature="e#6116#6223#0" expanded="false" />
+            <element signature="e#6116#6463#0" expanded="false" />
+            <element signature="e#6638#6810#0" expanded="false" />
+            <element signature="e#6813#6986#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -791,14 +874,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/include/AudioManagement/Entity.h" />
-    <entry file="file://$PROJECT_DIR$/src/AudioManagement/play.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="284">
-          <caret line="141" column="13" lean-forward="false" selection-start-line="141" selection-start-column="13" selection-end-line="141" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///usr/include/c++/6/thread">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-461">
@@ -835,87 +910,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="212">
-          <caret line="11" column="85" lean-forward="false" selection-start-line="11" selection-start-column="85" selection-end-line="11" selection-end-column="85" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/include/AudioManagement/AudioPlayer.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="552">
-          <caret line="23" column="18" lean-forward="false" selection-start-line="23" selection-start-column="18" selection-end-line="23" selection-end-column="18" />
-          <folding>
-            <element signature="e#67#108#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/include/AudioManagement/AudioManager.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-556">
           <caret line="14" column="20" lean-forward="false" selection-start-line="14" selection-start-column="20" selection-end-line="14" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AudioManagement/AudioManager.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
-          <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#2#0" expanded="false" />
-            <element signature="e#160#239#0" expanded="false" />
-            <element signature="e#160#714#0" expanded="false" />
-            <element signature="e#716#809#0" expanded="false" />
-            <element signature="e#811#1196#0" expanded="false" />
-            <element signature="e#1198#1792#0" expanded="false" />
-            <element signature="e#1794#1964#0" expanded="false" />
-            <element signature="e#1794#2785#0" expanded="false" />
-            <element signature="e#2787#2896#0" expanded="false" />
-            <element signature="e#2787#3997#0" expanded="false" />
-            <element signature="e#3999#4055#0" expanded="false" />
-            <element signature="e#3999#4178#0" expanded="false" />
-            <element signature="e#4180#4236#0" expanded="false" />
-            <element signature="e#4180#4356#0" expanded="false" />
-            <element signature="e#4358#4456#0" expanded="false" />
-            <element signature="e#4358#4662#0" expanded="false" />
-            <element signature="e#4664#4762#0" expanded="false" />
-            <element signature="e#4664#4965#0" expanded="false" />
-            <element signature="e#4967#5064#0" expanded="false" />
-            <element signature="e#4967#5390#0" expanded="false" />
-            <element signature="e#5392#5488#0" expanded="false" />
-            <element signature="e#5392#5814#0" expanded="false" />
-            <element signature="e#5816#5914#0" expanded="false" />
-            <element signature="e#5816#6154#0" expanded="false" />
-            <element signature="e#6156#6263#0" expanded="false" />
-            <element signature="e#6156#6503#0" expanded="false" />
-            <element signature="e#6506#6675#0" expanded="false" />
-            <element signature="e#6678#6850#0" expanded="false" />
-            <element signature="e#6853#7026#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/include/SpectrumManagement/Spectrum.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="332">
-          <caret line="30" column="0" lean-forward="true" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
-          <folding>
-            <element signature="e#101#119#0" expanded="true" />
-            <marker date="1493122121436" expanded="true" signature="172:639" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/include/SpectrumManagement/SpectrumAnalyzer.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="244">
-          <caret line="15" column="10" lean-forward="false" selection-start-line="15" selection-start-column="10" selection-end-line="15" selection-end-column="10" />
-          <folding>
-            <element signature="e#117#134#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -947,10 +945,93 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/SpectrumManagement/SpectrumAnalyzer.cpp">
+    <entry file="file://$PROJECT_DIR$/src/AudioManagement/AudioData.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="548">
-          <caret line="41" column="1" lean-forward="true" selection-start-line="41" selection-start-column="1" selection-end-line="41" selection-end-column="1" />
+        <state relative-caret-position="2160">
+          <caret line="93" column="16" lean-forward="false" selection-start-line="93" selection-start-column="16" selection-end-line="93" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AudioManagement/play.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="284">
+          <caret line="141" column="13" lean-forward="false" selection-start-line="141" selection-start-column="13" selection-end-line="141" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/include/AudioManagement/AudioPlayer.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="222">
+          <caret line="21" column="25" lean-forward="false" selection-start-line="21" selection-start-column="25" selection-end-line="21" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AudioManagement/AudioManager.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="792">
+          <caret line="53" column="0" lean-forward="false" selection-start-line="53" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#2#0" expanded="false" />
+            <element signature="e#40#81#0" expanded="true" />
+            <element signature="e#160#239#0" expanded="false" />
+            <element signature="e#160#714#0" expanded="false" />
+            <element signature="e#1754#1924#0" expanded="false" />
+            <element signature="e#2747#2856#0" expanded="false" />
+            <element signature="e#2747#3957#0" expanded="false" />
+            <element signature="e#3959#4015#0" expanded="false" />
+            <element signature="e#3959#4138#0" expanded="false" />
+            <element signature="e#4140#4196#0" expanded="false" />
+            <element signature="e#4140#4316#0" expanded="false" />
+            <element signature="e#4318#4416#0" expanded="false" />
+            <element signature="e#4318#4622#0" expanded="false" />
+            <element signature="e#4624#4722#0" expanded="false" />
+            <element signature="e#4624#4925#0" expanded="false" />
+            <element signature="e#4927#5024#0" expanded="false" />
+            <element signature="e#5352#5448#0" expanded="false" />
+            <element signature="e#5352#5774#0" expanded="false" />
+            <element signature="e#5776#5874#0" expanded="false" />
+            <element signature="e#5776#6114#0" expanded="false" />
+            <element signature="e#6116#6223#0" expanded="false" />
+            <element signature="e#6116#6463#0" expanded="false" />
+            <element signature="e#6638#6810#0" expanded="false" />
+            <element signature="e#6813#6986#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/include/SpectrumManagement/SpectrumAnalyzer.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="308">
+          <caret line="29" column="4" lean-forward="false" selection-start-line="29" selection-start-column="4" selection-end-line="29" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="380">
+          <caret line="46" column="42" lean-forward="false" selection-start-line="46" selection-start-column="42" selection-end-line="46" selection-end-column="42" />
+          <folding>
+            <element signature="e#39#58#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/include/stdint.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="160" column="9" lean-forward="false" selection-start-line="160" selection-start-column="9" selection-end-line="160" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/include/SpectrumManagement/Spectrum.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="332">
+          <caret line="21" column="89" lean-forward="false" selection-start-line="21" selection-start-column="89" selection-end-line="21" selection-end-column="89" />
           <folding />
         </state>
       </provider>
@@ -958,62 +1039,69 @@
     <entry file="file://$PROJECT_DIR$/src/AudioManagement/AudioPlayer.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="288">
-          <caret line="49" column="66" lean-forward="false" selection-start-line="49" selection-start-column="66" selection-end-line="49" selection-end-column="66" />
+          <caret line="115" column="58" lean-forward="true" selection-start-line="115" selection-start-column="13" selection-end-line="115" selection-end-column="58" />
           <folding>
             <element signature="e#0#2#0" expanded="false" />
             <element signature="e#136#341#0" expanded="false" />
-            <element signature="e#136#1131#0" expanded="false" />
-            <element signature="e#1133#1241#0" expanded="false" />
-            <element signature="e#2138#2346#0" expanded="false" />
-            <element signature="e#2348#3828#0" expanded="false" />
-            <element signature="e#2441#2524#0" expanded="false" />
-            <element signature="e#2742#2799#0" expanded="false" />
-            <element signature="e#2863#2921#0" expanded="false" />
-            <element signature="e#3033#3241#0" expanded="false" />
-            <element signature="e#3417#3476#0" expanded="false" />
-            <element signature="e#3830#3988#0" expanded="false" />
-            <element signature="e#4756#4798#0" expanded="false" />
-            <element signature="e#4756#5335#0" expanded="false" />
-            <element signature="e#5337#5879#0" expanded="false" />
-            <element signature="e#5881#6207#0" expanded="false" />
-            <element signature="e#6209#6359#0" expanded="false" />
-            <element signature="e#6361#6510#0" expanded="false" />
-            <element signature="e#6512#6564#0" expanded="false" />
-            <element signature="e#6566#7446#0" expanded="false" />
-            <element signature="e#7448#7523#0" expanded="false" />
-            <element signature="e#7448#7613#0" expanded="false" />
-            <element signature="e#7615#7697#0" expanded="false" />
-            <element signature="e#7699#7783#0" expanded="false" />
+            <element signature="e#136#1163#0" expanded="false" />
+            <element signature="e#1165#1273#0" expanded="false" />
+            <element signature="e#2170#3652#0" expanded="false" />
+            <element signature="e#2263#2346#0" expanded="false" />
+            <element signature="e#2566#2623#0" expanded="false" />
+            <element signature="e#2687#2745#0" expanded="false" />
+            <element signature="e#2857#3065#0" expanded="false" />
+            <element signature="e#3241#3300#0" expanded="false" />
+            <element signature="e#3814#4578#0" expanded="false" />
+            <element signature="e#4580#4622#0" expanded="false" />
+            <element signature="e#4580#5159#0" expanded="false" />
+            <element signature="e#5161#5501#0" expanded="false" />
+            <element signature="e#5503#5703#0" expanded="false" />
+            <element signature="e#5705#5793#0" expanded="false" />
+            <element signature="e#7488#8368#0" expanded="false" />
+            <element signature="e#8370#8445#0" expanded="false" />
+            <element signature="e#8370#8535#0" expanded="false" />
+            <element signature="e#8537#8619#0" expanded="false" />
+            <element signature="e#8621#8705#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AudioManagement/AudioData.cpp">
+    <entry file="file://$PROJECT_DIR$/src/SpectrumManagement/SpectrumAnalyzer.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="246">
-          <caret line="93" column="16" lean-forward="false" selection-start-line="93" selection-start-column="16" selection-end-line="93" selection-end-column="16" />
+        <state relative-caret-position="192">
+          <caret line="21" column="57" lean-forward="false" selection-start-line="21" selection-start-column="57" selection-end-line="21" selection-end-column="57" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main.cpp">
+    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="356">
-          <caret line="64" column="23" lean-forward="false" selection-start-line="64" selection-start-column="23" selection-end-line="64" selection-end-column="23" />
-          <folding>
-            <element signature="e#39#58#0" expanded="true" />
-            <element signature="e#309#1789#0" expanded="false" />
-          </folding>
+        <state relative-caret-position="72">
+          <caret line="9" column="27" lean-forward="false" selection-start-line="9" selection-start-column="27" selection-end-line="9" selection-end-column="27" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/SpectrumManagement/Spectrum.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="92">
-          <caret line="44" column="18" lean-forward="true" selection-start-line="44" selection-start-column="18" selection-end-line="44" selection-end-column="18" />
+        <state relative-caret-position="347">
+          <caret line="110" column="38" lean-forward="false" selection-start-line="110" selection-start-column="38" selection-end-line="110" selection-end-column="38" />
           <folding>
+            <element signature="e#0#2#0" expanded="false" />
             <element signature="e#40#80#0" expanded="true" />
-            <element signature="e#1228#1463#0" expanded="false" />
+            <element signature="e#216#270#0" expanded="false" />
+            <element signature="e#272#507#0" expanded="false" />
+            <element signature="e#272#903#0" expanded="false" />
+            <element signature="e#905#1140#0" expanded="false" />
+            <element signature="e#905#1534#0" expanded="false" />
+            <element signature="e#1536#1802#0" expanded="false" />
+            <element signature="e#1804#2155#0" expanded="false" />
+            <element signature="e#1804#2768#0" expanded="false" />
+            <element signature="e#2770#2880#0" expanded="false" />
+            <element signature="e#3504#3617#0" expanded="false" />
+            <element signature="e#3841#3871#0" expanded="false" />
+            <element signature="e#4157#4190#0" expanded="false" />
+            <element signature="e#4280#4470#0" expanded="false" />
           </folding>
         </state>
       </provider>

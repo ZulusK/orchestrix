@@ -19,6 +19,7 @@ enum {
 */
 class AudioPlayer {
     AudioManager *manager;
+    thread * runningThread;
     ALuint source;
     ALvoid *rawSoundData;
     int currState;
@@ -54,11 +55,11 @@ public:
 
     ~AudioPlayer();
 
-    thread *play();
+    bool play();
 
     void pause();
 
-    thread *rewind();
+    bool rewind();
 
     void stop();
 
@@ -69,6 +70,8 @@ public:
     bool isStopped();
 
     bool isPaused();
+
+    void useSettigs();
 };
 
 #endif //ORCHESTRIX_AUDIOPLAYER_H

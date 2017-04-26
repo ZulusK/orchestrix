@@ -47,12 +47,10 @@ void AudioManager::deleteSource(ALuint source) {
 AudioManager::~AudioManager() {
     _bufferMutex.lock();
     _sourceMutex.lock();
-    print(sources);
     for (auto it = sources.begin(); it != sources.end(); it++) {
         deleteSource(*it);
         sources.erase(it);
     }
-    print(buffers);
     for (auto it = buffers.begin(); it != buffers.end(); it++) {
         deleteBuffer(*it);
         buffers.erase(it);
