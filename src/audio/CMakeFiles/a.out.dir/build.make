@@ -91,6 +91,7 @@ a_out_EXTERNAL_OBJECTS =
 a.out: CMakeFiles/a.out.dir/src/main.cpp.o
 a.out: CMakeFiles/a.out.dir/build.make
 a.out: libaut.a
+a.out: /usr/local/lib/libbass.so
 a.out: CMakeFiles/a.out.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/zulus/Projects/GitProj/orchestrix/src/audio/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable a.out"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/a.out.dir/link.txt --verbose=$(VERBOSE)

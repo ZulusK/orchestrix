@@ -73,14 +73,13 @@ AudioData *AudioData::load_wav(const std::string &filename) {
         if (SF_FORMAT_PCM_16 & info.format) {
             __int16_t *data = new __int16_t[info.frames * info.channels];
             sf_read_short(file, data, info.frames * info.channels);
-            cout << "Frames " << info.frames << endl;
             sound = new AudioData(filename, data, info.frames, info.samplerate, info.channels, 16);
         } else if (SF_FORMAT_PCM_S8 & info.format) {
             __int8_t *data = new __int8_t[info.frames * info.channels];
             sf_read_raw(file, data, info.frames * info.channels);
             sound = new AudioData(filename, data, info.frames, info.samplerate, info.channels, 8);
         }
-
+    sf_close(file);
     }
     return sound;
 }

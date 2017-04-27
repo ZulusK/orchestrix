@@ -3,6 +3,11 @@
 
 CMakeFiles/a.out.dir/src/main.cpp.o
  /home/zulus/Projects/GitProj/orchestrix/src/audio/src/main.cpp
+ /usr/local/include/AL/al.h
+ /usr/local/include/AL/alc.h
+ /usr/local/include/bass.h
+ /usr/local/include/sndfile.h
+ /usr/local/include/sndfile.hh
  include/AudioManagement/AudioData.h
  include/AudioManagement/AudioManager.h
  include/AudioManagement/AudioPlayer.h

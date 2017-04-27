@@ -5,8 +5,6 @@
 #include <AudioManagement/AudioData.h>
 #include <AudioManagement/AudioManager.h>
 #include <AudioManagement/AudioPlayer.h>
-#include <thread>
-#include <pbconsole.h>
 #include <SpectrumManagement/SpectrumAnalyzer.h>
 
 #define _DEBUG
@@ -44,6 +42,6 @@ int main(void) {
     string filename1 = "res/mySound.wav";
     AudioData *sound1 = AudioData::load(filename1);
     cout<<sound1->toString()<<endl;
-    SpectrumAnalyzer analyzer(sound1, 1024, 20);
-    cout<<"time: "<<analyzer.getTimeBound()<<endl;
+    SpectrumAnalyzer analyzer(sound1,SAMPLE_2048, 20);
+    delete sound1;
 }

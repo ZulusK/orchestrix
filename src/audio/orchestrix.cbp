@@ -66,12 +66,11 @@
 				<Compiler>
 					<Add directory="/home/zulus/Projects/GitProj/orchestrix/src/audio/include"/>
 					<Add directory="/home/zulus/Projects/GitProj/orchestrix/src/audio/include/AudioManagement"/>
-					<Add directory="/home/zulus/Projects/GitProj/orchestrix/src/audio/usr/local/include"/>
+					<Add directory="/usr/local/include"/>
 					<Add directory="/usr/include/c++/6"/>
 					<Add directory="/usr/include/x86_64-linux-gnu/c++/6"/>
 					<Add directory="/usr/include/c++/6/backward"/>
 					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/6/include"/>
-					<Add directory="/usr/local/include"/>
 					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/6/include-fixed"/>
 					<Add directory="/usr/include/x86_64-linux-gnu"/>
 					<Add directory="/usr/include"/>
@@ -92,12 +91,11 @@
 				<Compiler>
 					<Add directory="/home/zulus/Projects/GitProj/orchestrix/src/audio/include"/>
 					<Add directory="/home/zulus/Projects/GitProj/orchestrix/src/audio/include/AudioManagement"/>
-					<Add directory="/home/zulus/Projects/GitProj/orchestrix/src/audio/usr/local/include"/>
+					<Add directory="/usr/local/include"/>
 					<Add directory="/usr/include/c++/6"/>
 					<Add directory="/usr/include/x86_64-linux-gnu/c++/6"/>
 					<Add directory="/usr/include/c++/6/backward"/>
 					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/6/include"/>
-					<Add directory="/usr/local/include"/>
 					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/6/include-fixed"/>
 					<Add directory="/usr/include/x86_64-linux-gnu"/>
 					<Add directory="/usr/include"/>
@@ -128,12 +126,11 @@
 				<Compiler>
 					<Add directory="/home/zulus/Projects/GitProj/orchestrix/src/audio/include"/>
 					<Add directory="/home/zulus/Projects/GitProj/orchestrix/src/audio/include/AudioManagement"/>
-					<Add directory="/home/zulus/Projects/GitProj/orchestrix/src/audio/usr/local/include"/>
+					<Add directory="/usr/local/include"/>
 					<Add directory="/usr/include/c++/6"/>
 					<Add directory="/usr/include/x86_64-linux-gnu/c++/6"/>
 					<Add directory="/usr/include/c++/6/backward"/>
 					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/6/include"/>
-					<Add directory="/usr/local/include"/>
 					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/6/include-fixed"/>
 					<Add directory="/usr/include/x86_64-linux-gnu"/>
 					<Add directory="/usr/include"/>
@@ -154,12 +151,11 @@
 				<Compiler>
 					<Add directory="/home/zulus/Projects/GitProj/orchestrix/src/audio/include"/>
 					<Add directory="/home/zulus/Projects/GitProj/orchestrix/src/audio/include/AudioManagement"/>
-					<Add directory="/home/zulus/Projects/GitProj/orchestrix/src/audio/usr/local/include"/>
+					<Add directory="/usr/local/include"/>
 					<Add directory="/usr/include/c++/6"/>
 					<Add directory="/usr/include/x86_64-linux-gnu/c++/6"/>
 					<Add directory="/usr/include/c++/6/backward"/>
 					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/6/include"/>
-					<Add directory="/usr/local/include"/>
 					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/6/include-fixed"/>
 					<Add directory="/usr/include/x86_64-linux-gnu"/>
 					<Add directory="/usr/include"/>

@@ -5,8 +5,11 @@
 #include <SpectrumManagement/Spectrum.h>
 #include <AudioManagement/OpenAL.h>
 #include <fftw3.h>
+#include <bass.h>
 #include <cmath>
 #include <AudioManagement/AudioManager.h>
+#include <cstring>
+#include <SpectrumManagement/SpectrumAnalyzer.h>
 
 #define MAX_DB 100
 
@@ -22,7 +25,7 @@ int Spectrum::getLength() const {
  * @param lenB count of elements in B
  * @param channel count of channel in A
  */
-void Spectrum::fillBuffer(const __int16_t *A, double *B, size_t lenA, size_t lenB, int channel) {
+void Spectrum::fillBuffer(const __int16_t *A, __int16_t *B, size_t lenA, size_t lenB, int channel) {
     size_t iA = 0;
     size_t iB = 0;
     for (; iA < lenA && iB < lenB; iA += channel, iB++) {
@@ -30,7 +33,7 @@ void Spectrum::fillBuffer(const __int16_t *A, double *B, size_t lenA, size_t len
         for (int i = 0; i < channel; i++) {
             B[iB] += A[iA];
         }
-        B[iB] /= channel * INT16_MAX;
+        B[iB] /= channel;
     }
     for (; iB < lenB; iB++) {
         B[iB] = 0;
@@ -45,7 +48,7 @@ void Spectrum::fillBuffer(const __int16_t *A, double *B, size_t lenA, size_t len
  * @param lenB count of elements in B
  * @param channel count of channel in A
  */
-void Spectrum::fillBuffer(const __int8_t *A, double *B, size_t lenA, size_t lenB, int channel) {
+void Spectrum::fillBuffer(const __int8_t *A, __int8_t *B, size_t lenA, size_t lenB, int channel) {
     size_t iA = 0;
     size_t iB = 0;
     for (; iA < lenA && iB < lenB; iA += channel, iB++) {
@@ -53,7 +56,7 @@ void Spectrum::fillBuffer(const __int8_t *A, double *B, size_t lenA, size_t lenB
         for (int i = 0; i < channel; i++) {
             B[iB] += A[iA];
         }
-        B[iB] /= channel * INT8_MAX;
+        B[iB] /= channel;
     }
     for (; iB < lenB; iB++) {
         B[iB] = 0;
@@ -68,6 +71,55 @@ float *normalizeFFTBuffer(fftw_complex *inputBuffer, size_t size) {
     return outputBuffer;
 }
 
+Spectrum::Spectrum(HCHANNEL hchannel, double offset, int mode, int bars) {
+    this->length = bars;
+    this->spectrums = new float[bars];
+    float *fft;
+    int size = 0;
+    switch (mode) {
+        case BASS_DATA_FFT8192:
+            size = 8192;
+            break;
+        case BASS_DATA_FFT4096:
+            size = 4096;
+            break;
+        case BASS_DATA_FFT2048:
+            size = 2048;
+            break;
+        case BASS_DATA_FFT512:
+            size = 512;
+            break;
+        case BASS_DATA_FFT1024:
+        default:
+            size = 1024;
+            break;
+    }
+    fft = new float[size];
+    BASS_ChannelSetPosition(hchannel, BASS_ChannelSeconds2Bytes(hchannel, offset), BASS_POS_BYTE);
+    for (int i = 0; i < size; i++) {
+        fft[i] = 0;
+    }
+    BASS_ChannelGetData(hchannel, fft, mode);
+    SpectrumAnalyzer::printError();
+    for (int i = 0; i < size; i++) {
+        if (fft[i] > 1) {
+            fft[i] = 1;
+        }
+    }
+    int range = size / (this->length);
+    for (int i = 0; i < length; i++) {
+        int rigthBound = (i + 1) * range;
+        int leftBound = i * range;
+        float average = 0;
+        for (int j = leftBound; j < rigthBound; j++) {
+            average += fft[j];
+        }
+        average /= range;
+        this->spectrums[i] = average;
+    }
+    delete[] fft;
+}
+
 /**
  * create new spectrum from input data
  * @param data reference to data
@@ -80,18 +132,24 @@ float *normalizeFFTBuffer(fftw_complex *inputBuffer, size_t size) {
  */
 Spectrum::Spectrum(const void *data, size_t offset, size_t chunkLength, int bars, size_t inputDataLength,
                    int channel, int bits) {
-    this->length = bars;
 
-    //create new buffer
-    double *chunkBuffer = new double[chunkLength];
-    //fill it by normalized data
-    if (bits == 8) {
-        fillBuffer((__int8_t *) data + offset, chunkBuffer, inputDataLength - offset, chunkLength, channel);
-    } else {
-        fillBuffer((__int16_t *) data + offset, chunkBuffer, inputDataLength - offset, chunkLength, channel);
-    }
-    this->exec(chunkBuffer, chunkLength);
-    delete[] chunkBuffer;
+//
+//    create new buffer
+//    void *oneChannelData;
+//    double *normalizedChannelData = new double[chunkLength];
+//    fill it by normalized data
+//    if (bits == 8) {
+//        oneChannelData = new __int8_t[chunkLength];
+//        fillBuffer((__int8_t *) data + offset, (__int8_t *) oneChannelData, inputDataLength - offset, chunkLength,
+//                   channel);
+//        delete[] (__int8_t *) oneChannelData;
+//    } else {
+//        fillBuffer((__int8_t *) data + offset, (__int8_t *) oneChannelData, inputDataLength - offset, chunkLength,
+//                   channel);
+//        delete[] (__int8_t *) oneChannelData;
+//    }
+//    this->exec(oneChannelData, chunkLength);
+
 }
 
 /**
@@ -121,6 +179,7 @@ float *Spectrum::createBars(float *frequenceBuffer, int size) {
     return barVal;
 }
 
+
 /**
  * execute calculating fft value and spectrums
  * @param input_buffer
@@ -128,6 +187,7 @@ float *Spectrum::createBars(float *frequenceBuffer, int size) {
  * @param bars
  */
 void Spectrum::exec(double *input_buffer, size_t input_size) {
+
     int output_size = (input_size / 2 + 1);
     fftw_complex *output_buffer = static_cast<fftw_complex *>(fftw_malloc(output_size * sizeof(fftw_complex)));
     /**
@@ -156,4 +216,8 @@ string Spectrum::toString() {
 
 float *Spectrum::getSpectrums() const {
     return spectrums;
+}
+
+Spectrum::~Spectrum() {
+    delete[] spectrums;
 }

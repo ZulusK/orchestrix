@@ -7,6 +7,14 @@
 
 #include <cstddef>
 #include <AudioManagement/OpenAL.h>
+#include <bass.h>
+
+enum {
+    SAMPLE_8192,
+    SAMPLE_4096,
+    SAMPLE_2048,
+    SAMPLE_1024
+};
 
 class Spectrum {
 
@@ -17,9 +25,9 @@ class Spectrum {
 
     void exec(double *input_buffer, size_t input_size);
 
-    void fillBuffer(const __int16_t *A, double *B, size_t lenA, size_t lenB, int channel);
+    void fillBuffer(const __int16_t *A, __int16_t *B, size_t lenA, size_t lenB, int channel);
 
-    void fillBuffer(const __int8_t *A, double *B, size_t lenA, size_t lenB, int channel);
+    void fillBuffer(const __int8_t *A, __int8_t *B, size_t lenA, size_t lenB, int channel);
 
 public:
     void normalize();
@@ -32,6 +40,8 @@ public:
              int channel,
              int bits);
 
+    Spectrum(HSTREAM hchannel, double offset, int mode, int bars);
+    ~Spectrum();
     string toString();
 };
 
