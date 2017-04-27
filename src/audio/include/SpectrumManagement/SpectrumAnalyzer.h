@@ -14,6 +14,8 @@ class SpectrumAnalyzer {
 private:
     vector<Spectrum *> spectrums;
     size_t bars;
+
+    unsigned int mode;
     size_t elementsInChunk;
     float timeBound;
     void *rawBytes;
@@ -22,11 +24,11 @@ private:
     int frequency;
     int bitsPerSample;
 
-    void exec();
+    void exec(string filename);
 
 public:
-    SpectrumAnalyzer(AudioData *data, size_t chunks, int bars);
-
+    SpectrumAnalyzer(AudioData *data, int mode, int bars);
+    ~SpectrumAnalyzer();
     const vector<Spectrum *> &getSpectrums() const;
 
     size_t getBars() const;
@@ -44,6 +46,8 @@ public:
     int getFrequency() const;
 
     int getBitsPerSample() const;
+
+    static void printError();
 };
 
 

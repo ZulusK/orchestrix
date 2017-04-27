@@ -191,7 +191,7 @@ audio_SOURCE_DIR:STATIC=/home/zulus/Projects/GitProj/orchestrix/src/audio
 aut_BINARY_DIR:STATIC=/home/zulus/Projects/GitProj/orchestrix/src/audio
 
 //Dependencies for the target
-aut_LIB_DEPENDS:STATIC=general;sndfile;general;openal;general;alut;general;fftw3;general;pthread;
+aut_LIB_DEPENDS:STATIC=general;sndfile;general;/usr/local/lib/libbass.so;general;openal;general;alut;general;fftw3;general;pthread;
 
 //Value Computed by CMake
 aut_SOURCE_DIR:STATIC=/home/zulus/Projects/GitProj/orchestrix/src/audio

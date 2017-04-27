@@ -1,1 +1,1 @@
-/usr/bin/c++    -std=c++14 -O3 -DNDEBUG   CMakeFiles/a.out.dir/src/main.cpp.o  -o a.out -rdynamic libaut.a -lsndfile -lopenal -lalut -lfftw3 -lprogbase -lpthread 
+/usr/bin/c++    -std=c++14 -O3 -DNDEBUG   CMakeFiles/a.out.dir/src/main.cpp.o  -o a.out  -L/usr/local/lib -Wl,-rpath,/usr/local/lib -rdynamic libaut.a -lprogbase -lsndfile -lbass -lopenal -lalut -lfftw3 -lpthread 

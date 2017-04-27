@@ -15,11 +15,33 @@ AudioManagement/AudioManager.h
 -
 AudioManagement/AudioPlayer.h
 -
-thread
--
-pbconsole.h
--
 SpectrumManagement/SpectrumAnalyzer.h
+-
+
+/usr/local/include/AL/al.h
+
+/usr/local/include/AL/alc.h
+
+/usr/local/include/bass.h
+wtypes.h
+-
+stdint.h
+-
+
+/usr/local/include/sndfile.h
+stdio.h
+-
+stdint.h
+-
+sys/types.h
+-
+
+/usr/local/include/sndfile.hh
+sndfile.h
+-
+string
+-
+new
 -
 
 include/AudioManagement/AudioData.h
@@ -74,6 +96,8 @@ include/SpectrumManagement/Spectrum.h
 cstddef
 -
 AudioManagement/OpenAL.h
+-
+bass.h
 -
 
 include/SpectrumManagement/SpectrumAnalyzer.h

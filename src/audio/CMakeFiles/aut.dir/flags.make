@@ -6,5 +6,5 @@ CXX_FLAGS =  -std=c++14 -O3 -DNDEBUG
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/zulus/Projects/GitProj/orchestrix/src/audio/include -I/home/zulus/Projects/GitProj/orchestrix/src/audio/include/AudioManagement -I/home/zulus/Projects/GitProj/orchestrix/src/audio/usr/local/include 
+CXX_INCLUDES = -I/home/zulus/Projects/GitProj/orchestrix/src/audio/include -I/home/zulus/Projects/GitProj/orchestrix/src/audio/include/AudioManagement -I/usr/local/include 
 
