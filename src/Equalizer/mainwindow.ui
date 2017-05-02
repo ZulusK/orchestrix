@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1326</width>
-    <height>734</height>
+    <width>965</width>
+    <height>517</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -22,14 +22,17 @@ border-image:url(&quot;:img/bg2.jpg&quot;);;
    <property name="styleSheet">
     <string notr="true"/>
    </property>
-   <widget class="QWidget" name="verticalLayoutWidget">
+   <widget class="QWidget" name="verticalWidget" native="true">
     <property name="geometry">
      <rect>
-      <x>300</x>
-      <y>40</y>
-      <width>831</width>
-      <height>451</height>
+      <x>170</x>
+      <y>110</y>
+      <width>691</width>
+      <height>241</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border-image:url(&quot;:img/bg.png&quot;);</string>
     </property>
     <layout class="QVBoxLayout" name="verticalLayout"/>
    </widget>
@@ -39,7 +42,7 @@ border-image:url(&quot;:img/bg2.jpg&quot;);;
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1326</width>
+     <width>965</width>
      <height>19</height>
     </rect>
    </property>
