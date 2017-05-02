@@ -1,6 +1,6 @@
 #Equalizer ver3.0
 
-### Obligatory includes : <equalizer.h> , <QTimer>
+### Obligatory includes : equalizer.h , QTimer
 
 ### Initializing :
 
