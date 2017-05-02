@@ -8,6 +8,10 @@
 #include <QTime>
 #include <QDebug>
 #include <QThread>
+#include <thread>
+#include <mutex>
+#include <QTimer>
+#include <QEventLoop>
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -17,28 +21,38 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->setupUi(this);
 
 
+            int numberOfBars = 24;
+            int numberOfChunks = 100;
+
+
+
             int numbOfRepaints = 50;
-            int * startYArr = NULL;
+            int startArray[24];
+            for(int i = 0 ; i < 24 ; i++)
+            {
+                startArray[i] = -1;
+            }
+
             int numOfPoints = 20;
 
 
+            Equalizer * eq = new Equalizer();
+            ui->verticalLayout->addWidget(eq);
 
             double randomTestArray[numOfPoints];
             double fMin = 0;
             double fMax = 20;
+            srand(time(NULL));
 
-            for(int p = 0 ; p < numbOfRepaints ; p++)
+            for(int p = 0 ; p < 100 ; p++)
             {
-                srand(time(NULL));
+
                 for(int i = 0 ; i < numOfPoints ; i++)
                 {
                     randomTestArray[i] = fMin + (double)rand() * (fMax - fMin) / RAND_MAX;
                 }
-
-                Equalizer * eq = new Equalizer();
-                ui->verticalLayout->addWidget(eq);
-                startYArr = eq->setChunk(&randomTestArray[0] , startYArr);
-                delete ui->verticalLayout->takeAt(0);
+                QCoreApplication::processEvents(QEventLoop::AllEvents);
+                eq->setChunk(&randomTestArray[0] , &startArray[0]);
             }
 
 
@@ -48,3 +62,4 @@ MainWindow::~MainWindow()
 {
     delete ui;
 }
+

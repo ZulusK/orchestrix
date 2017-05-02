@@ -6,6 +6,11 @@
 #include <QMargins>
 #include <QPainter>
 #include <QRect>
+#include <iostream>
+#include <QThread>
+#include <QCoreApplication>
+
+using namespace std;
 
 
 class Equalizer : public QWidget
@@ -65,6 +70,7 @@ class Equalizer : public QWidget
 
 public:
     explicit Equalizer(QWidget *parent = 0);
+
     QRect nRect() const;
     void setNRect(const QRect &rect);
 
@@ -209,7 +215,7 @@ public:
     QLine nLine24() const;
     void setNLine24(const QLine &line24);
 
-    int * setChunk(double *chunk, int * startYArr);
+    void setChunk(double *chunk, int * startYArr);
 
 
 private:
