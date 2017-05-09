@@ -78,20 +78,20 @@ Spectrum::Spectrum(HCHANNEL hchannel, double offset, int mode, int bars) {
     int size = 0;
     switch (mode) {
         case BASS_DATA_FFT8192:
-            size = 8192;
-            break;
-        case BASS_DATA_FFT4096:
             size = 4096;
             break;
-        case BASS_DATA_FFT2048:
+        case BASS_DATA_FFT4096:
             size = 2048;
             break;
+        case BASS_DATA_FFT2048:
+            size = 1024;
+            break;
         case BASS_DATA_FFT512:
-            size = 512;
+            size = 256;
             break;
         case BASS_DATA_FFT1024:
         default:
-            size = 1024;
+            size = 512;
             break;
     }
     fft = new float[size];
@@ -104,9 +104,13 @@ Spectrum::Spectrum(HCHANNEL hchannel, double offset, int mode, int bars) {
     for (int i = 0; i < size; i++) {
         if (fft[i] > 1) {
             fft[i] = 1;
+        } else if (fft[i] < 0) {
+            fft[i] = abs(fft[i]);
         }
+
     }
     int range = size / (this->length);
+    energy = 0;
     for (int i = 0; i < length; i++) {
         int rigthBound = (i + 1) * range;
         int leftBound = i * range;
@@ -114,8 +118,8 @@ Spectrum::Spectrum(HCHANNEL hchannel, double offset, int mode, int bars) {
         for (int j = leftBound; j < rigthBound; j++) {
             average += fft[j];
         }
-        average /= range;
-        this->spectrums[i] = average;
+        this->spectrums[i] = average / (float) (range);
+        energy += this->spectrums[i];
     }
     delete[] fft;
 }
@@ -220,4 +224,8 @@ float *Spectrum::getSpectrums() const {
 
 Spectrum::~Spectrum() {
     delete[] spectrums;
+}
+
+float Spectrum::getEnergy() const {
+    return energy;
 }

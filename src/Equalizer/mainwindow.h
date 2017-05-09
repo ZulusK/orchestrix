@@ -2,7 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
-#include <../EqOrch/equalizer.h>
+#include <equalizer.h>
 
 
 namespace Ui {

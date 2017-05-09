@@ -18,7 +18,7 @@ void SpectrumAnalyzer::printError() {
                     << endl;
             break;
         case BASS_ERROR_TIMEOUT:
-            cout << "The sample's minimum time gap (BASS_SAMPLE) has not yet passed since the last channel was created."
+            cout << "The sample's minimum playingTime gap (BASS_SAMPLE) has not yet passed since the last channel was created."
                  << endl;
             break;
         case BASS_ERROR_INIT    :
@@ -79,27 +79,27 @@ SpectrumAnalyzer::SpectrumAnalyzer(AudioData *data, int mode, int bars) {
 
         switch (mode) {
             case SAMPLE_1024:
-                this->elementsInChunk = 512;
-                this->mode = BASS_DATA_FFT512;
-                break;
-            case SAMPLE_2048:
-                this->elementsInChunk = 1024;
-                this->mode = BASS_DATA_FFT1024;
-                break;
-            case SAMPLE_4096:
                 this->elementsInChunk = 2048;
                 this->mode = BASS_DATA_FFT2048;
                 break;
-            case SAMPLE_8192:
+            case SAMPLE_2048:
                 this->elementsInChunk = 4096;
                 this->mode = BASS_DATA_FFT4096;
                 break;
+            case SAMPLE_4096:
+                this->elementsInChunk = 8192;
+                this->mode = BASS_DATA_FFT8192;
+                break;
+            case SAMPLE_8192:
+                this->elementsInChunk = 16384;
+                this->mode = BASS_DATA_FFT16384;
+                break;
             default:
-                this->elementsInChunk = 512;
-                this->mode = BASS_DATA_FFT512;
+                this->elementsInChunk = 1024;
+                this->mode = BASS_DATA_FFT1024;
                 break;
         }
-        this->timeBound = (float) (this->elementsInChunk) / (float) this->frequency / channels;
+        this->timeBound = (float) (this->elementsInChunk) / (float) this->frequency/data->get_channels();
 
         /**
          * process spectrums

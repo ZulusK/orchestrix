@@ -14,10 +14,10 @@ TEMPLATE = app
 
 SOURCES += main.cpp\
         mainwindow.cpp \
-    ../EqOrch/equalizer.cpp
+    ../eq2/equalizer.cpp
 
 HEADERS  += mainwindow.h \
-    ../EqOrch/equalizer.h
+    ../eq2/equalizer.h \
 
 FORMS    += mainwindow.ui
 
