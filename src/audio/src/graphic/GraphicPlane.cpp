@@ -206,6 +206,11 @@ void GraphicPlane::print(const std::string &str, CursorAttributes colorBG, Curso
                          const Vec2D &pos) {
     Vec2D posChar{pos.x, pos.y};
     for (auto it = str.begin(); it != str.end(); it++) {
+        if (*it.base() == '\n') {
+            posChar.y++;
+            posChar.x = pos.x;
+            continue;
+        }
         if (posChar.x > width) {
             posChar.y++;
             if (posChar.y > heigth) break;
@@ -263,7 +268,6 @@ CursorAttributes GraphicPlane::getRandomBGColor() {
 
 
 CursorAttributes GraphicPlane::getRandomFGColor() {
-    return pb::FG_INTENSITY_WHITE;
     switch (rand() % 16) {
         case 0:
             return pb::FG_WHITE;

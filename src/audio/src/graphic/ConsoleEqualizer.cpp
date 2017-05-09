@@ -6,8 +6,8 @@
 #include "ConsoleGraphic/ConsoleEqualizer.h"
 
 #define WIDTH 3
-#define SHOOT 0.3
-#define SIZE_MULT 10000
+#define SHOOT 0.75
+#define SIZE_MULT 4000
 
 CursorAttributes *copyColors(CursorAttributes *colors, int cnt, CursorAttributes defColor) {
     CursorAttributes *newColors;
@@ -35,7 +35,7 @@ ConsoleEqualizer::ConsoleEqualizer(AudioData *sound, int heigth, int barsCount, 
     this->heigth = heigth;
     this->shift = (width - barsCount * WIDTH) / 2;
     this->barsCount = barsCount;
-
+    this->sound = sound;
     console = new GraphicPlane(width, heigth + 5, pb::BG_INTENSITY_BLACK);
     analyzer = new SpectrumAnalyzer(sound, SAMPLE_2048, barsCount);
     this->lowBound = console->getHeigth() - 2;
@@ -67,8 +67,6 @@ void ConsoleEqualizer::drawEQ(int ind) {
     auto color = GraphicPlane::getRandomFGColor();
     for (int i = 0; i < analyzer->getBars(); i++) {
         drawBar(i, getBarHeight(currSpec[i]));
-//        console->print(std::to_string(i) + " " + std::to_string(getBarHeight(currSpec[i])), console->getDefaultColorBG(), color,
-//                       Vec2D{1, 1 + i});
     }
 }
 
@@ -85,6 +83,59 @@ void ConsoleEqualizer::clearEQ(int ind) {
     }
 }
 
+void ConsoleEqualizer::drawInfo(long ind) {
+    static int color = 0;
+    long millisecEQ = analyzer->getTimeBound() * 1000 * ind;
+    int secEQ = millisecEQ / 1000;
+    int minEQ = secEQ / 60;
+    secEQ %= 60;
+    millisecEQ %= 1000;
+
+    long millisecPlayer = player->getTime();
+    int secPlayer = millisecPlayer / 1000;
+    int minPlayer = secPlayer / 60;
+    secPlayer %= 60;
+    millisecPlayer %= 1000;
+
+    console->print(std::to_string(minPlayer) + ":" + std::to_string(secPlayer) + ":" + std::to_string(millisecPlayer) +
+                   " / " + std::to_string(minEQ) + ":" + std::to_string(secEQ) + ":" + std::to_string(millisecEQ),
+                   console->getDefaultColorBG(), console->getDefaultColorFG(),
+                   Vec2D{console->getWidth() - 26, 1});
+
+    console->print(sound->toString(), console->getDefaultColorBG(), console->getDefaultColorFG(),
+                   Vec2D{console->getWidth() - 26, 4});
+
+    double valNew = getBarHeight(getEnergy(ind) / 10);
+    double valOld = getBarHeight(getEnergy(ind - 1) / 10);
+    console->fillRect(Vec2D{1, lowBound}, Vec2D{1 + WIDTH, lowBound - heigth * valOld},
+                      console->getDefaultColorBG());
+    console->fillRect(Vec2D{1, lowBound}, Vec2D{1 + WIDTH, lowBound - heigth * valNew},
+                      barColors[color]);
+    if (isShoot(ind)) {
+        color++;
+        color %= barsCount;
+    }
+}
+
+bool ConsoleEqualizer::isShoot(int ind) {
+    double currEnergy = getEnergy(ind);
+    int size = 4;
+    double average = 0;
+    for (int i = 0; i < size; i++) {
+        average += getEnergy(ind + i - size / 2);
+    }
+    average -= currEnergy;
+    average /= (size - 1);
+
+    console->print(to_string(average) + " : " + to_string(currEnergy),
+                   console->getDefaultColorBG(),
+                   console->getDefaultColorFG(),
+                   Vec2D{console->getWidth() - 26, 3});
+    if ((double) currEnergy-average > SHOOT * average) {
+        return true;
+    } else return false;
+}
+
 void ConsoleEqualizer::exec() {
     console->prepare();
     long time0;
@@ -96,33 +147,46 @@ void ConsoleEqualizer::exec() {
     time0 = clock();
     auto t1 = clock();
     int pos = 1;
+
     for (unsigned long i = 0; i < frames; i++) {
+        drawInfo(i);
         drawEQ(i);
-        console->print(std::to_string(i), console->getDefaultColorBG(), color, Vec2D{1, 1});
-        timeDif = timeBound - (clock() - time0) / (double) CLOCKS_PER_SEC * 1000;
+//        console->print(std::to_string(i), console->getDefaultColorBG(), color, Vec2D{1, 1});
         console->redraw();
+        timeDif = timeBound - (clock() - time0) / (double) CLOCKS_PER_SEC * 1000;
+        long playerTime = player->getTime();
         if (timeDif > 0) {
             this_thread::sleep_for(chrono::milliseconds(timeDif));
         }
-        float lastEnergy = 0;
-        if (i - 1 < 3) {
-            lastEnergy = 0.0000001;
-        } else {
-            lastEnergy = analyzer->getSpectrums()[i+1]->getEnergy() + 0.00001;
-        }
-        float currEnergy = analyzer->getSpectrums()[i]->getEnergy() + 0.00001;
 
-        if (currEnergy / lastEnergy < SHOOT) {
-            console->print(std::to_string(lastEnergy) +std::to_string(currEnergy), console->getDefaultColorBG(), color, Vec2D{pos, 3});
-            delete[]this->barColors;
-            this->barColors = copyColors(NULL,barsCount,console->getDefaultColorBG());
-            console->redraw();
-        }
         clearEQ(i);
-        double playerTime = player->getTime();
         time0 = clock();
     }
-    console->redraw();
+
     player->stop();
 }
 
+
+double ConsoleEqualizer::getEnergy(int ind) {
+//    long shift = ind * samplesInSpectrums * sound->get_channels();
+//    long samples = sound->get_samples() * sound->get_channels();
+    if (ind < 0 || ind >= analyzer->getSpectrums().size()) {
+        return 0.0001;
+    }
+    return analyzer->getSpectrums()[ind]->getEnergy();
+//    unsigned long sum = 1;
+//    __int16_t *data = (__int16_t *) sound->get_source() + shift;
+//    int maxBound = (int) min(samples - shift, (long) samplesInSpectrums);
+//    for (int i = 0; i < maxBound; i += sound->get_channels()) {
+//        sum += abs(data[i]);
+//    }
+//    console->print(std::to_string(sum) + "   ", console->getDefaultColorBG(),
+//                   console->getDefaultColorFG(),
+//                   Vec2D{console->getWidth() - 26, 2});
+//    energy.push_back(sum);
+//    return sum;
+}
+
+void ConsoleEqualizer::detectEnergy(int ind) {
+
+}

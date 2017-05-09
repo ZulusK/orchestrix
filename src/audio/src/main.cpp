@@ -43,6 +43,6 @@ int main(void) {
     string filename1 = "res/21pilots.wav";
     AudioData *sound1 = AudioData::load(filename1);
     cout << sound1->toString() << endl;
-    ConsoleEqualizer eq(sound1, 20, 30);
+    ConsoleEqualizer eq(sound1, 20, 20);
     eq.exec();
 }

@@ -151,6 +151,8 @@ GraphicPlane.h
 -
 GraphUtil.h
 -
+vector
+-
 
 include/ConsoleGraphic/GraphUtil.h
 

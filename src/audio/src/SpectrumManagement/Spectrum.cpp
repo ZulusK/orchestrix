@@ -102,12 +102,7 @@ Spectrum::Spectrum(HCHANNEL hchannel, double offset, int mode, int bars) {
     BASS_ChannelGetData(hchannel, fft, mode);
     SpectrumAnalyzer::printError();
     for (int i = 0; i < size; i++) {
-        if (fft[i] > 1) {
-            fft[i] = 1;
-        } else if (fft[i] < 0) {
-            fft[i] = abs(fft[i]);
-        }
-
+        fft[i] = abs(tan(fft[i]));
     }
     int range = size / (this->length);
     energy = 0;

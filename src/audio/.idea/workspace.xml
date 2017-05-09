@@ -6,10 +6,10 @@
   <component name="CMakeRunConfigurationManager" shouldGenerate="true" buildAllGenerated="true">
     <generated>
       <config projectName="orchestrix" targetName="audio" />
-      <config projectName="orchestrix" targetName="sut" />
       <config projectName="orchestrix" targetName="ut" />
-      <config projectName="orchestrix" targetName="aut" />
+      <config projectName="orchestrix" targetName="sut" />
       <config projectName="orchestrix" targetName="a.out" />
+      <config projectName="orchestrix" targetName="aut" />
       <config projectName="orchestrix" targetName="orchestrix" />
     </generated>
   </component>
@@ -35,54 +35,23 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Spectrum.cpp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/SpectrumManagement/Spectrum.cpp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="500">
-              <caret line="123" column="17" lean-forward="true" selection-start-line="123" selection-start-column="17" selection-end-line="123" selection-end-column="17" />
-              <folding>
-                <element signature="e#0#2#0" expanded="false" />
-                <element signature="e#302#356#0" expanded="false" />
-                <element signature="e#358#593#0" expanded="false" />
-                <element signature="e#358#980#0" expanded="false" />
-                <element signature="e#982#1217#0" expanded="false" />
-                <element signature="e#982#1602#0" expanded="false" />
-                <element signature="e#1604#1870#0" expanded="false" />
-                <element signature="e#3322#3673#0" expanded="false" />
-                <element signature="e#3322#4517#0" expanded="false" />
-                <element signature="e#4519#4629#0" expanded="false" />
-                <element signature="e#4519#5251#0" expanded="false" />
-                <element signature="e#5254#5367#0" expanded="false" />
-                <element signature="e#6031#6221#0" expanded="false" />
-                <element signature="e#6223#6286#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Spectrum.h" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/include/SpectrumManagement/Spectrum.h">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="264">
-              <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
-              <folding>
-                <element signature="e#101#119#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="ConsoleEqualizer.cpp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/graphic/ConsoleEqualizer.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1194">
-              <caret line="52" column="46" lean-forward="false" selection-start-line="52" selection-start-column="46" selection-end-line="52" selection-end-column="46" />
+            <state relative-caret-position="120">
+              <caret line="8" column="18" lean-forward="false" selection-start-line="8" selection-start-column="18" selection-end-line="8" selection-end-column="18" />
               <folding>
                 <element signature="e#0#2#0" expanded="false" />
                 <element signature="e#179#699#0" expanded="false" />
-                <element signature="e#1352#1476#0" expanded="false" />
-                <element signature="e#1478#1725#0" expanded="false" />
-                <element signature="e#1727#1989#0" expanded="false" />
+                <element signature="e#701#1374#0" expanded="false" />
+                <element signature="e#1376#1500#0" expanded="false" />
+                <element signature="e#1502#1749#0" expanded="false" />
+                <element signature="e#1751#2013#0" expanded="false" />
+                <element signature="e#2015#2280#0" expanded="false" />
+                <element signature="e#2282#2438#0" expanded="false" />
+                <element signature="e#2440#2656#0" expanded="false" />
+                <element signature="e#4659#5502#0" expanded="false" />
+                <element signature="e#6348#6397#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -91,8 +60,8 @@
       <file leaf-file-name="ConsoleEqualizer.h" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/include/ConsoleGraphic/ConsoleEqualizer.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="332">
-              <caret line="40" column="12" lean-forward="false" selection-start-line="40" selection-start-column="12" selection-end-line="40" selection-end-column="12" />
+            <state relative-caret-position="240">
+              <caret line="25" column="24" lean-forward="false" selection-start-line="25" selection-start-column="24" selection-end-line="25" selection-end-column="24" />
               <folding>
                 <element signature="e#117#165#0" expanded="true" />
               </folding>
@@ -103,7 +72,7 @@
       <file leaf-file-name="AudioPlayer.cpp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/AudioManagement/AudioPlayer.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-139">
+            <state relative-caret-position="24">
               <caret line="16" column="18" lean-forward="false" selection-start-line="16" selection-start-column="18" selection-end-line="16" selection-end-column="18" />
               <folding>
                 <element signature="e#0#2#0" expanded="false" />
@@ -139,12 +108,27 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SpectrumAnalyzer.cpp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/SpectrumManagement/SpectrumAnalyzer.cpp">
+      <file leaf-file-name="Spectrum.cpp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/SpectrumManagement/Spectrum.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-474">
-              <caret line="101" column="57" lean-forward="false" selection-start-line="101" selection-start-column="57" selection-end-line="101" selection-end-column="57" />
-              <folding />
+            <state relative-caret-position="212">
+              <caret line="99" column="19" lean-forward="true" selection-start-line="99" selection-start-column="19" selection-end-line="99" selection-end-column="19" />
+              <folding>
+                <element signature="e#0#2#0" expanded="false" />
+                <element signature="e#302#356#0" expanded="false" />
+                <element signature="e#358#593#0" expanded="false" />
+                <element signature="e#358#980#0" expanded="false" />
+                <element signature="e#982#1217#0" expanded="false" />
+                <element signature="e#982#1602#0" expanded="false" />
+                <element signature="e#1604#1870#0" expanded="false" />
+                <element signature="e#3229#3580#0" expanded="false" />
+                <element signature="e#3229#4424#0" expanded="false" />
+                <element signature="e#4426#4536#0" expanded="false" />
+                <element signature="e#4426#5158#0" expanded="false" />
+                <element signature="e#5161#5274#0" expanded="false" />
+                <element signature="e#5938#6128#0" expanded="false" />
+                <element signature="e#6130#6193#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -152,18 +136,8 @@
       <file leaf-file-name="AudioPlayer.h" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/include/AudioManagement/AudioPlayer.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="264">
+            <state relative-caret-position="-168">
               <caret line="15" column="44" lean-forward="false" selection-start-line="15" selection-start-column="44" selection-end-line="15" selection-end-column="44" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="OpenAL.h" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/include/AudioManagement/OpenAL.h">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="174">
-              <caret line="89" column="0" lean-forward="true" selection-start-line="89" selection-start-column="0" selection-end-line="89" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -172,8 +146,8 @@
       <file leaf-file-name="main.cpp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="140">
-              <caret line="35" column="19" lean-forward="true" selection-start-line="35" selection-start-column="19" selection-end-line="35" selection-end-column="19" />
+            <state relative-caret-position="284">
+              <caret line="41" column="21" lean-forward="true" selection-start-line="41" selection-start-column="21" selection-end-line="41" selection-end-column="21" />
               <folding>
                 <element signature="e#39#58#0" expanded="true" />
               </folding>
@@ -185,7 +159,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>frequency</find>
       <find>player</find>
       <find>buffer</find>
       <find>`</find>
@@ -213,6 +186,9 @@
       <find>' '</find>
       <find>sleep</find>
       <find>BG</find>
+      <find>pri</find>
+      <find>sampl</find>
+      <find>samples</find>
     </findStrings>
     <replaceStrings>
       <replace>this</replace>
@@ -248,15 +224,15 @@
         <option value="$PROJECT_DIR$/CMakeLists.txt" />
         <option value="$PROJECT_DIR$/include/SpectrumManagement/SpectrumAnalyzer.h" />
         <option value="$PROJECT_DIR$/include/ConsoleGraphic/GraphicPlane.h" />
-        <option value="$PROJECT_DIR$/src/graphic/GraphicPlane.cpp" />
         <option value="$PROJECT_DIR$/src/SpectrumManagement/SpectrumAnalyzer.cpp" />
         <option value="$PROJECT_DIR$/src/AudioManagement/AudioPlayer.cpp" />
         <option value="$PROJECT_DIR$/include/AudioManagement/OpenAL.h" />
         <option value="$PROJECT_DIR$/include/AudioManagement/AudioPlayer.h" />
-        <option value="$PROJECT_DIR$/include/ConsoleGraphic/ConsoleEqualizer.h" />
         <option value="$PROJECT_DIR$/include/SpectrumManagement/Spectrum.h" />
-        <option value="$PROJECT_DIR$/src/SpectrumManagement/Spectrum.cpp" />
+        <option value="$PROJECT_DIR$/src/graphic/GraphicPlane.cpp" />
+        <option value="$PROJECT_DIR$/include/ConsoleGraphic/ConsoleEqualizer.h" />
         <option value="$PROJECT_DIR$/src/main.cpp" />
+        <option value="$PROJECT_DIR$/src/SpectrumManagement/Spectrum.cpp" />
         <option value="$PROJECT_DIR$/src/graphic/ConsoleEqualizer.cpp" />
       </list>
     </option>
@@ -691,12 +667,14 @@
       <workItem from="1493251850874" duration="12265000" />
       <workItem from="1493487674767" duration="275000" />
       <workItem from="1493572728782" duration="99000" />
-      <workItem from="1494280381977" duration="15750000" />
+      <workItem from="1494280381977" duration="15786000" />
+      <workItem from="1494322906570" duration="5521000" />
+      <workItem from="1494330544658" duration="4052000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="155944000" />
+    <option name="totallyTimeSpent" value="165553000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="24" width="1366" height="699" extended-state="6" />
@@ -708,18 +686,18 @@
       <window_info id="CMake" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3290735" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.80990416" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.87380195" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5223642" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.80990416" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3283082" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5223642" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -781,7 +759,6 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#39#58#0" expanded="true" />
-            <element signature="e#298#1038#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -898,14 +875,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/include/AudioManagement/AudioData.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="21" column="12" lean-forward="false" selection-start-line="21" selection-start-column="12" selection-end-line="21" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/AudioManagement/play.cpp" />
     <entry file="file:///usr/include/stdint.h">
       <provider selected="true" editor-type-id="text-editor">
@@ -914,30 +883,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AudioManagement/AudioData.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="312">
-          <caret line="16" column="9" lean-forward="true" selection-start-line="16" selection-start-column="9" selection-end-line="16" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///usr/local/include/bass.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="22560">
           <caret line="940" column="32" lean-forward="false" selection-start-line="940" selection-start-column="32" selection-end-line="940" selection-end-column="32" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/areaDrawing.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-628">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/areaDrawing.cpp" />
     <entry file="file://$PROJECT_DIR$/include/ConsoleGraphic/GraphUtil.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-288">
@@ -958,7 +911,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="10" column="33" lean-forward="false" selection-start-line="10" selection-start-column="33" selection-end-line="10" selection-end-column="33" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -978,29 +930,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/include/ConsoleGraphic/GraphicPlane.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="452">
-          <caret line="72" column="11" lean-forward="false" selection-start-line="72" selection-start-column="11" selection-end-line="72" selection-end-column="11" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/graphic/GraphicPlane.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-288">
-          <caret line="226" column="51" lean-forward="false" selection-start-line="226" selection-start-column="51" selection-end-line="226" selection-end-column="51" />
-          <folding>
-            <element signature="e#40#80#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///usr/include/time.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="198">
           <caret line="385" column="11" lean-forward="false" selection-start-line="385" selection-start-column="11" selection-end-line="385" selection-end-column="11" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1014,27 +947,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/include/AudioManagement/OpenAL.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="174">
-          <caret line="89" column="0" lean-forward="true" selection-start-line="89" selection-start-column="0" selection-end-line="89" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="2136">
+          <caret line="89" column="0" lean-forward="false" selection-start-line="89" selection-start-column="0" selection-end-line="89" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/include/AudioManagement/AudioPlayer.h">
+    <entry file="file://$PROJECT_DIR$/include/ConsoleGraphic/GraphicPlane.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="15" column="44" lean-forward="false" selection-start-line="15" selection-start-column="44" selection-end-line="15" selection-end-column="44" />
+        <state relative-caret-position="1728">
+          <caret line="72" column="11" lean-forward="false" selection-start-line="72" selection-start-column="11" selection-end-line="72" selection-end-column="11" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/include/ConsoleGraphic/ConsoleEqualizer.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="332">
-          <caret line="40" column="12" lean-forward="false" selection-start-line="40" selection-start-column="12" selection-end-line="40" selection-end-column="12" />
-          <folding>
-            <element signature="e#117#165#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1043,14 +965,48 @@
         <state relative-caret-position="264">
           <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
           <folding>
-            <element signature="e#101#119#0" expanded="true" />
+            <element signature="e#101#119#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/SpectrumManagement/SpectrumAnalyzer.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1056">
+          <caret line="101" column="57" lean-forward="false" selection-start-line="101" selection-start-column="57" selection-end-line="101" selection-end-column="57" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/graphic/GraphicPlane.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5064">
+          <caret line="211" column="21" lean-forward="false" selection-start-line="211" selection-start-column="21" selection-end-line="211" selection-end-column="21" />
+          <folding>
+            <element signature="e#40#80#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AudioManagement/AudioData.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="428">
+          <caret line="79" column="61" lean-forward="false" selection-start-line="79" selection-start-column="55" selection-end-line="79" selection-end-column="61" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/include/AudioManagement/AudioData.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-172">
+          <caret line="16" column="22" lean-forward="false" selection-start-line="16" selection-start-column="22" selection-end-line="16" selection-end-column="22" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/AudioManagement/AudioPlayer.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-139">
+        <state relative-caret-position="24">
           <caret line="16" column="18" lean-forward="false" selection-start-line="16" selection-start-column="18" selection-end-line="16" selection-end-column="18" />
           <folding>
             <element signature="e#0#2#0" expanded="false" />
@@ -1085,18 +1041,38 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/SpectrumManagement/SpectrumAnalyzer.cpp">
+    <entry file="file://$PROJECT_DIR$/src/main.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-474">
-          <caret line="101" column="57" lean-forward="false" selection-start-line="101" selection-start-column="57" selection-end-line="101" selection-end-column="57" />
+        <state relative-caret-position="284">
+          <caret line="41" column="21" lean-forward="true" selection-start-line="41" selection-start-column="21" selection-end-line="41" selection-end-column="21" />
+          <folding>
+            <element signature="e#39#58#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/include/AudioManagement/AudioPlayer.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-168">
+          <caret line="15" column="44" lean-forward="false" selection-start-line="15" selection-start-column="44" selection-end-line="15" selection-end-column="44" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/include/ConsoleGraphic/ConsoleEqualizer.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="25" column="24" lean-forward="false" selection-start-line="25" selection-start-column="24" selection-end-line="25" selection-end-column="24" />
+          <folding>
+            <element signature="e#117#165#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/SpectrumManagement/Spectrum.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="500">
-          <caret line="123" column="17" lean-forward="true" selection-start-line="123" selection-start-column="17" selection-end-line="123" selection-end-column="17" />
+        <state relative-caret-position="212">
+          <caret line="99" column="19" lean-forward="true" selection-start-line="99" selection-start-column="19" selection-end-line="99" selection-end-column="19" />
           <folding>
             <element signature="e#0#2#0" expanded="false" />
             <element signature="e#302#356#0" expanded="false" />
@@ -1105,37 +1081,33 @@
             <element signature="e#982#1217#0" expanded="false" />
             <element signature="e#982#1602#0" expanded="false" />
             <element signature="e#1604#1870#0" expanded="false" />
-            <element signature="e#3322#3673#0" expanded="false" />
-            <element signature="e#3322#4517#0" expanded="false" />
-            <element signature="e#4519#4629#0" expanded="false" />
-            <element signature="e#4519#5251#0" expanded="false" />
-            <element signature="e#5254#5367#0" expanded="false" />
-            <element signature="e#6031#6221#0" expanded="false" />
-            <element signature="e#6223#6286#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
-          <caret line="35" column="19" lean-forward="true" selection-start-line="35" selection-start-column="19" selection-end-line="35" selection-end-column="19" />
-          <folding>
-            <element signature="e#39#58#0" expanded="true" />
+            <element signature="e#3229#3580#0" expanded="false" />
+            <element signature="e#3229#4424#0" expanded="false" />
+            <element signature="e#4426#4536#0" expanded="false" />
+            <element signature="e#4426#5158#0" expanded="false" />
+            <element signature="e#5161#5274#0" expanded="false" />
+            <element signature="e#5938#6128#0" expanded="false" />
+            <element signature="e#6130#6193#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/graphic/ConsoleEqualizer.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1194">
-          <caret line="52" column="46" lean-forward="false" selection-start-line="52" selection-start-column="46" selection-end-line="52" selection-end-column="46" />
+        <state relative-caret-position="120">
+          <caret line="8" column="18" lean-forward="false" selection-start-line="8" selection-start-column="18" selection-end-line="8" selection-end-column="18" />
           <folding>
             <element signature="e#0#2#0" expanded="false" />
             <element signature="e#179#699#0" expanded="false" />
-            <element signature="e#1352#1476#0" expanded="false" />
-            <element signature="e#1478#1725#0" expanded="false" />
-            <element signature="e#1727#1989#0" expanded="false" />
+            <element signature="e#701#1374#0" expanded="false" />
+            <element signature="e#1376#1500#0" expanded="false" />
+            <element signature="e#1502#1749#0" expanded="false" />
+            <element signature="e#1751#2013#0" expanded="false" />
+            <element signature="e#2015#2280#0" expanded="false" />
+            <element signature="e#2282#2438#0" expanded="false" />
+            <element signature="e#2440#2656#0" expanded="false" />
+            <element signature="e#4659#5502#0" expanded="false" />
+            <element signature="e#6348#6397#0" expanded="false" />
           </folding>
         </state>
       </provider>

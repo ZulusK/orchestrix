@@ -8,6 +8,7 @@
 #include <SpectrumManagement/SpectrumAnalyzer.h>
 #include <GraphicPlane.h>
 #include <GraphUtil.h>
+#include <vector>
 
 class ConsoleEqualizer {
     SpectrumAnalyzer *analyzer;
@@ -21,12 +22,17 @@ class ConsoleEqualizer {
     int lowBound;
     int barsCount;
     CursorAttributes *barColors;
+    int samplesInSpectrums = 2048;
+    vector<unsigned long> energy;
+    AudioData *sound;
 public:
     ConsoleEqualizer(AudioData *sound, int heigth, int count, CursorAttributes *colors = NULL);
 
     void exec();
 
     virtual ~ConsoleEqualizer();
+
+private:
 
     void drawBar(int ind, double val);
 
@@ -39,6 +45,15 @@ public:
     double getBarHeight(double val);
 
     double calculateSum(int ind);
+
+    void drawInfo(long ind);
+
+
+    void detectEnergy(int ind);
+
+    double getEnergy(int ind);
+
+    bool isShoot(int ind);
 };
 
 
