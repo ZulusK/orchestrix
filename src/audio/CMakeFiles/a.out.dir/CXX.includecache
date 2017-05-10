@@ -6,6 +6,28 @@
 
 #IncludeRegexTransform: 
 
+/home/zulus/Projects/GitProj/orchestrix/src/audio/src/graphic/ConsoleEqualizer.cpp
+progbase-cpp/console.h
+-
+ConsoleGraphic/ConsoleEqualizer.h
+/home/zulus/Projects/GitProj/orchestrix/src/audio/src/graphic/ConsoleGraphic/ConsoleEqualizer.h
+
+/home/zulus/Projects/GitProj/orchestrix/src/audio/src/graphic/GraphUtil.cpp
+math.h
+-
+progbase-cpp/console.h
+-
+ConsoleGraphic/GraphUtil.h
+-
+
+/home/zulus/Projects/GitProj/orchestrix/src/audio/src/graphic/GraphicPlane.cpp
+ConsoleGraphic/GraphicPlane.h
+-
+pbconsole.h
+-
+ConsoleGraphic/GraphicPlane.h
+/home/zulus/Projects/GitProj/orchestrix/src/audio/src/graphic/ConsoleGraphic/GraphicPlane.h
+
 /home/zulus/Projects/GitProj/orchestrix/src/audio/src/main.cpp
 iostream
 -
@@ -17,6 +39,8 @@ AudioManagement/AudioPlayer.h
 -
 SpectrumManagement/SpectrumAnalyzer.h
 -
+ConsoleEqualizer.h
+-
 
 /usr/local/include/AL/al.h
 
@@ -27,6 +51,34 @@ wtypes.h
 -
 stdint.h
 -
+
+/usr/local/include/pbconsole.h
+progbase/console.h
+-
+
+/usr/local/include/progbase-cpp/console.h
+iostream
+-
+stdexcept
+-
+progbase.h
+-
+progbase/console.h
+-
+
+/usr/local/include/progbase.h
+stdlib.h
+-
+stdio.h
+-
+progbase_info.h
+/usr/local/include/progbase_info.h
+
+/usr/local/include/progbase/console.h
+stdio.h
+-
+
+/usr/local/include/progbase_info.h
 
 /usr/local/include/sndfile.h
 stdio.h
@@ -90,6 +142,26 @@ AL/al.h
 AL/alc.h
 -
 iostream
+-
+
+include/ConsoleGraphic/ConsoleEqualizer.h
+SpectrumManagement/SpectrumAnalyzer.h
+-
+GraphicPlane.h
+-
+GraphUtil.h
+-
+vector
+-
+
+include/ConsoleGraphic/GraphUtil.h
+
+include/ConsoleGraphic/GraphicPlane.h
+progbase-cpp/console.h
+-
+ConsoleGraphic/GraphUtil.h
+-
+mutex
 -
 
 include/SpectrumManagement/Spectrum.h

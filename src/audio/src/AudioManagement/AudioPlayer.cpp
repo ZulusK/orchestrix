@@ -6,6 +6,7 @@
 #include <thread>
 
 
+
 /**
  * create new player
  * @param manager reference to AudioManager, which is stored AudioPlayer
@@ -171,11 +172,15 @@ void AudioPlayer::useSettigs() {
 
 void AudioPlayer::exec() {
     updateState();
+    playingTime = 0;
+    auto time0 = Clock::now();
     while (currState == PLAYING && state == AL_PLAYING) {
         update();
-        this_thread::sleep_for(chrono::seconds(1));
+        this_thread::sleep_for(chrono::milliseconds(SLEEP_TIME));
+        playingTime= std::chrono::duration_cast<std::chrono::milliseconds>(Clock::now() - time0).count();
     }
     updateState();
+    playingTime = 0;
 }
 
 /**
@@ -196,13 +201,17 @@ bool AudioPlayer::play() {
     } else return false;
 }
 
+double AudioPlayer::getTime() {
+    return playingTime ;
+}
+
 bool AudioPlayer::rewind() {
     if (isPaused()) {
-        cout<<"rewind"<<endl;
+        cout << "rewind" << endl;
         this->currState = PLAYING;
         AL_CHECK(alSourcePlay(source));
         updateState();
-        cout<<"try to rewind "<<(state==AL_PLAYING)<<endl;
+        cout << "try to rewind " << (state == AL_PLAYING) << endl;
         this->runningThread = new thread(&AudioPlayer::exec, this);
         return true;
     }
@@ -225,8 +234,8 @@ void AudioPlayer::stop() {
         AL_CHECK(alSourceStop(source));
         ALint processedBuffers;
         AL_CHECK(alGetSourcei(source, AL_BUFFERS_PROCESSED, &processedBuffers));
-        cout<<"processed buffers "<<processedBuffers<<endl;
-        for(int i=0; i<processedBuffers;i++){
+        cout << "processed buffers " << processedBuffers << endl;
+        for (int i = 0; i < processedBuffers; i++) {
             ALuint buffer;
             AL_CHECK(alSourceUnqueueBuffers(source, 1, &buffer));
             manager->clearBuffer(buffer);

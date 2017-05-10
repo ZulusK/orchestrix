@@ -20,7 +20,11 @@ class Spectrum {
 
     float *spectrums;
     int length;
+    float energy;
+public:
+    float getEnergy() const;
 
+private:
     float *createBars(float *frequenceBuffer, int size);
 
     void exec(double *input_buffer, size_t input_size);
