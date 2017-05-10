@@ -40,4 +40,6 @@ C, C++(OpenAL), Java(Swing/JavaFX)
 * [Trello Board](https://trello.com/b/wYCiqJlm/project-g)
 * [Project Documentation](https://drive.google.com/drive/folders/0BwhvZDamUuTLREdIdXpQbktvRlU)
 * [Backlog](https://docs.google.com/spreadsheets/d/1CGTPGKU5ydsndaLlhleCA4-7bzNCsfhk_9pVEnQrE3o/edit?usp=drive_web)
+* [Sprint#1](https://trello.com/b/isvaCOPi/sprint-1)
+* [Sprint#2](https://trello.com/b/YiUD2T7c/sprint-2-05-04-10-05)
 * view sprint's backlogs in directory doc
