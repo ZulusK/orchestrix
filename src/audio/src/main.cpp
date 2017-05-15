@@ -1,55 +1,48 @@
-#include <wavFile.h>
-#include <audioSpectrum.h>
-#include <playerWav.h>
+//
+// Created by zulus on 21.04.17.
+//
 #include <iostream>
-#include <equalizer.h>
+#include <AudioManagement/AudioData.h>
+#include <AudioManagement/AudioManager.h>
+#include <AudioManagement/AudioPlayer.h>
+#include <SpectrumManagement/SpectrumAnalyzer.h>
+#include <ConsoleEqualizer.h>
 
-#if defined (__cplusplus)
-extern "C" {
-#endif
-#include <progbase.h>
-#include <pbconsole.h>
-#if defined (__cplusplus)
-}
-#endif
-
-#define MAX_DB 20
+#define _DEBUG
 using namespace std;
 
-
-int main(void) {
-    WavFile *wav = WavFile_read("res/ass.wav");
-//    WavFile *wav = WavFile_read("res/ppl.wav");
-    if (wav != NULL) {
-        WavFile_print(wav);
-//        int N = 32768;
-        int N = 2048;
-        double *subChunk = (double *) malloc(sizeof(double) * N);
-        long left = 0;
-//        Player * player=Player_create(wav->datai,wav->samples,wav->header.numChannels,wav->header.sampleRate,wav->header.bitsPerSample);
-        for (; left < wav->samples; left += N) {
-            for (long i = 0; i < N; i++) {
-                subChunk[i] = wav->datad[left + i * wav->header.numChannels];
-            }
-            double *spectrum = getSpectrum(subChunk, N, 1);
-            double *frames = getSpectrumFrame(spectrum, N / 2, 64, 0);
-            Equalizer_startEqualizer(frames, 64, 10);
-
-//            Player_play(player);
-            free(spectrum);
-            free(frames);
-            sleepMillis(100);
+void exampleSound() {
+    string filename1 = "res/21pilots.wav";
+    AudioData *sound1 = AudioData::load(filename1);
+    AudioManager *manager = AudioManager::init(1, 8);
+    AudioPlayer *player1 = new AudioPlayer(manager, sound1, 1);
+    cout << player1->toString() << endl;
+    player1->play();
+    while (true) {
+        char input;
+        cin >> input;
+        if (input == '1') {
+            player1->play();
+        } else if (input == '2') {
+            player1->pause();
+        } else if (input == '3') {
+            player1->rewind();
+        } else if (input == '4') {
+            player1->stop();
+        } else if (input == '5') {
+            break;
         }
-        WavFile_free(wav);
     }
-    return 0;
+    delete player1;
+    delete manager;
+    delete sound1;
 }
 
-
-
-/*
- Player * player=Player_create(wav->datai, wav->samples, wav->header.numChannels, wav->header.sampleRate,
-                                      wav->header.bitsPerSample);
-        Player_play(player);
-        Player_free(player);
- */
+int main(void) {
+//    exampleSound();
+    string filename1 = "res/21pilots.wav";
+    AudioData *sound1 = AudioData::load(filename1);
+    cout << sound1->toString() << endl;
+    ConsoleEqualizer eq(sound1, 20, 20);
+    eq.exec();
+}
