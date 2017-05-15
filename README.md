@@ -42,5 +42,5 @@ C, C++(OpenAL), Java(Swing/JavaFX)
 * [Backlog](https://docs.google.com/spreadsheets/d/1CGTPGKU5ydsndaLlhleCA4-7bzNCsfhk_9pVEnQrE3o/edit?usp=drive_web)
 * [Sprint#1](https://trello.com/b/isvaCOPi/sprint-1)
 * [Sprint#2](https://trello.com/b/YiUD2T7c/sprint-2-05-04-10-05)
-* [Sprint#2](https://trello.com/b/mDGpx3wv/sprint-3)
+* [Sprint#3](https://trello.com/b/mDGpx3wv/sprint-3)
 * view sprint's backlogs in directory doc
