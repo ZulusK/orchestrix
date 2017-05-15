@@ -1,0 +1,12 @@
+[
+{
+  "directory": "/home/icebro/Desktop/WiFiAccessPoint/build",
+  "command": "/usr/bin/c++    -I/home/icebro/Desktop/WiFiAccessPoint/include  -g   -std=gnu++11 -o CMakeFiles/controller.dir/main.cpp.o -c /home/icebro/Desktop/WiFiAccessPoint/main.cpp",
+  "file": "/home/icebro/Desktop/WiFiAccessPoint/main.cpp"
+},
+{
+  "directory": "/home/icebro/Desktop/WiFiAccessPoint/build",
+  "command": "/usr/bin/c++    -I/home/icebro/Desktop/WiFiAccessPoint/include  -g   -std=gnu++11 -o CMakeFiles/controller.dir/src/Controller.cpp.o -c /home/icebro/Desktop/WiFiAccessPoint/src/Controller.cpp",
+  "file": "/home/icebro/Desktop/WiFiAccessPoint/src/Controller.cpp"
+}
+]
