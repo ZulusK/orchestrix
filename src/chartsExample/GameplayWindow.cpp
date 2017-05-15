@@ -25,21 +25,17 @@ void GameplayWindow::updateEQ() {
     const float *bars = s->getSpectrums();
     currentSpectr++;
     updateChart(bars, count);
+    this->repaint();
+//    cout<<currentSpectr<<"/"<<size<<endl;
   }
 }
 
 void GameplayWindow::updateChart(const float *arr, int count) {
   int max = 100;
-  //  QList<QAbstactSeries *> list = equalizer->series();
   equalizer->removeAllSeries();
-  //  for (int i = 0; i < list.length(); i++) {
-  //    list[i]->clear();
-  //    delete list[i];
-  //  }
-
   QBarSeries *series = new QBarSeries();
   QBarSet *set = new QBarSet(NULL);
-  *set << max;
+//  *set << max;
   series->append(set);
   for (int i = 0; i < count; i++) {
     set = new QBarSet(NULL);
@@ -52,12 +48,11 @@ void GameplayWindow::updateChart(const float *arr, int count) {
 void GameplayWindow::initEQ() {
   QTimer *timer = new QTimer(this);
   connect(timer, SIGNAL(timeout()), this, SLOT(updateEQ()));
-  timer->start(analyzer->getTimeBound() * 1000);
+  timer->start(analyzer->getTimeBound());
   srand(time(NULL));
   equalizer = new QChart();
 
   updateEQ();
-  //  equalizer->setAnimationOptions();
   equalizer->legend()->setVisible(false);
 
   QChartView *chartView = new QChartView(equalizer);
@@ -67,8 +62,8 @@ void GameplayWindow::initEQ() {
 }
 
 void GameplayWindow::processSpectrum() {
-  AudioData *data = AudioData::load("../audio/res/21pilots.wav");
-  analyzer = new SpectrumAnalyzer(data, 2048, 30);
+  AudioData *data = AudioData::load("../audio/res/ppl.wav");
+  analyzer = new SpectrumAnalyzer(data, SAMPLE_1024, 60);
   manager = AudioManager::init();
   player = new AudioPlayer(manager, data, 1);
   std::cout << analyzer->getSpectrums().size() << endl;

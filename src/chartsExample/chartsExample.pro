@@ -36,4 +36,9 @@ LIBS+= -L/usr/local/lib -lalut
 LIBS+= -L/usr/local/lib -lfftw3
 LIBS+= -L/usr/local/lib -lsndfile
 LIBS+= -L/usr/local/lib -lpthread
+LIBS += -L/usr/local/lib/ -lbass
 
+INCLUDEPATH += /usr/local/include
+DEPENDPATH += /usr/local/include
+
+unix|win32: LIBS += -lbass

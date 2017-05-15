@@ -36,7 +36,10 @@ class Equalizer : public QWidget
     Q_PROPERTY(QRect nrect18 READ nRect18 WRITE setNRect18)
     Q_PROPERTY(QRect nrect19 READ nRect19 WRITE setNRect19)
     Q_PROPERTY(QRect nrect20 READ nRect20 WRITE setNRect20)
-
+    Q_PROPERTY(QRect nrect21 READ nRect21 WRITE setNRect21)
+    Q_PROPERTY(QRect nrect22 READ nRect22 WRITE setNRect22)
+    Q_PROPERTY(QRect nrect23 READ nRect23 WRITE setNRect23)
+    Q_PROPERTY(QRect nrect24 READ nRect24 WRITE setNRect24)
 
     Q_PROPERTY(QLine nline READ nline WRITE setNline)
     Q_PROPERTY(QLine nline2 READ nline2 WRITE setNline2)
@@ -57,6 +60,11 @@ class Equalizer : public QWidget
     Q_PROPERTY(QLine nline17 READ nline17 WRITE setNline17)
     Q_PROPERTY(QLine nline18 READ nline18 WRITE setNline18)
     Q_PROPERTY(QLine nline19 READ nline19 WRITE setNline19)
+    Q_PROPERTY(QLine nline20 READ nline20 WRITE setNline20)
+    Q_PROPERTY(QLine nline21 READ nline21 WRITE setNline21)
+    Q_PROPERTY(QLine nline22 READ nline22 WRITE setNline22)
+    Q_PROPERTY(QLine nline23 READ nline23 WRITE setNline23)
+    Q_PROPERTY(QLine nline24 READ nline24 WRITE setNline24)
 
 
 
@@ -192,6 +200,20 @@ public:
     QLine nLine19() const;
     void setNLine19(const QLine &line19);
 
+    QLine nLine20() const;
+    void setNLine20(const QLine &line20);
+
+    QLine nLine21() const;
+    void setNLine21(const QLine &line21);
+
+    QLine nLine22() const;
+    void setNLine22(const QLine &line22);
+
+    QLine nLine23() const;
+    void setNLine23(const QLine &line23);
+
+    QLine nLine24() const;
+    void setNLine24(const QLine &line24);
 
     void setChunk(double *chunk, int * startYArr);
 
@@ -218,7 +240,10 @@ private:
     QRect mRect18;
     QRect mRect19;
     QRect mRect20;
-
+    QRect mRect21;
+    QRect mRect22;
+    QRect mRect23;
+    QRect mRect24;
 
 
     QLine mLine;
@@ -240,8 +265,11 @@ private:
     QLine mLine17;
     QLine mLine18;
     QLine mLine19;
-
-
+    QLine mLine20;
+    QLine mLine21;
+    QLine mLine22;
+    QLine mLine23;
+    QLine mLine24;
 
 private:
 

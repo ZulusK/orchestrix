@@ -5,9 +5,8 @@
 #include <AudioManagement/AudioData.h>
 #include <AudioManagement/AudioManager.h>
 #include <AudioManagement/AudioPlayer.h>
-#include <thread>
-#include <pbconsole.h>
 #include <SpectrumManagement/SpectrumAnalyzer.h>
+#include <ConsoleEqualizer.h>
 
 #define _DEBUG
 using namespace std;
@@ -41,9 +40,9 @@ void exampleSound() {
 
 int main(void) {
 //    exampleSound();
-    string filename1 = "res/mySound.wav";
+    string filename1 = "res/21pilots.wav";
     AudioData *sound1 = AudioData::load(filename1);
-    cout<<sound1->toString()<<endl;
-    SpectrumAnalyzer analyzer(sound1, 1024, 20);
-    cout<<"time: "<<analyzer.getTimeBound()<<endl;
+    cout << sound1->toString() << endl;
+    ConsoleEqualizer eq(sound1, 20, 20);
+    eq.exec();
 }

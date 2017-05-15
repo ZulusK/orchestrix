@@ -12,12 +12,14 @@ enum {
     STOPPED,
     PAUSED
 };
-
+#define SLEEP_TIME 100
+typedef chrono::high_resolution_clock Clock;
 /**
  * Audio player, which stored info about source
  * and source, buffers and current state
 */
 class AudioPlayer {
+     long playingTime;
     AudioManager *manager;
     thread * runningThread;
     ALuint source;
@@ -51,7 +53,7 @@ private:
     void updateState();
 
 public:
-    AudioPlayer(AudioManager *manager, AudioData *audioData, float volume);
+    AudioPlayer(AudioManager *manager, AudioData *audioData, float volume=1);
 
     ~AudioPlayer();
 
@@ -72,6 +74,8 @@ public:
     bool isPaused();
 
     void useSettigs();
+
+     double getTime();
 };
 
 #endif //ORCHESTRIX_AUDIOPLAYER_H
