@@ -1,0 +1,7 @@
+/usr/local/include//AudioManagement/AudioManager.h
+/usr/local/include//AudioManagement/AudioData.h
+/usr/local/include//AudioManagement/AudioPlayer.h
+/usr/local/include//AudioManagement/OpenAL.h
+/usr/local/include//SpectrumManagement/Spectrum.h
+/usr/local/include//SpectrumManagement/SpectrumAnalyzer.h
+/usr/local/lib/libaut.a
