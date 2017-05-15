@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/doc">
+        <file>mus.csv</file>
+    </qresource>
+</RCC>
