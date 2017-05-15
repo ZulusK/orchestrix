@@ -1,0 +1,28 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/icebro/Desktop/WiFiAccessPoint/include/Controller.h
+progbase/net.h
+-
+
+/home/icebro/Desktop/WiFiAccessPoint/main.cpp
+iostream
+-
+include/Controller.h
+/home/icebro/Desktop/WiFiAccessPoint/include/Controller.h
+
+/home/icebro/Desktop/WiFiAccessPoint/src/Controller.cpp
+../include/Controller.h
+/home/icebro/Desktop/WiFiAccessPoint/include/Controller.h
+iostream
+-
+cstdio
+-
+cstdlib
+-
+
