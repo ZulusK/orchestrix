@@ -1,1 +1,0 @@
-/usr/bin/c++   -g   CMakeFiles/controller.dir/main.cpp.o CMakeFiles/controller.dir/src/Controller.cpp.o  -o controller -lprogbase -lssl 

@@ -1,9 +1,7 @@
 cmake_minimum_required(VERSION 3.5.2)
 
-include_directories(include)
-
 set(CMAKE_CXX_STANDARD 11)
-file(GLOB LIB_SOURCES "src/*.cpp")
+file(GLOB LIB_SOURCES "*.cpp")
 
 project(controller)
 
