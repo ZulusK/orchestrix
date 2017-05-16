@@ -6,8 +6,8 @@
 #include "ConsoleGraphic/ConsoleEqualizer.h"
 
 #define WIDTH 3
-#define SHOOT 0.75
-#define SIZE_MULT 4000
+#define SHOOT 0.6
+#define SIZE_MULT 100
 
 CursorAttributes *copyColors(CursorAttributes *colors, int cnt, CursorAttributes defColor) {
     CursorAttributes *newColors;
@@ -101,7 +101,9 @@ void ConsoleEqualizer::drawInfo(long ind) {
                    " / " + std::to_string(minEQ) + ":" + std::to_string(secEQ) + ":" + std::to_string(millisecEQ),
                    console->getDefaultColorBG(), console->getDefaultColorFG(),
                    Vec2D{console->getWidth() - 26, 1});
-
+    console->print(std::to_string(analyzer->getSHOOT()),
+                   console->getDefaultColorBG(), console->getDefaultColorFG(),
+                   Vec2D{console->getWidth() - 26, 2});
     console->print(sound->toString(), console->getDefaultColorBG(), console->getDefaultColorFG(),
                    Vec2D{console->getWidth() - 26, 4});
 
@@ -118,22 +120,7 @@ void ConsoleEqualizer::drawInfo(long ind) {
 }
 
 bool ConsoleEqualizer::isShoot(int ind) {
-    double currEnergy = getEnergy(ind);
-    int size = 4;
-    double average = 0;
-    for (int i = 0; i < size; i++) {
-        average += getEnergy(ind + i - size / 2);
-    }
-    average -= currEnergy;
-    average /= (size - 1);
-
-    console->print(to_string(average) + " : " + to_string(currEnergy),
-                   console->getDefaultColorBG(),
-                   console->getDefaultColorFG(),
-                   Vec2D{console->getWidth() - 26, 3});
-    if ((double) currEnergy-average > SHOOT * average) {
-        return true;
-    } else return false;
+    return analyzer->isShoot(ind);
 }
 
 void ConsoleEqualizer::exec() {
@@ -168,23 +155,10 @@ void ConsoleEqualizer::exec() {
 
 
 double ConsoleEqualizer::getEnergy(int ind) {
-//    long shift = ind * samplesInSpectrums * sound->get_channels();
-//    long samples = sound->get_samples() * sound->get_channels();
     if (ind < 0 || ind >= analyzer->getSpectrums().size()) {
         return 0.0001;
     }
     return analyzer->getSpectrums()[ind]->getEnergy();
-//    unsigned long sum = 1;
-//    __int16_t *data = (__int16_t *) sound->get_source() + shift;
-//    int maxBound = (int) min(samples - shift, (long) samplesInSpectrums);
-//    for (int i = 0; i < maxBound; i += sound->get_channels()) {
-//        sum += abs(data[i]);
-//    }
-//    console->print(std::to_string(sum) + "   ", console->getDefaultColorBG(),
-//                   console->getDefaultColorFG(),
-//                   Vec2D{console->getWidth() - 26, 2});
-//    energy.push_back(sum);
-//    return sum;
 }
 
 void ConsoleEqualizer::detectEnergy(int ind) {

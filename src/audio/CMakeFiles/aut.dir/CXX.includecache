@@ -35,17 +35,9 @@ thread
 /home/zulus/Projects/GitProj/orchestrix/src/audio/src/SpectrumManagement/Spectrum.cpp
 SpectrumManagement/Spectrum.h
 -
-AudioManagement/OpenAL.h
--
-fftw3.h
--
-bass.h
--
 cmath
 -
 AudioManagement/AudioManager.h
--
-cstring
 -
 SpectrumManagement/SpectrumAnalyzer.h
 -
@@ -54,6 +46,8 @@ SpectrumManagement/SpectrumAnalyzer.h
 SpectrumManagement/SpectrumAnalyzer.h
 -
 AudioManagement/OpenAL.h
+-
+cmath
 -
 
 /usr/local/include/AL/al.h
@@ -64,12 +58,6 @@ AudioManagement/OpenAL.h
 wtypes.h
 -
 stdint.h
--
-
-/usr/local/include/fftw3.h
-stdio.h
--
-stddef.h
 -
 
 /usr/local/include/sndfile.h

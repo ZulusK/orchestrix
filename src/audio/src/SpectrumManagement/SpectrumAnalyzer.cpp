@@ -4,6 +4,7 @@
 
 #include <SpectrumManagement/SpectrumAnalyzer.h>
 #include <AudioManagement/OpenAL.h>
+#include <cmath>
 
 using namespace std;
 
@@ -18,8 +19,9 @@ void SpectrumAnalyzer::printError() {
                     << endl;
             break;
         case BASS_ERROR_TIMEOUT:
-            cout << "The sample's minimum playingTime gap (BASS_SAMPLE) has not yet passed since the last channel was created."
-                 << endl;
+            cout
+                    << "The sample's minimum playingTime gap (BASS_SAMPLE) has not yet passed since the last channel was created."
+                    << endl;
             break;
         case BASS_ERROR_INIT    :
             cout << "BASS_Init has not been successfully called." << endl;
@@ -99,11 +101,8 @@ SpectrumAnalyzer::SpectrumAnalyzer(AudioData *data, int mode, int bars) {
                 this->mode = BASS_DATA_FFT1024;
                 break;
         }
-        this->timeBound = (float) (this->elementsInChunk) / (float) this->frequency/data->get_channels();
+        this->timeBound = (float) (this->elementsInChunk) / (float) this->frequency / data->get_channels();
 
-        /**
-         * process spectrums
-         */
         exec(data->get_name());
     } else throw "Null pointer to data";
 }
@@ -127,6 +126,19 @@ void SpectrumAnalyzer::exec(string filename) {
     }
     BASS_SampleFree(hchannel);
     BASS_Free();
+    this->count = spectrums.size();
+    findShoot();
+}
+
+void SpectrumAnalyzer::findShoot() {
+    double sum = 0;
+    for (int i = 0; i < count; i++) {
+        sum += getAverageEnergy(i);
+    }
+    this->SHOOT = sum / count * sqrt(40);
+    if (this->SHOOT >= 1) {
+        this->SHOOT = 0.9;
+    }
 }
 
 const vector<Spectrum *> &SpectrumAnalyzer::getSpectrums() const {
@@ -170,4 +182,37 @@ SpectrumAnalyzer::~SpectrumAnalyzer() {
         delete spectrums[i];
     }
     spectrums.clear();
+}
+
+
+float SpectrumAnalyzer::getAverageEnergy(int ind) {
+    if (ind < 0 || ind >= this->spectrums.size()) {
+        return 1.e-10;
+    }
+    float average = 0;
+    int count = 0;
+    for (int i = -3; i < 3; i++) {
+        int id = i + ind;
+        if (i != 0 && id >= 0 && id < spectrums.size()) {
+            average += spectrums[id]->getEnergy();
+            count++;
+        }
+    }
+    average /= count;
+    return average;
+}
+
+bool SpectrumAnalyzer::isShoot(int ind) {
+    if (ind < 0 || ind >= this->spectrums.size()) {
+        return false;
+    }
+    return (getAverageEnergy(ind) / spectrums[ind]->getEnergy() < this->SHOOT);
+}
+
+float SpectrumAnalyzer::getSHOOT() const {
+    return SHOOT;
+}
+
+unsigned long SpectrumAnalyzer::getCount() const {
+    return count;
 }

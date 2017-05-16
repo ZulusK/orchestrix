@@ -40,7 +40,7 @@ void exampleSound() {
 
 int main(void) {
 //    exampleSound();
-    string filename1 = "res/21pilots.wav";
+    string filename1 = "res/ppl.wav";
     AudioData *sound1 = AudioData::load(filename1);
     cout << sound1->toString() << endl;
     ConsoleEqualizer eq(sound1, 20, 20);
