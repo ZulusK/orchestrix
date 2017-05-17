@@ -6,6 +6,7 @@ HelpDialog::HelpDialog(Game * game,QWidget *parent) :
     ui(new Ui::HelpDialog)
 {
     ui->setupUi(this);
+    this->setWindowFlags(Qt::Window);
     this->showFullScreen();
     this->environment=game;
 }

@@ -1,17 +1,13 @@
 #ifndef ORCHESTRIX_AUDIOPLAYER_H
 #define ORCHESTRIX_AUDIOPLAYER_H
 
-#include <AudioManager.h>
 #include <AudioData.h>
+#include <AudioManager.h>
 #include <OpenAL.h>
-#include <thread>
 #include <mutex>
+#include <thread>
 
-enum {
-    PLAYING,
-    STOPPED,
-    PAUSED
-};
+enum { PLAYING, STOPPED, PAUSED };
 #define SLEEP_TIME 100
 typedef chrono::high_resolution_clock Clock;
 /**
@@ -19,63 +15,63 @@ typedef chrono::high_resolution_clock Clock;
  * and source, buffers and current state
 */
 class AudioPlayer {
-     long playingTime;
-    AudioManager *manager;
-    thread * runningThread;
-    ALuint source;
-    ALvoid *rawSoundData;
-    int currState;
-    ALsizei currPos;
-    ALenum state;
-    int remainBuffers;
-    //al settings
-    AudioInfo info;
-    //source settings
-    PlayerInfo settings;
-    //mutex to read data
-    recursive_mutex _readDataMutex;
-    recursive_mutex _setBuffCntMutex;
-    recursive_mutex _updateStateMutex;
+  long playingTime;
+  AudioManager *manager;
+  thread *runningThread;
+  ALuint source;
+  ALvoid *rawSoundData;
+  int currState;
+  ALsizei currPos;
+  ALenum state;
+  int remainBuffers;
+  // al settings
+  AudioInfo info;
+  // source settings
+  PlayerInfo settings;
+  // mutex to read data
+  recursive_mutex _readDataMutex;
+  recursive_mutex _setBuffCntMutex;
+  recursive_mutex _updateStateMutex;
+
 private:
+  bool fillBuffer(ALuint buffer);
 
-    bool fillBuffer(ALuint buffer);
+  void update();
 
-    void update();
+  void exec();
 
-    void exec();
+  void updateBuffer(ALuint buffer);
 
-    void updateBuffer(ALuint buffer);
+  bool preload();
 
-    bool preload();
+  void freeResources();
 
-    void freeResources();
-
-    void updateState();
+  void updateState();
 
 public:
-    AudioPlayer(AudioManager *manager, AudioData *audioData, float volume=1);
+  AudioPlayer(AudioManager *manager, AudioData *audioData, float volume = 1);
 
-    ~AudioPlayer();
+  ~AudioPlayer();
 
-    bool play();
+  bool play();
 
-    void pause();
+  void pause();
 
-    bool rewind();
+  bool rewind();
 
-    void stop();
+  void stop();
 
-    bool isPlaying();
+  bool isPlaying();
 
-    string toString();
+  string toString();
 
-    bool isStopped();
+  bool isStopped();
 
-    bool isPaused();
+  bool isPaused();
 
-    void useSettigs();
+  void useSettigs();
 
-     double getTime();
+  double getTime();
 };
 
-#endif //ORCHESTRIX_AUDIOPLAYER_H
+#endif // ORCHESTRIX_AUDIOPLAYER_H

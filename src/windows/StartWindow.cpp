@@ -18,7 +18,6 @@ StartWindow::StartWindow(QWidget *parent)
 StartWindow::~StartWindow() { delete ui; }
 
 void StartWindow::on_startBtn_clicked() {
-
   GameDialog game_d(environment);
   this->hide();
   if (!game_d.exec()) {

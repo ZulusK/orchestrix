@@ -38,7 +38,8 @@ SOURCES += src/main.cpp\
     src/audio/AudioPlayer.cpp \
     src/audio/Spectrum.cpp \
     src/audio/SpectrumAnalyzer.cpp \
-    src/windows/GameDialog.cpp
+    src/windows/GameDialog.cpp \
+    src/EQWidget.cpp
 
 HEADERS  += src/windows/StartWindow.h \
     src/User.h \
@@ -52,13 +53,15 @@ HEADERS  += src/windows/StartWindow.h \
     src/audio/OpenAL.h \
     src/audio/Spectrum.h \
     src/audio/SpectrumAnalyzer.h \
-    src/windows/GameDialog.h
+    src/windows/GameDialog.h \
+    src/EQWidget.h
 
 FORMS    += src/windows/uis/StartWindow.ui \
     src/windows/uis/HelpDialog.ui \
     src/windows/uis/ResultsDialog.ui \
     src/windows/uis/LoginDialog.ui \
-    src/windows/uis/GameDialog.ui
+    src/windows/uis/GameDialog.ui \
+    src/EQWidget.ui
 
 LIBS+= -L/usr/local/lib -lopenal
 LIBS+= -L/usr/local/lib -lalut
@@ -68,3 +71,6 @@ LIBS+= -L/usr/local/lib -lprogbase-cpp
 LIBS+= -L/usr/local/lib -lprogbase
 LIBS+= -L/usr/local/lib -lssl
 LIBS += -lbass
+
+RESOURCES += \
+    resources.qrc
