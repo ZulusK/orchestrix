@@ -10,8 +10,7 @@
 StartWindow::StartWindow(QWidget *parent)
     : QMainWindow(parent), ui(new Ui::StartWindow) {
   ui->setupUi(this);
-  ui->centralWidget->setLayout(ui->horizontalLayout_2);
-  //  this->showFullScreen();
+  this->showFullScreen();
   this->environment = new Game();
   connect(this, SIGNAL(updateWindow()), SLOT(updateContent()));
 }
@@ -44,7 +43,9 @@ void StartWindow::on_settingsBtn_clicked() {}
 
 void StartWindow::on_helpBtn_clicked() {
   HelpDialog help_d(environment);
+  this->hide();
   help_d.exec();
+  this->show();
 }
 
 void StartWindow::on_loginBtn_clicked() {

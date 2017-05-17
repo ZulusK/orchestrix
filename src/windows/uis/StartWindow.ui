@@ -16,39 +16,11 @@
   <widget class="QWidget" name="centralWidget">
    <layout class="QVBoxLayout" name="verticalLayout_2">
     <item>
-     <layout class="QVBoxLayout" name="centralLayout">
+     <layout class="QGridLayout" name="gridLayout">
       <property name="sizeConstraint">
        <enum>QLayout::SetDefaultConstraint</enum>
       </property>
-      <item>
-       <widget class="QLabel" name="label">
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-          <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
-        </property>
-        <property name="sizeIncrement">
-         <size>
-          <width>2</width>
-          <height>2</height>
-         </size>
-        </property>
-        <property name="font">
-         <font>
-          <family>DejaVu Sans</family>
-          <pointsize>17</pointsize>
-         </font>
-        </property>
-        <property name="text">
-         <string>Reservoir code | ORCHESTRIX</string>
-        </property>
-        <property name="alignment">
-         <set>Qt::AlignCenter</set>
-        </property>
-       </widget>
-      </item>
-      <item>
+      <item row="3" column="0">
        <layout class="QGridLayout" name="gridLayout_2">
         <property name="sizeConstraint">
          <enum>QLayout::SetDefaultConstraint</enum>
@@ -56,7 +28,7 @@
         <item row="0" column="0">
          <widget class="QPushButton" name="helpBtn">
           <property name="sizePolicy">
-           <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+           <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
             <horstretch>0</horstretch>
             <verstretch>0</verstretch>
            </sizepolicy>
@@ -66,20 +38,20 @@
           </property>
          </widget>
         </item>
-        <item row="2" column="1">
+        <item row="2" column="2">
          <layout class="QVBoxLayout" name="verticalLayout">
           <property name="sizeConstraint">
            <enum>QLayout::SetDefaultConstraint</enum>
           </property>
           <item>
-           <spacer name="verticalSpacer_3">
+           <spacer name="verticalSpacer_2">
             <property name="orientation">
              <enum>Qt::Vertical</enum>
             </property>
             <property name="sizeHint" stdset="0">
              <size>
               <width>20</width>
-              <height>80</height>
+              <height>40</height>
              </size>
             </property>
            </spacer>
@@ -104,35 +76,6 @@
            </widget>
           </item>
           <item>
-           <spacer name="verticalSpacer_2">
-            <property name="orientation">
-             <enum>Qt::Vertical</enum>
-            </property>
-            <property name="sizeType">
-             <enum>QSizePolicy::Expanding</enum>
-            </property>
-            <property name="sizeHint" stdset="0">
-             <size>
-              <width>20</width>
-              <height>10</height>
-             </size>
-            </property>
-           </spacer>
-          </item>
-          <item>
-           <spacer name="verticalSpacer_8">
-            <property name="orientation">
-             <enum>Qt::Vertical</enum>
-            </property>
-            <property name="sizeHint" stdset="0">
-             <size>
-              <width>20</width>
-              <height>40</height>
-             </size>
-            </property>
-           </spacer>
-          </item>
-          <item>
            <widget class="QPushButton" name="resultsBtn">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Expanding" vsizetype="MinimumExpanding">
@@ -150,19 +93,6 @@
              <string>view results</string>
             </property>
            </widget>
-          </item>
-          <item>
-           <spacer name="verticalSpacer_4">
-            <property name="orientation">
-             <enum>Qt::Vertical</enum>
-            </property>
-            <property name="sizeHint" stdset="0">
-             <size>
-              <width>20</width>
-              <height>40</height>
-             </size>
-            </property>
-           </spacer>
           </item>
           <item>
            <widget class="QPushButton" name="settingsBtn">
@@ -184,32 +114,6 @@
            </widget>
           </item>
           <item>
-           <spacer name="verticalSpacer_5">
-            <property name="orientation">
-             <enum>Qt::Vertical</enum>
-            </property>
-            <property name="sizeHint" stdset="0">
-             <size>
-              <width>20</width>
-              <height>10</height>
-             </size>
-            </property>
-           </spacer>
-          </item>
-          <item>
-           <spacer name="verticalSpacer_7">
-            <property name="orientation">
-             <enum>Qt::Vertical</enum>
-            </property>
-            <property name="sizeHint" stdset="0">
-             <size>
-              <width>20</width>
-              <height>40</height>
-             </size>
-            </property>
-           </spacer>
-          </item>
-          <item>
            <widget class="QPushButton" name="exitBtn">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Expanding" vsizetype="MinimumExpanding">
@@ -229,21 +133,21 @@
            </widget>
           </item>
           <item>
-           <spacer name="verticalSpacer_6">
+           <spacer name="verticalSpacer_3">
             <property name="orientation">
              <enum>Qt::Vertical</enum>
             </property>
             <property name="sizeHint" stdset="0">
              <size>
               <width>20</width>
-              <height>80</height>
+              <height>40</height>
              </size>
             </property>
            </spacer>
           </item>
          </layout>
         </item>
-        <item row="1" column="2">
+        <item row="1" column="4">
          <layout class="QHBoxLayout" name="horizontalLayout_2">
           <property name="sizeConstraint">
            <enum>QLayout::SetDefaultConstraint</enum>
@@ -251,7 +155,7 @@
           <item>
            <widget class="QLabel" name="nameLbl">
             <property name="sizePolicy">
-             <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+             <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
               <horstretch>0</horstretch>
               <verstretch>0</verstretch>
              </sizepolicy>
@@ -262,16 +166,9 @@
            </widget>
           </item>
           <item>
-           <widget class="Line" name="line_2">
-            <property name="orientation">
-             <enum>Qt::Vertical</enum>
-            </property>
-           </widget>
-          </item>
-          <item>
            <widget class="QLabel" name="scoreLbl">
             <property name="sizePolicy">
-             <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+             <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
               <horstretch>0</horstretch>
               <verstretch>0</verstretch>
              </sizepolicy>
@@ -286,7 +183,7 @@
           </item>
          </layout>
         </item>
-        <item row="0" column="2">
+        <item row="0" column="4">
          <layout class="QHBoxLayout" name="horizontalLayout">
           <property name="sizeConstraint">
            <enum>QLayout::SetDefaultConstraint</enum>
@@ -294,7 +191,7 @@
           <item>
            <widget class="QPushButton" name="loginBtn">
             <property name="sizePolicy">
-             <sizepolicy hsizetype="Expanding" vsizetype="Minimum">
+             <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
               <horstretch>0</horstretch>
               <verstretch>0</verstretch>
              </sizepolicy>
@@ -305,16 +202,9 @@
            </widget>
           </item>
           <item>
-           <widget class="Line" name="line">
-            <property name="orientation">
-             <enum>Qt::Vertical</enum>
-            </property>
-           </widget>
-          </item>
-          <item>
            <widget class="QPushButton" name="logoutBtn">
             <property name="sizePolicy">
-             <sizepolicy hsizetype="Expanding" vsizetype="Minimum">
+             <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
               <horstretch>0</horstretch>
               <verstretch>0</verstretch>
              </sizepolicy>
@@ -339,7 +229,7 @@
           </property>
          </spacer>
         </item>
-        <item row="2" column="2">
+        <item row="2" column="4">
          <widget class="QTableWidget" name="resultsTable">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Expanding" vsizetype="MinimumExpanding">
@@ -352,7 +242,106 @@
           </property>
          </widget>
         </item>
+        <item row="0" column="1">
+         <spacer name="horizontalSpacer">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeType">
+           <enum>QSizePolicy::MinimumExpanding</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>160</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item row="3" column="4">
+         <spacer name="verticalSpacer_4">
+          <property name="orientation">
+           <enum>Qt::Vertical</enum>
+          </property>
+          <property name="sizeType">
+           <enum>QSizePolicy::Preferred</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>20</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item row="2" column="3">
+         <spacer name="horizontalSpacer_2">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeType">
+           <enum>QSizePolicy::Preferred</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>20</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
        </layout>
+      </item>
+      <item row="2" column="0">
+       <spacer name="verticalSpacer_5">
+        <property name="orientation">
+         <enum>Qt::Vertical</enum>
+        </property>
+        <property name="sizeType">
+         <enum>QSizePolicy::Preferred</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>20</width>
+          <height>10</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item row="0" column="0">
+       <widget class="QLabel" name="label">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="sizeIncrement">
+         <size>
+          <width>2</width>
+          <height>2</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <family>DejaVu Sans</family>
+          <pointsize>17</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>Reservoir code | ORCHESTRIX</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0">
+       <widget class="Line" name="line">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+       </widget>
       </item>
      </layout>
     </item>

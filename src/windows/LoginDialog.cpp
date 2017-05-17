@@ -1,7 +1,7 @@
 #include "LoginDialog.h"
 #include "ui_LoginDialog.h"
 
-LoginDialog::LoginDialog(Game * game,AQWidget *parent)
+LoginDialog::LoginDialog(Game * game,QWidget *parent)
     : QDialog(parent), ui(new Ui::LoginDialog) {
   ui->setupUi(this);
   this->environment=game;
