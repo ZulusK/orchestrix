@@ -1,11 +1,12 @@
 #include "HelpDialog.h"
 #include "ui_HelpDialog.h"
 
-HelpDialog::HelpDialog(QWidget *parent) :
+HelpDialog::HelpDialog(Game * game,QWidget *parent) :
     QDialog(parent),
     ui(new Ui::HelpDialog)
 {
     ui->setupUi(this);
+    this->environment=game;
 }
 
 HelpDialog::~HelpDialog()

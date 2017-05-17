@@ -4,6 +4,7 @@
 ResultsDialog::ResultsDialog(Game *game, QWidget *parent)
     : QDialog(parent), ui(new Ui::ResultsDialog) {
   ui->setupUi(this);
+  this->showFullScreen();
   this->environment = game;
 }
 

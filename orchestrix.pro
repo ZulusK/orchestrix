@@ -37,7 +37,8 @@ SOURCES += src/main.cpp\
     src/audio/AudioManager.cpp \
     src/audio/AudioPlayer.cpp \
     src/audio/Spectrum.cpp \
-    src/audio/SpectrumAnalyzer.cpp
+    src/audio/SpectrumAnalyzer.cpp \
+    src/windows/GameDialog.cpp
 
 HEADERS  += src/windows/StartWindow.h \
     src/User.h \
@@ -50,12 +51,14 @@ HEADERS  += src/windows/StartWindow.h \
     src/audio/AudioPlayer.h \
     src/audio/OpenAL.h \
     src/audio/Spectrum.h \
-    src/audio/SpectrumAnalyzer.h
+    src/audio/SpectrumAnalyzer.h \
+    src/windows/GameDialog.h
 
 FORMS    += src/windows/uis/StartWindow.ui \
     src/windows/uis/HelpDialog.ui \
     src/windows/uis/ResultsDialog.ui \
-    src/windows/uis/LoginDialog.ui
+    src/windows/uis/LoginDialog.ui \
+    src/windows/uis/GameDialog.ui
 
 LIBS+= -L/usr/local/lib -lopenal
 LIBS+= -L/usr/local/lib -lalut

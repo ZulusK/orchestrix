@@ -23,6 +23,12 @@ private slots:
   void on_resultsBtn_clicked();
   void updateContent();
 
+  void on_settingsBtn_clicked();
+
+  void on_helpBtn_clicked();
+
+  void on_loginBtn_clicked();
+
 private:
   Ui::StartWindow *ui;
   Game *environment;

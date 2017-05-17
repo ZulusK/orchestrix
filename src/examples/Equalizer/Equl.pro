@@ -14,10 +14,10 @@ TEMPLATE = app
 
 SOURCES += main.cpp\
         mainwindow.cpp \
-    ../eq2/equalizer.cpp
+        equalizer.cpp
 
 HEADERS  += mainwindow.h \
-    ../eq2/equalizer.h \
+    equalizer.h \
 
 FORMS    += mainwindow.ui
 
