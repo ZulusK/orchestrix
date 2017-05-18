@@ -1,6 +1,1 @@
-<RCC>
-    <qresource prefix="/res/soundEffects">
-        <file>res/sound effects/bad.wav</file>
-        <file>res/sound effects/good.wav</file>
-    </qresource>
-</RCC>
+<RCC/>
