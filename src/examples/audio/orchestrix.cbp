@@ -8,78 +8,34 @@
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="/home/zulus/Projects/GitProj/orchestrix/src/audio"/>
+				<Option working_dir="/home/zulus/Projects/GitProj/orchestrix/src/examples/audio"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/zulus/Projects/GitProj/orchestrix/src/audio/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/zulus/Projects/GitProj/orchestrix/src/audio/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/zulus/Projects/GitProj/orchestrix/src/audio/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/zulus/Projects/GitProj/orchestrix/src/audio/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="list_install_components">
-				<Option working_dir="/home/zulus/Projects/GitProj/orchestrix/src/audio"/>
-				<Option type="4"/>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/zulus/Projects/GitProj/orchestrix/src/audio/Makefile&quot;  VERBOSE=1 list_install_components"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/zulus/Projects/GitProj/orchestrix/src/audio/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/zulus/Projects/GitProj/orchestrix/src/audio/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/zulus/Projects/GitProj/orchestrix/src/audio/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="install">
-				<Option working_dir="/home/zulus/Projects/GitProj/orchestrix/src/audio"/>
-				<Option type="4"/>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/zulus/Projects/GitProj/orchestrix/src/audio/Makefile&quot;  VERBOSE=1 install"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/zulus/Projects/GitProj/orchestrix/src/audio/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/zulus/Projects/GitProj/orchestrix/src/audio/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/zulus/Projects/GitProj/orchestrix/src/audio/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="install/local">
-				<Option working_dir="/home/zulus/Projects/GitProj/orchestrix/src/audio"/>
-				<Option type="4"/>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/zulus/Projects/GitProj/orchestrix/src/audio/Makefile&quot;  VERBOSE=1 install/local"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/zulus/Projects/GitProj/orchestrix/src/audio/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/zulus/Projects/GitProj/orchestrix/src/audio/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/zulus/Projects/GitProj/orchestrix/src/audio/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="install/strip">
-				<Option working_dir="/home/zulus/Projects/GitProj/orchestrix/src/audio"/>
-				<Option type="4"/>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/zulus/Projects/GitProj/orchestrix/src/audio/Makefile&quot;  VERBOSE=1 install/strip"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/zulus/Projects/GitProj/orchestrix/src/audio/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/zulus/Projects/GitProj/orchestrix/src/audio/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/zulus/Projects/GitProj/orchestrix/src/audio/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/zulus/Projects/GitProj/orchestrix/src/examples/audio/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/zulus/Projects/GitProj/orchestrix/src/examples/audio/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/zulus/Projects/GitProj/orchestrix/src/examples/audio/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/zulus/Projects/GitProj/orchestrix/src/examples/audio/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="/home/zulus/Projects/GitProj/orchestrix/src/audio"/>
+				<Option working_dir="/home/zulus/Projects/GitProj/orchestrix/src/examples/audio"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/zulus/Projects/GitProj/orchestrix/src/audio/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/zulus/Projects/GitProj/orchestrix/src/audio/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/zulus/Projects/GitProj/orchestrix/src/audio/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/zulus/Projects/GitProj/orchestrix/src/audio/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/zulus/Projects/GitProj/orchestrix/src/examples/audio/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/zulus/Projects/GitProj/orchestrix/src/examples/audio/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/zulus/Projects/GitProj/orchestrix/src/examples/audio/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/zulus/Projects/GitProj/orchestrix/src/examples/audio/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="a.out">
-				<Option output="/home/zulus/Projects/GitProj/orchestrix/src/audio/a.out" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/zulus/Projects/GitProj/orchestrix/src/audio"/>
+				<Option output="/home/zulus/Projects/GitProj/orchestrix/src/examples/audio/a.out" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/zulus/Projects/GitProj/orchestrix/src/examples/audio"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/home/zulus/Projects/GitProj/orchestrix/src/audio/include"/>
-					<Add directory="/home/zulus/Projects/GitProj/orchestrix/src/audio/include/AudioManagement"/>
-					<Add directory="/home/zulus/Projects/GitProj/orchestrix/src/audio/include/SpectrumManagement"/>
-					<Add directory="/home/zulus/Projects/GitProj/orchestrix/src/audio/include/ConsoleGraphic"/>
-					<Add directory="/usr/local/include"/>
 					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/6/include"/>
+					<Add directory="/usr/local/include"/>
 					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/6/include-fixed"/>
 					<Add directory="/usr/include/x86_64-linux-gnu"/>
 					<Add directory="/usr/include"/>
@@ -88,25 +44,21 @@
 					<Add directory="/usr/include/c++/6/backward"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/zulus/Projects/GitProj/orchestrix/src/audio/Makefile&quot;  VERBOSE=1 a.out"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/zulus/Projects/GitProj/orchestrix/src/audio/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/zulus/Projects/GitProj/orchestrix/src/audio/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/zulus/Projects/GitProj/orchestrix/src/audio/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/zulus/Projects/GitProj/orchestrix/src/examples/audio/Makefile&quot;  VERBOSE=1 a.out"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/zulus/Projects/GitProj/orchestrix/src/examples/audio/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/zulus/Projects/GitProj/orchestrix/src/examples/audio/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/zulus/Projects/GitProj/orchestrix/src/examples/audio/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="a.out/fast">
-				<Option output="/home/zulus/Projects/GitProj/orchestrix/src/audio/a.out" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/zulus/Projects/GitProj/orchestrix/src/audio"/>
+				<Option output="/home/zulus/Projects/GitProj/orchestrix/src/examples/audio/a.out" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/zulus/Projects/GitProj/orchestrix/src/examples/audio"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/home/zulus/Projects/GitProj/orchestrix/src/audio/include"/>
-					<Add directory="/home/zulus/Projects/GitProj/orchestrix/src/audio/include/AudioManagement"/>
-					<Add directory="/home/zulus/Projects/GitProj/orchestrix/src/audio/include/SpectrumManagement"/>
-					<Add directory="/home/zulus/Projects/GitProj/orchestrix/src/audio/include/ConsoleGraphic"/>
-					<Add directory="/usr/local/include"/>
 					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/6/include"/>
+					<Add directory="/usr/local/include"/>
 					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/6/include-fixed"/>
 					<Add directory="/usr/include/x86_64-linux-gnu"/>
 					<Add directory="/usr/include"/>
@@ -115,35 +67,31 @@
 					<Add directory="/usr/include/c++/6/backward"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/zulus/Projects/GitProj/orchestrix/src/audio/Makefile&quot;  VERBOSE=1 a.out/fast"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/zulus/Projects/GitProj/orchestrix/src/audio/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/zulus/Projects/GitProj/orchestrix/src/audio/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/zulus/Projects/GitProj/orchestrix/src/audio/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/zulus/Projects/GitProj/orchestrix/src/examples/audio/Makefile&quot;  VERBOSE=1 a.out/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/zulus/Projects/GitProj/orchestrix/src/examples/audio/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/zulus/Projects/GitProj/orchestrix/src/examples/audio/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/zulus/Projects/GitProj/orchestrix/src/examples/audio/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="/home/zulus/Projects/GitProj/orchestrix/src/audio"/>
+				<Option working_dir="/home/zulus/Projects/GitProj/orchestrix/src/examples/audio"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/zulus/Projects/GitProj/orchestrix/src/audio/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/zulus/Projects/GitProj/orchestrix/src/audio/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/zulus/Projects/GitProj/orchestrix/src/audio/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/zulus/Projects/GitProj/orchestrix/src/audio/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/zulus/Projects/GitProj/orchestrix/src/examples/audio/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/zulus/Projects/GitProj/orchestrix/src/examples/audio/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/zulus/Projects/GitProj/orchestrix/src/examples/audio/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/zulus/Projects/GitProj/orchestrix/src/examples/audio/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="aut">
-				<Option output="/home/zulus/Projects/GitProj/orchestrix/src/audio/libaut.a" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/zulus/Projects/GitProj/orchestrix/src/audio"/>
+				<Option output="/home/zulus/Projects/GitProj/orchestrix/src/examples/audio/libaut.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/zulus/Projects/GitProj/orchestrix/src/examples/audio"/>
 				<Option object_output="./"/>
 				<Option type="2"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/home/zulus/Projects/GitProj/orchestrix/src/audio/include"/>
-					<Add directory="/home/zulus/Projects/GitProj/orchestrix/src/audio/include/AudioManagement"/>
-					<Add directory="/home/zulus/Projects/GitProj/orchestrix/src/audio/include/SpectrumManagement"/>
-					<Add directory="/home/zulus/Projects/GitProj/orchestrix/src/audio/include/ConsoleGraphic"/>
-					<Add directory="/usr/local/include"/>
 					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/6/include"/>
+					<Add directory="/usr/local/include"/>
 					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/6/include-fixed"/>
 					<Add directory="/usr/include/x86_64-linux-gnu"/>
 					<Add directory="/usr/include"/>
@@ -152,25 +100,21 @@
 					<Add directory="/usr/include/c++/6/backward"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/zulus/Projects/GitProj/orchestrix/src/audio/Makefile&quot;  VERBOSE=1 aut"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/zulus/Projects/GitProj/orchestrix/src/audio/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/zulus/Projects/GitProj/orchestrix/src/audio/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/zulus/Projects/GitProj/orchestrix/src/audio/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/zulus/Projects/GitProj/orchestrix/src/examples/audio/Makefile&quot;  VERBOSE=1 aut"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/zulus/Projects/GitProj/orchestrix/src/examples/audio/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/zulus/Projects/GitProj/orchestrix/src/examples/audio/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/zulus/Projects/GitProj/orchestrix/src/examples/audio/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="aut/fast">
-				<Option output="/home/zulus/Projects/GitProj/orchestrix/src/audio/libaut.a" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/zulus/Projects/GitProj/orchestrix/src/audio"/>
+				<Option output="/home/zulus/Projects/GitProj/orchestrix/src/examples/audio/libaut.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/zulus/Projects/GitProj/orchestrix/src/examples/audio"/>
 				<Option object_output="./"/>
 				<Option type="2"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/home/zulus/Projects/GitProj/orchestrix/src/audio/include"/>
-					<Add directory="/home/zulus/Projects/GitProj/orchestrix/src/audio/include/AudioManagement"/>
-					<Add directory="/home/zulus/Projects/GitProj/orchestrix/src/audio/include/SpectrumManagement"/>
-					<Add directory="/home/zulus/Projects/GitProj/orchestrix/src/audio/include/ConsoleGraphic"/>
-					<Add directory="/usr/local/include"/>
 					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/6/include"/>
+					<Add directory="/usr/local/include"/>
 					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/6/include-fixed"/>
 					<Add directory="/usr/include/x86_64-linux-gnu"/>
 					<Add directory="/usr/include"/>
@@ -179,68 +123,56 @@
 					<Add directory="/usr/include/c++/6/backward"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/zulus/Projects/GitProj/orchestrix/src/audio/Makefile&quot;  VERBOSE=1 aut/fast"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/zulus/Projects/GitProj/orchestrix/src/audio/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/zulus/Projects/GitProj/orchestrix/src/audio/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/zulus/Projects/GitProj/orchestrix/src/audio/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/zulus/Projects/GitProj/orchestrix/src/examples/audio/Makefile&quot;  VERBOSE=1 aut/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/zulus/Projects/GitProj/orchestrix/src/examples/audio/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/zulus/Projects/GitProj/orchestrix/src/examples/audio/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/zulus/Projects/GitProj/orchestrix/src/examples/audio/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/home/zulus/Projects/GitProj/orchestrix/src/audio/include/AudioManagement/AudioData.h">
-			<Option target="aut"/>
-		</Unit>
-		<Unit filename="/home/zulus/Projects/GitProj/orchestrix/src/audio/include/AudioManagement/AudioManager.h">
-			<Option target="aut"/>
-		</Unit>
-		<Unit filename="/home/zulus/Projects/GitProj/orchestrix/src/audio/include/AudioManagement/AudioPlayer.h">
-			<Option target="aut"/>
-		</Unit>
-		<Unit filename="/home/zulus/Projects/GitProj/orchestrix/src/audio/include/AudioManagement/OpenAL.h">
-			<Option target="aut"/>
-		</Unit>
-		<Unit filename="/home/zulus/Projects/GitProj/orchestrix/src/audio/include/ConsoleGraphic/ConsoleEqualizer.h">
+		<Unit filename="/home/zulus/Projects/GitProj/orchestrix/src/examples/audio/main.cpp">
 			<Option target="a.out"/>
 		</Unit>
-		<Unit filename="/home/zulus/Projects/GitProj/orchestrix/src/audio/include/ConsoleGraphic/GraphUtil.h">
+		<Unit filename="/home/zulus/Projects/GitProj/orchestrix/src/examples/audio/src/AudioData.cpp">
+			<Option target="aut"/>
+		</Unit>
+		<Unit filename="/home/zulus/Projects/GitProj/orchestrix/src/examples/audio/src/AudioData.h">
+			<Option target="aut"/>
+		</Unit>
+		<Unit filename="/home/zulus/Projects/GitProj/orchestrix/src/examples/audio/src/AudioManager.cpp">
+			<Option target="aut"/>
+		</Unit>
+		<Unit filename="/home/zulus/Projects/GitProj/orchestrix/src/examples/audio/src/AudioManager.h">
+			<Option target="aut"/>
+		</Unit>
+		<Unit filename="/home/zulus/Projects/GitProj/orchestrix/src/examples/audio/src/AudioPlayer.cpp">
+			<Option target="aut"/>
+		</Unit>
+		<Unit filename="/home/zulus/Projects/GitProj/orchestrix/src/examples/audio/src/AudioPlayer.h">
+			<Option target="aut"/>
+		</Unit>
+		<Unit filename="/home/zulus/Projects/GitProj/orchestrix/src/examples/audio/src/Spectrum.cpp">
+			<Option target="aut"/>
+		</Unit>
+		<Unit filename="/home/zulus/Projects/GitProj/orchestrix/src/examples/audio/src/Spectrum.h">
+			<Option target="aut"/>
+		</Unit>
+		<Unit filename="/home/zulus/Projects/GitProj/orchestrix/src/examples/audio/src/SpectrumAnalyzer.cpp">
+			<Option target="aut"/>
+		</Unit>
+		<Unit filename="/home/zulus/Projects/GitProj/orchestrix/src/examples/audio/src/SpectrumAnalyzer.h">
+			<Option target="aut"/>
+		</Unit>
+		<Unit filename="/home/zulus/Projects/GitProj/orchestrix/src/examples/audio/src/graphic/ConsoleEqualizer.cpp">
 			<Option target="a.out"/>
 		</Unit>
-		<Unit filename="/home/zulus/Projects/GitProj/orchestrix/src/audio/include/ConsoleGraphic/GraphicPlane.h">
+		<Unit filename="/home/zulus/Projects/GitProj/orchestrix/src/examples/audio/src/graphic/GraphUtil.cpp">
 			<Option target="a.out"/>
 		</Unit>
-		<Unit filename="/home/zulus/Projects/GitProj/orchestrix/src/audio/include/SpectrumManagement/Spectrum.h">
-			<Option target="aut"/>
-		</Unit>
-		<Unit filename="/home/zulus/Projects/GitProj/orchestrix/src/audio/include/SpectrumManagement/SpectrumAnalyzer.h">
-			<Option target="aut"/>
-		</Unit>
-		<Unit filename="/home/zulus/Projects/GitProj/orchestrix/src/audio/src/AudioManagement/AudioData.cpp">
-			<Option target="aut"/>
-		</Unit>
-		<Unit filename="/home/zulus/Projects/GitProj/orchestrix/src/audio/src/AudioManagement/AudioManager.cpp">
-			<Option target="aut"/>
-		</Unit>
-		<Unit filename="/home/zulus/Projects/GitProj/orchestrix/src/audio/src/AudioManagement/AudioPlayer.cpp">
-			<Option target="aut"/>
-		</Unit>
-		<Unit filename="/home/zulus/Projects/GitProj/orchestrix/src/audio/src/SpectrumManagement/Spectrum.cpp">
-			<Option target="aut"/>
-		</Unit>
-		<Unit filename="/home/zulus/Projects/GitProj/orchestrix/src/audio/src/SpectrumManagement/SpectrumAnalyzer.cpp">
-			<Option target="aut"/>
-		</Unit>
-		<Unit filename="/home/zulus/Projects/GitProj/orchestrix/src/audio/src/graphic/ConsoleEqualizer.cpp">
+		<Unit filename="/home/zulus/Projects/GitProj/orchestrix/src/examples/audio/src/graphic/GraphicPlane.cpp">
 			<Option target="a.out"/>
 		</Unit>
-		<Unit filename="/home/zulus/Projects/GitProj/orchestrix/src/audio/src/graphic/GraphUtil.cpp">
-			<Option target="a.out"/>
-		</Unit>
-		<Unit filename="/home/zulus/Projects/GitProj/orchestrix/src/audio/src/graphic/GraphicPlane.cpp">
-			<Option target="a.out"/>
-		</Unit>
-		<Unit filename="/home/zulus/Projects/GitProj/orchestrix/src/audio/src/main.cpp">
-			<Option target="a.out"/>
-		</Unit>
-		<Unit filename="/home/zulus/Projects/GitProj/orchestrix/src/audio/CMakeLists.txt">
+		<Unit filename="/home/zulus/Projects/GitProj/orchestrix/src/examples/audio/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>

@@ -38,6 +38,7 @@ public:
 
     ~SpectrumAnalyzer();
 
+    const float *  getSpectrums(long ind) const;
     const vector<Spectrum *> &getSpectrums() const;
 
     size_t getBars() const;

@@ -2,10 +2,10 @@
 // Created by zulus on 21.04.17.
 //
 #include <iostream>
-#include <AudioManagement/AudioData.h>
-#include <AudioManagement/AudioManager.h>
-#include <AudioManagement/AudioPlayer.h>
-#include <ConsoleEqualizer.h>
+#include <audio/AudioData.h>
+#include <audio/AudioManager.h>
+#include <audio/AudioPlayer.h>
+#include <graphic/ConsoleEqualizer.h>
 
 #define _DEBUG
 using namespace std;

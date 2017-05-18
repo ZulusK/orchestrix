@@ -47,7 +47,7 @@ float *getFFT(HCHANNEL hchannel, double offset, int size, int mode) {
     return fft;
 }
 
-float *Spectrum::execute(HCHANNEL hchannel, double offset, int mode, int bars) {
+void Spectrum::execute(HCHANNEL hchannel, double offset, int mode, int bars) {
     int size = getFFTSize(mode);
     float *fft = getFFT(hchannel, offset, size, mode);
     calculateBars(fft, size);

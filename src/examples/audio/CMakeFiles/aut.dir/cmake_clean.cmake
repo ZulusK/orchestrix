@@ -1,9 +1,9 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/aut.dir/src/AudioManagement/AudioData.cpp.o"
-  "CMakeFiles/aut.dir/src/AudioManagement/AudioManager.cpp.o"
-  "CMakeFiles/aut.dir/src/AudioManagement/AudioPlayer.cpp.o"
-  "CMakeFiles/aut.dir/src/SpectrumManagement/Spectrum.cpp.o"
-  "CMakeFiles/aut.dir/src/SpectrumManagement/SpectrumAnalyzer.cpp.o"
+  "CMakeFiles/aut.dir/src/AudioData.cpp.o"
+  "CMakeFiles/aut.dir/src/AudioManager.cpp.o"
+  "CMakeFiles/aut.dir/src/AudioPlayer.cpp.o"
+  "CMakeFiles/aut.dir/src/Spectrum.cpp.o"
+  "CMakeFiles/aut.dir/src/SpectrumAnalyzer.cpp.o"
   "libaut.pdb"
   "libaut.a"
 )

@@ -1,9 +1,9 @@
 #ifndef ORCHESTRIX_AUDIOPLAYER_H
 #define ORCHESTRIX_AUDIOPLAYER_H
 
-#include <AudioData.h>
-#include <AudioManager.h>
-#include <OpenAL.h>
+#include <audio/AudioData.h>
+#include <audio/AudioManager.h>
+#include <audio/OpenAL.h>
 #include <mutex>
 #include <thread>
 

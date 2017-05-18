@@ -1,11 +1,7 @@
-//
-// Created by zulus on 25.04.17.
-//
-
-#include <SpectrumManagement/Spectrum.h>
+#include <audio/Spectrum.h>
 #include <cmath>
-#include <AudioManagement/AudioManager.h>
-#include <SpectrumManagement/SpectrumAnalyzer.h>
+#include <audio/AudioManager.h>
+#include <audio/SpectrumAnalyzer.h>
 
 int Spectrum::getLength() const {
     return length;
@@ -51,7 +47,7 @@ float *getFFT(HCHANNEL hchannel, double offset, int size, int mode) {
     return fft;
 }
 
-float *Spectrum::execute(HCHANNEL hchannel, double offset, int mode, int bars) {
+void Spectrum::execute(HCHANNEL hchannel, double offset, int mode, int bars) {
     int size = getFFTSize(mode);
     float *fft = getFFT(hchannel, offset, size, mode);
     calculateBars(fft, size);

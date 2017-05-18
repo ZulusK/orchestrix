@@ -4,7 +4,7 @@
 
 #include <math.h>
 #include <progbase-cpp/console.h>
-#include <ConsoleGraphic/GraphUtil.h>
+#include <graphic/GraphUtil.h>
 
 void swap(double * a, double * b) {
     double t = *a;

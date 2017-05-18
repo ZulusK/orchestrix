@@ -2,9 +2,8 @@
 // Created by zulus on 29.04.17.
 //
 
-#include <ConsoleGraphic/GraphicPlane.h>
+#include <graphic/GraphicPlane.h>
 #include <pbconsole.h>
-#include "ConsoleGraphic/GraphicPlane.h"
 
 using namespace progbase;
 using namespace console;
