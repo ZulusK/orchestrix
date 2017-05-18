@@ -27,7 +27,7 @@ public:
 private:
     float *calculateBars(float *fft, int size);
 
-    float *execute(HCHANNEL hchannel, double offset, int mode, int bars);
+    void execute(HCHANNEL hchannel, double offset, int mode, int bars);
 
 public:
 

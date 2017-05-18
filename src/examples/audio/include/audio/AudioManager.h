@@ -3,8 +3,8 @@
 
 #include <AL/alc.h>
 #include <AL/al.h>
-#include <AudioManagement/AudioData.h>
-#include <AudioManagement/OpenAL.h>
+#include <audio/AudioData.h>
+#include <audio/OpenAL.h>
 #include <map>
 #include <vector>
 #include <mutex>

@@ -1,4 +1,4 @@
-The system is: Linux - 4.10.0-19-generic - x86_64
+The system is: Linux - 4.10.0-21-generic - x86_64
 Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
 Compiler: /usr/bin/cc 
 Build flags: 
@@ -10,11 +10,11 @@ The output was:
 
 Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.out"
 
-The C compiler identification is GNU, found in "/home/zulus/Projects/GitProj/orchestrix/src/audio/CMakeFiles/3.6.3/CompilerIdC/a.out"
+The C compiler identification is GNU, found in "/home/zulus/Projects/GitProj/orchestrix/src/examples/audio/CMakeFiles/3.6.3/CompilerIdC/a.out"
 
 Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
 Compiler: /usr/bin/c++ 
-Build flags: 
+Build flags: ;-std=c++14
 Id flags: 
 
 The output was:
@@ -23,33 +23,33 @@ The output was:
 
 Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "a.out"
 
-The CXX compiler identification is GNU, found in "/home/zulus/Projects/GitProj/orchestrix/src/audio/CMakeFiles/3.6.3/CompilerIdCXX/a.out"
+The CXX compiler identification is GNU, found in "/home/zulus/Projects/GitProj/orchestrix/src/examples/audio/CMakeFiles/3.6.3/CompilerIdCXX/a.out"
 
 Determining if the C compiler works passed with the following output:
-Change Dir: /home/zulus/Projects/GitProj/orchestrix/src/audio/CMakeFiles/CMakeTmp
+Change Dir: /home/zulus/Projects/GitProj/orchestrix/src/examples/audio/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_a889c/fast"
-/usr/bin/make -f CMakeFiles/cmTC_a889c.dir/build.make CMakeFiles/cmTC_a889c.dir/build
-make[1]: вход в каталог «/home/zulus/Projects/GitProj/orchestrix/src/audio/CMakeFiles/CMakeTmp»
-Building C object CMakeFiles/cmTC_a889c.dir/testCCompiler.c.o
-/usr/bin/cc     -o CMakeFiles/cmTC_a889c.dir/testCCompiler.c.o   -c /home/zulus/Projects/GitProj/orchestrix/src/audio/CMakeFiles/CMakeTmp/testCCompiler.c
-Linking C executable cmTC_a889c
-/home/zulus/apps/clion-2016.3.3/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_a889c.dir/link.txt --verbose=1
-/usr/bin/cc       CMakeFiles/cmTC_a889c.dir/testCCompiler.c.o  -o cmTC_a889c -rdynamic 
-make[1]: выход из каталога «/home/zulus/Projects/GitProj/orchestrix/src/audio/CMakeFiles/CMakeTmp»
+Run Build Command:"/usr/bin/make" "cmTC_3c7b2/fast"
+/usr/bin/make -f CMakeFiles/cmTC_3c7b2.dir/build.make CMakeFiles/cmTC_3c7b2.dir/build
+make[1]: вход в каталог «/home/zulus/Projects/GitProj/orchestrix/src/examples/audio/CMakeFiles/CMakeTmp»
+Building C object CMakeFiles/cmTC_3c7b2.dir/testCCompiler.c.o
+/usr/bin/cc     -o CMakeFiles/cmTC_3c7b2.dir/testCCompiler.c.o   -c /home/zulus/Projects/GitProj/orchestrix/src/examples/audio/CMakeFiles/CMakeTmp/testCCompiler.c
+Linking C executable cmTC_3c7b2
+/home/zulus/apps/clion-2016.3.3/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_3c7b2.dir/link.txt --verbose=1
+/usr/bin/cc       CMakeFiles/cmTC_3c7b2.dir/testCCompiler.c.o  -o cmTC_3c7b2 -rdynamic 
+make[1]: выход из каталога «/home/zulus/Projects/GitProj/orchestrix/src/examples/audio/CMakeFiles/CMakeTmp»
 
 
 Detecting C compiler ABI info compiled with the following output:
-Change Dir: /home/zulus/Projects/GitProj/orchestrix/src/audio/CMakeFiles/CMakeTmp
+Change Dir: /home/zulus/Projects/GitProj/orchestrix/src/examples/audio/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_e6753/fast"
-/usr/bin/make -f CMakeFiles/cmTC_e6753.dir/build.make CMakeFiles/cmTC_e6753.dir/build
-make[1]: вход в каталог «/home/zulus/Projects/GitProj/orchestrix/src/audio/CMakeFiles/CMakeTmp»
-Building C object CMakeFiles/cmTC_e6753.dir/CMakeCCompilerABI.c.o
-/usr/bin/cc     -o CMakeFiles/cmTC_e6753.dir/CMakeCCompilerABI.c.o   -c /home/zulus/apps/clion-2016.3.3/bin/cmake/share/cmake-3.6/Modules/CMakeCCompilerABI.c
-Linking C executable cmTC_e6753
-/home/zulus/apps/clion-2016.3.3/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_e6753.dir/link.txt --verbose=1
-/usr/bin/cc      -v CMakeFiles/cmTC_e6753.dir/CMakeCCompilerABI.c.o  -o cmTC_e6753 -rdynamic  
+Run Build Command:"/usr/bin/make" "cmTC_c536c/fast"
+/usr/bin/make -f CMakeFiles/cmTC_c536c.dir/build.make CMakeFiles/cmTC_c536c.dir/build
+make[1]: вход в каталог «/home/zulus/Projects/GitProj/orchestrix/src/examples/audio/CMakeFiles/CMakeTmp»
+Building C object CMakeFiles/cmTC_c536c.dir/CMakeCCompilerABI.c.o
+/usr/bin/cc     -o CMakeFiles/cmTC_c536c.dir/CMakeCCompilerABI.c.o   -c /home/zulus/apps/clion-2016.3.3/bin/cmake/share/cmake-3.6/Modules/CMakeCCompilerABI.c
+Linking C executable cmTC_c536c
+/home/zulus/apps/clion-2016.3.3/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_c536c.dir/link.txt --verbose=1
+/usr/bin/cc      -v CMakeFiles/cmTC_c536c.dir/CMakeCCompilerABI.c.o  -o cmTC_c536c -rdynamic  
 Using built-in specs.
 COLLECT_GCC=/usr/bin/cc
 COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/6/lto-wrapper
@@ -59,24 +59,24 @@ Thread model: posix
 gcc version 6.3.0 20170406 (Ubuntu 6.3.0-12ubuntu2) 
 COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/6/:/usr/lib/gcc/x86_64-linux-gnu/6/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/6/:/usr/lib/gcc/x86_64-linux-gnu/
 LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/6/:/usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/6/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/6/../../../:/lib/:/usr/lib/
-COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_e6753' '-rdynamic' '-mtune=generic' '-march=x86-64'
- /usr/lib/gcc/x86_64-linux-gnu/6/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/6/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/6/lto-wrapper -plugin-opt=-fresolution=/tmp/ccQtHQEA.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_e6753 /usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/6/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/6 -L/usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/6/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/6/../../.. CMakeFiles/cmTC_e6753.dir/CMakeCCompilerABI.c.o -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /usr/lib/gcc/x86_64-linux-gnu/6/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu/crtn.o
-COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_e6753' '-rdynamic' '-mtune=generic' '-march=x86-64'
-make[1]: выход из каталога «/home/zulus/Projects/GitProj/orchestrix/src/audio/CMakeFiles/CMakeTmp»
+COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_c536c' '-rdynamic' '-mtune=generic' '-march=x86-64'
+ /usr/lib/gcc/x86_64-linux-gnu/6/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/6/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/6/lto-wrapper -plugin-opt=-fresolution=/tmp/ccNp0rhQ.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_c536c /usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/6/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/6 -L/usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/6/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/6/../../.. CMakeFiles/cmTC_c536c.dir/CMakeCCompilerABI.c.o -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /usr/lib/gcc/x86_64-linux-gnu/6/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu/crtn.o
+COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_c536c' '-rdynamic' '-mtune=generic' '-march=x86-64'
+make[1]: выход из каталога «/home/zulus/Projects/GitProj/orchestrix/src/examples/audio/CMakeFiles/CMakeTmp»
 
 
 Parsed C implicit link information from above output:
   link line regex: [^( *|.*[/\])(ld|([^/\]+-)?ld|collect2)[^/\]*( |$)]
-  ignore line: [Change Dir: /home/zulus/Projects/GitProj/orchestrix/src/audio/CMakeFiles/CMakeTmp]
+  ignore line: [Change Dir: /home/zulus/Projects/GitProj/orchestrix/src/examples/audio/CMakeFiles/CMakeTmp]
   ignore line: []
-  ignore line: [Run Build Command:"/usr/bin/make" "cmTC_e6753/fast"]
-  ignore line: [/usr/bin/make -f CMakeFiles/cmTC_e6753.dir/build.make CMakeFiles/cmTC_e6753.dir/build]
-  ignore line: [make[1]: вход в каталог «/home/zulus/Projects/GitProj/orchestrix/src/audio/CMakeFiles/CMakeTmp»]
-  ignore line: [Building C object CMakeFiles/cmTC_e6753.dir/CMakeCCompilerABI.c.o]
-  ignore line: [/usr/bin/cc     -o CMakeFiles/cmTC_e6753.dir/CMakeCCompilerABI.c.o   -c /home/zulus/apps/clion-2016.3.3/bin/cmake/share/cmake-3.6/Modules/CMakeCCompilerABI.c]
-  ignore line: [Linking C executable cmTC_e6753]
-  ignore line: [/home/zulus/apps/clion-2016.3.3/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_e6753.dir/link.txt --verbose=1]
-  ignore line: [/usr/bin/cc      -v CMakeFiles/cmTC_e6753.dir/CMakeCCompilerABI.c.o  -o cmTC_e6753 -rdynamic  ]
+  ignore line: [Run Build Command:"/usr/bin/make" "cmTC_c536c/fast"]
+  ignore line: [/usr/bin/make -f CMakeFiles/cmTC_c536c.dir/build.make CMakeFiles/cmTC_c536c.dir/build]
+  ignore line: [make[1]: вход в каталог «/home/zulus/Projects/GitProj/orchestrix/src/examples/audio/CMakeFiles/CMakeTmp»]
+  ignore line: [Building C object CMakeFiles/cmTC_c536c.dir/CMakeCCompilerABI.c.o]
+  ignore line: [/usr/bin/cc     -o CMakeFiles/cmTC_c536c.dir/CMakeCCompilerABI.c.o   -c /home/zulus/apps/clion-2016.3.3/bin/cmake/share/cmake-3.6/Modules/CMakeCCompilerABI.c]
+  ignore line: [Linking C executable cmTC_c536c]
+  ignore line: [/home/zulus/apps/clion-2016.3.3/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_c536c.dir/link.txt --verbose=1]
+  ignore line: [/usr/bin/cc      -v CMakeFiles/cmTC_c536c.dir/CMakeCCompilerABI.c.o  -o cmTC_c536c -rdynamic  ]
   ignore line: [Using built-in specs.]
   ignore line: [COLLECT_GCC=/usr/bin/cc]
   ignore line: [COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/6/lto-wrapper]
@@ -86,13 +86,13 @@ Parsed C implicit link information from above output:
   ignore line: [gcc version 6.3.0 20170406 (Ubuntu 6.3.0-12ubuntu2) ]
   ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/6/:/usr/lib/gcc/x86_64-linux-gnu/6/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/6/:/usr/lib/gcc/x86_64-linux-gnu/]
   ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/6/:/usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/6/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/6/../../../:/lib/:/usr/lib/]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_e6753' '-rdynamic' '-mtune=generic' '-march=x86-64']
-  link line: [ /usr/lib/gcc/x86_64-linux-gnu/6/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/6/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/6/lto-wrapper -plugin-opt=-fresolution=/tmp/ccQtHQEA.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_e6753 /usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/6/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/6 -L/usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/6/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/6/../../.. CMakeFiles/cmTC_e6753.dir/CMakeCCompilerABI.c.o -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /usr/lib/gcc/x86_64-linux-gnu/6/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu/crtn.o]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_c536c' '-rdynamic' '-mtune=generic' '-march=x86-64']
+  link line: [ /usr/lib/gcc/x86_64-linux-gnu/6/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/6/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/6/lto-wrapper -plugin-opt=-fresolution=/tmp/ccNp0rhQ.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_c536c /usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/6/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/6 -L/usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/6/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/6/../../.. CMakeFiles/cmTC_c536c.dir/CMakeCCompilerABI.c.o -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /usr/lib/gcc/x86_64-linux-gnu/6/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu/crtn.o]
     arg [/usr/lib/gcc/x86_64-linux-gnu/6/collect2] ==> ignore
     arg [-plugin] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/6/liblto_plugin.so] ==> ignore
     arg [-plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/6/lto-wrapper] ==> ignore
-    arg [-plugin-opt=-fresolution=/tmp/ccQtHQEA.res] ==> ignore
+    arg [-plugin-opt=-fresolution=/tmp/ccNp0rhQ.res] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
     arg [-plugin-opt=-pass-through=-lc] ==> ignore
@@ -112,7 +112,7 @@ Parsed C implicit link information from above output:
     arg [-znow] ==> ignore
     arg [-zrelro] ==> ignore
     arg [-o] ==> ignore
-    arg [cmTC_e6753] ==> ignore
+    arg [cmTC_c536c] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu/Scrt1.o] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu/crti.o] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/6/crtbeginS.o] ==> ignore
@@ -124,7 +124,7 @@ Parsed C implicit link information from above output:
     arg [-L/usr/lib/x86_64-linux-gnu] ==> dir [/usr/lib/x86_64-linux-gnu]
     arg [-L/usr/lib/../lib] ==> dir [/usr/lib/../lib]
     arg [-L/usr/lib/gcc/x86_64-linux-gnu/6/../../..] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/6/../../..]
-    arg [CMakeFiles/cmTC_e6753.dir/CMakeCCompilerABI.c.o] ==> ignore
+    arg [CMakeFiles/cmTC_c536c.dir/CMakeCCompilerABI.c.o] ==> ignore
     arg [-lgcc] ==> lib [gcc]
     arg [--as-needed] ==> ignore
     arg [-lgcc_s] ==> lib [gcc_s]
@@ -156,17 +156,17 @@ Parsed C implicit link information from above output:
 
 
 Detecting C [-std=c11] compiler features compiled with the following output:
-Change Dir: /home/zulus/Projects/GitProj/orchestrix/src/audio/CMakeFiles/CMakeTmp
+Change Dir: /home/zulus/Projects/GitProj/orchestrix/src/examples/audio/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_21f8c/fast"
-/usr/bin/make -f CMakeFiles/cmTC_21f8c.dir/build.make CMakeFiles/cmTC_21f8c.dir/build
-make[1]: вход в каталог «/home/zulus/Projects/GitProj/orchestrix/src/audio/CMakeFiles/CMakeTmp»
-Building C object CMakeFiles/cmTC_21f8c.dir/feature_tests.c.o
-/usr/bin/cc    -std=c11 -o CMakeFiles/cmTC_21f8c.dir/feature_tests.c.o   -c /home/zulus/Projects/GitProj/orchestrix/src/audio/CMakeFiles/feature_tests.c
-Linking C executable cmTC_21f8c
-/home/zulus/apps/clion-2016.3.3/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_21f8c.dir/link.txt --verbose=1
-/usr/bin/cc       CMakeFiles/cmTC_21f8c.dir/feature_tests.c.o  -o cmTC_21f8c -rdynamic 
-make[1]: выход из каталога «/home/zulus/Projects/GitProj/orchestrix/src/audio/CMakeFiles/CMakeTmp»
+Run Build Command:"/usr/bin/make" "cmTC_b8e83/fast"
+/usr/bin/make -f CMakeFiles/cmTC_b8e83.dir/build.make CMakeFiles/cmTC_b8e83.dir/build
+make[1]: вход в каталог «/home/zulus/Projects/GitProj/orchestrix/src/examples/audio/CMakeFiles/CMakeTmp»
+Building C object CMakeFiles/cmTC_b8e83.dir/feature_tests.c.o
+/usr/bin/cc    -std=c11 -o CMakeFiles/cmTC_b8e83.dir/feature_tests.c.o   -c /home/zulus/Projects/GitProj/orchestrix/src/examples/audio/CMakeFiles/feature_tests.c
+Linking C executable cmTC_b8e83
+/home/zulus/apps/clion-2016.3.3/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_b8e83.dir/link.txt --verbose=1
+/usr/bin/cc       CMakeFiles/cmTC_b8e83.dir/feature_tests.c.o  -o cmTC_b8e83 -rdynamic 
+make[1]: выход из каталога «/home/zulus/Projects/GitProj/orchestrix/src/examples/audio/CMakeFiles/CMakeTmp»
 
 
     Feature record: C_FEATURE:1c_function_prototypes
@@ -176,17 +176,17 @@ make[1]: выход из каталога «/home/zulus/Projects/GitProj/orchest
 
 
 Detecting C [-std=c99] compiler features compiled with the following output:
-Change Dir: /home/zulus/Projects/GitProj/orchestrix/src/audio/CMakeFiles/CMakeTmp
+Change Dir: /home/zulus/Projects/GitProj/orchestrix/src/examples/audio/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_184d8/fast"
-/usr/bin/make -f CMakeFiles/cmTC_184d8.dir/build.make CMakeFiles/cmTC_184d8.dir/build
-make[1]: вход в каталог «/home/zulus/Projects/GitProj/orchestrix/src/audio/CMakeFiles/CMakeTmp»
-Building C object CMakeFiles/cmTC_184d8.dir/feature_tests.c.o
-/usr/bin/cc    -std=c99 -o CMakeFiles/cmTC_184d8.dir/feature_tests.c.o   -c /home/zulus/Projects/GitProj/orchestrix/src/audio/CMakeFiles/feature_tests.c
-Linking C executable cmTC_184d8
-/home/zulus/apps/clion-2016.3.3/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_184d8.dir/link.txt --verbose=1
-/usr/bin/cc       CMakeFiles/cmTC_184d8.dir/feature_tests.c.o  -o cmTC_184d8 -rdynamic 
-make[1]: выход из каталога «/home/zulus/Projects/GitProj/orchestrix/src/audio/CMakeFiles/CMakeTmp»
+Run Build Command:"/usr/bin/make" "cmTC_1d320/fast"
+/usr/bin/make -f CMakeFiles/cmTC_1d320.dir/build.make CMakeFiles/cmTC_1d320.dir/build
+make[1]: вход в каталог «/home/zulus/Projects/GitProj/orchestrix/src/examples/audio/CMakeFiles/CMakeTmp»
+Building C object CMakeFiles/cmTC_1d320.dir/feature_tests.c.o
+/usr/bin/cc    -std=c99 -o CMakeFiles/cmTC_1d320.dir/feature_tests.c.o   -c /home/zulus/Projects/GitProj/orchestrix/src/examples/audio/CMakeFiles/feature_tests.c
+Linking C executable cmTC_1d320
+/home/zulus/apps/clion-2016.3.3/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_1d320.dir/link.txt --verbose=1
+/usr/bin/cc       CMakeFiles/cmTC_1d320.dir/feature_tests.c.o  -o cmTC_1d320 -rdynamic 
+make[1]: выход из каталога «/home/zulus/Projects/GitProj/orchestrix/src/examples/audio/CMakeFiles/CMakeTmp»
 
 
     Feature record: C_FEATURE:1c_function_prototypes
@@ -196,17 +196,17 @@ make[1]: выход из каталога «/home/zulus/Projects/GitProj/orchest
 
 
 Detecting C [-std=c90] compiler features compiled with the following output:
-Change Dir: /home/zulus/Projects/GitProj/orchestrix/src/audio/CMakeFiles/CMakeTmp
+Change Dir: /home/zulus/Projects/GitProj/orchestrix/src/examples/audio/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_1b6a2/fast"
-/usr/bin/make -f CMakeFiles/cmTC_1b6a2.dir/build.make CMakeFiles/cmTC_1b6a2.dir/build
-make[1]: вход в каталог «/home/zulus/Projects/GitProj/orchestrix/src/audio/CMakeFiles/CMakeTmp»
-Building C object CMakeFiles/cmTC_1b6a2.dir/feature_tests.c.o
-/usr/bin/cc    -std=c90 -o CMakeFiles/cmTC_1b6a2.dir/feature_tests.c.o   -c /home/zulus/Projects/GitProj/orchestrix/src/audio/CMakeFiles/feature_tests.c
-Linking C executable cmTC_1b6a2
-/home/zulus/apps/clion-2016.3.3/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_1b6a2.dir/link.txt --verbose=1
-/usr/bin/cc       CMakeFiles/cmTC_1b6a2.dir/feature_tests.c.o  -o cmTC_1b6a2 -rdynamic 
-make[1]: выход из каталога «/home/zulus/Projects/GitProj/orchestrix/src/audio/CMakeFiles/CMakeTmp»
+Run Build Command:"/usr/bin/make" "cmTC_e1858/fast"
+/usr/bin/make -f CMakeFiles/cmTC_e1858.dir/build.make CMakeFiles/cmTC_e1858.dir/build
+make[1]: вход в каталог «/home/zulus/Projects/GitProj/orchestrix/src/examples/audio/CMakeFiles/CMakeTmp»
+Building C object CMakeFiles/cmTC_e1858.dir/feature_tests.c.o
+/usr/bin/cc    -std=c90 -o CMakeFiles/cmTC_e1858.dir/feature_tests.c.o   -c /home/zulus/Projects/GitProj/orchestrix/src/examples/audio/CMakeFiles/feature_tests.c
+Linking C executable cmTC_e1858
+/home/zulus/apps/clion-2016.3.3/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_e1858.dir/link.txt --verbose=1
+/usr/bin/cc       CMakeFiles/cmTC_e1858.dir/feature_tests.c.o  -o cmTC_e1858 -rdynamic 
+make[1]: выход из каталога «/home/zulus/Projects/GitProj/orchestrix/src/examples/audio/CMakeFiles/CMakeTmp»
 
 
     Feature record: C_FEATURE:1c_function_prototypes
@@ -214,30 +214,30 @@ make[1]: выход из каталога «/home/zulus/Projects/GitProj/orchest
     Feature record: C_FEATURE:0c_static_assert
     Feature record: C_FEATURE:0c_variadic_macros
 Determining if the CXX compiler works passed with the following output:
-Change Dir: /home/zulus/Projects/GitProj/orchestrix/src/audio/CMakeFiles/CMakeTmp
+Change Dir: /home/zulus/Projects/GitProj/orchestrix/src/examples/audio/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_71a9d/fast"
-/usr/bin/make -f CMakeFiles/cmTC_71a9d.dir/build.make CMakeFiles/cmTC_71a9d.dir/build
-make[1]: вход в каталог «/home/zulus/Projects/GitProj/orchestrix/src/audio/CMakeFiles/CMakeTmp»
-Building CXX object CMakeFiles/cmTC_71a9d.dir/testCXXCompiler.cxx.o
-/usr/bin/c++      -o CMakeFiles/cmTC_71a9d.dir/testCXXCompiler.cxx.o -c /home/zulus/Projects/GitProj/orchestrix/src/audio/CMakeFiles/CMakeTmp/testCXXCompiler.cxx
-Linking CXX executable cmTC_71a9d
-/home/zulus/apps/clion-2016.3.3/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_71a9d.dir/link.txt --verbose=1
-/usr/bin/c++        CMakeFiles/cmTC_71a9d.dir/testCXXCompiler.cxx.o  -o cmTC_71a9d -rdynamic 
-make[1]: выход из каталога «/home/zulus/Projects/GitProj/orchestrix/src/audio/CMakeFiles/CMakeTmp»
+Run Build Command:"/usr/bin/make" "cmTC_e03a7/fast"
+/usr/bin/make -f CMakeFiles/cmTC_e03a7.dir/build.make CMakeFiles/cmTC_e03a7.dir/build
+make[1]: вход в каталог «/home/zulus/Projects/GitProj/orchestrix/src/examples/audio/CMakeFiles/CMakeTmp»
+Building CXX object CMakeFiles/cmTC_e03a7.dir/testCXXCompiler.cxx.o
+/usr/bin/c++      -o CMakeFiles/cmTC_e03a7.dir/testCXXCompiler.cxx.o -c /home/zulus/Projects/GitProj/orchestrix/src/examples/audio/CMakeFiles/CMakeTmp/testCXXCompiler.cxx
+Linking CXX executable cmTC_e03a7
+/home/zulus/apps/clion-2016.3.3/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_e03a7.dir/link.txt --verbose=1
+/usr/bin/c++        CMakeFiles/cmTC_e03a7.dir/testCXXCompiler.cxx.o  -o cmTC_e03a7 -rdynamic 
+make[1]: выход из каталога «/home/zulus/Projects/GitProj/orchestrix/src/examples/audio/CMakeFiles/CMakeTmp»
 
 
 Detecting CXX compiler ABI info compiled with the following output:
-Change Dir: /home/zulus/Projects/GitProj/orchestrix/src/audio/CMakeFiles/CMakeTmp
+Change Dir: /home/zulus/Projects/GitProj/orchestrix/src/examples/audio/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_33fc2/fast"
-/usr/bin/make -f CMakeFiles/cmTC_33fc2.dir/build.make CMakeFiles/cmTC_33fc2.dir/build
-make[1]: вход в каталог «/home/zulus/Projects/GitProj/orchestrix/src/audio/CMakeFiles/CMakeTmp»
-Building CXX object CMakeFiles/cmTC_33fc2.dir/CMakeCXXCompilerABI.cpp.o
-/usr/bin/c++      -o CMakeFiles/cmTC_33fc2.dir/CMakeCXXCompilerABI.cpp.o -c /home/zulus/apps/clion-2016.3.3/bin/cmake/share/cmake-3.6/Modules/CMakeCXXCompilerABI.cpp
-Linking CXX executable cmTC_33fc2
-/home/zulus/apps/clion-2016.3.3/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_33fc2.dir/link.txt --verbose=1
-/usr/bin/c++       -v CMakeFiles/cmTC_33fc2.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_33fc2 -rdynamic  
+Run Build Command:"/usr/bin/make" "cmTC_4824d/fast"
+/usr/bin/make -f CMakeFiles/cmTC_4824d.dir/build.make CMakeFiles/cmTC_4824d.dir/build
+make[1]: вход в каталог «/home/zulus/Projects/GitProj/orchestrix/src/examples/audio/CMakeFiles/CMakeTmp»
+Building CXX object CMakeFiles/cmTC_4824d.dir/CMakeCXXCompilerABI.cpp.o
+/usr/bin/c++      -o CMakeFiles/cmTC_4824d.dir/CMakeCXXCompilerABI.cpp.o -c /home/zulus/apps/clion-2016.3.3/bin/cmake/share/cmake-3.6/Modules/CMakeCXXCompilerABI.cpp
+Linking CXX executable cmTC_4824d
+/home/zulus/apps/clion-2016.3.3/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_4824d.dir/link.txt --verbose=1
+/usr/bin/c++       -v CMakeFiles/cmTC_4824d.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_4824d -rdynamic  
 Using built-in specs.
 COLLECT_GCC=/usr/bin/c++
 COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/6/lto-wrapper
@@ -247,24 +247,24 @@ Thread model: posix
 gcc version 6.3.0 20170406 (Ubuntu 6.3.0-12ubuntu2) 
 COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/6/:/usr/lib/gcc/x86_64-linux-gnu/6/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/6/:/usr/lib/gcc/x86_64-linux-gnu/
 LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/6/:/usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/6/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/6/../../../:/lib/:/usr/lib/
-COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_33fc2' '-rdynamic' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
- /usr/lib/gcc/x86_64-linux-gnu/6/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/6/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/6/lto-wrapper -plugin-opt=-fresolution=/tmp/cc2p5pkl.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_33fc2 /usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/6/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/6 -L/usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/6/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/6/../../.. CMakeFiles/cmTC_33fc2.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/6/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu/crtn.o
-COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_33fc2' '-rdynamic' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
-make[1]: выход из каталога «/home/zulus/Projects/GitProj/orchestrix/src/audio/CMakeFiles/CMakeTmp»
+COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_4824d' '-rdynamic' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
+ /usr/lib/gcc/x86_64-linux-gnu/6/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/6/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/6/lto-wrapper -plugin-opt=-fresolution=/tmp/ccsSH6Zu.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_4824d /usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/6/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/6 -L/usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/6/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/6/../../.. CMakeFiles/cmTC_4824d.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/6/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu/crtn.o
+COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_4824d' '-rdynamic' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
+make[1]: выход из каталога «/home/zulus/Projects/GitProj/orchestrix/src/examples/audio/CMakeFiles/CMakeTmp»
 
 
 Parsed CXX implicit link information from above output:
   link line regex: [^( *|.*[/\])(ld|([^/\]+-)?ld|collect2)[^/\]*( |$)]
-  ignore line: [Change Dir: /home/zulus/Projects/GitProj/orchestrix/src/audio/CMakeFiles/CMakeTmp]
+  ignore line: [Change Dir: /home/zulus/Projects/GitProj/orchestrix/src/examples/audio/CMakeFiles/CMakeTmp]
   ignore line: []
-  ignore line: [Run Build Command:"/usr/bin/make" "cmTC_33fc2/fast"]
-  ignore line: [/usr/bin/make -f CMakeFiles/cmTC_33fc2.dir/build.make CMakeFiles/cmTC_33fc2.dir/build]
-  ignore line: [make[1]: вход в каталог «/home/zulus/Projects/GitProj/orchestrix/src/audio/CMakeFiles/CMakeTmp»]
-  ignore line: [Building CXX object CMakeFiles/cmTC_33fc2.dir/CMakeCXXCompilerABI.cpp.o]
-  ignore line: [/usr/bin/c++      -o CMakeFiles/cmTC_33fc2.dir/CMakeCXXCompilerABI.cpp.o -c /home/zulus/apps/clion-2016.3.3/bin/cmake/share/cmake-3.6/Modules/CMakeCXXCompilerABI.cpp]
-  ignore line: [Linking CXX executable cmTC_33fc2]
-  ignore line: [/home/zulus/apps/clion-2016.3.3/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_33fc2.dir/link.txt --verbose=1]
-  ignore line: [/usr/bin/c++       -v CMakeFiles/cmTC_33fc2.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_33fc2 -rdynamic  ]
+  ignore line: [Run Build Command:"/usr/bin/make" "cmTC_4824d/fast"]
+  ignore line: [/usr/bin/make -f CMakeFiles/cmTC_4824d.dir/build.make CMakeFiles/cmTC_4824d.dir/build]
+  ignore line: [make[1]: вход в каталог «/home/zulus/Projects/GitProj/orchestrix/src/examples/audio/CMakeFiles/CMakeTmp»]
+  ignore line: [Building CXX object CMakeFiles/cmTC_4824d.dir/CMakeCXXCompilerABI.cpp.o]
+  ignore line: [/usr/bin/c++      -o CMakeFiles/cmTC_4824d.dir/CMakeCXXCompilerABI.cpp.o -c /home/zulus/apps/clion-2016.3.3/bin/cmake/share/cmake-3.6/Modules/CMakeCXXCompilerABI.cpp]
+  ignore line: [Linking CXX executable cmTC_4824d]
+  ignore line: [/home/zulus/apps/clion-2016.3.3/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_4824d.dir/link.txt --verbose=1]
+  ignore line: [/usr/bin/c++       -v CMakeFiles/cmTC_4824d.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_4824d -rdynamic  ]
   ignore line: [Using built-in specs.]
   ignore line: [COLLECT_GCC=/usr/bin/c++]
   ignore line: [COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/6/lto-wrapper]
@@ -274,13 +274,13 @@ Parsed CXX implicit link information from above output:
   ignore line: [gcc version 6.3.0 20170406 (Ubuntu 6.3.0-12ubuntu2) ]
   ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/6/:/usr/lib/gcc/x86_64-linux-gnu/6/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/6/:/usr/lib/gcc/x86_64-linux-gnu/]
   ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/6/:/usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/6/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/6/../../../:/lib/:/usr/lib/]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_33fc2' '-rdynamic' '-shared-libgcc' '-mtune=generic' '-march=x86-64']
-  link line: [ /usr/lib/gcc/x86_64-linux-gnu/6/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/6/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/6/lto-wrapper -plugin-opt=-fresolution=/tmp/cc2p5pkl.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_33fc2 /usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/6/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/6 -L/usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/6/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/6/../../.. CMakeFiles/cmTC_33fc2.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/6/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu/crtn.o]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_4824d' '-rdynamic' '-shared-libgcc' '-mtune=generic' '-march=x86-64']
+  link line: [ /usr/lib/gcc/x86_64-linux-gnu/6/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/6/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/6/lto-wrapper -plugin-opt=-fresolution=/tmp/ccsSH6Zu.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_4824d /usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/6/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/6 -L/usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/6/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/6/../../.. CMakeFiles/cmTC_4824d.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/6/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu/crtn.o]
     arg [/usr/lib/gcc/x86_64-linux-gnu/6/collect2] ==> ignore
     arg [-plugin] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/6/liblto_plugin.so] ==> ignore
     arg [-plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/6/lto-wrapper] ==> ignore
-    arg [-plugin-opt=-fresolution=/tmp/cc2p5pkl.res] ==> ignore
+    arg [-plugin-opt=-fresolution=/tmp/ccsSH6Zu.res] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
     arg [-plugin-opt=-pass-through=-lc] ==> ignore
@@ -300,7 +300,7 @@ Parsed CXX implicit link information from above output:
     arg [-znow] ==> ignore
     arg [-zrelro] ==> ignore
     arg [-o] ==> ignore
-    arg [cmTC_33fc2] ==> ignore
+    arg [cmTC_4824d] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu/Scrt1.o] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu/crti.o] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/6/crtbeginS.o] ==> ignore
@@ -312,7 +312,7 @@ Parsed CXX implicit link information from above output:
     arg [-L/usr/lib/x86_64-linux-gnu] ==> dir [/usr/lib/x86_64-linux-gnu]
     arg [-L/usr/lib/../lib] ==> dir [/usr/lib/../lib]
     arg [-L/usr/lib/gcc/x86_64-linux-gnu/6/../../..] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/6/../../..]
-    arg [CMakeFiles/cmTC_33fc2.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
+    arg [CMakeFiles/cmTC_4824d.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
     arg [-lstdc++] ==> lib [stdc++]
     arg [-lm] ==> lib [m]
     arg [-lgcc_s] ==> lib [gcc_s]
@@ -342,17 +342,17 @@ Parsed CXX implicit link information from above output:
 
 
 Detecting CXX [-std=c++14] compiler features compiled with the following output:
-Change Dir: /home/zulus/Projects/GitProj/orchestrix/src/audio/CMakeFiles/CMakeTmp
+Change Dir: /home/zulus/Projects/GitProj/orchestrix/src/examples/audio/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_28123/fast"
-/usr/bin/make -f CMakeFiles/cmTC_28123.dir/build.make CMakeFiles/cmTC_28123.dir/build
-make[1]: вход в каталог «/home/zulus/Projects/GitProj/orchestrix/src/audio/CMakeFiles/CMakeTmp»
-Building CXX object CMakeFiles/cmTC_28123.dir/feature_tests.cxx.o
-/usr/bin/c++     -std=c++14 -o CMakeFiles/cmTC_28123.dir/feature_tests.cxx.o -c /home/zulus/Projects/GitProj/orchestrix/src/audio/CMakeFiles/feature_tests.cxx
-Linking CXX executable cmTC_28123
-/home/zulus/apps/clion-2016.3.3/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_28123.dir/link.txt --verbose=1
-/usr/bin/c++        CMakeFiles/cmTC_28123.dir/feature_tests.cxx.o  -o cmTC_28123 -rdynamic 
-make[1]: выход из каталога «/home/zulus/Projects/GitProj/orchestrix/src/audio/CMakeFiles/CMakeTmp»
+Run Build Command:"/usr/bin/make" "cmTC_63c32/fast"
+/usr/bin/make -f CMakeFiles/cmTC_63c32.dir/build.make CMakeFiles/cmTC_63c32.dir/build
+make[1]: вход в каталог «/home/zulus/Projects/GitProj/orchestrix/src/examples/audio/CMakeFiles/CMakeTmp»
+Building CXX object CMakeFiles/cmTC_63c32.dir/feature_tests.cxx.o
+/usr/bin/c++     -std=c++14 -o CMakeFiles/cmTC_63c32.dir/feature_tests.cxx.o -c /home/zulus/Projects/GitProj/orchestrix/src/examples/audio/CMakeFiles/feature_tests.cxx
+Linking CXX executable cmTC_63c32
+/home/zulus/apps/clion-2016.3.3/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_63c32.dir/link.txt --verbose=1
+/usr/bin/c++        CMakeFiles/cmTC_63c32.dir/feature_tests.cxx.o  -o cmTC_63c32 -rdynamic 
+make[1]: выход из каталога «/home/zulus/Projects/GitProj/orchestrix/src/examples/audio/CMakeFiles/CMakeTmp»
 
 
     Feature record: CXX_FEATURE:1cxx_aggregate_default_initializers
@@ -415,17 +415,17 @@ make[1]: выход из каталога «/home/zulus/Projects/GitProj/orchest
 
 
 Detecting CXX [-std=c++11] compiler features compiled with the following output:
-Change Dir: /home/zulus/Projects/GitProj/orchestrix/src/audio/CMakeFiles/CMakeTmp
+Change Dir: /home/zulus/Projects/GitProj/orchestrix/src/examples/audio/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_96010/fast"
-/usr/bin/make -f CMakeFiles/cmTC_96010.dir/build.make CMakeFiles/cmTC_96010.dir/build
-make[1]: вход в каталог «/home/zulus/Projects/GitProj/orchestrix/src/audio/CMakeFiles/CMakeTmp»
-Building CXX object CMakeFiles/cmTC_96010.dir/feature_tests.cxx.o
-/usr/bin/c++     -std=c++11 -o CMakeFiles/cmTC_96010.dir/feature_tests.cxx.o -c /home/zulus/Projects/GitProj/orchestrix/src/audio/CMakeFiles/feature_tests.cxx
-Linking CXX executable cmTC_96010
-/home/zulus/apps/clion-2016.3.3/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_96010.dir/link.txt --verbose=1
-/usr/bin/c++        CMakeFiles/cmTC_96010.dir/feature_tests.cxx.o  -o cmTC_96010 -rdynamic 
-make[1]: выход из каталога «/home/zulus/Projects/GitProj/orchestrix/src/audio/CMakeFiles/CMakeTmp»
+Run Build Command:"/usr/bin/make" "cmTC_7cab6/fast"
+/usr/bin/make -f CMakeFiles/cmTC_7cab6.dir/build.make CMakeFiles/cmTC_7cab6.dir/build
+make[1]: вход в каталог «/home/zulus/Projects/GitProj/orchestrix/src/examples/audio/CMakeFiles/CMakeTmp»
+Building CXX object CMakeFiles/cmTC_7cab6.dir/feature_tests.cxx.o
+/usr/bin/c++     -std=c++11 -o CMakeFiles/cmTC_7cab6.dir/feature_tests.cxx.o -c /home/zulus/Projects/GitProj/orchestrix/src/examples/audio/CMakeFiles/feature_tests.cxx
+Linking CXX executable cmTC_7cab6
+/home/zulus/apps/clion-2016.3.3/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_7cab6.dir/link.txt --verbose=1
+/usr/bin/c++        CMakeFiles/cmTC_7cab6.dir/feature_tests.cxx.o  -o cmTC_7cab6 -rdynamic 
+make[1]: выход из каталога «/home/zulus/Projects/GitProj/orchestrix/src/examples/audio/CMakeFiles/CMakeTmp»
 
 
     Feature record: CXX_FEATURE:0cxx_aggregate_default_initializers
@@ -488,17 +488,17 @@ make[1]: выход из каталога «/home/zulus/Projects/GitProj/orchest
 
 
 Detecting CXX [-std=c++98] compiler features compiled with the following output:
-Change Dir: /home/zulus/Projects/GitProj/orchestrix/src/audio/CMakeFiles/CMakeTmp
+Change Dir: /home/zulus/Projects/GitProj/orchestrix/src/examples/audio/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_66752/fast"
-/usr/bin/make -f CMakeFiles/cmTC_66752.dir/build.make CMakeFiles/cmTC_66752.dir/build
-make[1]: вход в каталог «/home/zulus/Projects/GitProj/orchestrix/src/audio/CMakeFiles/CMakeTmp»
-Building CXX object CMakeFiles/cmTC_66752.dir/feature_tests.cxx.o
-/usr/bin/c++     -std=c++98 -o CMakeFiles/cmTC_66752.dir/feature_tests.cxx.o -c /home/zulus/Projects/GitProj/orchestrix/src/audio/CMakeFiles/feature_tests.cxx
-Linking CXX executable cmTC_66752
-/home/zulus/apps/clion-2016.3.3/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_66752.dir/link.txt --verbose=1
-/usr/bin/c++        CMakeFiles/cmTC_66752.dir/feature_tests.cxx.o  -o cmTC_66752 -rdynamic 
-make[1]: выход из каталога «/home/zulus/Projects/GitProj/orchestrix/src/audio/CMakeFiles/CMakeTmp»
+Run Build Command:"/usr/bin/make" "cmTC_c2b21/fast"
+/usr/bin/make -f CMakeFiles/cmTC_c2b21.dir/build.make CMakeFiles/cmTC_c2b21.dir/build
+make[1]: вход в каталог «/home/zulus/Projects/GitProj/orchestrix/src/examples/audio/CMakeFiles/CMakeTmp»
+Building CXX object CMakeFiles/cmTC_c2b21.dir/feature_tests.cxx.o
+/usr/bin/c++     -std=c++98 -o CMakeFiles/cmTC_c2b21.dir/feature_tests.cxx.o -c /home/zulus/Projects/GitProj/orchestrix/src/examples/audio/CMakeFiles/feature_tests.cxx
+Linking CXX executable cmTC_c2b21
+/home/zulus/apps/clion-2016.3.3/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_c2b21.dir/link.txt --verbose=1
+/usr/bin/c++        CMakeFiles/cmTC_c2b21.dir/feature_tests.cxx.o  -o cmTC_c2b21 -rdynamic 
+make[1]: выход из каталога «/home/zulus/Projects/GitProj/orchestrix/src/examples/audio/CMakeFiles/CMakeTmp»
 
 
     Feature record: CXX_FEATURE:0cxx_aggregate_default_initializers
@@ -558,7 +558,7 @@ make[1]: выход из каталога «/home/zulus/Projects/GitProj/orchest
     Feature record: CXX_FEATURE:0cxx_variable_templates
     Feature record: CXX_FEATURE:0cxx_variadic_macros
     Feature record: CXX_FEATURE:0cxx_variadic_templates
-The system is: Linux - 4.10.0-19-generic - x86_64
+The system is: Linux - 4.10.0-21-generic - x86_64
 Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
 Compiler: /usr/bin/cc 
 Build flags: 
@@ -570,11 +570,11 @@ The output was:
 
 Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.out"
 
-The C compiler identification is GNU, found in "/home/zulus/Projects/GitProj/orchestrix/src/audio/CMakeFiles/3.7.2/CompilerIdC/a.out"
+The C compiler identification is GNU, found in "/home/zulus/Projects/GitProj/orchestrix/src/examples/audio/CMakeFiles/3.7.2/CompilerIdC/a.out"
 
 Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
 Compiler: /usr/bin/c++ 
-Build flags: 
+Build flags: ;-std=c++14
 Id flags: 
 
 The output was:
@@ -583,33 +583,33 @@ The output was:
 
 Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "a.out"
 
-The CXX compiler identification is GNU, found in "/home/zulus/Projects/GitProj/orchestrix/src/audio/CMakeFiles/3.7.2/CompilerIdCXX/a.out"
+The CXX compiler identification is GNU, found in "/home/zulus/Projects/GitProj/orchestrix/src/examples/audio/CMakeFiles/3.7.2/CompilerIdCXX/a.out"
 
 Determining if the C compiler works passed with the following output:
-Change Dir: /home/zulus/Projects/GitProj/orchestrix/src/audio/CMakeFiles/CMakeTmp
+Change Dir: /home/zulus/Projects/GitProj/orchestrix/src/examples/audio/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_168e0/fast"
-/usr/bin/make -f CMakeFiles/cmTC_168e0.dir/build.make CMakeFiles/cmTC_168e0.dir/build
-make[1]: вход в каталог «/home/zulus/Projects/GitProj/orchestrix/src/audio/CMakeFiles/CMakeTmp»
-Building C object CMakeFiles/cmTC_168e0.dir/testCCompiler.c.o
-/usr/bin/cc     -o CMakeFiles/cmTC_168e0.dir/testCCompiler.c.o   -c /home/zulus/Projects/GitProj/orchestrix/src/audio/CMakeFiles/CMakeTmp/testCCompiler.c
-Linking C executable cmTC_168e0
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_168e0.dir/link.txt --verbose=1
-/usr/bin/cc       CMakeFiles/cmTC_168e0.dir/testCCompiler.c.o  -o cmTC_168e0 -rdynamic 
-make[1]: выход из каталога «/home/zulus/Projects/GitProj/orchestrix/src/audio/CMakeFiles/CMakeTmp»
+Run Build Command:"/usr/bin/make" "cmTC_1c278/fast"
+/usr/bin/make -f CMakeFiles/cmTC_1c278.dir/build.make CMakeFiles/cmTC_1c278.dir/build
+make[1]: вход в каталог «/home/zulus/Projects/GitProj/orchestrix/src/examples/audio/CMakeFiles/CMakeTmp»
+Building C object CMakeFiles/cmTC_1c278.dir/testCCompiler.c.o
+/usr/bin/cc     -o CMakeFiles/cmTC_1c278.dir/testCCompiler.c.o   -c /home/zulus/Projects/GitProj/orchestrix/src/examples/audio/CMakeFiles/CMakeTmp/testCCompiler.c
+Linking C executable cmTC_1c278
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_1c278.dir/link.txt --verbose=1
+/usr/bin/cc       CMakeFiles/cmTC_1c278.dir/testCCompiler.c.o  -o cmTC_1c278 -rdynamic 
+make[1]: выход из каталога «/home/zulus/Projects/GitProj/orchestrix/src/examples/audio/CMakeFiles/CMakeTmp»
 
 
 Detecting C compiler ABI info compiled with the following output:
-Change Dir: /home/zulus/Projects/GitProj/orchestrix/src/audio/CMakeFiles/CMakeTmp
+Change Dir: /home/zulus/Projects/GitProj/orchestrix/src/examples/audio/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_af6d5/fast"
-/usr/bin/make -f CMakeFiles/cmTC_af6d5.dir/build.make CMakeFiles/cmTC_af6d5.dir/build
-make[1]: вход в каталог «/home/zulus/Projects/GitProj/orchestrix/src/audio/CMakeFiles/CMakeTmp»
-Building C object CMakeFiles/cmTC_af6d5.dir/CMakeCCompilerABI.c.o
-/usr/bin/cc     -o CMakeFiles/cmTC_af6d5.dir/CMakeCCompilerABI.c.o   -c /usr/share/cmake-3.7/Modules/CMakeCCompilerABI.c
-Linking C executable cmTC_af6d5
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_af6d5.dir/link.txt --verbose=1
-/usr/bin/cc      -v CMakeFiles/cmTC_af6d5.dir/CMakeCCompilerABI.c.o  -o cmTC_af6d5 -rdynamic  
+Run Build Command:"/usr/bin/make" "cmTC_e9ecc/fast"
+/usr/bin/make -f CMakeFiles/cmTC_e9ecc.dir/build.make CMakeFiles/cmTC_e9ecc.dir/build
+make[1]: вход в каталог «/home/zulus/Projects/GitProj/orchestrix/src/examples/audio/CMakeFiles/CMakeTmp»
+Building C object CMakeFiles/cmTC_e9ecc.dir/CMakeCCompilerABI.c.o
+/usr/bin/cc     -o CMakeFiles/cmTC_e9ecc.dir/CMakeCCompilerABI.c.o   -c /usr/share/cmake-3.7/Modules/CMakeCCompilerABI.c
+Linking C executable cmTC_e9ecc
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_e9ecc.dir/link.txt --verbose=1
+/usr/bin/cc      -v CMakeFiles/cmTC_e9ecc.dir/CMakeCCompilerABI.c.o  -o cmTC_e9ecc -rdynamic  
 Using built-in specs.
 COLLECT_GCC=/usr/bin/cc
 COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/6/lto-wrapper
@@ -619,24 +619,24 @@ Thread model: posix
 gcc version 6.3.0 20170406 (Ubuntu 6.3.0-12ubuntu2) 
 COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/6/:/usr/lib/gcc/x86_64-linux-gnu/6/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/6/:/usr/lib/gcc/x86_64-linux-gnu/
 LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/6/:/usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/6/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/6/../../../:/lib/:/usr/lib/
-COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_af6d5' '-rdynamic' '-mtune=generic' '-march=x86-64'
- /usr/lib/gcc/x86_64-linux-gnu/6/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/6/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/6/lto-wrapper -plugin-opt=-fresolution=/tmp/cc5QSFa0.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_af6d5 /usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/6/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/6 -L/usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/6/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/6/../../.. CMakeFiles/cmTC_af6d5.dir/CMakeCCompilerABI.c.o -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /usr/lib/gcc/x86_64-linux-gnu/6/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu/crtn.o
-COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_af6d5' '-rdynamic' '-mtune=generic' '-march=x86-64'
-make[1]: выход из каталога «/home/zulus/Projects/GitProj/orchestrix/src/audio/CMakeFiles/CMakeTmp»
+COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_e9ecc' '-rdynamic' '-mtune=generic' '-march=x86-64'
+ /usr/lib/gcc/x86_64-linux-gnu/6/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/6/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/6/lto-wrapper -plugin-opt=-fresolution=/tmp/ccFVEPmA.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_e9ecc /usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/6/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/6 -L/usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/6/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/6/../../.. CMakeFiles/cmTC_e9ecc.dir/CMakeCCompilerABI.c.o -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /usr/lib/gcc/x86_64-linux-gnu/6/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu/crtn.o
+COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_e9ecc' '-rdynamic' '-mtune=generic' '-march=x86-64'
+make[1]: выход из каталога «/home/zulus/Projects/GitProj/orchestrix/src/examples/audio/CMakeFiles/CMakeTmp»
 
 
 Parsed C implicit link information from above output:
   link line regex: [^( *|.*[/\])(ld|([^/\]+-)?ld|collect2)[^/\]*( |$)]
-  ignore line: [Change Dir: /home/zulus/Projects/GitProj/orchestrix/src/audio/CMakeFiles/CMakeTmp]
+  ignore line: [Change Dir: /home/zulus/Projects/GitProj/orchestrix/src/examples/audio/CMakeFiles/CMakeTmp]
   ignore line: []
-  ignore line: [Run Build Command:"/usr/bin/make" "cmTC_af6d5/fast"]
-  ignore line: [/usr/bin/make -f CMakeFiles/cmTC_af6d5.dir/build.make CMakeFiles/cmTC_af6d5.dir/build]
-  ignore line: [make[1]: вход в каталог «/home/zulus/Projects/GitProj/orchestrix/src/audio/CMakeFiles/CMakeTmp»]
-  ignore line: [Building C object CMakeFiles/cmTC_af6d5.dir/CMakeCCompilerABI.c.o]
-  ignore line: [/usr/bin/cc     -o CMakeFiles/cmTC_af6d5.dir/CMakeCCompilerABI.c.o   -c /usr/share/cmake-3.7/Modules/CMakeCCompilerABI.c]
-  ignore line: [Linking C executable cmTC_af6d5]
-  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_af6d5.dir/link.txt --verbose=1]
-  ignore line: [/usr/bin/cc      -v CMakeFiles/cmTC_af6d5.dir/CMakeCCompilerABI.c.o  -o cmTC_af6d5 -rdynamic  ]
+  ignore line: [Run Build Command:"/usr/bin/make" "cmTC_e9ecc/fast"]
+  ignore line: [/usr/bin/make -f CMakeFiles/cmTC_e9ecc.dir/build.make CMakeFiles/cmTC_e9ecc.dir/build]
+  ignore line: [make[1]: вход в каталог «/home/zulus/Projects/GitProj/orchestrix/src/examples/audio/CMakeFiles/CMakeTmp»]
+  ignore line: [Building C object CMakeFiles/cmTC_e9ecc.dir/CMakeCCompilerABI.c.o]
+  ignore line: [/usr/bin/cc     -o CMakeFiles/cmTC_e9ecc.dir/CMakeCCompilerABI.c.o   -c /usr/share/cmake-3.7/Modules/CMakeCCompilerABI.c]
+  ignore line: [Linking C executable cmTC_e9ecc]
+  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_e9ecc.dir/link.txt --verbose=1]
+  ignore line: [/usr/bin/cc      -v CMakeFiles/cmTC_e9ecc.dir/CMakeCCompilerABI.c.o  -o cmTC_e9ecc -rdynamic  ]
   ignore line: [Using built-in specs.]
   ignore line: [COLLECT_GCC=/usr/bin/cc]
   ignore line: [COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/6/lto-wrapper]
@@ -646,13 +646,13 @@ Parsed C implicit link information from above output:
   ignore line: [gcc version 6.3.0 20170406 (Ubuntu 6.3.0-12ubuntu2) ]
   ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/6/:/usr/lib/gcc/x86_64-linux-gnu/6/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/6/:/usr/lib/gcc/x86_64-linux-gnu/]
   ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/6/:/usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/6/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/6/../../../:/lib/:/usr/lib/]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_af6d5' '-rdynamic' '-mtune=generic' '-march=x86-64']
-  link line: [ /usr/lib/gcc/x86_64-linux-gnu/6/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/6/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/6/lto-wrapper -plugin-opt=-fresolution=/tmp/cc5QSFa0.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_af6d5 /usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/6/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/6 -L/usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/6/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/6/../../.. CMakeFiles/cmTC_af6d5.dir/CMakeCCompilerABI.c.o -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /usr/lib/gcc/x86_64-linux-gnu/6/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu/crtn.o]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_e9ecc' '-rdynamic' '-mtune=generic' '-march=x86-64']
+  link line: [ /usr/lib/gcc/x86_64-linux-gnu/6/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/6/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/6/lto-wrapper -plugin-opt=-fresolution=/tmp/ccFVEPmA.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_e9ecc /usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/6/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/6 -L/usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/6/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/6/../../.. CMakeFiles/cmTC_e9ecc.dir/CMakeCCompilerABI.c.o -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /usr/lib/gcc/x86_64-linux-gnu/6/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu/crtn.o]
     arg [/usr/lib/gcc/x86_64-linux-gnu/6/collect2] ==> ignore
     arg [-plugin] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/6/liblto_plugin.so] ==> ignore
     arg [-plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/6/lto-wrapper] ==> ignore
-    arg [-plugin-opt=-fresolution=/tmp/cc5QSFa0.res] ==> ignore
+    arg [-plugin-opt=-fresolution=/tmp/ccFVEPmA.res] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
     arg [-plugin-opt=-pass-through=-lc] ==> ignore
@@ -672,7 +672,7 @@ Parsed C implicit link information from above output:
     arg [-znow] ==> ignore
     arg [-zrelro] ==> ignore
     arg [-o] ==> ignore
-    arg [cmTC_af6d5] ==> ignore
+    arg [cmTC_e9ecc] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu/Scrt1.o] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu/crti.o] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/6/crtbeginS.o] ==> ignore
@@ -684,7 +684,7 @@ Parsed C implicit link information from above output:
     arg [-L/usr/lib/x86_64-linux-gnu] ==> dir [/usr/lib/x86_64-linux-gnu]
     arg [-L/usr/lib/../lib] ==> dir [/usr/lib/../lib]
     arg [-L/usr/lib/gcc/x86_64-linux-gnu/6/../../..] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/6/../../..]
-    arg [CMakeFiles/cmTC_af6d5.dir/CMakeCCompilerABI.c.o] ==> ignore
+    arg [CMakeFiles/cmTC_e9ecc.dir/CMakeCCompilerABI.c.o] ==> ignore
     arg [-lgcc] ==> lib [gcc]
     arg [--as-needed] ==> ignore
     arg [-lgcc_s] ==> lib [gcc_s]
@@ -716,17 +716,17 @@ Parsed C implicit link information from above output:
 
 
 Detecting C [-std=c11] compiler features compiled with the following output:
-Change Dir: /home/zulus/Projects/GitProj/orchestrix/src/audio/CMakeFiles/CMakeTmp
+Change Dir: /home/zulus/Projects/GitProj/orchestrix/src/examples/audio/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_12560/fast"
-/usr/bin/make -f CMakeFiles/cmTC_12560.dir/build.make CMakeFiles/cmTC_12560.dir/build
-make[1]: вход в каталог «/home/zulus/Projects/GitProj/orchestrix/src/audio/CMakeFiles/CMakeTmp»
-Building C object CMakeFiles/cmTC_12560.dir/feature_tests.c.o
-/usr/bin/cc    -std=c11 -o CMakeFiles/cmTC_12560.dir/feature_tests.c.o   -c /home/zulus/Projects/GitProj/orchestrix/src/audio/CMakeFiles/feature_tests.c
-Linking C executable cmTC_12560
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_12560.dir/link.txt --verbose=1
-/usr/bin/cc       CMakeFiles/cmTC_12560.dir/feature_tests.c.o  -o cmTC_12560 -rdynamic 
-make[1]: выход из каталога «/home/zulus/Projects/GitProj/orchestrix/src/audio/CMakeFiles/CMakeTmp»
+Run Build Command:"/usr/bin/make" "cmTC_0565c/fast"
+/usr/bin/make -f CMakeFiles/cmTC_0565c.dir/build.make CMakeFiles/cmTC_0565c.dir/build
+make[1]: вход в каталог «/home/zulus/Projects/GitProj/orchestrix/src/examples/audio/CMakeFiles/CMakeTmp»
+Building C object CMakeFiles/cmTC_0565c.dir/feature_tests.c.o
+/usr/bin/cc    -std=c11 -o CMakeFiles/cmTC_0565c.dir/feature_tests.c.o   -c /home/zulus/Projects/GitProj/orchestrix/src/examples/audio/CMakeFiles/feature_tests.c
+Linking C executable cmTC_0565c
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_0565c.dir/link.txt --verbose=1
+/usr/bin/cc       CMakeFiles/cmTC_0565c.dir/feature_tests.c.o  -o cmTC_0565c -rdynamic 
+make[1]: выход из каталога «/home/zulus/Projects/GitProj/orchestrix/src/examples/audio/CMakeFiles/CMakeTmp»
 
 
     Feature record: C_FEATURE:1c_function_prototypes
@@ -736,17 +736,17 @@ make[1]: выход из каталога «/home/zulus/Projects/GitProj/orchest
 
 
 Detecting C [-std=c99] compiler features compiled with the following output:
-Change Dir: /home/zulus/Projects/GitProj/orchestrix/src/audio/CMakeFiles/CMakeTmp
+Change Dir: /home/zulus/Projects/GitProj/orchestrix/src/examples/audio/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_3f747/fast"
-/usr/bin/make -f CMakeFiles/cmTC_3f747.dir/build.make CMakeFiles/cmTC_3f747.dir/build
-make[1]: вход в каталог «/home/zulus/Projects/GitProj/orchestrix/src/audio/CMakeFiles/CMakeTmp»
-Building C object CMakeFiles/cmTC_3f747.dir/feature_tests.c.o
-/usr/bin/cc    -std=c99 -o CMakeFiles/cmTC_3f747.dir/feature_tests.c.o   -c /home/zulus/Projects/GitProj/orchestrix/src/audio/CMakeFiles/feature_tests.c
-Linking C executable cmTC_3f747
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_3f747.dir/link.txt --verbose=1
-/usr/bin/cc       CMakeFiles/cmTC_3f747.dir/feature_tests.c.o  -o cmTC_3f747 -rdynamic 
-make[1]: выход из каталога «/home/zulus/Projects/GitProj/orchestrix/src/audio/CMakeFiles/CMakeTmp»
+Run Build Command:"/usr/bin/make" "cmTC_18dd7/fast"
+/usr/bin/make -f CMakeFiles/cmTC_18dd7.dir/build.make CMakeFiles/cmTC_18dd7.dir/build
+make[1]: вход в каталог «/home/zulus/Projects/GitProj/orchestrix/src/examples/audio/CMakeFiles/CMakeTmp»
+Building C object CMakeFiles/cmTC_18dd7.dir/feature_tests.c.o
+/usr/bin/cc    -std=c99 -o CMakeFiles/cmTC_18dd7.dir/feature_tests.c.o   -c /home/zulus/Projects/GitProj/orchestrix/src/examples/audio/CMakeFiles/feature_tests.c
+Linking C executable cmTC_18dd7
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_18dd7.dir/link.txt --verbose=1
+/usr/bin/cc       CMakeFiles/cmTC_18dd7.dir/feature_tests.c.o  -o cmTC_18dd7 -rdynamic 
+make[1]: выход из каталога «/home/zulus/Projects/GitProj/orchestrix/src/examples/audio/CMakeFiles/CMakeTmp»
 
 
     Feature record: C_FEATURE:1c_function_prototypes
@@ -756,17 +756,17 @@ make[1]: выход из каталога «/home/zulus/Projects/GitProj/orchest
 
 
 Detecting C [-std=c90] compiler features compiled with the following output:
-Change Dir: /home/zulus/Projects/GitProj/orchestrix/src/audio/CMakeFiles/CMakeTmp
+Change Dir: /home/zulus/Projects/GitProj/orchestrix/src/examples/audio/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_62f73/fast"
-/usr/bin/make -f CMakeFiles/cmTC_62f73.dir/build.make CMakeFiles/cmTC_62f73.dir/build
-make[1]: вход в каталог «/home/zulus/Projects/GitProj/orchestrix/src/audio/CMakeFiles/CMakeTmp»
-Building C object CMakeFiles/cmTC_62f73.dir/feature_tests.c.o
-/usr/bin/cc    -std=c90 -o CMakeFiles/cmTC_62f73.dir/feature_tests.c.o   -c /home/zulus/Projects/GitProj/orchestrix/src/audio/CMakeFiles/feature_tests.c
-Linking C executable cmTC_62f73
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_62f73.dir/link.txt --verbose=1
-/usr/bin/cc       CMakeFiles/cmTC_62f73.dir/feature_tests.c.o  -o cmTC_62f73 -rdynamic 
-make[1]: выход из каталога «/home/zulus/Projects/GitProj/orchestrix/src/audio/CMakeFiles/CMakeTmp»
+Run Build Command:"/usr/bin/make" "cmTC_76374/fast"
+/usr/bin/make -f CMakeFiles/cmTC_76374.dir/build.make CMakeFiles/cmTC_76374.dir/build
+make[1]: вход в каталог «/home/zulus/Projects/GitProj/orchestrix/src/examples/audio/CMakeFiles/CMakeTmp»
+Building C object CMakeFiles/cmTC_76374.dir/feature_tests.c.o
+/usr/bin/cc    -std=c90 -o CMakeFiles/cmTC_76374.dir/feature_tests.c.o   -c /home/zulus/Projects/GitProj/orchestrix/src/examples/audio/CMakeFiles/feature_tests.c
+Linking C executable cmTC_76374
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_76374.dir/link.txt --verbose=1
+/usr/bin/cc       CMakeFiles/cmTC_76374.dir/feature_tests.c.o  -o cmTC_76374 -rdynamic 
+make[1]: выход из каталога «/home/zulus/Projects/GitProj/orchestrix/src/examples/audio/CMakeFiles/CMakeTmp»
 
 
     Feature record: C_FEATURE:1c_function_prototypes
@@ -774,30 +774,30 @@ make[1]: выход из каталога «/home/zulus/Projects/GitProj/orchest
     Feature record: C_FEATURE:0c_static_assert
     Feature record: C_FEATURE:0c_variadic_macros
 Determining if the CXX compiler works passed with the following output:
-Change Dir: /home/zulus/Projects/GitProj/orchestrix/src/audio/CMakeFiles/CMakeTmp
+Change Dir: /home/zulus/Projects/GitProj/orchestrix/src/examples/audio/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_8a7cf/fast"
-/usr/bin/make -f CMakeFiles/cmTC_8a7cf.dir/build.make CMakeFiles/cmTC_8a7cf.dir/build
-make[1]: вход в каталог «/home/zulus/Projects/GitProj/orchestrix/src/audio/CMakeFiles/CMakeTmp»
-Building CXX object CMakeFiles/cmTC_8a7cf.dir/testCXXCompiler.cxx.o
-/usr/bin/c++      -o CMakeFiles/cmTC_8a7cf.dir/testCXXCompiler.cxx.o -c /home/zulus/Projects/GitProj/orchestrix/src/audio/CMakeFiles/CMakeTmp/testCXXCompiler.cxx
-Linking CXX executable cmTC_8a7cf
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_8a7cf.dir/link.txt --verbose=1
-/usr/bin/c++        CMakeFiles/cmTC_8a7cf.dir/testCXXCompiler.cxx.o  -o cmTC_8a7cf -rdynamic 
-make[1]: выход из каталога «/home/zulus/Projects/GitProj/orchestrix/src/audio/CMakeFiles/CMakeTmp»
+Run Build Command:"/usr/bin/make" "cmTC_e3c1e/fast"
+/usr/bin/make -f CMakeFiles/cmTC_e3c1e.dir/build.make CMakeFiles/cmTC_e3c1e.dir/build
+make[1]: вход в каталог «/home/zulus/Projects/GitProj/orchestrix/src/examples/audio/CMakeFiles/CMakeTmp»
+Building CXX object CMakeFiles/cmTC_e3c1e.dir/testCXXCompiler.cxx.o
+/usr/bin/c++     -std=c++14    -o CMakeFiles/cmTC_e3c1e.dir/testCXXCompiler.cxx.o -c /home/zulus/Projects/GitProj/orchestrix/src/examples/audio/CMakeFiles/CMakeTmp/testCXXCompiler.cxx
+Linking CXX executable cmTC_e3c1e
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_e3c1e.dir/link.txt --verbose=1
+/usr/bin/c++    -std=c++14     CMakeFiles/cmTC_e3c1e.dir/testCXXCompiler.cxx.o  -o cmTC_e3c1e -rdynamic 
+make[1]: выход из каталога «/home/zulus/Projects/GitProj/orchestrix/src/examples/audio/CMakeFiles/CMakeTmp»
 
 
 Detecting CXX compiler ABI info compiled with the following output:
-Change Dir: /home/zulus/Projects/GitProj/orchestrix/src/audio/CMakeFiles/CMakeTmp
+Change Dir: /home/zulus/Projects/GitProj/orchestrix/src/examples/audio/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_f183a/fast"
-/usr/bin/make -f CMakeFiles/cmTC_f183a.dir/build.make CMakeFiles/cmTC_f183a.dir/build
-make[1]: вход в каталог «/home/zulus/Projects/GitProj/orchestrix/src/audio/CMakeFiles/CMakeTmp»
-Building CXX object CMakeFiles/cmTC_f183a.dir/CMakeCXXCompilerABI.cpp.o
-/usr/bin/c++      -o CMakeFiles/cmTC_f183a.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.7/Modules/CMakeCXXCompilerABI.cpp
-Linking CXX executable cmTC_f183a
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_f183a.dir/link.txt --verbose=1
-/usr/bin/c++       -v CMakeFiles/cmTC_f183a.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_f183a -rdynamic  
+Run Build Command:"/usr/bin/make" "cmTC_ed398/fast"
+/usr/bin/make -f CMakeFiles/cmTC_ed398.dir/build.make CMakeFiles/cmTC_ed398.dir/build
+make[1]: вход в каталог «/home/zulus/Projects/GitProj/orchestrix/src/examples/audio/CMakeFiles/CMakeTmp»
+Building CXX object CMakeFiles/cmTC_ed398.dir/CMakeCXXCompilerABI.cpp.o
+/usr/bin/c++     -std=c++14    -o CMakeFiles/cmTC_ed398.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.7/Modules/CMakeCXXCompilerABI.cpp
+Linking CXX executable cmTC_ed398
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_ed398.dir/link.txt --verbose=1
+/usr/bin/c++    -std=c++14    -v CMakeFiles/cmTC_ed398.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_ed398 -rdynamic  
 Using built-in specs.
 COLLECT_GCC=/usr/bin/c++
 COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/6/lto-wrapper
@@ -807,24 +807,24 @@ Thread model: posix
 gcc version 6.3.0 20170406 (Ubuntu 6.3.0-12ubuntu2) 
 COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/6/:/usr/lib/gcc/x86_64-linux-gnu/6/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/6/:/usr/lib/gcc/x86_64-linux-gnu/
 LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/6/:/usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/6/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/6/../../../:/lib/:/usr/lib/
-COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_f183a' '-rdynamic' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
- /usr/lib/gcc/x86_64-linux-gnu/6/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/6/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/6/lto-wrapper -plugin-opt=-fresolution=/tmp/ccCCM871.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_f183a /usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/6/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/6 -L/usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/6/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/6/../../.. CMakeFiles/cmTC_f183a.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/6/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu/crtn.o
-COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_f183a' '-rdynamic' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
-make[1]: выход из каталога «/home/zulus/Projects/GitProj/orchestrix/src/audio/CMakeFiles/CMakeTmp»
+COLLECT_GCC_OPTIONS='-std=c++14' '-v' '-o' 'cmTC_ed398' '-rdynamic' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
+ /usr/lib/gcc/x86_64-linux-gnu/6/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/6/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/6/lto-wrapper -plugin-opt=-fresolution=/tmp/cc81aY4G.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_ed398 /usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/6/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/6 -L/usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/6/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/6/../../.. CMakeFiles/cmTC_ed398.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/6/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu/crtn.o
+COLLECT_GCC_OPTIONS='-std=c++14' '-v' '-o' 'cmTC_ed398' '-rdynamic' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
+make[1]: выход из каталога «/home/zulus/Projects/GitProj/orchestrix/src/examples/audio/CMakeFiles/CMakeTmp»
 
 
 Parsed CXX implicit link information from above output:
   link line regex: [^( *|.*[/\])(ld|([^/\]+-)?ld|collect2)[^/\]*( |$)]
-  ignore line: [Change Dir: /home/zulus/Projects/GitProj/orchestrix/src/audio/CMakeFiles/CMakeTmp]
+  ignore line: [Change Dir: /home/zulus/Projects/GitProj/orchestrix/src/examples/audio/CMakeFiles/CMakeTmp]
   ignore line: []
-  ignore line: [Run Build Command:"/usr/bin/make" "cmTC_f183a/fast"]
-  ignore line: [/usr/bin/make -f CMakeFiles/cmTC_f183a.dir/build.make CMakeFiles/cmTC_f183a.dir/build]
-  ignore line: [make[1]: вход в каталог «/home/zulus/Projects/GitProj/orchestrix/src/audio/CMakeFiles/CMakeTmp»]
-  ignore line: [Building CXX object CMakeFiles/cmTC_f183a.dir/CMakeCXXCompilerABI.cpp.o]
-  ignore line: [/usr/bin/c++      -o CMakeFiles/cmTC_f183a.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.7/Modules/CMakeCXXCompilerABI.cpp]
-  ignore line: [Linking CXX executable cmTC_f183a]
-  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_f183a.dir/link.txt --verbose=1]
-  ignore line: [/usr/bin/c++       -v CMakeFiles/cmTC_f183a.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_f183a -rdynamic  ]
+  ignore line: [Run Build Command:"/usr/bin/make" "cmTC_ed398/fast"]
+  ignore line: [/usr/bin/make -f CMakeFiles/cmTC_ed398.dir/build.make CMakeFiles/cmTC_ed398.dir/build]
+  ignore line: [make[1]: вход в каталог «/home/zulus/Projects/GitProj/orchestrix/src/examples/audio/CMakeFiles/CMakeTmp»]
+  ignore line: [Building CXX object CMakeFiles/cmTC_ed398.dir/CMakeCXXCompilerABI.cpp.o]
+  ignore line: [/usr/bin/c++     -std=c++14    -o CMakeFiles/cmTC_ed398.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.7/Modules/CMakeCXXCompilerABI.cpp]
+  ignore line: [Linking CXX executable cmTC_ed398]
+  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_ed398.dir/link.txt --verbose=1]
+  ignore line: [/usr/bin/c++    -std=c++14    -v CMakeFiles/cmTC_ed398.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_ed398 -rdynamic  ]
   ignore line: [Using built-in specs.]
   ignore line: [COLLECT_GCC=/usr/bin/c++]
   ignore line: [COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/6/lto-wrapper]
@@ -834,13 +834,13 @@ Parsed CXX implicit link information from above output:
   ignore line: [gcc version 6.3.0 20170406 (Ubuntu 6.3.0-12ubuntu2) ]
   ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/6/:/usr/lib/gcc/x86_64-linux-gnu/6/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/6/:/usr/lib/gcc/x86_64-linux-gnu/]
   ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/6/:/usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/6/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/6/../../../:/lib/:/usr/lib/]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_f183a' '-rdynamic' '-shared-libgcc' '-mtune=generic' '-march=x86-64']
-  link line: [ /usr/lib/gcc/x86_64-linux-gnu/6/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/6/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/6/lto-wrapper -plugin-opt=-fresolution=/tmp/ccCCM871.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_f183a /usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/6/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/6 -L/usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/6/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/6/../../.. CMakeFiles/cmTC_f183a.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/6/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu/crtn.o]
+  ignore line: [COLLECT_GCC_OPTIONS='-std=c++14' '-v' '-o' 'cmTC_ed398' '-rdynamic' '-shared-libgcc' '-mtune=generic' '-march=x86-64']
+  link line: [ /usr/lib/gcc/x86_64-linux-gnu/6/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/6/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/6/lto-wrapper -plugin-opt=-fresolution=/tmp/cc81aY4G.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_ed398 /usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/6/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/6 -L/usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/6/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/6/../../.. CMakeFiles/cmTC_ed398.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/6/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu/crtn.o]
     arg [/usr/lib/gcc/x86_64-linux-gnu/6/collect2] ==> ignore
     arg [-plugin] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/6/liblto_plugin.so] ==> ignore
     arg [-plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/6/lto-wrapper] ==> ignore
-    arg [-plugin-opt=-fresolution=/tmp/ccCCM871.res] ==> ignore
+    arg [-plugin-opt=-fresolution=/tmp/cc81aY4G.res] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
     arg [-plugin-opt=-pass-through=-lc] ==> ignore
@@ -860,7 +860,7 @@ Parsed CXX implicit link information from above output:
     arg [-znow] ==> ignore
     arg [-zrelro] ==> ignore
     arg [-o] ==> ignore
-    arg [cmTC_f183a] ==> ignore
+    arg [cmTC_ed398] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu/Scrt1.o] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu/crti.o] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/6/crtbeginS.o] ==> ignore
@@ -872,7 +872,7 @@ Parsed CXX implicit link information from above output:
     arg [-L/usr/lib/x86_64-linux-gnu] ==> dir [/usr/lib/x86_64-linux-gnu]
     arg [-L/usr/lib/../lib] ==> dir [/usr/lib/../lib]
     arg [-L/usr/lib/gcc/x86_64-linux-gnu/6/../../..] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/6/../../..]
-    arg [CMakeFiles/cmTC_f183a.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
+    arg [CMakeFiles/cmTC_ed398.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
     arg [-lstdc++] ==> lib [stdc++]
     arg [-lm] ==> lib [m]
     arg [-lgcc_s] ==> lib [gcc_s]
@@ -902,17 +902,17 @@ Parsed CXX implicit link information from above output:
 
 
 Detecting CXX [-std=c++14] compiler features compiled with the following output:
-Change Dir: /home/zulus/Projects/GitProj/orchestrix/src/audio/CMakeFiles/CMakeTmp
+Change Dir: /home/zulus/Projects/GitProj/orchestrix/src/examples/audio/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_d84d3/fast"
-/usr/bin/make -f CMakeFiles/cmTC_d84d3.dir/build.make CMakeFiles/cmTC_d84d3.dir/build
-make[1]: вход в каталог «/home/zulus/Projects/GitProj/orchestrix/src/audio/CMakeFiles/CMakeTmp»
-Building CXX object CMakeFiles/cmTC_d84d3.dir/feature_tests.cxx.o
-/usr/bin/c++     -std=c++14 -o CMakeFiles/cmTC_d84d3.dir/feature_tests.cxx.o -c /home/zulus/Projects/GitProj/orchestrix/src/audio/CMakeFiles/feature_tests.cxx
-Linking CXX executable cmTC_d84d3
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_d84d3.dir/link.txt --verbose=1
-/usr/bin/c++        CMakeFiles/cmTC_d84d3.dir/feature_tests.cxx.o  -o cmTC_d84d3 -rdynamic 
-make[1]: выход из каталога «/home/zulus/Projects/GitProj/orchestrix/src/audio/CMakeFiles/CMakeTmp»
+Run Build Command:"/usr/bin/make" "cmTC_be14a/fast"
+/usr/bin/make -f CMakeFiles/cmTC_be14a.dir/build.make CMakeFiles/cmTC_be14a.dir/build
+make[1]: вход в каталог «/home/zulus/Projects/GitProj/orchestrix/src/examples/audio/CMakeFiles/CMakeTmp»
+Building CXX object CMakeFiles/cmTC_be14a.dir/feature_tests.cxx.o
+/usr/bin/c++     -std=c++14    -std=c++14 -o CMakeFiles/cmTC_be14a.dir/feature_tests.cxx.o -c /home/zulus/Projects/GitProj/orchestrix/src/examples/audio/CMakeFiles/feature_tests.cxx
+Linking CXX executable cmTC_be14a
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_be14a.dir/link.txt --verbose=1
+/usr/bin/c++    -std=c++14     CMakeFiles/cmTC_be14a.dir/feature_tests.cxx.o  -o cmTC_be14a -rdynamic 
+make[1]: выход из каталога «/home/zulus/Projects/GitProj/orchestrix/src/examples/audio/CMakeFiles/CMakeTmp»
 
 
     Feature record: CXX_FEATURE:1cxx_aggregate_default_initializers
@@ -975,17 +975,17 @@ make[1]: выход из каталога «/home/zulus/Projects/GitProj/orchest
 
 
 Detecting CXX [-std=c++11] compiler features compiled with the following output:
-Change Dir: /home/zulus/Projects/GitProj/orchestrix/src/audio/CMakeFiles/CMakeTmp
+Change Dir: /home/zulus/Projects/GitProj/orchestrix/src/examples/audio/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_742f9/fast"
-/usr/bin/make -f CMakeFiles/cmTC_742f9.dir/build.make CMakeFiles/cmTC_742f9.dir/build
-make[1]: вход в каталог «/home/zulus/Projects/GitProj/orchestrix/src/audio/CMakeFiles/CMakeTmp»
-Building CXX object CMakeFiles/cmTC_742f9.dir/feature_tests.cxx.o
-/usr/bin/c++     -std=c++11 -o CMakeFiles/cmTC_742f9.dir/feature_tests.cxx.o -c /home/zulus/Projects/GitProj/orchestrix/src/audio/CMakeFiles/feature_tests.cxx
-Linking CXX executable cmTC_742f9
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_742f9.dir/link.txt --verbose=1
-/usr/bin/c++        CMakeFiles/cmTC_742f9.dir/feature_tests.cxx.o  -o cmTC_742f9 -rdynamic 
-make[1]: выход из каталога «/home/zulus/Projects/GitProj/orchestrix/src/audio/CMakeFiles/CMakeTmp»
+Run Build Command:"/usr/bin/make" "cmTC_d8a40/fast"
+/usr/bin/make -f CMakeFiles/cmTC_d8a40.dir/build.make CMakeFiles/cmTC_d8a40.dir/build
+make[1]: вход в каталог «/home/zulus/Projects/GitProj/orchestrix/src/examples/audio/CMakeFiles/CMakeTmp»
+Building CXX object CMakeFiles/cmTC_d8a40.dir/feature_tests.cxx.o
+/usr/bin/c++     -std=c++14    -std=c++11 -o CMakeFiles/cmTC_d8a40.dir/feature_tests.cxx.o -c /home/zulus/Projects/GitProj/orchestrix/src/examples/audio/CMakeFiles/feature_tests.cxx
+Linking CXX executable cmTC_d8a40
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_d8a40.dir/link.txt --verbose=1
+/usr/bin/c++    -std=c++14     CMakeFiles/cmTC_d8a40.dir/feature_tests.cxx.o  -o cmTC_d8a40 -rdynamic 
+make[1]: выход из каталога «/home/zulus/Projects/GitProj/orchestrix/src/examples/audio/CMakeFiles/CMakeTmp»
 
 
     Feature record: CXX_FEATURE:0cxx_aggregate_default_initializers
@@ -1048,17 +1048,17 @@ make[1]: выход из каталога «/home/zulus/Projects/GitProj/orchest
 
 
 Detecting CXX [-std=c++98] compiler features compiled with the following output:
-Change Dir: /home/zulus/Projects/GitProj/orchestrix/src/audio/CMakeFiles/CMakeTmp
+Change Dir: /home/zulus/Projects/GitProj/orchestrix/src/examples/audio/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_34962/fast"
-/usr/bin/make -f CMakeFiles/cmTC_34962.dir/build.make CMakeFiles/cmTC_34962.dir/build
-make[1]: вход в каталог «/home/zulus/Projects/GitProj/orchestrix/src/audio/CMakeFiles/CMakeTmp»
-Building CXX object CMakeFiles/cmTC_34962.dir/feature_tests.cxx.o
-/usr/bin/c++     -std=c++98 -o CMakeFiles/cmTC_34962.dir/feature_tests.cxx.o -c /home/zulus/Projects/GitProj/orchestrix/src/audio/CMakeFiles/feature_tests.cxx
-Linking CXX executable cmTC_34962
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_34962.dir/link.txt --verbose=1
-/usr/bin/c++        CMakeFiles/cmTC_34962.dir/feature_tests.cxx.o  -o cmTC_34962 -rdynamic 
-make[1]: выход из каталога «/home/zulus/Projects/GitProj/orchestrix/src/audio/CMakeFiles/CMakeTmp»
+Run Build Command:"/usr/bin/make" "cmTC_48b5a/fast"
+/usr/bin/make -f CMakeFiles/cmTC_48b5a.dir/build.make CMakeFiles/cmTC_48b5a.dir/build
+make[1]: вход в каталог «/home/zulus/Projects/GitProj/orchestrix/src/examples/audio/CMakeFiles/CMakeTmp»
+Building CXX object CMakeFiles/cmTC_48b5a.dir/feature_tests.cxx.o
+/usr/bin/c++     -std=c++14    -std=c++98 -o CMakeFiles/cmTC_48b5a.dir/feature_tests.cxx.o -c /home/zulus/Projects/GitProj/orchestrix/src/examples/audio/CMakeFiles/feature_tests.cxx
+Linking CXX executable cmTC_48b5a
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_48b5a.dir/link.txt --verbose=1
+/usr/bin/c++    -std=c++14     CMakeFiles/cmTC_48b5a.dir/feature_tests.cxx.o  -o cmTC_48b5a -rdynamic 
+make[1]: выход из каталога «/home/zulus/Projects/GitProj/orchestrix/src/examples/audio/CMakeFiles/CMakeTmp»
 
 
     Feature record: CXX_FEATURE:0cxx_aggregate_default_initializers

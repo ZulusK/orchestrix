@@ -4,21 +4,16 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/zulus/Projects/GitProj/orchestrix/src/audio/src/AudioManagement/AudioData.cpp" "/home/zulus/Projects/GitProj/orchestrix/src/audio/CMakeFiles/aut.dir/src/AudioManagement/AudioData.cpp.o"
-  "/home/zulus/Projects/GitProj/orchestrix/src/audio/src/AudioManagement/AudioManager.cpp" "/home/zulus/Projects/GitProj/orchestrix/src/audio/CMakeFiles/aut.dir/src/AudioManagement/AudioManager.cpp.o"
-  "/home/zulus/Projects/GitProj/orchestrix/src/audio/src/AudioManagement/AudioPlayer.cpp" "/home/zulus/Projects/GitProj/orchestrix/src/audio/CMakeFiles/aut.dir/src/AudioManagement/AudioPlayer.cpp.o"
-  "/home/zulus/Projects/GitProj/orchestrix/src/audio/src/SpectrumManagement/Spectrum.cpp" "/home/zulus/Projects/GitProj/orchestrix/src/audio/CMakeFiles/aut.dir/src/SpectrumManagement/Spectrum.cpp.o"
-  "/home/zulus/Projects/GitProj/orchestrix/src/audio/src/SpectrumManagement/SpectrumAnalyzer.cpp" "/home/zulus/Projects/GitProj/orchestrix/src/audio/CMakeFiles/aut.dir/src/SpectrumManagement/SpectrumAnalyzer.cpp.o"
+  "/home/zulus/Projects/GitProj/orchestrix/src/examples/audio/src/AudioData.cpp" "/home/zulus/Projects/GitProj/orchestrix/src/examples/audio/CMakeFiles/aut.dir/src/AudioData.cpp.o"
+  "/home/zulus/Projects/GitProj/orchestrix/src/examples/audio/src/AudioManager.cpp" "/home/zulus/Projects/GitProj/orchestrix/src/examples/audio/CMakeFiles/aut.dir/src/AudioManager.cpp.o"
+  "/home/zulus/Projects/GitProj/orchestrix/src/examples/audio/src/AudioPlayer.cpp" "/home/zulus/Projects/GitProj/orchestrix/src/examples/audio/CMakeFiles/aut.dir/src/AudioPlayer.cpp.o"
+  "/home/zulus/Projects/GitProj/orchestrix/src/examples/audio/src/Spectrum.cpp" "/home/zulus/Projects/GitProj/orchestrix/src/examples/audio/CMakeFiles/aut.dir/src/Spectrum.cpp.o"
+  "/home/zulus/Projects/GitProj/orchestrix/src/examples/audio/src/SpectrumAnalyzer.cpp" "/home/zulus/Projects/GitProj/orchestrix/src/examples/audio/CMakeFiles/aut.dir/src/SpectrumAnalyzer.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
-  "include"
-  "include/AudioManagement"
-  "include/SpectrumManagement"
-  "include/ConsoleGraphic"
-  "/usr/local/include"
   )
 
 # Targets to which this target links.

@@ -1,5 +1,5 @@
-#include <AudioPlayer.h>
-#include <OpenAL.h>
+#include <audio/AudioPlayer.h>
+#include <audio/OpenAL.h>
 #include <thread>
 
 /**

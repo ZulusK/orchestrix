@@ -4,6 +4,7 @@
 #include <EQWidget.h>
 #include <Game.h>
 #include <QDialog>
+#include <QTimer>
 #include <User.h>
 
 namespace Ui {
@@ -21,9 +22,15 @@ protected:
   void updateEQ();
 
 private:
+  long lastUpdate;
   Ui::GameDialog *ui;
   Game *environment;
   EQWidget *eqwidget;
+  AudioPlayer *audioPlayer;
+  AudioData *audioData;
+  SpectrumAnalyzer *analyzer;
+  AudioManager *manager;
+  QTimer eqTimerUpdater;
 };
 
 #endif // GAMEDIALOG_H

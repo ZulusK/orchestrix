@@ -1,4 +1,4 @@
-/home/zulus/apps/clion-2016.3.3/bin/cmake/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /home/zulus/Projects/GitProj/orchestrix/src/audio
+/home/zulus/apps/clion-2016.3.3/bin/cmake/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /home/zulus/Projects/GitProj/orchestrix/src/examples/audio
 -- Configuring done
 -- Generating done
--- Build files have been written to: /home/zulus/Projects/GitProj/orchestrix/src/audio
+-- Build files have been written to: /home/zulus/Projects/GitProj/orchestrix/src/examples/audio

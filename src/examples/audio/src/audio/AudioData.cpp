@@ -1,6 +1,5 @@
-#include "AudioManagement/AudioData.h"
+#include <audio/AudioData.h>
 #include <iostream>
-#include <AudioManagement/AudioData.h>
 #include <AL/al.h>
 
 

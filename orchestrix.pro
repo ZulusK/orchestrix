@@ -73,4 +73,8 @@ LIBS+= -L/usr/local/lib -lssl
 LIBS += -lbass
 
 RESOURCES += \
-    resources.qrc
+    res.qrc
+
+
+
+

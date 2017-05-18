@@ -6,7 +6,7 @@
 #define THREADS_CONSOLE_H
 
 #include <progbase-cpp/console.h>
-#include <ConsoleGraphic/GraphUtil.h>
+#include <graphic/GraphUtil.h>
 #include <mutex>
 
 using namespace progbase;

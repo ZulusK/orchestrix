@@ -3,7 +3,7 @@
 //
 
 #include <progbase-cpp/console.h>
-#include "ConsoleGraphic/ConsoleEqualizer.h"
+#include <graphic/ConsoleEqualizer.h>
 
 #define WIDTH 3
 #define SHOOT 0.6
@@ -30,7 +30,7 @@ CursorAttributes *copyColors(CursorAttributes *colors, int cnt, CursorAttributes
 
 ConsoleEqualizer::ConsoleEqualizer(AudioData *sound, int heigth, int barsCount, CursorAttributes *colors) {
     manager = AudioManager::init();
-    player = new AudioPlayer(manager, sound);
+    player = new AudioPlayer(manager, sound,1);
     this->width = max(barsCount * WIDTH, 120);
     this->heigth = heigth;
     this->shift = (width - barsCount * WIDTH) / 2;

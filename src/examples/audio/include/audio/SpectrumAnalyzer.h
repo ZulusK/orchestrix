@@ -1,14 +1,10 @@
-//
-// Created by zulus on 25.04.17.
-//
-
 #ifndef ORCHESTRIX_SPECTRUMANALYZER_H
 #define ORCHESTRIX_SPECTRUMANALYZER_H
 
 #include <vector>
-#include <AudioManagement/AudioData.h>
-#include <AudioManagement/AudioPlayer.h>
-#include <SpectrumManagement/Spectrum.h>
+#include <audio/AudioData.h>
+#include <audio/AudioPlayer.h>
+#include <audio/Spectrum.h>
 
 class SpectrumAnalyzer {
 private:
@@ -42,6 +38,7 @@ public:
 
     ~SpectrumAnalyzer();
 
+    const float *  getSpectrums(long ind) const;
     const vector<Spectrum *> &getSpectrums() const;
 
     size_t getBars() const;

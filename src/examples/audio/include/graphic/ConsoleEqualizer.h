@@ -5,9 +5,9 @@
 #ifndef ORCHESTRIX_CONSOLEEQUALIZER_H
 #define ORCHESTRIX_CONSOLEEQUALIZER_H
 
-#include <SpectrumManagement/SpectrumAnalyzer.h>
-#include <GraphicPlane.h>
-#include <GraphUtil.h>
+#include <audio/SpectrumAnalyzer.h>
+#include <graphic/GraphicPlane.h>
+#include <graphic/GraphUtil.h>
 #include <vector>
 
 class ConsoleEqualizer {

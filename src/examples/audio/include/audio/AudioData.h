@@ -1,7 +1,3 @@
-//
-// Created by zulus on 21.04.17.
-//
-
 #ifndef ORCHESTRIX_AUDIOSOURCE_H
 #define ORCHESTRIX_AUDIOSOURCE_H
 

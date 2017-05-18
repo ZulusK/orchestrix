@@ -1,10 +1,6 @@
-//
-// Created by zulus on 13.04.17.
-//
-
-#include "AudioManagement/AudioManager.h"
+#include <audio/AudioManager.h>
 #include <cstring>
-#include <AudioManagement/OpenAL.h>
+#include <audio/OpenAL.h>
 
 using namespace std;
 
