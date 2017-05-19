@@ -28,6 +28,8 @@ GameDialog::GameDialog(Game *game, QWidget *parent)
   this->eqwidget = new EQWidget(audioPlayer, analyzer, this);
   ui->centralGrid->addWidget(eqwidget, 1, 0, 1, 2);
   audioPlayer->play();
+  eqwidget->setShape(AREA);
+  eqwidget->start();
 }
 
 GameDialog::~GameDialog() {
