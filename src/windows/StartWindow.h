@@ -13,7 +13,7 @@ class StartWindow : public QMainWindow {
   Q_OBJECT
 
 public:
-  explicit StartWindow(QWidget *parent = 0);
+  explicit StartWindow(Game *game, QWidget *parent = 0);
   ~StartWindow();
 signals:
   void updateWindow();

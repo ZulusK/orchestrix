@@ -45,14 +45,14 @@
 				<Option compiler="gcc"/>
 				<Compiler>
 					<Add directory="/home/zulus/Projects/GitProj/orchestrix/src/examples/audio/include"/>
-					<Add directory="/usr/include/c++/6"/>
-					<Add directory="/usr/include/x86_64-linux-gnu/c++/6"/>
-					<Add directory="/usr/include/c++/6/backward"/>
 					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/6/include"/>
 					<Add directory="/usr/local/include"/>
 					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/6/include-fixed"/>
 					<Add directory="/usr/include/x86_64-linux-gnu"/>
 					<Add directory="/usr/include"/>
+					<Add directory="/usr/include/c++/6"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/6"/>
+					<Add directory="/usr/include/c++/6/backward"/>
 				</Compiler>
 				<MakeCommands>
 					<Build command="/usr/bin/make -j4 -f &quot;/home/zulus/Projects/GitProj/orchestrix/src/examples/audio/Makefile&quot;  VERBOSE=1 a.out"/>
@@ -69,14 +69,14 @@
 				<Option compiler="gcc"/>
 				<Compiler>
 					<Add directory="/home/zulus/Projects/GitProj/orchestrix/src/examples/audio/include"/>
-					<Add directory="/usr/include/c++/6"/>
-					<Add directory="/usr/include/x86_64-linux-gnu/c++/6"/>
-					<Add directory="/usr/include/c++/6/backward"/>
 					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/6/include"/>
 					<Add directory="/usr/local/include"/>
 					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/6/include-fixed"/>
 					<Add directory="/usr/include/x86_64-linux-gnu"/>
 					<Add directory="/usr/include"/>
+					<Add directory="/usr/include/c++/6"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/6"/>
+					<Add directory="/usr/include/c++/6/backward"/>
 				</Compiler>
 				<MakeCommands>
 					<Build command="/usr/bin/make -j4 -f &quot;/home/zulus/Projects/GitProj/orchestrix/src/examples/audio/Makefile&quot;  VERBOSE=1 a.out/fast"/>
@@ -123,6 +123,9 @@
 			<Option target="a.out"/>
 		</Unit>
 		<Unit filename="/home/zulus/Projects/GitProj/orchestrix/src/examples/audio/src/audio/AudioPlayer.cpp">
+			<Option target="a.out"/>
+		</Unit>
+		<Unit filename="/home/zulus/Projects/GitProj/orchestrix/src/examples/audio/src/audio/OpenALUtils.cpp">
 			<Option target="a.out"/>
 		</Unit>
 		<Unit filename="/home/zulus/Projects/GitProj/orchestrix/src/examples/audio/src/audio/Spectrum.cpp">

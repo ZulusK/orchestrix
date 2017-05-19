@@ -80,10 +80,10 @@ float *Spectrum::calculateBars(float *fft, int size) {
     return spectrums;
 }
 
-string Spectrum::toString() {
-    string s = "Spectrum[ " + to_string(length) + " ]";
+std::string Spectrum::toString() {
+    std::string s = "Spectrum[ " + std::to_string(length) + " ]";
     for (int i = 0; i < length; i++) {
-        s += to_string(spectrums[i]) + " ";
+        s += std::to_string(spectrums[i]) + " ";
     }
     return s;
 }

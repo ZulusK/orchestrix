@@ -3,6 +3,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/a.out.dir/src/audio/AudioData.cpp.o"
   "CMakeFiles/a.out.dir/src/audio/AudioManager.cpp.o"
   "CMakeFiles/a.out.dir/src/audio/AudioPlayer.cpp.o"
+  "CMakeFiles/a.out.dir/src/audio/OpenALUtils.cpp.o"
   "CMakeFiles/a.out.dir/src/audio/Spectrum.cpp.o"
   "CMakeFiles/a.out.dir/src/audio/SpectrumAnalyzer.cpp.o"
   "CMakeFiles/a.out.dir/src/graphic/ConsoleEqualizer.cpp.o"

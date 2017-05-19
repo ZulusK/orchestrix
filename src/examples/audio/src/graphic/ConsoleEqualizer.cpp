@@ -31,7 +31,7 @@ CursorAttributes *copyColors(CursorAttributes *colors, int cnt, CursorAttributes
 ConsoleEqualizer::ConsoleEqualizer(AudioData *sound, int heigth, int barsCount, CursorAttributes *colors) {
     manager = AudioManager::init();
     player = new AudioPlayer(manager, sound,1);
-    this->width = max(barsCount * WIDTH, 120);
+    this->width = std::max(barsCount * WIDTH, 120);
     this->heigth = heigth;
     this->shift = (width - barsCount * WIDTH) / 2;
     this->barsCount = barsCount;
@@ -143,7 +143,7 @@ void ConsoleEqualizer::exec() {
         timeDif = timeBound - (clock() - time0) / (double) CLOCKS_PER_SEC * 1000;
         long playerTime = player->getTime();
         if (timeDif > 0) {
-            this_thread::sleep_for(chrono::milliseconds(timeDif));
+            std::this_thread::sleep_for(std::chrono::milliseconds(timeDif));
         }
 
         clearEQ(i);

@@ -7,7 +7,7 @@
 #include <audio/AudioPlayer.h>
 #include <graphic/ConsoleEqualizer.h>
 
-#define _DEBUG
+//#define _DEBUG
 using namespace std;
 
 void exampleSound() {
@@ -37,11 +37,15 @@ void exampleSound() {
     delete sound1;
 }
 
-int main(void) {
-//    exampleSound();
+void exampleEQ() {
     string filename1 = "res/ppl.wav";
     AudioData *sound1 = AudioData::load(filename1);
     cout << sound1->toString() << endl;
     ConsoleEqualizer eq(sound1, 20, 40);
     eq.exec();
+}
+
+int main(void) {
+    exampleSound();
+
 }

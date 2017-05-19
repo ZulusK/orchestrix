@@ -23,7 +23,7 @@ class ConsoleEqualizer {
     int barsCount;
     CursorAttributes *barColors;
     int samplesInSpectrums = 2048;
-    vector<unsigned long> energy;
+    std::vector<unsigned long> energy;
     AudioData *sound;
 public:
     ConsoleEqualizer(AudioData *sound, int heigth, int count, CursorAttributes *colors = NULL);

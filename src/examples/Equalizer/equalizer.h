@@ -40,7 +40,6 @@ class Equalizer : public QWidget
     Q_PROPERTY(QRect nrect22 READ nRect22 WRITE setNRect22)
     Q_PROPERTY(QRect nrect23 READ nRect23 WRITE setNRect23)
     Q_PROPERTY(QRect nrect24 READ nRect24 WRITE setNRect24)
-
     Q_PROPERTY(QLine nline READ nline WRITE setNline)
     Q_PROPERTY(QLine nline2 READ nline2 WRITE setNline2)
     Q_PROPERTY(QLine nline3 READ nline3 WRITE setNline3)

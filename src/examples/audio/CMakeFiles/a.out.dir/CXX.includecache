@@ -42,6 +42,10 @@ audio/OpenAL.h
 thread
 -
 
+/home/zulus/Projects/GitProj/orchestrix/src/examples/audio/src/audio/OpenALUtils.cpp
+audio/OpenAL.h
+-
+
 /home/zulus/Projects/GitProj/orchestrix/src/examples/audio/src/audio/Spectrum.cpp
 audio/Spectrum.h
 -

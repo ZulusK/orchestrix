@@ -6,7 +6,7 @@
 #define ORCHESTRIX_SPECTRUM_H
 
 #include <cstddef>
-#include <OpenAL.h>
+#include <audio/OpenAL.h>
 #include <bass.h>
 
 enum {
@@ -39,7 +39,7 @@ public:
 
     ~Spectrum();
 
-    string toString();
+    std::string toString();
 };
 
 
