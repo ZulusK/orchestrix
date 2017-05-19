@@ -18,9 +18,6 @@ public:
   explicit GameDialog(Game *game, QWidget *parent = 0);
   ~GameDialog();
 
-protected:
-  void updateEQ();
-
 private:
   long lastUpdate;
   Ui::GameDialog *ui;
@@ -29,8 +26,6 @@ private:
   AudioPlayer *audioPlayer;
   AudioData *audioData;
   SpectrumAnalyzer *analyzer;
-  AudioManager *manager;
-  QTimer eqTimerUpdater;
 };
 
 #endif // GAMEDIALOG_H

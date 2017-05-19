@@ -7,15 +7,18 @@
 #include <QFileDialog>
 #include <ResultsDialog.h>
 
-StartWindow::StartWindow(QWidget *parent)
+StartWindow::StartWindow(Game *game, QWidget *parent)
     : QMainWindow(parent), ui(new Ui::StartWindow) {
   ui->setupUi(this);
   this->showFullScreen();
-  this->environment = new Game();
+  this->environment = game;
   connect(this, SIGNAL(updateWindow()), SLOT(updateContent()));
 }
 
-StartWindow::~StartWindow() { delete ui; }
+StartWindow::~StartWindow() {
+    delete environment;
+    delete ui;
+}
 
 void StartWindow::on_startBtn_clicked() {
   GameDialog game_d(environment);

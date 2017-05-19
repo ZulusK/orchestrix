@@ -39,7 +39,7 @@ public:
 
     ~Spectrum();
 
-    string toString();
+    std::string toString();
 };
 
 

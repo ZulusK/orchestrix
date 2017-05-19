@@ -2,13 +2,13 @@
 #define ORCHESTRIX_SPECTRUMANALYZER_H
 
 #include <vector>
-#include <AudioData.h>
-#include <AudioPlayer.h>
-#include <Spectrum.h>
+#include <audio/AudioData.h>
+#include <audio/AudioPlayer.h>
+#include <audio/Spectrum.h>
 
 class SpectrumAnalyzer {
 private:
-    vector<Spectrum *> spectrums;
+    std::vector<Spectrum *> spectrums;
     size_t bars;
     float SHOOT;
     unsigned int mode;
@@ -21,7 +21,7 @@ private:
     int bitsPerSample;
     unsigned long count;
 
-    void exec(string filename);
+    void exec(std::string filename);
 
     void findShoot();
 
@@ -39,7 +39,7 @@ public:
     ~SpectrumAnalyzer();
 
     const float *  getSpectrums(long ind) const;
-    const vector<Spectrum *> &getSpectrums() const;
+    const std::vector<Spectrum *> &getSpectrums() const;
 
     size_t getBars() const;
 

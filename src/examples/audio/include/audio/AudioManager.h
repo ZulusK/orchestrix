@@ -12,8 +12,8 @@
 
 class AudioManager {
 private:
-    recursive_mutex _sourceMutex;
-    recursive_mutex _bufferMutex;
+    std::recursive_mutex _sourceMutex;
+    std::recursive_mutex _bufferMutex;
 
     AudioData *sound;
     ALCdevice *device;
@@ -33,9 +33,9 @@ private:
 
     static void print(const std::vector<std::string> vec);
 
-    static void print(const set<ALuint> buffer);
+    static void print(const std::set<ALuint> buffer);
 
-    static vector<string> getAllDevices();
+    static std::vector<std::string> getAllDevices();
 
     ALuint generateBuffer();
 
@@ -62,7 +62,7 @@ public:
 
     void clearSource(ALuint source);
 
-    void print(const vector<ALuint> buffer);
+    void print(const std::vector<ALuint> buffer);
 };
 
 #endif //ORCHESTRIX_AUDIOPLAYER_H
