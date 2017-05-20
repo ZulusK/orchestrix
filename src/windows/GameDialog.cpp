@@ -13,13 +13,12 @@ GameDialog::GameDialog(Game *game, QWidget *parent)
   this->showFullScreen();
 
   this->environment = game;
-  //  this->audioData =
-  //      AudioData::load(QFileDialog::getOpenFileName(
-  //                          this, QString::fromUtf8("Choose your sound to
-  //                          play"),
-  //                          QDir::currentPath(), "Images (*.wav);;")
-  //                          .toStdString());
-  this->audioData = AudioData::load("../orchestrix/res/21pilots.wav");
+  this->audioData =
+      AudioData::load(QFileDialog::getOpenFileName(
+                          this, QString::fromUtf8("Choose your sound to play"),
+                          QDir::currentPath(), "Images (*.wav);;")
+                          .toStdString());
+  //  this->audioData = AudioData::load("../orchestrix/res/21pilots.wav");
   cout << audioData->toString() << endl;
   // create user sound
   this->audioPlayer = new AudioPlayer(game->getAudioManager(), audioData, 1);
@@ -28,7 +27,11 @@ GameDialog::GameDialog(Game *game, QWidget *parent)
   this->eqwidget = new EQWidget(audioPlayer, analyzer, this);
   ui->centralGrid->addWidget(eqwidget, 1, 0, 1, 2);
   audioPlayer->play();
-  eqwidget->setShape(AREA);
+  eqwidget->setShape(LINE);
+  eqwidget->setBrush(QBrush(QColor(0, 97, 255), Qt::Dense6Pattern));
+  eqwidget->setPen(
+      QPen(QColor(0, 97, 255), 10, Qt::SolidLine, Qt::RoundCap, Qt::RoundJoin));
+  eqwidget->setAntialiased(true);
   eqwidget->start();
 }
 

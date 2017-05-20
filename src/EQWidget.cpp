@@ -79,6 +79,11 @@ void EQWidget::timerLoopInit() {
 
 void EQWidget::updateBars() {
   if (!isPaused) {
+    if (!analyzer->isShoot(spectrumPos)) {
+      setBrush(QBrush(QColor(0, 97, 255), Qt::Dense6Pattern));
+    } else {
+      setBrush(QBrush(QColor(255, 10, 0), Qt::Dense6Pattern));
+    }
     auto oldPos = this->spectrumPos;
     updateSpectrumPos();
     // check, is player pos was setting
@@ -120,7 +125,13 @@ void EQWidget::paintEvent(QPaintEvent *event) {
   }
 }
 
-void EQWidget::drawRectBars(QPainter &painter) {}
+void EQWidget::drawRectBars(QPainter &painter) {
+  auto barWidth = this->width() / (float)barsCount;
+  for (int i = 0; i < barsCount; i++) {
+    painter.drawRect(i * barWidth, height() - bars[i]->y(), barWidth,
+                     bars[i]->y());
+  }
+}
 
 void EQWidget::drawLineBars(QPainter &painter) {
   painter.drawLine(QPointF(0, height()), *this->bars[0]);
@@ -129,14 +140,17 @@ void EQWidget::drawLineBars(QPainter &painter) {
   }
   painter.drawLine(*this->bars[this->barsCount - 1],
                    QPointF(width(), height()));
+  painter.drawLine(QPointF(0, height()), QPointF(width(), height()));
 }
 
 void EQWidget::drawAreaBars(QPainter &painter) {
   QPainterPath path;
+  path.moveTo(0, height());
   for (int i = 0; i < barsCount; i++) {
     path.lineTo(*bars[i]);
   }
   path.lineTo(QPointF(width(), height()));
+  path.lineTo(0, height());
   painter.drawPath(path);
 }
 
