@@ -15,8 +15,6 @@
 #include <Spectrum.h>
 #include <SpectrumAnalyzer.h>
 
-#define SPACE_BORDER 0.01
-
 typedef enum { RECT = 0x1, LINE, AREA } EQShape;
 
 namespace Ui {

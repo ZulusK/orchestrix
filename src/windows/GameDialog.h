@@ -5,8 +5,8 @@
 #include <Game.h>
 #include <QDialog>
 #include <QTimer>
+#include <SoundHistogramm.h>
 #include <User.h>
-
 namespace Ui {
 class GameDialog;
 }
@@ -23,6 +23,7 @@ private:
   Ui::GameDialog *ui;
   Game *environment;
   EQWidget *eqwidget;
+  SoundHistogramm *histogramm;
   AudioPlayer *audioPlayer;
   AudioData *audioData;
   SpectrumAnalyzer *analyzer;
