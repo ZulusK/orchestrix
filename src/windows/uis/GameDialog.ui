@@ -363,13 +363,6 @@
          </property>
         </widget>
        </item>
-       <item>
-        <widget class="QProgressBar" name="songProgress">
-         <property name="value">
-          <number>50</number>
-         </property>
-        </widget>
-       </item>
       </layout>
      </item>
     </layout>

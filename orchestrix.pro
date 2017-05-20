@@ -39,7 +39,8 @@ SOURCES += src/main.cpp\
     src/audio/Spectrum.cpp \
     src/audio/SpectrumAnalyzer.cpp \
     src/windows/GameDialog.cpp \
-    src/EQWidget.cpp
+    src/EQWidget.cpp \
+    src/SoundHistogramm.cpp
 
 HEADERS  += src/windows/StartWindow.h \
     src/User.h \
@@ -54,14 +55,16 @@ HEADERS  += src/windows/StartWindow.h \
     src/audio/Spectrum.h \
     src/audio/SpectrumAnalyzer.h \
     src/windows/GameDialog.h \
-    src/EQWidget.h
+    src/EQWidget.h \
+    src/SoundHistogramm.h
 
 FORMS    += src/windows/uis/StartWindow.ui \
     src/windows/uis/HelpDialog.ui \
     src/windows/uis/ResultsDialog.ui \
     src/windows/uis/LoginDialog.ui \
     src/windows/uis/GameDialog.ui \
-    src/EQWidget.ui
+    src/EQWidget.ui \
+    src/SoundHistogramm.ui
 
 LIBS+= -L/usr/local/lib -lopenal
 LIBS+= -L/usr/local/lib -lalut
