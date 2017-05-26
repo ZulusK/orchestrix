@@ -24,7 +24,7 @@ double getPoint16(short *data, int heigth) {
   return heigth / 2 + val * heigth;
 }
 
-QPixmap *createImage(const AudioData *sound) {
+QPixmap *SoundHistogramm::createImage() {
   QPixmap *image = new QPixmap(1920, 500);
   image->fill(QColor(255, 255, 255, 0));
   QPainter painter(image);
@@ -39,8 +39,8 @@ QPixmap *createImage(const AudioData *sound) {
   int range = sound->get_samples() / width;
   int channels = sound->get_channels();
   int imHeigth = image->height();
-  painter.setPen(QPen(QColor(255, 255, 255), 2, Qt::SolidLine, Qt::RoundCap,
-                      Qt::RoundJoin));
+
+  painter.setPen(this->pen);
 
   if (sound->get_bitsPerSample() == 16) {
     short *data = (short *)sound->get_source();
@@ -61,19 +61,23 @@ QPixmap *createImage(const AudioData *sound) {
   return image;
 }
 
-SoundHistogramm::SoundHistogramm(AudioPlayer *player, AudioData *sound,
-                                 QWidget *parent)
+SoundHistogramm::SoundHistogramm(const QPen &pen, AudioPlayer *player,
+                                 AudioData *sound, QWidget *parent)
     : QWidget(parent), ui(new Ui::SoundHistogramm) {
   ui->setupUi(this);
+  // create updating timer;
   this->timer = new QTimer();
   connect(timer, SIGNAL(timeout()), this, SLOT(updateHistogramm()));
-  timer->setInterval(300);
-  timer->start();
-  this->image = createImage(sound);
+  timer->setInterval(150);
+
+  // copy ref
   this->player = player;
   this->sound = sound;
+  this->setPen(pen);
   this->remainingTime = sound->get_samples() / sound->get_sampleRate() * 1000;
 }
+
+void SoundHistogramm::start() { timer->start(); }
 
 SoundHistogramm::~SoundHistogramm() {
   timer->stop();
@@ -86,7 +90,15 @@ QSize SoundHistogramm::minimumSizeHint() const { return QSize(100, 150); }
 
 QSize SoundHistogramm::sizeHint() const { return QSize(200, 150); }
 
-void SoundHistogramm::setPen(const QPen &pen) { this->pen = pen; }
+void SoundHistogramm::setPen(const QPen &pen) {
+  this->pen = pen;
+  auto newImage = createImage();
+  auto tmp = this->image;
+  this->image = newImage;
+  if (tmp) {
+    delete tmp;
+  }
+}
 
 void SoundHistogramm::setBrush(const QBrush &brush) { this->brush = brush; }
 
@@ -99,10 +111,9 @@ void SoundHistogramm::updateHistogramm() { update(); }
 void SoundHistogramm::paintEvent(QPaintEvent *event) {
   QPainter painter(this);
   painter.setBrush(this->brush);
-  painter.setPen(this->pen);
+  painter.setPen(QPen(QColor(0, 0, 0, 0)));
   painter.setRenderHint(QPainter::Antialiasing, antialiased);
   painter.drawPixmap(this->rect(), *image);
-
   double circleRadius = height() / 2.5;
   double center = height() / 2;
   double progress = (double)player->getTime() / remainingTime;
@@ -110,6 +121,7 @@ void SoundHistogramm::paintEvent(QPaintEvent *event) {
                       center + (width() - center) * progress - circleRadius,
                       circleRadius * 2);
   painter.drawRect(progressRect);
+
   // static ellips
   painter.drawEllipse(QPointF(center, center), circleRadius, circleRadius);
   painter.drawEllipse(QPointF(progressRect.x() + progressRect.width(), center),

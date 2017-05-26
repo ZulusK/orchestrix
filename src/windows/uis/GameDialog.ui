@@ -2,11 +2,14 @@
 <ui version="4.0">
  <class>GameDialog</class>
  <widget class="QDialog" name="GameDialog">
+  <property name="windowModality">
+   <enum>Qt::ApplicationModal</enum>
+  </property>
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>704</width>
+    <width>809</width>
     <height>313</height>
    </rect>
   </property>
@@ -29,10 +32,15 @@
    </size>
   </property>
   <property name="windowTitle">
-   <string>Dialog</string>
+   <string>Orchestrix</string>
+  </property>
+  <property name="autoFillBackground">
+   <bool>false</bool>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-image: url(:/res/eqBg.jpg);</string>
+   <string notr="true">QDialog#GameDialog{
+background-image: url(:/res/eqBg.jpg);
+}</string>
   </property>
   <layout class="QHBoxLayout" name="horizontalLayout">
    <item>
@@ -58,12 +66,73 @@
           </spacer>
          </item>
          <item>
+          <widget class="QPushButton" name="stopBtn">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>75</width>
+             <height>75</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QPushButton:hover{
+border-width: 0px;
+background-color: #FF3D00;
+border-radius: 35%;
+}
+QPushButton{
+background-color:  #FFFF00;
+border-radius:0%;
+border-color: rgba(0,0,0,0);
+}</string>
+           </property>
+           <property name="text">
+            <string>stop</string>
+           </property>
+           <property name="default">
+            <bool>false</bool>
+           </property>
+           <property name="flat">
+            <bool>false</bool>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <spacer name="horizontalSpacer_8">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>40</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item>
           <widget class="QLabel" name="label_4">
            <property name="sizePolicy">
             <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
              <horstretch>0</horstretch>
              <verstretch>0</verstretch>
             </sizepolicy>
+           </property>
+           <property name="font">
+            <font>
+             <pointsize>15</pointsize>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">background-color: rgba(255, 255, 255,0);
+color: rgb(255,255,255);
+selection-background-color: rgb(252, 233, 79);
+</string>
            </property>
            <property name="text">
             <string>Well DOne</string>
@@ -89,76 +158,206 @@
          <item>
           <widget class="QPushButton" name="indicator1">
            <property name="sizePolicy">
-            <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+            <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
              <horstretch>0</horstretch>
              <verstretch>0</verstretch>
             </sizepolicy>
            </property>
            <property name="minimumSize">
             <size>
-             <width>100</width>
-             <height>100</height>
+             <width>150</width>
+             <height>150</height>
             </size>
+           </property>
+           <property name="sizeIncrement">
+            <size>
+             <width>0</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="font">
+            <font>
+             <pointsize>20</pointsize>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">background-color:#76FF03;
+border-color: rgba(0, 0, 0,0);
+border-style: inset;
+border-width: 10px;
+border-radius: 75%;
+color: rgb(255,255,255);</string>
            </property>
            <property name="text">
             <string>1</string>
            </property>
+           <property name="default">
+            <bool>false</bool>
+           </property>
+           <property name="flat">
+            <bool>false</bool>
+           </property>
           </widget>
+         </item>
+         <item>
+          <spacer name="horizontalSpacer_5">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>40</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
          </item>
          <item>
           <widget class="QPushButton" name="indicator2">
            <property name="sizePolicy">
-            <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+            <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
              <horstretch>0</horstretch>
              <verstretch>0</verstretch>
             </sizepolicy>
            </property>
            <property name="minimumSize">
             <size>
-             <width>100</width>
-             <height>100</height>
+             <width>150</width>
+             <height>150</height>
             </size>
+           </property>
+           <property name="sizeIncrement">
+            <size>
+             <width>1</width>
+             <height>1</height>
+            </size>
+           </property>
+           <property name="font">
+            <font>
+             <pointsize>20</pointsize>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">background-color:#76FF03;
+border-color: rgba(0, 0, 0,0);
+border-style: inset;
+border-width: 10px;
+border-radius: 75%;
+color: rgb(255,255,255);</string>
            </property>
            <property name="text">
             <string>2</string>
            </property>
+           <property name="flat">
+            <bool>false</bool>
+           </property>
           </widget>
+         </item>
+         <item>
+          <spacer name="horizontalSpacer_6">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>40</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
          </item>
          <item>
           <widget class="QPushButton" name="indicator3">
            <property name="sizePolicy">
-            <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+            <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
              <horstretch>0</horstretch>
              <verstretch>0</verstretch>
             </sizepolicy>
            </property>
            <property name="minimumSize">
             <size>
-             <width>100</width>
-             <height>100</height>
+             <width>150</width>
+             <height>150</height>
             </size>
+           </property>
+           <property name="sizeIncrement">
+            <size>
+             <width>1</width>
+             <height>1</height>
+            </size>
+           </property>
+           <property name="font">
+            <font>
+             <pointsize>20</pointsize>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">background-color:#76FF03;
+border-color: rgba(0, 0, 0,0);
+border-style: inset;
+border-width: 10px;
+border-radius: 75%;
+color: rgb(255,255,255);</string>
            </property>
            <property name="text">
             <string>3</string>
            </property>
+           <property name="flat">
+            <bool>false</bool>
+           </property>
           </widget>
+         </item>
+         <item>
+          <spacer name="horizontalSpacer_7">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>40</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
          </item>
          <item>
           <widget class="QPushButton" name="indicator4">
            <property name="sizePolicy">
-            <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+            <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
              <horstretch>0</horstretch>
              <verstretch>0</verstretch>
             </sizepolicy>
            </property>
            <property name="minimumSize">
             <size>
-             <width>100</width>
-             <height>100</height>
+             <width>150</width>
+             <height>150</height>
             </size>
+           </property>
+           <property name="sizeIncrement">
+            <size>
+             <width>1</width>
+             <height>1</height>
+            </size>
+           </property>
+           <property name="font">
+            <font>
+             <pointsize>20</pointsize>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">background-color:#76FF03;
+border-color: rgba(0, 0, 0,0);
+border-style: inset;
+border-width: 10px;
+border-radius: 75%;
+color: rgb(255,255,255);</string>
            </property>
            <property name="text">
             <string>4</string>
+           </property>
+           <property name="flat">
+            <bool>false</bool>
            </property>
           </widget>
          </item>
@@ -208,8 +407,13 @@
              <pointsize>15</pointsize>
             </font>
            </property>
+           <property name="autoFillBackground">
+            <bool>false</bool>
+           </property>
            <property name="styleSheet">
-            <string notr="true">background-color: rgba(255, 255, 255,0);</string>
+            <string notr="true">background-color: rgba(255, 255, 255,0);
+color: rgb(255,255,255)
+</string>
            </property>
            <property name="text">
             <string>Score</string>
@@ -235,24 +439,19 @@
              <pointsize>18</pointsize>
             </font>
            </property>
+           <property name="autoFillBackground">
+            <bool>false</bool>
+           </property>
            <property name="styleSheet">
-            <string notr="true">background-color: rgba(255, 255, 255,0);</string>
+            <string notr="true">background-color: rgba(255, 255, 255,0);
+color: rgb(255,255,255);
+background-image:none;</string>
            </property>
            <property name="text">
             <string>0</string>
            </property>
            <property name="alignment">
             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-           </property>
-          </widget>
-         </item>
-         <item row="4" column="0">
-          <widget class="QLabel" name="label_3">
-           <property name="styleSheet">
-            <string notr="true">background-color: rgba(255, 255, 255,0);</string>
-           </property>
-           <property name="text">
-            <string>time</string>
            </property>
           </widget>
          </item>
@@ -269,8 +468,13 @@
              <pointsize>20</pointsize>
             </font>
            </property>
+           <property name="autoFillBackground">
+            <bool>false</bool>
+           </property>
            <property name="styleSheet">
-            <string notr="true">background-color: rgba(255, 255, 255,0);</string>
+            <string notr="true">background-color: none;
+color: rgb(255,255,255)
+</string>
            </property>
            <property name="text">
             <string>Player name</string>
@@ -306,8 +510,13 @@
              <pointsize>18</pointsize>
             </font>
            </property>
+           <property name="autoFillBackground">
+            <bool>false</bool>
+           </property>
            <property name="styleSheet">
-            <string notr="true">background-color: rgba(255, 255, 255,0);</string>
+            <string notr="true">background-color: rgba(255, 255, 255,0);
+color: rgb(255,255,255)
+</string>
            </property>
            <property name="text">
             <string>+100</string>
@@ -354,6 +563,9 @@
           <font>
            <pointsize>20</pointsize>
           </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">color: rgb(255,255,255)</string>
          </property>
          <property name="text">
           <string>Some music name</string>

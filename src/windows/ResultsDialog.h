@@ -4,6 +4,7 @@
 #include <QDialog>
 #include <Game.h>
 #include <User.h>
+#include <vector>
 namespace Ui {
 class ResultsDialog;
 }
@@ -19,6 +20,9 @@ public:
 private:
     Ui::ResultsDialog *ui;
     Game * environment;
+    std::vector<User *> users;
+    void drawTable(const QString &filename);
+    void load(const QString &jsonString);
 };
 
 #endif // RESULTSDIALOG_H

@@ -40,7 +40,9 @@ SOURCES += src/main.cpp\
     src/audio/SpectrumAnalyzer.cpp \
     src/windows/GameDialog.cpp \
     src/EQWidget.cpp \
-    src/SoundHistogramm.cpp
+    src/SoundHistogramm.cpp \
+    FileProcessing.cpp \
+    src/Indicator.cpp
 
 HEADERS  += src/windows/StartWindow.h \
     src/User.h \
@@ -56,7 +58,9 @@ HEADERS  += src/windows/StartWindow.h \
     src/audio/SpectrumAnalyzer.h \
     src/windows/GameDialog.h \
     src/EQWidget.h \
-    src/SoundHistogramm.h
+    src/SoundHistogramm.h \
+    FileProcessing.h \
+    src/Indicator.h
 
 FORMS    += src/windows/uis/StartWindow.ui \
     src/windows/uis/HelpDialog.ui \
