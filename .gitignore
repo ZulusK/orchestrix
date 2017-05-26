@@ -2,9 +2,9 @@
 *.d
 
 #audio files
-*.wav
-*.mp3
-*.ogg
+#*.wav
+#*.mp3
+#*.ogg
 
 # Object files
 *.o

@@ -42,9 +42,9 @@ float *getFFT(HCHANNEL hchannel, double offset, int size, int mode) {
                           BASS_POS_BYTE);
   BASS_ChannelGetData(hchannel, fft, mode);
   SpectrumAnalyzer::printError();
-  for (int i = 0; i < size; i++) {
-    fft[i] = sqrt(fft[i]);
-  }
+  //  for (int i = 0; i < size; i++) {
+  //    fft[i] = sqrt(fft[i]);
+  //  }
   return fft;
 }
 
@@ -68,18 +68,13 @@ float *Spectrum::calculateBars(float *fft, int size) {
       b1 = b0 + 1;
     int count = b1 - b0;
     float average = 0;
-    float max = -1;
+    // calculate energy and average value
     for (; b0 < b1; b0++) {
-      average += fft[b0];
-      if (fft[b0] > max) {
-        max = fft[b0];
-      }
+      average += sqrt(fft[b0]);
+      energy += fft[b0];
     }
     this->spectrums[i] = sqrt(average / count);
-//    this->spectrums[i] = max;
-    energy += this->spectrums[i];
   }
-//  energy /= length;
   return spectrums;
 }
 

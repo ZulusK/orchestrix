@@ -5,7 +5,10 @@
 #include <LoginDialog.h>
 #include <QDir>
 #include <QFileDialog>
+#include <QMessageBox>
 #include <ResultsDialog.h>
+#include <iostream>
+using namespace std;
 
 StartWindow::StartWindow(Game *game, QWidget *parent)
     : QMainWindow(parent), ui(new Ui::StartWindow) {
@@ -16,17 +19,27 @@ StartWindow::StartWindow(Game *game, QWidget *parent)
 }
 
 StartWindow::~StartWindow() {
-    delete environment;
-    delete ui;
+  delete environment;
+  delete ui;
 }
 
 void StartWindow::on_startBtn_clicked() {
-  GameDialog game_d(environment);
+  GameDialog *game_d = new GameDialog(environment);
   this->hide();
-  if (!game_d.exec()) {
+  if (!game_d->exec()) {
     this->close();
   }
   this->show();
+  delete game_d;
+  QMessageBox::StandardButton reply;
+  reply = QMessageBox::question(this, "Saving", "Save your result?",
+                                QMessageBox::Yes | QMessageBox::No);
+  if (reply == QMessageBox::Yes) {
+    cout << "Yes was clicked" << endl;
+    ui->saveBtn->click();
+  } else {
+    cout << "Yes was *not* clicked" << endl;
+  }
 }
 
 void StartWindow::on_resultsBtn_clicked() {
@@ -41,8 +54,6 @@ void StartWindow::on_resultsBtn_clicked() {
 
 void StartWindow::updateContent() {}
 
-void StartWindow::on_settingsBtn_clicked() {}
-
 void StartWindow::on_helpBtn_clicked() {
   HelpDialog help_d(environment);
   this->hide();
@@ -55,4 +66,9 @@ void StartWindow::on_loginBtn_clicked() {
   if (!log_d.exec()) {
     this->close();
   }
+}
+
+void StartWindow::on_saveBtn_clicked()
+{
+
 }
