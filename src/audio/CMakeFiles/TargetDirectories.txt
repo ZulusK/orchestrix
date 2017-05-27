@@ -1,8 +1,0 @@
-/home/zulus/Projects/GitProj/orchestrix/src/audio/CMakeFiles/list_install_components.dir
-/home/zulus/Projects/GitProj/orchestrix/src/audio/CMakeFiles/install.dir
-/home/zulus/Projects/GitProj/orchestrix/src/audio/CMakeFiles/install/local.dir
-/home/zulus/Projects/GitProj/orchestrix/src/audio/CMakeFiles/install/strip.dir
-/home/zulus/Projects/GitProj/orchestrix/src/audio/CMakeFiles/edit_cache.dir
-/home/zulus/Projects/GitProj/orchestrix/src/audio/CMakeFiles/a.out.dir
-/home/zulus/Projects/GitProj/orchestrix/src/audio/CMakeFiles/rebuild_cache.dir
-/home/zulus/Projects/GitProj/orchestrix/src/audio/CMakeFiles/aut.dir

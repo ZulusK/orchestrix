@@ -1,3 +1,0 @@
-/home/icebro/Desktop/WiFiAccessPoint/build/CMakeFiles/rebuild_cache.dir
-/home/icebro/Desktop/WiFiAccessPoint/build/CMakeFiles/edit_cache.dir
-/home/icebro/Desktop/WiFiAccessPoint/build/CMakeFiles/controller.dir

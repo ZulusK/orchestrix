@@ -1,0 +1,2 @@
+/usr/bin/ar qc libaut.a  CMakeFiles/aut.dir/src/AudioData.cpp.o CMakeFiles/aut.dir/src/AudioManager.cpp.o CMakeFiles/aut.dir/src/AudioPlayer.cpp.o CMakeFiles/aut.dir/src/Spectrum.cpp.o CMakeFiles/aut.dir/src/SpectrumAnalyzer.cpp.o
+/usr/bin/ranlib libaut.a

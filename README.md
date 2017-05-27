@@ -12,7 +12,7 @@
 These days a great many people consider composing to be a threadbare craft, mastered solely by the goldsmiths of music. Our team dared to prove them wrong and bestow a salvatory instrument upon both vigorous gamers and lonesome pilgrims, craving means of melody's concoction. In a nutshell, we introduce a gaming pad, rigged with motion and proximity sensors, which are designed to capture the movements of your hands and transmute real life dynamics into signal modulation. Hence, every single relocation of your palms above the pad will grant you with infinite possibilities  of sound's flexure. The frequency of audio, nature of sound, volume can be inflected by the swings of your bare hands. One of the most intriguing application of orchestrix technology is a marvelous game of ours, inspired by our rivals's numerous, yet abortive attempts to entagle physical interaction, fun gaming, and entire scale of musical exuberance in a holistic product. Be dexterous, smart, innovative and you just might be able to score ultimately and overpower your friends. The wizardry is attained by assorted compound algorithms inside a computer as well as by meticulously integrated hardware. For comprehensive breakdown of technical groundwork chech out the documentation in the *Artifacts* section below.
 
 ## Technologies, libraries, programming languages :
-C, C++(OpenAL), Java(Swing/JavaFX)
+C, C++, OpenAL, Qt, Bass, Sndfile
 ## Hardware components : 
 
 
@@ -42,5 +42,5 @@ C, C++(OpenAL), Java(Swing/JavaFX)
 * [Backlog](https://docs.google.com/spreadsheets/d/1CGTPGKU5ydsndaLlhleCA4-7bzNCsfhk_9pVEnQrE3o/edit?usp=drive_web)
 * [Sprint#1](https://trello.com/b/isvaCOPi/sprint-1)
 * [Sprint#2](https://trello.com/b/YiUD2T7c/sprint-2-05-04-10-05)
-* [Sprint#2](https://trello.com/b/mDGpx3wv/sprint-3)
+* [Sprint#3](https://trello.com/b/mDGpx3wv/sprint-3)
 * view sprint's backlogs in directory doc
