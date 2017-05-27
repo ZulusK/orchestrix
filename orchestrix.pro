@@ -70,18 +70,23 @@ FORMS    += src/windows/uis/StartWindow.ui \
     src/EQWidget.ui \
     src/SoundHistogramm.ui
 
+INCLUDEPATH += /usr/local/include
+DEPENDPATH += /usr/local/include
+
+macx: LIBS += -L$$PWD/libs/ -lbass
+macx: LIBS += -L/usr/local/opt/openssl/lib/ -lssl
+
+
+INCLUDEPATH += $$PWD/libs
+DEPENDPATH += $$PWD/libs
+unix:!macx: LIBS += -L/usr/local/lib -lssl
+
 LIBS+= -L/usr/local/lib -lopenal
-LIBS+= -L/usr/local/lib -lalut
 LIBS+= -L/usr/local/lib -lsndfile
 LIBS+= -L/usr/local/lib -lpthread
 LIBS+= -L/usr/local/lib -lprogbase-cpp
 LIBS+= -L/usr/local/lib -lprogbase
-LIBS+= -L/usr/local/lib -lssl
-LIBS += -lbass
 
 RESOURCES += \
     res.qrc
-
-
-
 
