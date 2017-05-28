@@ -1,0 +1,28 @@
+{
+    "Users": [
+        {
+            "date": "Sun May 28 02:49:03 2017",
+            "name": "Danya",
+            "score": 89,
+            "sound": "Not selected"
+        },
+        {
+            "date": "Sun May 28 02:49:03 2017",
+            "name": "Vika",
+            "score": 44,
+            "sound": "Not selected"
+        },
+        {
+            "date": "Sun May 28 02:49:03 2017",
+            "name": "Lena",
+            "score": 23,
+            "sound": "Not selected"
+        },
+        {
+            "date": "Sun May 28 02:49:03 2017",
+            "name": "Alex",
+            "score": 5,
+            "sound": "Not selected"
+        }
+    ]
+}

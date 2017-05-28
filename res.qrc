@@ -1,5 +1,6 @@
 <RCC>
     <qresource prefix="/">
         <file>res/eqBg.jpg</file>
+        <file>res/results.json</file>
     </qresource>
 </RCC>
