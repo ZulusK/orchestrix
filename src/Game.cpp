@@ -1,5 +1,7 @@
 #include "Game.h"
-
+#include <QStringList>
+#include <iostream>
+using namespace std;
 Game::Game(AudioManager *manager) {
   this->audioManager = manager;
   this->user = NULL;
@@ -28,7 +30,8 @@ void Game::removeUser() {
 User *Game::getUser() { return this->user; }
 
 void Game::play(const QString &soundName) {
-  if (audioEffects.contains(soundName)) {
+  cout << soundName.toStdString() << endl;
+  if (audioEffects.contains(soundName) && !audioEffects[soundName].second->isPlaying()) {
     audioEffects[soundName].second->play();
   }
 }
@@ -36,15 +39,20 @@ void Game::play(const QString &soundName) {
 AudioManager *Game::getAudioManager() { return this->audioManager; }
 
 bool Game::loadSound(const QString &soundName) {
-  if (this->audioEffects.contains(soundName)) {
+  QStringList list = soundName.split("/");
+  QString name = list.at(list.size() - 1);
+
+  if (this->audioEffects.contains(name)) {
     return false;
   }
+
   auto sound = AudioData::load(soundName.toStdString());
   if (sound == NULL) {
+    cout << "not loaded " << soundName.toStdString() << endl;
     return false;
   }
-  audioEffects[soundName].first = sound;
-  audioEffects[soundName].second = new AudioPlayer(audioManager, sound, 1);
+  audioEffects[name].first = sound;
+  audioEffects[name].second = new AudioPlayer(audioManager, sound, 1);
   return true;
 }
 
