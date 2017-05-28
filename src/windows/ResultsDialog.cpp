@@ -9,6 +9,7 @@
 
 //
 #include <QDebug>
+#include <TableModel.h>
 #include <User.h>
 
 ResultsDialog::ResultsDialog(Game *game, QWidget *parent)
@@ -24,56 +25,31 @@ ResultsDialog::ResultsDialog(Game *game, QWidget *parent)
   //  User *u1 = new User("Danya", 89);
   //  User *u2 = new User("Vika", 44);
   //  User *u3 = new User("Alex", 5);
+  //  User *u4 = new User("Anna", 78);
+  //  User *u5 = new User("Sonya", 35);
+  //  User *u6 = new User("Oleg", 38);
+  //  User *u7 = new User("Kotik", 100);
   //  FileProcessing *f = new FileProcessing;
-  drawTable("/Users/lena/projectX/res/results.json");
+  drawTable("../orchestrix/res/results.json");
   //  f->users.push_back(u);
   //  f->users.push_back(u1);
   //  f->users.push_back(u2);
   //  f->users.push_back(u3);
+  //  f->users.push_back(u4);
+  //  f->users.push_back(u5);
+  //  f->users.push_back(u6);
+  //  f->users.push_back(u7);
   //  f->write("/Users/lena/projectX/res/results.json");
 }
 
 ResultsDialog::~ResultsDialog() { delete ui; }
-
-// void ResultsDialog::drawTable(const QString &filename) {
-//  FileProcessing *f = new FileProcessing;
-//  QString players = f->read(filename);
-//  // qDebug() << players;
-//  load(players);
-//  int row = 0;
-//  //ui->tableView->setRowCount(0);
-//  ui->tableView->horizontalHeader()->setSectionResizeMode(3,
-//                                                          QHeaderView::Stretch);
-//  for (auto it = begin(users); it != end(users); it++) {
-//    User *u = *it.base();
-//    qDebug() << u->getName();
-//    qDebug() << "----------";
-//    qDebug() << u->getSoundName();
-//    qDebug() << "----------";
-//    qDebug() << u->getScore();
-//    qDebug() << "----------";
-//    qDebug() << u->getDate();
-//    qDebug() << "----------";
-//    ui->tableView->setRowCount(row + 1);
-//    ui->tableView->setItem(row, 0, new QTableWidgetItem(u->getName()));
-//    ui->tableView->setItem(row, 1, new QTableWidgetItem(u->getSoundName()));
-//    ui->tableView->setItem(
-//        row, 2, new QTableWidgetItem(QString::number(u->getScore())));
-//    ui->tableView->setItem(row, 3, new QTableWidgetItem(u->getDate()));
-//    row++;
-//  }
-//  ui->tableView->resizeColumnsToContents();
-//  ui->tableView->resizeRowsToContents();
-//  ui->tableView->sortByColumn(2);
-//  // ui->tableView->ro
-//}
 
 void ResultsDialog::drawTable(const QString &filename) {
   FileProcessing *f = new FileProcessing;
   QString players = f->read(filename);
   load(players);
 
-  QStandardItemModel *model = new QStandardItemModel;
+  TableModel *model = new TableModel;
   QStandardItem *item;
 
   //Заголовки столбцов
