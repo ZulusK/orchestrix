@@ -354,17 +354,24 @@ background-color: rgb(250, 247, 190);
           </property>
          </spacer>
         </item>
-        <item row="2" column="3">
+        <item row="1" column="0">
+         <widget class="QPushButton" name="saveBtn">
+          <property name="text">
+           <string>save</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="4">
          <spacer name="horizontalSpacer_2">
           <property name="orientation">
            <enum>Qt::Horizontal</enum>
           </property>
           <property name="sizeType">
-           <enum>QSizePolicy::Preferred</enum>
+           <enum>QSizePolicy::Expanding</enum>
           </property>
           <property name="sizeHint" stdset="0">
            <size>
-            <width>20</width>
+            <width>240</width>
             <height>20</height>
            </size>
           </property>

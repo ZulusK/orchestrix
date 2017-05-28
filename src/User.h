@@ -1,18 +1,20 @@
 #ifndef USER_H
 #define USER_H
 #include <QJsonObject>
+#include <QMutex>
 #include <QString>
-
 class User {
 private:
   QString name;
   QString soundName;
   long long score;
   QString date;
+  QMutex mut;
 
 public:
   User(QString name);
-  User(const QString &jsonStr,int a);
+  User(const QJsonObject &jsonObject);
+  User(QString name, int score);
   const QString &getName();
   const QString &getSoundName();
   long getScore();

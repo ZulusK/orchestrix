@@ -8,6 +8,8 @@
     <y>0</y>
     <width>416</width>
     <height>343</height>
+    <width>554</width>
+    <height>359</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -64,8 +66,21 @@
        </property>
       </widget>
      </item>
+     <item row="0" column="0">
+      <widget class="QPushButton" name="backBtn">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="text">
+        <string>back</string>
+       </property>
+      </widget>
+     </item>
      <item row="1" column="0" colspan="2">
-      <widget class="QTableWidget" name="tableWidget"/>
+      <widget class="QTableView" name="tableView"/>
      </item>
     </layout>
    </item>

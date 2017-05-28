@@ -29,17 +29,20 @@ void StartWindow::on_startBtn_clicked() {
   if (!game_d->exec()) {
     this->close();
   }
+  game_d->hide();
   this->show();
   delete game_d;
-  QMessageBox::StandardButton reply;
-  reply = QMessageBox::question(this, "Saving", "Save your result?",
-                                QMessageBox::Yes | QMessageBox::No);
-  if (reply == QMessageBox::Yes) {
-    cout << "Yes was clicked" << endl;
-    ui->saveBtn->click();
-  } else {
-    cout << "Yes was *not* clicked" << endl;
-  }
+  cout<<"E"<<endl;
+//  QMessageBox::StandardButton reply;
+//  reply = QMessageBox::question(this, "Saving", "Save your result?",
+//                                QMessageBox::Yes | QMessageBox::No);
+//  if (reply == QMessageBox::Yes) {
+//    cout << "Yes was clicked" << endl;
+//    ui->saveBtn->click();
+//  } else {
+//    cout << "Yes was *not* clicked" << endl;
+//  }
+  cout<<"F"<<endl;
 }
 
 void StartWindow::on_resultsBtn_clicked() {

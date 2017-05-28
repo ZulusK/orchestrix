@@ -1,8 +1,6 @@
 <RCC>
     <qresource prefix="/">
-        <file>res/sound effects/bad.wav</file>
-        <file>res/sound effects/good.wav</file>
-        <file>res/sound effects/good1.wav</file>
         <file>res/eqBg.jpg</file>
+        <file>res/results.json</file>
     </qresource>
 </RCC>

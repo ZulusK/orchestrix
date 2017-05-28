@@ -37,7 +37,7 @@ EQWidget::EQWidget(AudioPlayer *player, SpectrumAnalyzer *analyzer,
 
   // init timer
   this->timer = new QTimer();
-  this->sleepTime = (long)(analyzer->getTimeBound() * 1000*0.4);
+  this->sleepTime = (long)(analyzer->getTimeBound());
   this->timer->setSingleShot(true);
   connect(timer, SIGNAL(timeout()), this, SLOT(updateBars()));
   this->lastUpdateTime = 0;
@@ -62,8 +62,7 @@ EQWidget::~EQWidget() {
 }
 
 void EQWidget::updateSpectrumPos() {
-  this->spectrumPos = player->getTime() / 1000.0 * analyzer->getFrequency() /
-                      analyzer->getElementsInChunk();
+  this->spectrumPos = player->getTime() / analyzer->getTimeBound();
 }
 
 void EQWidget::timerLoopInit() {
@@ -79,11 +78,6 @@ void EQWidget::timerLoopInit() {
 
 void EQWidget::updateBars() {
   if (!isPaused) {
-    if (!analyzer->isShoot(spectrumPos)) {
-      setBrush(QBrush(QColor(0, 97, 255), Qt::Dense6Pattern));
-    } else {
-      setBrush(QBrush(QColor(255, 10, 0), Qt::Dense6Pattern));
-    }
     auto oldPos = this->spectrumPos;
     updateSpectrumPos();
     // check, is player pos was setting
