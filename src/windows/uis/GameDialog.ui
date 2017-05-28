@@ -9,7 +9,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1034</width>
+    <width>1136</width>
     <height>313</height>
    </rect>
   </property>
@@ -39,7 +39,7 @@
   </property>
   <property name="styleSheet">
    <string notr="true">QDialog#GameDialog{
-background-image: url(:/res/eqBg.jpg);
+background-image: url(:/res/fon.jpg);
 }</string>
   </property>
   <layout class="QHBoxLayout" name="horizontalLayout">

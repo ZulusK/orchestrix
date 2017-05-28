@@ -17,6 +17,9 @@ ResultsDialog::ResultsDialog(Game *game, QWidget *parent)
   this->setWindowFlags(Qt::Window);
   this->showFullScreen();
   this->environment = game;
+  QPalette * palette = new QPalette();
+  palette->setBrush(this->backgroundRole(), QBrush(QPixmap(":/res/fon.jpg")));
+  this->setPalette(*palette);
   //  User *u = new User("Lena", 23);
   //  User *u1 = new User("Danya", 89);
   //  User *u2 = new User("Vika", 44);
