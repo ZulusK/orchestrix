@@ -23,7 +23,8 @@ QMAKE_CXXFLAGS += -std=c++14
 #DEFINES += QT_Dsudo chmod 644 /usr/local/lib/libbass.soISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 INCLUDEPATH += src/windows \
                src/audio   \
-               src/
+               src/        \
+                src/Controller/byUSB/
 
 
 SOURCES += src/main.cpp\
@@ -44,7 +45,7 @@ SOURCES += src/main.cpp\
     FileProcessing.cpp \
     src/Indicator.cpp \
     TableModel.cpp \
-    src/Controller.cpp
+  src/Controller/byUSB/Controller.cpp
 
 HEADERS  += src/windows/StartWindow.h \
     src/User.h \
@@ -64,7 +65,7 @@ HEADERS  += src/windows/StartWindow.h \
     FileProcessing.h \
     src/Indicator.h \
     TableModel.h \
-    src/Controller.h
+    src/Controller/byUSB/Controller.h
 
 FORMS    += src/windows/uis/StartWindow.ui \
     src/windows/uis/HelpDialog.ui \
