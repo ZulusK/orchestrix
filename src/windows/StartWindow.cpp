@@ -16,6 +16,10 @@ StartWindow::StartWindow(Game *game, QWidget *parent)
   this->showFullScreen();
   this->environment = game;
   connect(this, SIGNAL(updateWindow()), SLOT(updateContent()));
+  QPalette * palette = new QPalette();
+  palette->setBrush(this->backgroundRole(), QBrush(QPixmap(":/res/fon.jpg")));
+  this->setPalette(*palette);
+
 }
 
 StartWindow::~StartWindow() {

@@ -20,25 +20,164 @@
       <property name="sizeConstraint">
        <enum>QLayout::SetDefaultConstraint</enum>
       </property>
+      <item row="2" column="0">
+       <widget class="Line" name="line">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="0">
+       <widget class="QLabel" name="label">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="sizeIncrement">
+         <size>
+          <width>2</width>
+          <height>2</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <family>URW Bookman L</family>
+          <pointsize>40</pointsize>
+          <weight>9</weight>
+          <italic>false</italic>
+          <bold>false</bold>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">font: 75 40pt &quot;URW Bookman L&quot;;
+color:rgb(238, 238, 236);</string>
+        </property>
+        <property name="text">
+         <string>Reservoir code | ORCHESTRIX</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+      </item>
       <item row="3" column="0">
+       <spacer name="verticalSpacer_5">
+        <property name="orientation">
+         <enum>Qt::Vertical</enum>
+        </property>
+        <property name="sizeType">
+         <enum>QSizePolicy::Preferred</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>20</width>
+          <height>10</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item row="1" column="0">
        <layout class="QGridLayout" name="gridLayout_2">
         <property name="sizeConstraint">
          <enum>QLayout::SetDefaultConstraint</enum>
         </property>
-        <item row="0" column="0">
-         <widget class="QPushButton" name="helpBtn">
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
+        <item row="1" column="5">
+         <layout class="QHBoxLayout" name="horizontalLayout_2">
+          <property name="sizeConstraint">
+           <enum>QLayout::SetDefaultConstraint</enum>
           </property>
-          <property name="text">
-           <string>help</string>
-          </property>
-         </widget>
+          <item>
+           <widget class="QLabel" name="nameLbl">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="font">
+             <font>
+              <family>URW Bookman L</family>
+              <pointsize>13</pointsize>
+              <weight>9</weight>
+              <italic>false</italic>
+              <bold>false</bold>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">font: 75 13pt &quot;URW Bookman L&quot;;
+color:white;</string>
+            </property>
+            <property name="text">
+             <string>user name</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="scoreLbl">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="font">
+             <font>
+              <family>URW Bookman L</family>
+              <pointsize>13</pointsize>
+              <weight>9</weight>
+              <italic>false</italic>
+              <bold>false</bold>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">font: 75 13pt &quot;URW Bookman L&quot;;
+color:white;</string>
+            </property>
+            <property name="text">
+             <string>user score</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+            </property>
+           </widget>
+          </item>
+         </layout>
         </item>
-        <item row="2" column="2">
+        <item row="3" column="5">
+         <spacer name="verticalSpacer_4">
+          <property name="orientation">
+           <enum>Qt::Vertical</enum>
+          </property>
+          <property name="sizeType">
+           <enum>QSizePolicy::Preferred</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>20</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item row="0" column="2">
+         <spacer name="horizontalSpacer">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeType">
+           <enum>QSizePolicy::MinimumExpanding</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>160</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item row="2" column="3">
          <layout class="QVBoxLayout" name="verticalLayout">
           <property name="sizeConstraint">
            <enum>QLayout::SetDefaultConstraint</enum>
@@ -69,6 +208,24 @@
               <width>0</width>
               <height>40</height>
              </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QPushButton{
+font: 75 30pt &quot;URW Bookman L&quot;;
+background-color: rgb(0, 126, 255);
+ border-style: outset;
+ border-width: 2px;
+color:white;
+ border-radius: 20%;
+ border-color: rgba(0,0,0,0);
+}
+QPushButton:hover{
+border-width: 0px;
+background-color: rgb(255,20,0);
+border-radius: 20%;
+}
+
+</string>
             </property>
             <property name="text">
              <string>start</string>
@@ -105,6 +262,22 @@
               <height>40</height>
              </size>
             </property>
+            <property name="styleSheet">
+             <string notr="true">QPushButton{
+font: 75 30pt &quot;URW Bookman L&quot;;
+background-color: rgb(0, 126, 255);
+ border-style: outset;
+ border-width: 2px;
+color:white;
+ border-radius: 20%;
+ border-color: rgba(0,0,0,0);
+}
+QPushButton:hover{
+border-width: 0px;
+background-color: rgb(255,20,0);
+border-radius: 20%;
+}</string>
+            </property>
             <property name="text">
              <string>view results</string>
             </property>
@@ -140,6 +313,22 @@
               <height>40</height>
              </size>
             </property>
+            <property name="styleSheet">
+             <string notr="true">QPushButton{
+font: 75 30pt &quot;URW Bookman L&quot;;
+background-color: rgb(0, 126, 255);
+ border-style: outset;
+ border-width: 2px;
+color:white;
+ border-radius: 20%;
+ border-color: rgba(0,0,0,0);
+}
+QPushButton:hover{
+border-width: 0px;
+background-color: rgb(255,20,0);
+border-radius: 20%;
+}</string>
+            </property>
             <property name="text">
              <string>exit</string>
             </property>
@@ -160,14 +349,7 @@
           </item>
          </layout>
         </item>
-        <item row="1" column="4">
-         <layout class="QHBoxLayout" name="horizontalLayout_2">
-          <property name="sizeConstraint">
-           <enum>QLayout::SetDefaultConstraint</enum>
-          </property>
-         </layout>
-        </item>
-        <item row="0" column="4">
+        <item row="0" column="5">
          <layout class="QHBoxLayout" name="horizontalLayout">
           <property name="sizeConstraint">
            <enum>QLayout::SetDefaultConstraint</enum>
@@ -179,6 +361,31 @@
               <horstretch>0</horstretch>
               <verstretch>0</verstretch>
              </sizepolicy>
+            </property>
+            <property name="font">
+             <font>
+              <family>URW Bookman L</family>
+              <pointsize>25</pointsize>
+              <weight>9</weight>
+              <italic>false</italic>
+              <bold>false</bold>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QPushButton {
+font: 75 25pt &quot;URW Bookman L&quot;;
+background-color: rgb(0, 126, 255);
+ border-style: outset;
+ border-width: 2px;
+color:white;
+ border-radius: 20%;
+ border-color: rgba(0,0,0,0);
+}
+QPushButton:hover{
+border-width: 0px;
+background-color: rgb(255,20,0);
+border-radius: 20%;
+}</string>
             </property>
             <property name="text">
              <string>login</string>
@@ -193,12 +400,75 @@
               <verstretch>0</verstretch>
              </sizepolicy>
             </property>
+            <property name="font">
+             <font>
+              <family>URW Bookman L</family>
+              <pointsize>25</pointsize>
+              <weight>9</weight>
+              <italic>false</italic>
+              <bold>false</bold>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QPushButton {
+font: 75 25pt &quot;URW Bookman L&quot;;
+background-color: rgb(0, 126, 255);
+ border-style: outset;
+ border-width: 2px;
+color:white;
+ border-radius: 20%;
+ border-color: rgba(0,0,0,0);
+}
+QPushButton:hover{
+border-width: 0px;
+background-color: rgb(255,20,0);
+border-radius: 20%;
+}</string>
+            </property>
             <property name="text">
              <string>log out</string>
             </property>
            </widget>
           </item>
          </layout>
+        </item>
+        <item row="0" column="0">
+         <widget class="QPushButton" name="helpBtn">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="font">
+           <font>
+            <family>URW Bookman L</family>
+            <pointsize>25</pointsize>
+            <weight>9</weight>
+            <italic>false</italic>
+            <bold>false</bold>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QPushButton {
+font: 75 25pt &quot;URW Bookman L&quot;;
+background-color: rgb(0, 126, 255);
+ border-style: outset;
+ border-width: 2px;
+color:white;
+ border-radius: 20%;
+ border-color: rgba(0,0,0,0);
+}
+QPushButton:hover{
+border-width: 0px;
+background-color: rgb(255,20,0);
+border-radius: 20%;
+}</string>
+          </property>
+          <property name="text">
+           <string>help</string>
+          </property>
+         </widget>
         </item>
         <item row="2" column="0">
          <spacer name="verticalSpacer">
@@ -213,113 +483,39 @@
           </property>
          </spacer>
         </item>
-        <item row="0" column="1">
-         <spacer name="horizontalSpacer">
-          <property name="orientation">
-           <enum>Qt::Horizontal</enum>
-          </property>
-          <property name="sizeType">
-           <enum>QSizePolicy::MinimumExpanding</enum>
-          </property>
-          <property name="sizeHint" stdset="0">
-           <size>
-            <width>160</width>
-            <height>20</height>
-           </size>
-          </property>
-         </spacer>
-        </item>
-        <item row="3" column="4">
-         <spacer name="verticalSpacer_4">
-          <property name="orientation">
-           <enum>Qt::Vertical</enum>
-          </property>
-          <property name="sizeType">
-           <enum>QSizePolicy::Preferred</enum>
-          </property>
-          <property name="sizeHint" stdset="0">
-           <size>
-            <width>20</width>
-            <height>20</height>
-           </size>
-          </property>
-         </spacer>
-        </item>
         <item row="1" column="0">
          <widget class="QPushButton" name="saveBtn">
+          <property name="font">
+           <font>
+            <family>URW Bookman L</family>
+            <pointsize>25</pointsize>
+            <weight>9</weight>
+            <italic>false</italic>
+            <bold>false</bold>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QPushButton{
+font: 75 25pt &quot;URW Bookman L&quot;;
+background-color: rgb(0, 126, 255);
+ border-style: outset;
+ border-width: 2px;
+color:white;
+ border-radius: 20%;
+ border-color: rgba(0,0,0,0);
+}
+QPushButton:hover{
+border-width: 0px;
+background-color: rgb(255,20,0);
+border-radius: 20%;
+}</string>
+          </property>
           <property name="text">
            <string>save</string>
           </property>
          </widget>
         </item>
-        <item row="2" column="4">
-         <spacer name="horizontalSpacer_2">
-          <property name="orientation">
-           <enum>Qt::Horizontal</enum>
-          </property>
-          <property name="sizeType">
-           <enum>QSizePolicy::Expanding</enum>
-          </property>
-          <property name="sizeHint" stdset="0">
-           <size>
-            <width>240</width>
-            <height>20</height>
-           </size>
-          </property>
-         </spacer>
-        </item>
        </layout>
-      </item>
-      <item row="2" column="0">
-       <spacer name="verticalSpacer_5">
-        <property name="orientation">
-         <enum>Qt::Vertical</enum>
-        </property>
-        <property name="sizeType">
-         <enum>QSizePolicy::Preferred</enum>
-        </property>
-        <property name="sizeHint" stdset="0">
-         <size>
-          <width>20</width>
-          <height>10</height>
-         </size>
-        </property>
-       </spacer>
-      </item>
-      <item row="0" column="0">
-       <widget class="QLabel" name="label">
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
-          <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
-        </property>
-        <property name="sizeIncrement">
-         <size>
-          <width>2</width>
-          <height>2</height>
-         </size>
-        </property>
-        <property name="font">
-         <font>
-          <family>DejaVu Sans</family>
-          <pointsize>17</pointsize>
-         </font>
-        </property>
-        <property name="text">
-         <string>Reservoir code | ORCHESTRIX</string>
-        </property>
-        <property name="alignment">
-         <set>Qt::AlignCenter</set>
-        </property>
-       </widget>
-      </item>
-      <item row="1" column="0">
-       <widget class="Line" name="line">
-        <property name="orientation">
-         <enum>Qt::Horizontal</enum>
-        </property>
-       </widget>
       </item>
      </layout>
     </item>

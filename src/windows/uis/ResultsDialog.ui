@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>554</width>
-    <height>359</height>
+    <width>1253</width>
+    <height>354</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -16,15 +16,26 @@
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
     <layout class="QGridLayout" name="gridLayout">
+     <item row="1" column="0" colspan="3">
+      <widget class="QTableView" name="tableView"/>
+     </item>
      <item row="0" column="1">
       <widget class="QLabel" name="label">
        <property name="font">
         <font>
-         <pointsize>15</pointsize>
+         <family>URW Bookman L</family>
+         <pointsize>40</pointsize>
+         <weight>9</weight>
+         <italic>false</italic>
+         <bold>false</bold>
         </font>
        </property>
+       <property name="styleSheet">
+        <string notr="true">font: 75 40pt &quot;URW Bookman L&quot;;
+color:white;</string>
+       </property>
        <property name="text">
-        <string>Results</string>
+        <string>                                        ★★ Results ★★</string>
        </property>
        <property name="alignment">
         <set>Qt::AlignCenter</set>
@@ -34,22 +45,46 @@
      <item row="0" column="0">
       <widget class="QPushButton" name="backBtn">
        <property name="sizePolicy">
-        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+        <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
          <horstretch>0</horstretch>
          <verstretch>0</verstretch>
         </sizepolicy>
        </property>
-       <property name="text">
-        <string>back</string>
+       <property name="minimumSize">
+        <size>
+         <width>120</width>
+         <height>50</height>
+        </size>
        </property>
-      </widget>
-     </item>
-     <item row="1" column="0" colspan="2">
-      <widget class="QTableView" name="tableView">
-       <property name="font">
-        <font>
-         <pointsize>25</pointsize>
-        </font>
+       <property name="styleSheet">
+        <string notr="true">QPushButton{
+font: 75 30pt &quot;URW Bookman L&quot;;
+background-color: white;
+ border-style: outset;
+ border-width: 2px;
+color:white;
+ border-radius: 20%;
+ border-color: rgba(0,0,0,0);
+}
+QPushButton:hover{
+border-width: 0px;
+background-color: rgb(255,20,0);
+border-radius: 20%;
+}
+</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="icon">
+        <iconset resource="../../../res.qrc">
+         <normaloff>:/res/w512h5121390846445leftround512.png</normaloff>:/res/w512h5121390846445leftround512.png</iconset>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>25</width>
+         <height>25</height>
+        </size>
        </property>
       </widget>
      </item>
@@ -57,7 +92,9 @@
    </item>
   </layout>
  </widget>
- <resources/>
+ <resources>
+  <include location="../../../res.qrc"/>
+ </resources>
  <connections>
   <connection>
    <sender>backBtn</sender>
