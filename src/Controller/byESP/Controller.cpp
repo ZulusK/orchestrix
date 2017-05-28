@@ -1,7 +1,8 @@
-#include "../include/Controller.h"
+#include "Controller.h"
 #include <iostream>
 #include <cstdio>
 #include <cstdlib>
+#include <cstring>
 
 Controller::Controller(){
 	client = NULL;
@@ -37,21 +38,27 @@ Controller::~Controller(){
 	delete client;
 }
 
-int Controller::distanceFrom(int num){
-	if(num >= 4 || num < 0) return -1;
+bool * Controller::getInput(){
 
 	char messageStr[BUFFER_LEN];
-	std::sprintf(messageStr, "0;%i", num);
+	std::sprintf(messageStr, "0");
 
 	NetMessage_setDataString(message, messageStr);
 
-	if(!TcpClient_send(client, message)) return -1;
-	if(!TcpClient_receive(client, message)) return -1;
-
-	int dis = std::atoi(message->buffer);
+	if(!TcpClient_send(client, message)) return NULL;
 	NetMessage_setDataString(message, "");
+	while(strcmp(NetMessage_data(message), "") == 0) 
+	if(!TcpClient_receive(client, message)) return NULL;
 
-	return dis;
+	std::cout << NetMessage_data(message) << std::endl;
+
+	bool * values = new bool [4];
+	std::string answer = std::string(NetMessage_data(message));
+	for(int i = 0; i < 4; i++){
+		values[i] = answer.at(i) == '0' ? false : true;
+	}
+
+	return values;
 }
 
 void Controller::turnOnLed(int num){
@@ -61,7 +68,7 @@ void Controller::turnOnLed(int num){
 	std::sprintf(messageStr, "1;%i;1", num);
 
 	NetMessage_setDataString(message, messageStr);
-	TcpClient_send(client, message);
+	if(!TcpClient_send(client, message)) std::cout << "Not sent" << std::endl;
 	NetMessage_setDataString(message, "");
 }
 
@@ -72,6 +79,6 @@ void Controller::turnOffLed(int num){
 	std::sprintf(messageStr, "1;%i;0", num);
 
 	NetMessage_setDataString(message, messageStr);
-	TcpClient_send(client, message);
+	if(!TcpClient_send(client, message)) std::cout << "Not sent" << std::endl;
 	NetMessage_setDataString(message, "");
 }

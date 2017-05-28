@@ -11,10 +11,16 @@ const int port = 80;
 WiFiServer server(port);
 WiFiClient client;
 
-int askForDistance(char request[]){
+char * askForDistance(char request[]){
   Serial.print(request);
   while(!Serial.available()) delay(10);
-  return Serial.parseInt();
+  int numOfBytes = Serial.available();
+  char buff[numOfBytes + 1];
+  for(int i = 0; i < numOfBytes; i++){
+    buff[i] = (char)Serial.read();
+  }
+  buff[numOfBytes] = '\0';
+  return buff;
 }
 
 int askForLED(char request[]){
