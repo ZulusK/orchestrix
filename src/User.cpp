@@ -2,31 +2,27 @@
 #include <QDateTime>
 #include <QJsonDocument>
 
-void User::setScore(long long value)
-{
-    score = value;
-}
+void User::setScore(long long value) { score = value; }
 
-void User::setSoundName(const QString &value)
-{
-    soundName = value;
-}
+void User::setSoundName(const QString &value) { soundName = value; }
 
 User::User(QString name) {
-    this->name = name;
-    this->soundName = "Not selected";
+  this->name = name;
+  this->soundName = "Not selected";
   this->score = 0;
 }
+//
+User::User(QString name, int score) {
+  this->name = name;
+  this->soundName = "Not selected";
+  this->score = score;
+}
 
-User::User(const QString &jsonStr, int a) {
-    QJsonDocument jDoc = QJsonDocument::fromJson(jsonStr.toUtf8());
-    if(jDoc.isObject()){
-        QJsonObject jObj = jDoc.object();
-        this->name = jObj[QString::fromStdString("name")].toString();
-        this->soundName = jObj[QString::fromStdString("sound")].toString();
-        this->score = jObj[QString::fromStdString("score")].toInt();
-        this->date = jObj[QString::fromStdString("date")].toString();
-    }
+User::User(const QJsonObject &jsonObject) {
+  this->name = jsonObject[QString::fromStdString("name")].toString();
+  this->soundName = jsonObject[QString::fromStdString("sound")].toString();
+  this->score = jsonObject[QString::fromStdString("score")].toInt();
+  this->date = jsonObject[QString::fromStdString("date")].toString();
 }
 
 const QString &User::getName() { return this->name; }
