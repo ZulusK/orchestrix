@@ -2,7 +2,11 @@
 #include <QDateTime>
 #include <QJsonDocument>
 
-void User::setScore(long long value) { score = value; }
+void User::setScore(long long value) {
+  mut.lock();
+  score = value;
+  mut.unlock();
+}
 
 void User::setSoundName(const QString &value) { soundName = value; }
 
@@ -33,7 +37,11 @@ long User::getScore() { return this->score; }
 
 const QString &User::getDate() { return this->date; }
 
-void User::addToScore(int val) { this->score += val; }
+void User::addToScore(int val) {
+  mut.lock();
+  this->score += val;
+  mut.unlock();
+}
 
 User::~User() {}
 

@@ -6,20 +6,57 @@
 #include <iostream>
 using namespace std;
 
-double getPoint8(char *data, int heigth) {
-  double val = 0;
-  int max = CHAR_MAX;
-  val = data[0];
-  val /= max;
-  val /= 2.1;
-  return heigth / 2 + val * heigth;
+double getPoint8(char *data, int heigth, int range, int channels) {
+//  double val = 0;
+//  int max = CHAR_MAX;
+//  val = data[0];
+//  val /= max;
+//  val /= 2.1;
+//  return heigth / 2 + val * heigth;
+    double val = 0;
+    double pos = 0;
+    double neg = 0;
+    for (long i = 0; i < range * channels; i++) {
+      if (data[i] > CHAR_MAX/2) {
+        pos += data[i];
+      } else {
+        neg -= data[i];
+      }
+    }
+    val = pos - neg;
+    if (pos < -neg) {
+      val *= -1;
+    }
+    val /= range;
+    val /= CHAR_MAX/2;
+    val /= 2.1;
+    return heigth / 2 + val * heigth;
 }
 
-double getPoint16(short *data, int heigth) {
+double getPoint16(short *data, int heigth, int range, int channels) {
+  //  double val = 0;
+  //  int max = SHRT_MAX;
+  //  val = data[0];
+  //  val /= max;
+  //  val /= 2.1;
+  //  return heigth / 2 + val * heigth;
+
   double val = 0;
-  int max = SHRT_MAX;
-  val = data[0];
-  val /= max;
+  double pos = 0;
+  double neg = 0;
+  for (long i = 0; i < range * channels; i++) {
+    if (data[i] > 0) {
+      pos += data[i];
+    } else {
+      neg += data[i];
+    }
+  }
+  val = pos - neg;
+  if (pos < -neg) {
+    val *= -1;
+  }
+  val /= range;
+  val /= SHRT_MAX;
   val /= 2.1;
   return heigth / 2 + val * heigth;
 }
@@ -45,14 +82,15 @@ QPixmap *SoundHistogramm::createImage() {
   if (sound->get_bitsPerSample() == 16) {
     short *data = (short *)sound->get_source();
     for (int i = image->height() / 3, j = 0; i < image->width(); i++, j++) {
-      currPos = getPoint16(data + j * range * channels, imHeigth);
+      currPos = getPoint16(data + j * range * channels, imHeigth, range, channels);
       painter.drawLine(i - 1, oldPos, i, currPos);
       oldPos = currPos;
     }
   } else {
     char *data = (char *)sound->get_source();
     for (int i = image->height() / 3, j = 0; i < image->width(); i++, j++) {
-      currPos = getPoint8(data + j * range * channels, imHeigth);
+      currPos =
+          getPoint8(data + j * range * channels, imHeigth, range, channels);
       painter.drawLine(i - 1, oldPos, i, currPos);
       oldPos = currPos;
     }
@@ -74,7 +112,7 @@ SoundHistogramm::SoundHistogramm(const QPen &pen, AudioPlayer *player,
   this->player = player;
   this->sound = sound;
   this->setPen(pen);
-  this->remainingTime = sound->get_samples() / sound->get_sampleRate() * 1000;
+  this->remainingTime = sound->get_samples() / (double)sound->get_sampleRate() * 1000;
 }
 
 void SoundHistogramm::start() { timer->start(); }
