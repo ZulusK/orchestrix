@@ -33,6 +33,16 @@
             <verstretch>0</verstretch>
            </sizepolicy>
           </property>
+          <property name="styleSheet">
+           <string notr="true">background-color: rgb(250, 247, 190);
+ border-style: outset;
+ border-width: 2px;
+ border-radius: 10px;
+ border-color: beige;
+ min-width: 3em;
+ padding: 8px;
+font: 75 15pt &quot;URW Bookman L&quot;;</string>
+          </property>
           <property name="text">
            <string>help</string>
           </property>
@@ -66,9 +76,19 @@
             </property>
             <property name="minimumSize">
              <size>
-              <width>0</width>
+              <width>220</width>
               <height>40</height>
              </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">font: 75 15pt &quot;URW Bookman L&quot;;
+ background-color:rgb(229, 203, 166);
+ border-style: outset;
+ border-width: 2px;
+ border-radius: 10px;
+ border-color: beige;
+ min-width: 8em;
+ padding: 8px;</string>
             </property>
             <property name="text">
              <string>start</string>
@@ -101,9 +121,19 @@
             </property>
             <property name="minimumSize">
              <size>
-              <width>0</width>
+              <width>220</width>
               <height>40</height>
              </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">font: 75 15pt &quot;URW Bookman L&quot;;
+background-color: rgb(229, 203, 166);
+ border-style: outset;
+ border-width: 2px;
+ border-radius: 10px;
+ border-color: beige;
+ min-width: 8em;
+ padding: 8px;</string>
             </property>
             <property name="text">
              <string>view results</string>
@@ -136,9 +166,19 @@
             </property>
             <property name="minimumSize">
              <size>
-              <width>0</width>
+              <width>220</width>
               <height>40</height>
              </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">font: 75 15pt &quot;URW Bookman L&quot;;
+background-color: rgb(229, 203, 166);
+ border-style: outset;
+ border-width: 2px;
+ border-radius: 10px;
+ border-color: beige;
+ min-width: 8em;
+ padding: 8px;</string>
             </property>
             <property name="text">
              <string>exit</string>
@@ -173,6 +213,9 @@
               <verstretch>0</verstretch>
              </sizepolicy>
             </property>
+            <property name="styleSheet">
+             <string notr="true">font: 75 13pt &quot;URW Bookman L&quot;;</string>
+            </property>
             <property name="text">
              <string>user name</string>
             </property>
@@ -185,6 +228,9 @@
               <horstretch>0</horstretch>
               <verstretch>0</verstretch>
              </sizepolicy>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">font: 75 13pt &quot;URW Bookman L&quot;;</string>
             </property>
             <property name="text">
              <string>user score</string>
@@ -209,6 +255,17 @@
               <verstretch>0</verstretch>
              </sizepolicy>
             </property>
+            <property name="styleSheet">
+             <string notr="true">font: 75 15pt &quot;URW Bookman L&quot;;
+background-color:  rgb(250, 247, 190);
+ border-style: outset;
+ border-width: 2px;
+ border-radius: 6px;
+ border-color: beige;
+ min-width: 3em;
+ padding: 8px;
+</string>
+            </property>
             <property name="text">
              <string>login</string>
             </property>
@@ -221,6 +278,16 @@
               <horstretch>0</horstretch>
               <verstretch>0</verstretch>
              </sizepolicy>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">font: 75 15pt &quot;URW Bookman L&quot;;
+background-color: rgb(250, 247, 190);
+ border-style: outset;
+ border-width: 2px;
+ border-radius: 6px;
+ border-color: beige;
+ min-width: 3em;
+ padding: 8px;</string>
             </property>
             <property name="text">
              <string>log out</string>
@@ -251,7 +318,7 @@
            </sizepolicy>
           </property>
           <property name="styleSheet">
-           <string notr="true">background-color: rgba(85, 255, 255, 40);</string>
+           <string notr="true">background-color: rgba(201, 235, 206, 49)</string>
           </property>
          </widget>
         </item>
@@ -305,6 +372,16 @@
         </item>
         <item row="1" column="0">
          <widget class="QPushButton" name="saveBtn">
+          <property name="styleSheet">
+           <string notr="true">background-color: rgb(250, 247, 190);
+ border-style: outset;
+ border-width: 2px;
+ border-radius: 10px;
+ border-color: beige;
+ min-width: 3em;
+ padding: 8px;
+font: 75 15pt &quot;URW Bookman L&quot;;</string>
+          </property>
           <property name="text">
            <string>save</string>
           </property>
@@ -344,9 +421,15 @@
         </property>
         <property name="font">
          <font>
-          <family>DejaVu Sans</family>
-          <pointsize>17</pointsize>
+          <family>URW Bookman L</family>
+          <pointsize>20</pointsize>
+          <weight>9</weight>
+          <italic>false</italic>
+          <bold>false</bold>
          </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">font: 75 20pt &quot;URW Bookman L&quot;;</string>
         </property>
         <property name="text">
          <string>Reservoir code | ORCHESTRIX</string>

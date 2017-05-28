@@ -16,14 +16,30 @@
   <widget class="QPushButton" name="backBtn">
    <property name="geometry">
     <rect>
-     <x>30</x>
+     <x>10</x>
      <y>10</y>
-     <width>89</width>
-     <height>25</height>
+     <width>51</width>
+     <height>41</height>
     </rect>
    </property>
+   <property name="styleSheet">
+    <string notr="true"> background-color: rgb(250, 247, 190);
+ border-style: outset;
+ border-width: 2px;
+ border-color: beige;</string>
+   </property>
    <property name="text">
-    <string>back</string>
+    <string/>
+   </property>
+   <property name="icon">
+    <iconset>
+     <normaloff>../../../w512h5121390846445leftround512.png</normaloff>../../../w512h5121390846445leftround512.png</iconset>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>30</width>
+     <height>30</height>
+    </size>
    </property>
   </widget>
  </widget>

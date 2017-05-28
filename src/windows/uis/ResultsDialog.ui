@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>400</width>
-    <height>300</height>
+    <width>416</width>
+    <height>343</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -24,8 +24,21 @@
          <verstretch>0</verstretch>
         </sizepolicy>
        </property>
+       <property name="styleSheet">
+        <string notr="true">background-color:rgba(201, 235, 206, 49)</string>
+       </property>
        <property name="text">
-        <string>back</string>
+        <string/>
+       </property>
+       <property name="icon">
+        <iconset>
+         <normaloff>../../../w512h5121390846445leftround512.png</normaloff>../../../w512h5121390846445leftround512.png</iconset>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>25</width>
+         <height>25</height>
+        </size>
        </property>
       </widget>
      </item>
@@ -33,11 +46,18 @@
       <widget class="QLabel" name="label">
        <property name="font">
         <font>
-         <pointsize>15</pointsize>
+         <family>URW Bookman L</family>
+         <pointsize>20</pointsize>
+         <weight>9</weight>
+         <italic>false</italic>
+         <bold>false</bold>
         </font>
        </property>
+       <property name="styleSheet">
+        <string notr="true">font: 75 20pt &quot;URW Bookman L&quot;;</string>
+       </property>
        <property name="text">
-        <string>Results</string>
+        <string>★★ Results ★★</string>
        </property>
        <property name="alignment">
         <set>Qt::AlignCenter</set>
