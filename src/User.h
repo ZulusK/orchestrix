@@ -12,7 +12,8 @@ private:
 
 public:
   User(QString name);
-  User(const QString &jsonStr,int a);
+  User(const QJsonObject &jsonObject);
+  User(QString name, int score);
   const QString &getName();
   const QString &getSoundName();
   long getScore();

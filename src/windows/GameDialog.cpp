@@ -13,7 +13,7 @@ QString GameDialog::loadSound() {
       this, QString::fromUtf8("Choose your sound to play"), QDir::currentPath(),
       "Images (*.wav);;");
   if (soundPath.length() == 0) {
-    soundPath = "../orchestrix/res/21pilots.wav";
+    soundPath = ":/res/21pilots.wav";
   }
   // load sound
   this->audioData = AudioData::load(soundPath.toStdString());

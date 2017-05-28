@@ -42,7 +42,8 @@ SOURCES += src/main.cpp\
     src/EQWidget.cpp \
     src/SoundHistogramm.cpp \
     FileProcessing.cpp \
-    src/Indicator.cpp
+    src/Indicator.cpp \
+    TableModel.cpp
 
 HEADERS  += src/windows/StartWindow.h \
     src/User.h \
@@ -60,7 +61,8 @@ HEADERS  += src/windows/StartWindow.h \
     src/EQWidget.h \
     src/SoundHistogramm.h \
     FileProcessing.h \
-    src/Indicator.h
+    src/Indicator.h \
+    TableModel.h
 
 FORMS    += src/windows/uis/StartWindow.ui \
     src/windows/uis/HelpDialog.ui \
@@ -89,4 +91,7 @@ LIBS+= -L/usr/local/lib -lprogbase
 
 RESOURCES += \
     res.qrc
+
+DISTFILES += \
+    res/result
 
