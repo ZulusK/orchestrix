@@ -9,7 +9,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>809</width>
+    <width>1034</width>
     <height>313</height>
    </rect>
   </property>
@@ -116,12 +116,18 @@ border-color: rgba(0,0,0,0);
           </spacer>
          </item>
          <item>
-          <widget class="QLabel" name="label_4">
+          <widget class="QLabel" name="messageLbl">
            <property name="sizePolicy">
-            <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+            <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
              <horstretch>0</horstretch>
              <verstretch>0</verstretch>
             </sizepolicy>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>200</width>
+             <height>0</height>
+            </size>
            </property>
            <property name="font">
             <font>
@@ -134,8 +140,14 @@ color: rgb(255,255,255);
 selection-background-color: rgb(252, 233, 79);
 </string>
            </property>
+           <property name="frameShape">
+            <enum>QFrame::NoFrame</enum>
+           </property>
            <property name="text">
-            <string>Well DOne</string>
+            <string notr="true">Well Done                    </string>
+           </property>
+           <property name="textFormat">
+            <enum>Qt::AutoText</enum>
            </property>
            <property name="alignment">
             <set>Qt::AlignCenter</set>
@@ -177,14 +189,16 @@ selection-background-color: rgb(252, 233, 79);
            </property>
            <property name="font">
             <font>
-             <pointsize>20</pointsize>
+             <pointsize>40</pointsize>
+             <weight>75</weight>
+             <bold>true</bold>
             </font>
            </property>
            <property name="styleSheet">
             <string notr="true">background-color:#76FF03;
-border-color: rgba(0, 0, 0,0);
+border-color: rgba(255, 255, 255,255);
 border-style: inset;
-border-width: 10px;
+border-width: 3px;
 border-radius: 75%;
 color: rgb(255,255,255);</string>
            </property>
@@ -234,14 +248,16 @@ color: rgb(255,255,255);</string>
            </property>
            <property name="font">
             <font>
-             <pointsize>20</pointsize>
+             <pointsize>40</pointsize>
+             <weight>75</weight>
+             <bold>true</bold>
             </font>
            </property>
            <property name="styleSheet">
             <string notr="true">background-color:#76FF03;
-border-color: rgba(0, 0, 0,0);
+border-color: rgba(255, 255, 255,255);
 border-style: inset;
-border-width: 10px;
+border-width: 3px;
 border-radius: 75%;
 color: rgb(255,255,255);</string>
            </property>
@@ -288,14 +304,16 @@ color: rgb(255,255,255);</string>
            </property>
            <property name="font">
             <font>
-             <pointsize>20</pointsize>
+             <pointsize>40</pointsize>
+             <weight>75</weight>
+             <bold>true</bold>
             </font>
            </property>
            <property name="styleSheet">
             <string notr="true">background-color:#76FF03;
-border-color: rgba(0, 0, 0,0);
+border-color: rgba(255, 255, 255,255);
 border-style: inset;
-border-width: 10px;
+border-width: 3px;
 border-radius: 75%;
 color: rgb(255,255,255);</string>
            </property>
@@ -342,14 +360,16 @@ color: rgb(255,255,255);</string>
            </property>
            <property name="font">
             <font>
-             <pointsize>20</pointsize>
+             <pointsize>40</pointsize>
+             <weight>75</weight>
+             <bold>true</bold>
             </font>
            </property>
            <property name="styleSheet">
             <string notr="true">background-color:#76FF03;
-border-color: rgba(0, 0, 0,0);
+border-color: rgba(255, 255, 255,255);
 border-style: inset;
-border-width: 10px;
+border-width: 3px;
 border-radius: 75%;
 color: rgb(255,255,255);</string>
            </property>
@@ -378,6 +398,9 @@ color: rgb(255,255,255);</string>
        </item>
        <item row="0" column="1">
         <layout class="QGridLayout" name="plyerInfoGrid">
+         <property name="sizeConstraint">
+          <enum>QLayout::SetFixedSize</enum>
+         </property>
          <item row="3" column="0" colspan="2">
           <widget class="Line" name="line_2">
            <property name="sizePolicy">
@@ -395,7 +418,7 @@ color: rgb(255,255,255);</string>
           </widget>
          </item>
          <item row="2" column="0">
-          <widget class="QLabel" name="label_2">
+          <widget class="QLabel" name="scoreLbl">
            <property name="sizePolicy">
             <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
              <horstretch>0</horstretch>
@@ -456,7 +479,7 @@ background-image:none;</string>
           </widget>
          </item>
          <item row="0" column="0" colspan="2">
-          <widget class="QLabel" name="label">
+          <widget class="QLabel" name="playerNameLbl">
            <property name="sizePolicy">
             <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
              <horstretch>0</horstretch>

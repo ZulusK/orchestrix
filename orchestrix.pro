@@ -42,7 +42,9 @@ SOURCES += src/main.cpp\
     src/EQWidget.cpp \
     src/SoundHistogramm.cpp \
     FileProcessing.cpp \
-    src/Indicator.cpp
+    src/Indicator.cpp \
+    TableModel.cpp \
+    src/Controller.cpp
 
 HEADERS  += src/windows/StartWindow.h \
     src/User.h \
@@ -60,7 +62,9 @@ HEADERS  += src/windows/StartWindow.h \
     src/EQWidget.h \
     src/SoundHistogramm.h \
     FileProcessing.h \
-    src/Indicator.h
+    src/Indicator.h \
+    TableModel.h \
+    src/Controller.h
 
 FORMS    += src/windows/uis/StartWindow.ui \
     src/windows/uis/HelpDialog.ui \
@@ -70,18 +74,24 @@ FORMS    += src/windows/uis/StartWindow.ui \
     src/EQWidget.ui \
     src/SoundHistogramm.ui
 
+INCLUDEPATH += /usr/local/include
+DEPENDPATH += /usr/local/include
+INCLUDEPATH += $$PWD/libs
+DEPENDPATH += $$PWD/libs
+
+macx: LIBS += -L/usr/local/opt/openssl/lib/ -lssl
+unix:!macx: LIBS += -L/usr/local/lib -lssl
+unix:!macx: LIBS +=  -L$$PWD/libs/x64 -lbass
+LIBS +=  -L$$PWD/libs -lbass
+
 LIBS+= -L/usr/local/lib -lopenal
-LIBS+= -L/usr/local/lib -lalut
 LIBS+= -L/usr/local/lib -lsndfile
 LIBS+= -L/usr/local/lib -lpthread
 LIBS+= -L/usr/local/lib -lprogbase-cpp
 LIBS+= -L/usr/local/lib -lprogbase
-LIBS+= -L/usr/local/lib -lssl
-LIBS += -lbass
-
 RESOURCES += \
     res.qrc
 
-
-
+DISTFILES += \
+    res/result
 
