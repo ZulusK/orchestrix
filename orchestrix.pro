@@ -43,7 +43,8 @@ SOURCES += src/main.cpp\
     src/SoundHistogramm.cpp \
     FileProcessing.cpp \
     src/Indicator.cpp \
-    TableModel.cpp
+    TableModel.cpp \
+    src/Controller.cpp
 
 HEADERS  += src/windows/StartWindow.h \
     src/User.h \
@@ -62,7 +63,8 @@ HEADERS  += src/windows/StartWindow.h \
     src/SoundHistogramm.h \
     FileProcessing.h \
     src/Indicator.h \
-    TableModel.h
+    TableModel.h \
+    src/Controller.h
 
 FORMS    += src/windows/uis/StartWindow.ui \
     src/windows/uis/HelpDialog.ui \

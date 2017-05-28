@@ -1,6 +1,7 @@
 #include "Indicator.h"
 #include <QStyle>
 #include <chrono>
+#include <cmath>
 #include <iostream>
 using namespace std;
 long inline currentTime() {
@@ -23,17 +24,38 @@ Indicator::Indicator(int id, const QString &style, QPushButton *button,
   update();
 }
 
+int color(int start, int end, double progress) {
+  auto dx = end - start;
+  int s = 1;
+  if (dx < 0) {
+    s = -1;
+  }
+  int c = start + s * pow(abs(dx), progress);
+  if (c > 255) {
+    c = 255;
+  } else if (c < 0) {
+    c = 0;
+  }
+  return c;
+}
+
 QString getColor(float progress) {
+  int r;
+  int g;
+  int b;
+  int a;
   if (progress > 1) {
     progress = 1;
   }
-  int r = RED_START + (RED_END - RED_START) * progress;
-  int g = GREEN_START + (GREEN_END - GREEN_START) * progress;
-  int b = BLUE_START + (BLUE_END - BLUE_START) * progress;
 
-  int a = 255 * progress;
-  QString s = "rgba(" + QString::number(r) + "," + QString::number(g) + "," +
-              QString::number(b) + "," + QString::number(a) + ")";
+  r = color(RED_START, BLUE_END, progress);
+  g = color(GREEN_START, GREEN_END, progress);
+  b = color(BLUE_START, BLUE_END, progress);
+  a = color(0, 255, progress);
+
+  QString s = "rgba(" + QString::number(r) + "," + QString::number(250) + "," +
+              QString::number(b) + "," + QString::number(255) + ")";
+  cout << s.toStdString() << endl;
   return s;
 }
 
@@ -41,7 +63,7 @@ QString getRadius(float progress) {
   if (progress > 1) {
     progress = 1;
   }
-  return "border-radius: " + QString::number(50 - (int)(50 * progress)) + "%";
+  return "border-radius: " + QString::number((100 * progress)) + "%";
 }
 
 void Indicator::update() {
@@ -51,20 +73,23 @@ void Indicator::update() {
     button->setStyleSheet(buttonStyle + getColor(progress) + ";\n" +
                           getRadius(progress) + ";\n");
     if (progress > 1) {
-      this->timePeriod = -1;
       parent->indicatorEnd(this);
       return;
     }
   } else {
-    button->setStyleSheet(buttonStyle + getColor(0) + ";\n" + getRadius(0) +
+    //    button->hide();
+    button->setStyleSheet(buttonStyle + getColor(2) + ";\n" + getRadius(0) +
                           ";\n");
-    button->hide();
   }
 }
 
-Indicator::~Indicator() {
-  this->timePeriod = -1;
-}
+long Indicator::getTimePeriod() const { return timePeriod; }
+
+unsigned long Indicator::getCurPos() const { return curPos; }
+
+void Indicator::setCurPos(unsigned long value) { curPos = value; }
+
+Indicator::~Indicator() { this->timePeriod = -1; }
 
 int Indicator::getId() const { return id; }
 

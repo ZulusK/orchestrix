@@ -4,11 +4,11 @@
 #include <QPushButton>
 
 enum {
-  RED_START = 241,
+  RED_START = 255,
   RED_END = 255,
-  GREEN_START = 61,
+  GREEN_START = 255,
   GREEN_END = 0,
-  BLUE_START = 0,
+  BLUE_START = 255,
   BLUE_END = 0
 };
 class GameDialog;
@@ -29,6 +29,11 @@ public:
   int getId() const;
   void setId(int value);
 
+  unsigned long getCurPos() const;
+  void setCurPos(unsigned long value);
+
+  long getTimePeriod() const;
+
 private:
   void end();
   void start();
@@ -38,6 +43,7 @@ public slots:
   void update();
 
 private:
+  unsigned long curPos;
   long createdTime;
   long timePeriod;
   GameDialog *parent;

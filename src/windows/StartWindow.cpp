@@ -29,6 +29,7 @@ void StartWindow::on_startBtn_clicked() {
   if (!game_d->exec()) {
     this->close();
   }
+  game_d->hide();
   this->show();
   delete game_d;
   cout<<"E"<<endl;

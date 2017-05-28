@@ -112,7 +112,7 @@ SoundHistogramm::SoundHistogramm(const QPen &pen, AudioPlayer *player,
   this->player = player;
   this->sound = sound;
   this->setPen(pen);
-  this->remainingTime = sound->get_samples() / sound->get_sampleRate() * 1000;
+  this->remainingTime = sound->get_samples() / (double)sound->get_sampleRate() * 1000;
 }
 
 void SoundHistogramm::start() { timer->start(); }

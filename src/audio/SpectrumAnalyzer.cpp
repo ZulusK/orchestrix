@@ -108,13 +108,24 @@ SpectrumAnalyzer::SpectrumAnalyzer(AudioData *data, int mode, int bars) {
     this->timeBound = (float)(this->elementsInChunk) / (float)this->frequency /
                       data->get_channels();
     timeBound *= 1000;
+    space=20;
     exec(data->get_name());
   } else
     throw "Null pointer to data";
 }
 
+int SpectrumAnalyzer::getSpace() const
+{
+    return space;
+}
+
+void SpectrumAnalyzer::setSpace(int value)
+{
+    space = value;
+}
+
 void SpectrumAnalyzer::exec(string filename) {
-  int countOfSpectrums = this->samples / (elementsInChunk * channels) + 1;
+    int countOfSpectrums = this->samples / (elementsInChunk * channels) + 1;
   if (!BASS_Init(-1, frequency, 0, NULL, NULL)) {
     cout << "Can't initialize device" << endl;
     return;
@@ -140,9 +151,9 @@ void SpectrumAnalyzer::findShoot() {
   for (int i = 0; i < count; i++) {
     sum += getAverageEnergy(i);
   }
-  this->SHOOT = sum / count * sqrt(40);
+  this->SHOOT = sum / count * 8;
   if (this->SHOOT >= 1) {
-    this->SHOOT = 0.9;
+    this->SHOOT = 0.99;
   }
 }
 
@@ -186,7 +197,7 @@ float SpectrumAnalyzer::getAverageEnergy(int ind) {
   }
   float average = 0;
   int count = 0;
-  for (int i = -3; i < 3; i++) {
+  for (int i = -space; i < space; i++) {
     int id = i + ind;
     if (i != 0 && id >= 0 && id < spectrums.size()) {
       average += spectrums[id]->getEnergy();
@@ -201,6 +212,8 @@ bool SpectrumAnalyzer::isShoot(int ind) {
   if (ind < 0 || ind >= this->spectrums.size()) {
     return false;
   }
+//  cout << getAverageEnergy(ind) / spectrums[ind]->getEnergy() << endl;
+//  cout<<SHOOT<<endl;
   return (getAverageEnergy(ind) / spectrums[ind]->getEnergy() < this->SHOOT);
 }
 

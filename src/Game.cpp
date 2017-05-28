@@ -31,8 +31,7 @@ User *Game::getUser() { return this->user; }
 
 void Game::play(const QString &soundName) {
   cout << soundName.toStdString() << endl;
-  if (audioEffects.contains(soundName)) {
-    audioEffects[soundName].second->stop();
+  if (audioEffects.contains(soundName) && !audioEffects[soundName].second->isPlaying()) {
     audioEffects[soundName].second->play();
   }
 }
