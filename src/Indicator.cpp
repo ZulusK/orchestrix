@@ -34,7 +34,6 @@ QString getColor(float progress) {
   int a = 255 * progress;
   QString s = "rgba(" + QString::number(r) + "," + QString::number(g) + "," +
               QString::number(b) + "," + QString::number(a) + ")";
-  cout << s.toStdString() << endl;
   return s;
 }
 
@@ -42,7 +41,7 @@ QString getRadius(float progress) {
   if (progress > 1) {
     progress = 1;
   }
-  return "border-radius: " + QString::number(5+45 * progress) + "%";
+  return "border-radius: " + QString::number(50 - (int)(50 * progress)) + "%";
 }
 
 void Indicator::update() {
@@ -52,12 +51,10 @@ void Indicator::update() {
     button->setStyleSheet(buttonStyle + getColor(progress) + ";\n" +
                           getRadius(progress) + ";\n");
     if (progress > 1) {
+      this->timePeriod = -1;
       parent->indicatorEnd(this);
       return;
     }
-    cout << id << " : " << progress << endl;
-    QString style;
-
   } else {
     button->setStyleSheet(buttonStyle + getColor(0) + ";\n" + getRadius(0) +
                           ";\n");
@@ -67,7 +64,6 @@ void Indicator::update() {
 
 Indicator::~Indicator() {
   this->timePeriod = -1;
-  update();
 }
 
 int Indicator::getId() const { return id; }
@@ -82,3 +78,5 @@ void Indicator::setPeriod(long value) {
   timePeriod = value;
   this->createdTime = currentTime();
 }
+
+bool Indicator::isBusy() { return timePeriod > 0; }

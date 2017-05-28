@@ -20,6 +20,7 @@ class GameDialog;
 class GameDialog : public QDialog {
   Q_OBJECT
 private:
+  bool addIndicator(unsigned long pos, unsigned long curr);
   QString loadSound();
   void init();
   void start();
@@ -37,7 +38,7 @@ private slots:
 
 private:
   bool closeGame;
-
+  unsigned long lastSpectrum;
   long lastUpdate;
   Ui::GameDialog *ui;
   Game *environment;

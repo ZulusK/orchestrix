@@ -6,7 +6,7 @@
 enum {
   RED_START = 241,
   RED_END = 255,
-  GREEN_START= 61,
+  GREEN_START = 61,
   GREEN_END = 0,
   BLUE_START = 0,
   BLUE_END = 0
@@ -25,7 +25,7 @@ public:
 
   QPushButton *getButton() const;
   void setButton(QPushButton *value);
-
+  bool isBusy();
   int getId() const;
   void setId(int value);
 

@@ -237,8 +237,8 @@ void AudioPlayer::stop() {
         }
         currState = STOPPED;
         updateState();
-        this->runningThread->join();
-        delete runningThread;
+        this->runningThread->detach();
+//        delete runningThread;
         runningThread = NULL;
     }
 }
@@ -287,11 +287,11 @@ bool AudioPlayer::isPlaying() {
 }
 
 bool AudioPlayer::isPaused() {
-    updateState();
+//    updateState();
     return state == AL_PAUSED;
 }
 
 bool AudioPlayer::isStopped() {
-    updateState();
+//    updateState();
     return state == AL_STOPPED;
 }

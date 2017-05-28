@@ -37,7 +37,7 @@ EQWidget::EQWidget(AudioPlayer *player, SpectrumAnalyzer *analyzer,
 
   // init timer
   this->timer = new QTimer();
-  this->sleepTime = (long)(analyzer->getTimeBound() * 1000*0.4);
+  this->sleepTime = (long)(analyzer->getTimeBound());
   this->timer->setSingleShot(true);
   connect(timer, SIGNAL(timeout()), this, SLOT(updateBars()));
   this->lastUpdateTime = 0;
