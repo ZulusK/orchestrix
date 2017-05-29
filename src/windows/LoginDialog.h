@@ -17,14 +17,8 @@ public:
   ~LoginDialog();
 
 private slots:
-    void on_pushButton_2_clicked();
-
-    void on_pushButton_clicked();
-
-    void on_spinBox_valueChanged(int arg1);
-
-    void on_horizontalSlider_valueChanged(int value);
-
+    void accept();
+    void reject();
 private:
   Ui::LoginDialog *ui;
   Game *environment;

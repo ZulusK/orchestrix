@@ -1,7 +1,5 @@
 #include "LoginDialog.h"
 #include "ui_LoginDialog.h"
-
-//
 #include <QDebug>
 
 LoginDialog::LoginDialog(Game *game, QWidget *parent)
@@ -15,20 +13,22 @@ LoginDialog::LoginDialog(Game *game, QWidget *parent)
 
 LoginDialog::~LoginDialog() { delete ui; }
 
-void LoginDialog::on_pushButton_2_clicked() {
-  qDebug() << "1----";
-  if (environment->getUser() != NULL) {
-    environment->removeUser();
-  }
-  environment->addUser(new User(ui->nameEdit->text()));
-  this->reject();
+void LoginDialog::reject() {
+    if(environment->getUser()==NULL){
+         environment->addUser(new User("Vasya"));
+    }
+    QDialog::reject();
 }
 
-void LoginDialog::on_pushButton_clicked() {
-  qDebug() << "1+++++";
+
+void LoginDialog::accept() {
   if (environment->getUser() != NULL) {
     environment->removeUser();
   }
-  environment->addUser(new User("Vasya"));
-  this->accept();
+  if(ui->nameEdit->text().length()==0){
+      environment->addUser(new User("Vasya"));
+  }else{
+      environment->addUser(new User(ui->nameEdit->text()));
+  }
+  QDialog::accept();
 }

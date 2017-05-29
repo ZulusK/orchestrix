@@ -16,12 +16,11 @@ public:
   explicit ResultsDialog(Game *game, QWidget *parent = 0);
   ~ResultsDialog();
 
+    void load(const QString &jsonStr);
 private:
   Ui::ResultsDialog *ui;
   Game *environment;
-  std::vector<User *> users;
-  void drawTable(const QString &filename);
-  // void load(const QString &jsonString);
+  void drawTable();
 };
 
 #endif // RESULTSDIALOG_H

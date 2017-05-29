@@ -7,6 +7,9 @@
 #include <QPair>
 #include <QString>
 #include <User.h>
+#include <FileProcessing.h>
+
+#define STORAGE_PATH "../orchestrix/res/results.json"
 /**
  * @brief The Game class defines class of game's environment
  */
@@ -15,6 +18,7 @@ private:
   AudioManager *audioManager;
   QMap<QString, QPair<AudioData *, AudioPlayer *>> audioEffects;
   User *user;
+  FileProcessing * storage;
   /**
    * @brief Game constructor
    */
@@ -60,6 +64,10 @@ public:
    * @return true if success loaded, else - false
    */
   bool loadSound(const QString &soundName);
+
+  bool saveStorage();
+  bool updateStorage();
+  FileProcessing * getStorage();
 };
 
 #endif // GAME_H

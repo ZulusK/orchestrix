@@ -17,7 +17,29 @@
    <item>
     <layout class="QGridLayout" name="gridLayout">
      <item row="1" column="0" colspan="3">
-      <widget class="QTableView" name="tableView"/>
+      <widget class="QTableView" name="tableView">
+       <property name="styleSheet">
+        <string notr="true">background-color: rgba(255,255,255,100);
+border-radius: 20%;
+border-color:rgba(0,0,0,0);
+font: 75 23pt &quot;URW Bookman L&quot; ;
+QHeaderView {
+ background-color:red;
+ }</string>
+       </property>
+       <property name="editTriggers">
+        <set>QAbstractItemView::NoEditTriggers</set>
+       </property>
+       <property name="selectionMode">
+        <enum>QAbstractItemView::NoSelection</enum>
+       </property>
+       <property name="selectionBehavior">
+        <enum>QAbstractItemView::SelectRows</enum>
+       </property>
+       <property name="gridStyle">
+        <enum>Qt::NoPen</enum>
+       </property>
+      </widget>
      </item>
      <item row="0" column="1">
       <widget class="QLabel" name="label">
@@ -65,11 +87,14 @@ background-color: white;
 color:white;
  border-radius: 20%;
  border-color: rgba(0,0,0,0);
+background-color: rgb(0, 126, 255);
+outline:none;
 }
 QPushButton:hover{
 border-width: 0px;
 background-color: rgb(255,20,0);
 border-radius: 20%;
+outline:none;
 }
 </string>
        </property>

@@ -7,7 +7,9 @@ int main(int argc, char *argv[]) {
   if (game) {
     StartWindow w(game);
     w.show();
-    return a.exec();
+    a.exec();
+    delete game;
+    return EXIT_SUCCESS;
   } else {
     return EXIT_FAILURE;
   }

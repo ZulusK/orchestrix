@@ -15,41 +15,25 @@
 ResultsDialog::ResultsDialog(Game *game, QWidget *parent)
     : QDialog(parent), ui(new Ui::ResultsDialog) {
   ui->setupUi(this);
+  // copy ref
   this->setWindowFlags(Qt::Window);
   this->showFullScreen();
   this->environment = game;
-  QPalette * palette = new QPalette();
+
+  // customize
+  QPalette *palette = new QPalette();
   palette->setBrush(this->backgroundRole(), QBrush(QPixmap(":/res/fon.jpg")));
   this->setPalette(*palette);
-  //  User *u = new User("Lena", 23);
-  //  User *u1 = new User("Danya", 89);
-  //  User *u2 = new User("Vika", 44);
-  //  User *u3 = new User("Alex", 5);
-  //  User *u4 = new User("Anna", 78);
-  //  User *u5 = new User("Sonya", 35);
-  //  User *u6 = new User("Oleg", 38);
-  //  User *u7 = new User("Kotik", 100);
-  //  FileProcessing *f = new FileProcessing;
-  drawTable("../orchestrix/res/results.json");
-  //  f->users.push_back(u);
-  //  f->users.push_back(u1);
-  //  f->users.push_back(u2);
-  //  f->users.push_back(u3);
-  //  f->users.push_back(u4);
-  //  f->users.push_back(u5);
-  //  f->users.push_back(u6);
-  //  f->users.push_back(u7);
-  //  f->write("/Users/lena/projectX/res/results.json");
+
+  // add users to table
+  drawTable();
 }
 
 ResultsDialog::~ResultsDialog() { delete ui; }
 
-void ResultsDialog::drawTable(const QString &filename) {
-  FileProcessing *f = new FileProcessing;
-  //  QString players = f->read(filename);
-  f->load(filename);
-  users = f->users;
-
+void ResultsDialog::drawTable() {
+  environment->updateStorage();
+  auto users = environment->getStorage()->getUsers();
   TableModel *model = new TableModel;
   QStandardItem *item;
 
@@ -62,16 +46,8 @@ void ResultsDialog::drawTable(const QString &filename) {
   model->setHorizontalHeaderLabels(horizontalHeader);
 
   int row = 0;
-  for (auto it = begin(users); it != end(users); it++) {
+  for (auto it = users->begin(); it != users->end(); it++) {
     User *u = *it.base();
-    qDebug() << u->getName();
-    qDebug() << "----------";
-    qDebug() << u->getSoundName();
-    qDebug() << "----------";
-    qDebug() << u->getScore();
-    qDebug() << "----------";
-    qDebug() << u->getDate();
-    qDebug() << "----------";
 
     item = new QStandardItem(u->getName());
     model->setItem(row, 0, item);
@@ -87,27 +63,9 @@ void ResultsDialog::drawTable(const QString &filename) {
 
     row++;
   }
-
   ui->tableView->setModel(model);
 
   ui->tableView->resizeColumnsToContents();
   ui->tableView->horizontalHeader()->setSectionResizeMode(3,
                                                           QHeaderView::Stretch);
 }
-
-// void ResultsDialog::load(const QString &jsonStr) {
-//  qDebug() << jsonStr;
-//  QJsonDocument jsonDocument = QJsonDocument::fromJson(jsonStr.toUtf8());
-//  QJsonObject jsonObject = jsonDocument.object();
-//  QJsonArray jsonArray = jsonObject["Users"].toArray();
-//  // QJsonArray jsonArray = jsonDocument.array();
-//  int cnt = jsonArray.size();
-//  qDebug() << cnt;
-//  for (int i = 0; i < cnt; i++) {
-//    if (jsonArray[i].isObject()) {
-//      QJsonObject jsonObject = jsonArray[i].toObject();
-//      User *u = new User(jsonObject);
-//      users.push_back(u);
-//    }
-//  }
-//}

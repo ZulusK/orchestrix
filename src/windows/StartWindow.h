@@ -4,7 +4,6 @@
 #include <Game.h>
 #include <QMainWindow>
 #include <User.h>
-
 namespace Ui {
 class StartWindow;
 }
@@ -35,7 +34,6 @@ private slots:
 private:
   Ui::StartWindow *ui;
   Game *environment;
-  std::vector<User *> users;
 };
 
 #endif // STARTWINDOW_H

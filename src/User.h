@@ -21,9 +21,9 @@ public:
   const QString &getDate();
   void addToScore(int val);
   ~User();
-  QJsonObject *toJSON();
+  QJsonObject toJSON();
   QString toString();
-
+  bool equals(User *u);
   void setScore(long long value);
   void setSoundName(const QString &value);
 };

@@ -6,12 +6,15 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>728</width>
+    <width>827</width>
     <height>438</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>StartWindow</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true"/>
   </property>
   <widget class="QWidget" name="centralWidget">
    <layout class="QVBoxLayout" name="verticalLayout_2">
@@ -21,11 +24,20 @@
        <enum>QLayout::SetDefaultConstraint</enum>
       </property>
       <item row="2" column="0">
-       <widget class="Line" name="line">
+       <spacer name="verticalSpacer_5">
         <property name="orientation">
-         <enum>Qt::Horizontal</enum>
+         <enum>Qt::Vertical</enum>
         </property>
-       </widget>
+        <property name="sizeType">
+         <enum>QSizePolicy::Preferred</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>20</width>
+          <height>10</height>
+         </size>
+        </property>
+       </spacer>
       </item>
       <item row="0" column="0">
        <widget class="QLabel" name="label">
@@ -62,22 +74,6 @@ color:rgb(238, 238, 236);</string>
         </property>
        </widget>
       </item>
-      <item row="3" column="0">
-       <spacer name="verticalSpacer_5">
-        <property name="orientation">
-         <enum>Qt::Vertical</enum>
-        </property>
-        <property name="sizeType">
-         <enum>QSizePolicy::Preferred</enum>
-        </property>
-        <property name="sizeHint" stdset="0">
-         <size>
-          <width>20</width>
-          <height>10</height>
-         </size>
-        </property>
-       </spacer>
-      </item>
       <item row="1" column="0">
        <layout class="QGridLayout" name="gridLayout_2">
         <property name="sizeConstraint">
@@ -99,14 +95,14 @@ color:rgb(238, 238, 236);</string>
             <property name="font">
              <font>
               <family>URW Bookman L</family>
-              <pointsize>13</pointsize>
+              <pointsize>20</pointsize>
               <weight>9</weight>
               <italic>false</italic>
               <bold>false</bold>
              </font>
             </property>
             <property name="styleSheet">
-             <string notr="true">font: 75 13pt &quot;URW Bookman L&quot;;
+             <string notr="true">font: 75 20pt &quot;URW Bookman L&quot;;
 color:white;</string>
             </property>
             <property name="text">
@@ -125,14 +121,14 @@ color:white;</string>
             <property name="font">
              <font>
               <family>URW Bookman L</family>
-              <pointsize>13</pointsize>
+              <pointsize>20</pointsize>
               <weight>9</weight>
               <italic>false</italic>
               <bold>false</bold>
              </font>
             </property>
             <property name="styleSheet">
-             <string notr="true">font: 75 13pt &quot;URW Bookman L&quot;;
+             <string notr="true">font: 75 20pt &quot;URW Bookman L&quot;;
 color:white;</string>
             </property>
             <property name="text">
@@ -198,7 +194,7 @@ color:white;</string>
           <item>
            <widget class="QPushButton" name="startBtn">
             <property name="sizePolicy">
-             <sizepolicy hsizetype="Expanding" vsizetype="MinimumExpanding">
+             <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
               <horstretch>0</horstretch>
               <verstretch>0</verstretch>
              </sizepolicy>
@@ -209,23 +205,28 @@ color:white;</string>
               <height>40</height>
              </size>
             </property>
+            <property name="cursor">
+             <cursorShape>PointingHandCursor</cursorShape>
+            </property>
             <property name="styleSheet">
              <string notr="true">QPushButton{
-font: 75 30pt &quot;URW Bookman L&quot;;
+font: 75 40pt &quot;URW Bookman L&quot;;
 background-color: rgb(0, 126, 255);
  border-style: outset;
  border-width: 2px;
-color:white;
- border-radius: 20%;
+ color:white;
+ border-radius: 30%;
  border-color: rgba(0,0,0,0);
+padding-left:20px;
+padding-right:20px;
+outline:none;
 }
 QPushButton:hover{
 border-width: 0px;
 background-color: rgb(255,20,0);
-border-radius: 20%;
-}
-
-</string>
+border-radius: 30%;
+outline:none;
+}</string>
             </property>
             <property name="text">
              <string>start</string>
@@ -251,7 +252,7 @@ border-radius: 20%;
           <item>
            <widget class="QPushButton" name="resultsBtn">
             <property name="sizePolicy">
-             <sizepolicy hsizetype="Expanding" vsizetype="MinimumExpanding">
+             <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
               <horstretch>0</horstretch>
               <verstretch>0</verstretch>
              </sizepolicy>
@@ -262,24 +263,34 @@ border-radius: 20%;
               <height>40</height>
              </size>
             </property>
+            <property name="cursor">
+             <cursorShape>PointingHandCursor</cursorShape>
+            </property>
             <property name="styleSheet">
              <string notr="true">QPushButton{
-font: 75 30pt &quot;URW Bookman L&quot;;
+font: 75 40pt &quot;URW Bookman L&quot;;
 background-color: rgb(0, 126, 255);
  border-style: outset;
  border-width: 2px;
-color:white;
- border-radius: 20%;
+ color:white;
+ border-radius: 30%;
  border-color: rgba(0,0,0,0);
+padding-left:20px;
+padding-right:20px;
+outline:none;
 }
 QPushButton:hover{
 border-width: 0px;
 background-color: rgb(255,20,0);
-border-radius: 20%;
+border-radius: 30%;
+outline:none;
 }</string>
             </property>
             <property name="text">
              <string>view results</string>
+            </property>
+            <property name="shortcut">
+             <string>Ctrl+R</string>
             </property>
            </widget>
           </item>
@@ -302,7 +313,7 @@ border-radius: 20%;
           <item>
            <widget class="QPushButton" name="exitBtn">
             <property name="sizePolicy">
-             <sizepolicy hsizetype="Expanding" vsizetype="MinimumExpanding">
+             <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
               <horstretch>0</horstretch>
               <verstretch>0</verstretch>
              </sizepolicy>
@@ -313,24 +324,34 @@ border-radius: 20%;
               <height>40</height>
              </size>
             </property>
+            <property name="cursor">
+             <cursorShape>PointingHandCursor</cursorShape>
+            </property>
             <property name="styleSheet">
              <string notr="true">QPushButton{
-font: 75 30pt &quot;URW Bookman L&quot;;
+font: 75 40pt &quot;URW Bookman L&quot;;
 background-color: rgb(0, 126, 255);
  border-style: outset;
  border-width: 2px;
-color:white;
- border-radius: 20%;
+ color:white;
+ border-radius: 30%;
  border-color: rgba(0,0,0,0);
+padding-left:20px;
+padding-right:20px;
+outline:none;
 }
 QPushButton:hover{
 border-width: 0px;
 background-color: rgb(255,20,0);
-border-radius: 20%;
+border-radius: 30%;
+outline:none;
 }</string>
             </property>
             <property name="text">
              <string>exit</string>
+            </property>
+            <property name="shortcut">
+             <string>Ctrl+Esc</string>
             </property>
            </widget>
           </item>
@@ -371,24 +392,34 @@ border-radius: 20%;
               <bold>false</bold>
              </font>
             </property>
+            <property name="cursor">
+             <cursorShape>PointingHandCursor</cursorShape>
+            </property>
             <property name="styleSheet">
-             <string notr="true">QPushButton {
+             <string notr="true">QPushButton{
 font: 75 25pt &quot;URW Bookman L&quot;;
 background-color: rgb(0, 126, 255);
  border-style: outset;
  border-width: 2px;
-color:white;
+ color:white;
  border-radius: 20%;
  border-color: rgba(0,0,0,0);
+padding-left:20px;
+padding-right:20px;
+outline:none;
 }
 QPushButton:hover{
 border-width: 0px;
 background-color: rgb(255,20,0);
 border-radius: 20%;
+outline:none;
 }</string>
             </property>
             <property name="text">
              <string>login</string>
+            </property>
+            <property name="shortcut">
+             <string>Ctrl+L</string>
             </property>
            </widget>
           </item>
@@ -409,20 +440,27 @@ border-radius: 20%;
               <bold>false</bold>
              </font>
             </property>
+            <property name="cursor">
+             <cursorShape>PointingHandCursor</cursorShape>
+            </property>
             <property name="styleSheet">
-             <string notr="true">QPushButton {
+             <string notr="true">QPushButton{
 font: 75 25pt &quot;URW Bookman L&quot;;
 background-color: rgb(0, 126, 255);
  border-style: outset;
  border-width: 2px;
-color:white;
+ color:white;
  border-radius: 20%;
  border-color: rgba(0,0,0,0);
+padding-left:20px;
+padding-right:20px;
+outline:none;
 }
 QPushButton:hover{
 border-width: 0px;
 background-color: rgb(255,20,0);
 border-radius: 20%;
+outline:none;
 }</string>
             </property>
             <property name="text">
@@ -449,24 +487,34 @@ border-radius: 20%;
             <bold>false</bold>
            </font>
           </property>
+          <property name="cursor">
+           <cursorShape>PointingHandCursor</cursorShape>
+          </property>
           <property name="styleSheet">
-           <string notr="true">QPushButton {
+           <string notr="true">QPushButton{
 font: 75 25pt &quot;URW Bookman L&quot;;
 background-color: rgb(0, 126, 255);
  border-style: outset;
  border-width: 2px;
-color:white;
+ color:white;
  border-radius: 20%;
  border-color: rgba(0,0,0,0);
+padding-left:20px;
+padding-right:20px;
+outline:none;
 }
 QPushButton:hover{
 border-width: 0px;
 background-color: rgb(255,20,0);
 border-radius: 20%;
+outline:none;
 }</string>
           </property>
           <property name="text">
            <string>help</string>
+          </property>
+          <property name="shortcut">
+           <string>Ctrl+H</string>
           </property>
          </widget>
         </item>
@@ -494,24 +542,34 @@ border-radius: 20%;
             <bold>false</bold>
            </font>
           </property>
+          <property name="cursor">
+           <cursorShape>PointingHandCursor</cursorShape>
+          </property>
           <property name="styleSheet">
            <string notr="true">QPushButton{
 font: 75 25pt &quot;URW Bookman L&quot;;
 background-color: rgb(0, 126, 255);
  border-style: outset;
  border-width: 2px;
-color:white;
+ color:white;
  border-radius: 20%;
  border-color: rgba(0,0,0,0);
+padding-left:20px;
+padding-right:20px;
+outline:none;
 }
 QPushButton:hover{
 border-width: 0px;
 background-color: rgb(255,20,0);
 border-radius: 20%;
+outline:none;
 }</string>
           </property>
           <property name="text">
            <string>save</string>
+          </property>
+          <property name="shortcut">
+           <string>Ctrl+S</string>
           </property>
          </widget>
         </item>

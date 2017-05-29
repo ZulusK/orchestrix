@@ -27,7 +27,7 @@ QString GameDialog::loadSound() {
       new AudioPlayer(environment->getAudioManager(), audioData, 2);
 
   this->analyzer = new SpectrumAnalyzer(audioData, SAMPLE_1024, 50);
-  this->environment->getUser()->setSoundName(soundPath.split("/").constLast());
+  this->environment->getUser()->setSoundName(soundPath.split("/").last());
   return soundPath;
 }
 void GameDialog::addWords() {
@@ -53,7 +53,7 @@ void GameDialog::init() {
   srand(time(NULL));
   // load sound
   qDebug() << "00000000000000000";
-  // loadSound();
+  loadSound();
   addWords();
   // load standart sounds
   environment->loadSound("../orchestrix/res/sound effects/bad.wav");
@@ -61,8 +61,7 @@ void GameDialog::init() {
   // create equlizer view
   this->eqDefPen = new QPen(QColor("#2196F3"), 10, Qt::SolidLine, Qt::RoundCap,
                             Qt::RoundJoin);
-  //this->eqDefBrush = new QBrush(QColor("#2196F3"), Qt::Dense6Pattern);
-  this->eqDefBrush = new QBrush(QColor(20,255,20), Qt::Dense6Pattern);
+  this->eqDefBrush = new QBrush(QColor(20, 255, 20), Qt::Dense6Pattern);
   this->eqBadBrush = new QBrush(QColor(255, 20, 0), Qt::Dense6Pattern);
   this->eqGoodBrush = new QBrush(QColor(0, 255, 20), Qt::Dense6Pattern);
 
@@ -96,7 +95,7 @@ void GameDialog::init() {
   connect(updator, SIGNAL(timeout()), this, SLOT(gameUpdate()));
   // create conroller
   this->controller = new Controller();
-  cout<<"controller"<<controller->isConnected()<<endl;
+  cout << "controller" << controller->isConnected() << endl;
 }
 
 void GameDialog::createIndicators() {
@@ -117,10 +116,11 @@ void GameDialog::createIndicators() {
 GameDialog::GameDialog(Game *game, QWidget *parent)
     : QDialog(parent), ui(new Ui::GameDialog) {
   this->setWindowFlags(Qt::Window);
-  qDebug() << "555";
-  // this->showFullScreen();
-  qDebug() << "6666666";
+  this->showFullScreen();
   this->environment = game;
+  if (environment->getUser() == NULL) {
+    environment->addUser(new User("No name"));
+  }
   ui->setupUi(this);
   {
     ui->playerNameLbl->setText(game->getUser()->getName());
@@ -133,7 +133,7 @@ GameDialog::GameDialog(Game *game, QWidget *parent)
     ui->totalScoreLbl->setText("0");
 
     ui->messageLbl->hide();
-    ui->messageLbl->setText("PLAY!!!!!!!!!");
+    ui->messageLbl->setText("Start new game");
 
     ui->scoreLbl->hide();
     ui->songNameLbl->hide();
