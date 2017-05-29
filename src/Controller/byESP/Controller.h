@@ -1,5 +1,6 @@
 #pragma once
 #include <progbase/net.h>
+#include <string>
 #define BUFFER_LEN 1024
 
 class Controller{
@@ -12,7 +13,7 @@ public:
 	~Controller();
 
 	bool connect();
-	int distanceFrom(int num);
+	bool * getInput ();
 	void turnOnLed(int num);
 	void turnOffLed(int num);
 };

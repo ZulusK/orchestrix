@@ -14,7 +14,7 @@ QString GameDialog::loadSound() {
       this, QString::fromUtf8("Choose your sound to play"), QDir::currentPath(),
       "Sounds (*.wav);;");
   if (soundPath.length() == 0) {
-    soundPath = "../orchestrix/res/ppl.wav";
+    soundPath = "../orchestrix/res/we will rock u.wav";
   }
   // load sound
   this->audioData = AudioData::load(soundPath.toStdString());
@@ -49,6 +49,7 @@ void GameDialog::addWords() {
 }
 
 void GameDialog::init() {
+
   srand(time(NULL));
   // load sound
   qDebug() << "00000000000000000";
@@ -60,7 +61,8 @@ void GameDialog::init() {
   // create equlizer view
   this->eqDefPen = new QPen(QColor("#2196F3"), 10, Qt::SolidLine, Qt::RoundCap,
                             Qt::RoundJoin);
-  this->eqDefBrush = new QBrush(QColor("#2196F3"), Qt::Dense6Pattern);
+  //this->eqDefBrush = new QBrush(QColor("#2196F3"), Qt::Dense6Pattern);
+  this->eqDefBrush = new QBrush(QColor(20,255,20), Qt::Dense6Pattern);
   this->eqBadBrush = new QBrush(QColor(255, 20, 0), Qt::Dense6Pattern);
   this->eqGoodBrush = new QBrush(QColor(0, 255, 20), Qt::Dense6Pattern);
 
@@ -94,6 +96,7 @@ void GameDialog::init() {
   connect(updator, SIGNAL(timeout()), this, SLOT(gameUpdate()));
   // create conroller
   this->controller = new Controller();
+  cout<<"controller"<<controller->isConnected()<<endl;
 }
 
 void GameDialog::createIndicators() {

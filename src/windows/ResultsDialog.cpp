@@ -18,6 +18,9 @@ ResultsDialog::ResultsDialog(Game *game, QWidget *parent)
   this->setWindowFlags(Qt::Window);
   this->showFullScreen();
   this->environment = game;
+  QPalette * palette = new QPalette();
+  palette->setBrush(this->backgroundRole(), QBrush(QPixmap(":/res/fon.jpg")));
+  this->setPalette(*palette);
   //  User *u = new User("Lena", 23);
   //  User *u1 = new User("Danya", 89);
   //  User *u2 = new User("Vika", 44);
@@ -27,7 +30,7 @@ ResultsDialog::ResultsDialog(Game *game, QWidget *parent)
   //  User *u6 = new User("Oleg", 38);
   //  User *u7 = new User("Kotik", 100);
   //  FileProcessing *f = new FileProcessing;
-  drawTable("/Users/lena/projectX/res/results.json");
+  drawTable("../orchestrix/res/results.json");
   //  f->users.push_back(u);
   //  f->users.push_back(u1);
   //  f->users.push_back(u2);

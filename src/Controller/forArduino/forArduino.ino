@@ -3,15 +3,14 @@ int trigPin[] = {2, 3, 4, 5};
 int echoPin[] = {6, 7, 8, 9};
 int ledPin[] = {10, 11, 12, 13};
 
-int distance = -1;
-
 void setup() {
-  Serial.begin(115200);
   for (int i = 0; i < numOfDevices; i++) {
     pinMode(trigPin[i], OUTPUT);
     pinMode(echoPin[i], INPUT);
     pinMode(ledPin[i], OUTPUT);
   }
+  delay(2000);
+  Serial.begin(115200);
 }
 
 int findDistance(int trig, int echo) {
@@ -39,12 +38,15 @@ void loop() {
   int command = atoi(buff);
 
   if(command == 0){
-    int i = 1;
-    
-    for(; buff[i] != '\0' && buff[i - 1] != ';'; i++);
-    int controller = atoi(buff + i);
-    
-    Serial.print(findDistance(trigPin[controller], echoPin[controller]));
+    buff[0] = '\0';
+    for(int i = 0; i < 4; i++){
+      int distance[4];
+      for(int i = 0; i < 4; i++){
+        distance[i] = findDistance(trigPin[i],echoPin[i]) > 30 ? 0 : 1;
+      }
+      sprintf(buff, "%i%i%i%i", distance[0],distance[1],distance[2],distance[3]);
+    }
+    Serial.print(buff);
   }
   else{
     int i = 1;

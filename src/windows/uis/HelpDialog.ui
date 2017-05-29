@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>400</width>
-    <height>300</height>
+    <width>433</width>
+    <height>338</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -16,18 +16,47 @@
   <widget class="QPushButton" name="backBtn">
    <property name="geometry">
     <rect>
-     <x>30</x>
+     <x>10</x>
      <y>10</y>
-     <width>89</width>
-     <height>25</height>
+     <width>111</width>
+     <height>71</height>
     </rect>
    </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton{
+font: 75 30pt &quot;URW Bookman L&quot;;
+background-color: white;
+ border-style: outset;
+ border-width: 2px;
+color:white;
+ border-radius: 20%;
+ border-color: rgba(0,0,0,0);
+}
+QPushButton:hover{
+border-width: 0px;
+background-color: rgb(255,20,0);
+border-radius: 20%;
+}
+</string>
+   </property>
    <property name="text">
-    <string>back</string>
+    <string/>
+   </property>
+   <property name="icon">
+    <iconset resource="../../../res.qrc">
+     <normaloff>:/res/w512h5121390846445leftround512.png</normaloff>:/res/w512h5121390846445leftround512.png</iconset>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>60</width>
+     <height>60</height>
+    </size>
    </property>
   </widget>
  </widget>
- <resources/>
+ <resources>
+  <include location="../../../res.qrc"/>
+ </resources>
  <connections>
   <connection>
    <sender>backBtn</sender>

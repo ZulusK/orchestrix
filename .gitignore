@@ -28,7 +28,6 @@
 *.lo
 
 
-
 # Executables
 *.exe
 *.out
