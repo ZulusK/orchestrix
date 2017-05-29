@@ -30,9 +30,12 @@ private slots:
 
   void on_saveBtn_clicked();
 
+  void on_logoutBtn_clicked();
+
 private:
   Ui::StartWindow *ui;
   Game *environment;
+  std::vector<User *> users;
 };
 
 #endif // STARTWINDOW_H

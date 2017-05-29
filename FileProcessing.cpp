@@ -1,5 +1,6 @@
 #include "FileProcessing.h"
 
+#include <QDebug>
 #include <QFile>
 #include <QJsonArray>
 #include <QJsonDocument>
@@ -39,4 +40,22 @@ void FileProcessing::write(const QString &filename) {
     return;
   }
   saveFile.write(saveDoc.toJson());
+}
+
+void FileProcessing::load(const QString &filename) {
+  QString jsonStr = read(filename);
+  qDebug() << jsonStr;
+  QJsonDocument jsonDocument = QJsonDocument::fromJson(jsonStr.toUtf8());
+  QJsonObject jsonObject = jsonDocument.object();
+  QJsonArray jsonArray = jsonObject["Users"].toArray();
+  // QJsonArray jsonArray = jsonDocument.array();
+  int cnt = jsonArray.size();
+  qDebug() << cnt;
+  for (int i = 0; i < cnt; i++) {
+    if (jsonArray[i].isObject()) {
+      QJsonObject jsonObject = jsonArray[i].toObject();
+      User *u = new User(jsonObject);
+      users.push_back(u);
+    }
+  }
 }

@@ -21,7 +21,7 @@ private:
   Game *environment;
   std::vector<User *> users;
   void drawTable(const QString &filename);
-  void load(const QString &jsonString);
+  // void load(const QString &jsonString);
 };
 
 #endif // RESULTSDIALOG_H

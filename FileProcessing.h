@@ -11,6 +11,7 @@ public:
 
   QString read(const QString &filename);
   void write(const QString &filename);
+  void load(const QString &filename);
   std::vector<User *> users;
 };
 

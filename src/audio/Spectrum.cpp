@@ -5,7 +5,7 @@
 
 int Spectrum::getLength() const { return length; }
 
-int inline getFFTSize(int mode) {
+int inline getFFTSize(long mode) {
   int size;
   switch (mode) {
   case BASS_DATA_FFT8192:

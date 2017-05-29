@@ -43,8 +43,9 @@ ResultsDialog::~ResultsDialog() { delete ui; }
 
 void ResultsDialog::drawTable(const QString &filename) {
   FileProcessing *f = new FileProcessing;
-  QString players = f->read(filename);
-  load(players);
+  //  QString players = f->read(filename);
+  f->load(filename);
+  users = f->users;
 
   TableModel *model = new TableModel;
   QStandardItem *item;
@@ -89,44 +90,21 @@ void ResultsDialog::drawTable(const QString &filename) {
   ui->tableView->resizeColumnsToContents();
   ui->tableView->horizontalHeader()->setSectionResizeMode(3,
                                                           QHeaderView::Stretch);
-  ui->tableView->setStyleSheet("QTableView::item {selection-color: black; "
-                               "selection-background-color: rgba(0, 144, 255, "
-                               "100);}");
 }
 
-//    //Второй ряд
-//    item = new QStandardItem(QString("4"));
-//    model->setItem(1, 0, item);
-
-//    item = new QStandardItem(QString("5"));
-//    model->setItem(1, 1, item);
-
-//    item = new QStandardItem(QString("6"));
-//    model->setItem(1, 2, item);
-
-//    item = new QStandardItem(QString("7"));
-//    model->setItem(1, 3, item);
-
-//    ui->tableView->setModel(model);
-
-//    ui->tableView->resizeRowsToContents();
-//    ui->tableView->resizeColumnsToContents();
-
-void ResultsDialog::load(const QString &jsonStr) {
-  qDebug() << jsonStr;
-  QJsonDocument jsonDocument = QJsonDocument::fromJson(jsonStr.toUtf8());
-  QJsonObject jsonObject = jsonDocument.object();
-  QJsonArray jsonArray = jsonObject["Users"].toArray();
-  // QJsonArray jsonArray = jsonDocument.array();
-  int cnt = jsonArray.size();
-  qDebug() << cnt;
-  for (int i = 0; i < cnt; i++) {
-    if (jsonArray[i].isObject()) {
-      QJsonObject jsonObject = jsonArray[i].toObject();
-      User *u = new User(jsonObject);
-      // qDebug() << "-------";
-      // qDebug() << u->getName();
-      users.push_back(u);
-    }
-  }
-}
+// void ResultsDialog::load(const QString &jsonStr) {
+//  qDebug() << jsonStr;
+//  QJsonDocument jsonDocument = QJsonDocument::fromJson(jsonStr.toUtf8());
+//  QJsonObject jsonObject = jsonDocument.object();
+//  QJsonArray jsonArray = jsonObject["Users"].toArray();
+//  // QJsonArray jsonArray = jsonDocument.array();
+//  int cnt = jsonArray.size();
+//  qDebug() << cnt;
+//  for (int i = 0; i < cnt; i++) {
+//    if (jsonArray[i].isObject()) {
+//      QJsonObject jsonObject = jsonArray[i].toObject();
+//      User *u = new User(jsonObject);
+//      users.push_back(u);
+//    }
+//  }
+//}
