@@ -33,7 +33,7 @@ private:
   void createIndicators();
   bool initIndicator(QVector<Indicator *> freeIndicators,
                      unsigned long shootPos, unsigned long currPos);
-  void indicatorEnded(Indicator *ind);
+  void indicatorEnded(Indicator *ind, bool success);
   QVector<Indicator *> getFreeIndicators();
   QString loadSound();
 
@@ -44,6 +44,14 @@ public:
 private slots:
   void on_stopBtn_clicked();
   void updateGame();
+
+  void on_indicator0_clicked();
+
+  void on_indicator1_clicked();
+
+  void on_indicator2_clicked();
+
+  void on_indicator3_clicked();
 
 protected:
   void paintEvent(QPaintEvent *event) override;
@@ -89,9 +97,12 @@ private:
 
   // style of indicators
   QString indicatorStyle;
-
+  // style of message
+  QString messageStyle;
   // controller orchestriX
   Controller *controller;
+  int colorChangetCounter;
+  void changeBrush(QBrush *brush, int count);
 };
 
 #endif // GAMEDIALOG_H

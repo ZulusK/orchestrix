@@ -72,6 +72,7 @@ void GameDialog::setup() {
   ui->indicator3->show();
 
   lastProcessedSpectrum = 0;
+  colorChangetCounter = 0;
   // start executing game
   start();
 }
@@ -144,7 +145,7 @@ void GameDialog::init() {
   // for equalizer
   this->eqDefPen = new QPen(QColor("#2196F3"), 10, Qt::SolidLine, Qt::RoundCap,
                             Qt::RoundJoin);
-  this->eqDefBrush = new QBrush(QColor(20, 255, 20), Qt::Dense6Pattern);
+  this->eqDefBrush = new QBrush(QColor(33, 150, 243), Qt::Dense6Pattern);
   this->eqBadBrush = new QBrush(QColor(255, 20, 0), Qt::Dense6Pattern);
   this->eqGoodBrush = new QBrush(QColor(0, 255, 20), Qt::Dense6Pattern);
 
@@ -183,18 +184,27 @@ void GameDialog::init() {
 
 void GameDialog::createIndicators() {
   // add custom style to them
-  this->indicatorStyle = QString("border-color: rgba(0, 0, 0,0);\n"
-                                 "border-style: inset;\n"
-                                 "border-width: 4px;\n"
-                                 "color: rgb(255,255,255);\n"
-                                 "border-color: white;\n"
-                                 "background-color: ");
+  this->indicatorStyle =
+      QString("border-color: rgba(0, 0, 0,0);\n"
+              "border-style: inset;\n"
+              "border-width: 4px;\n"
+              "color: rgb(255,255,255);\n"
+              //                                 "border-color: white;\n"
+              "background-color: ");
+
+  // add custom style to message label
+  this->messageStyle = QString("border-color: rgba(0, 0, 0,0);\n");
+  ui->messageLbl->setStyleSheet(messageStyle + "color:white;");
   // create 4 indicators
   this->indicators = new Indicator *[COUNT_OF_INDICATORS];
-  indicators[0] = new Indicator(0, indicatorStyle, ui->indicator0, this);
-  indicators[1] = new Indicator(1, indicatorStyle, ui->indicator1, this);
-  indicators[2] = new Indicator(2, indicatorStyle, ui->indicator2, this);
-  indicators[3] = new Indicator(3, indicatorStyle, ui->indicator3, this);
+  indicators[0] =
+      new Indicator(0, indicatorStyle, ui->indicator0, controller, this);
+  indicators[1] =
+      new Indicator(1, indicatorStyle, ui->indicator1, controller, this);
+  indicators[2] =
+      new Indicator(2, indicatorStyle, ui->indicator2, controller, this);
+  indicators[3] =
+      new Indicator(3, indicatorStyle, ui->indicator3, controller, this);
 }
 
 GameDialog::~GameDialog() {
@@ -309,7 +319,7 @@ void GameDialog::updateGame() {
   for (int i = 0; i < 4; i++) {
     // if indicator ended, then process this event
     if (indicators[i]->update()) {
-      this->indicatorEnded(indicators[i]);
+      this->indicatorEnded(indicators[i], false);
     }
   }
 
@@ -326,11 +336,10 @@ void GameDialog::updateGame() {
       lastProcessedSpectrum = currSpectrum;
     }
     // get next left bound of spectrums
-    long bound = currSpectrum + (TIME_INTERVAL) / analyzer->getTimeBound();
+    unsigned long bound =
+        currSpectrum + (TIME_INTERVAL) / analyzer->getTimeBound();
 
-    cout << "start from" << lastProcessedSpectrum << endl;
-    cout << "bound with" << bound << endl << endl;
-    // seatch to shoot
+    // search to shoot
     for (; lastProcessedSpectrum < bound; lastProcessedSpectrum++) {
       // if find shoot
       if (analyzer->isShoot(lastProcessedSpectrum)) {
@@ -357,18 +366,79 @@ void GameDialog::on_stopBtn_clicked() {
   this->accept();
 }
 
-void GameDialog::updateInput() {}
+void GameDialog::updateInput() {
+  if (controller->isConnected()) {
+    bool *input = controller->getInput();
+    for (int i = 0; i < COUNT_OF_INDICATORS; i++) {
+      input[i] = !rand() % 10;
+      // if user influenced the sensor
+      if (input[i]) {
+        // if indicator is used, then input is correct
+        indicatorEnded(indicators[i], indicators[i]->isBusy());
+      }
+    }
+    delete input;
+  }
+}
 
-void GameDialog::indicatorEnded(Indicator *ind) {
-  int bonus = -100 * ind->getTimePeriod() / (float)TIME_INTERVAL;
+void GameDialog::indicatorEnded(Indicator *ind, bool success) {
+  // calculate negative bonus
+  int bonus = 100 * ind->getTimePeriod() / (float)TIME_INTERVAL;
+  if (!success) {
+    bonus *= -1;
+  }
+  // add bonus to user
   environment->getUser()->addToScore(bonus);
-  ui->currentScoreLbl->setText(QString::number(bonus));
-  ind->setPeriod(-1);
 
-  ui->messageLbl->setText(badWord[rand() % badWord.size()]);
+  if (success) {
+    //    environment->play("good.wav");
+    // set color of eq
+    changeBrush(eqGoodBrush, 15);
+    ui->messageLbl->setText(badWord[rand() % badWord.size()]);
+    ui->messageLbl->setStyleSheet(messageStyle + "color:rgb(0,255,20)");
+    // update text
+    ui->currentScoreLbl->setText("+" + QString::number(bonus));
+  } else {
+    //    environment->play("bad.wav");
+    // set color of eq
+    changeBrush(eqBadBrush, 15);
+    ui->messageLbl->setText(goodWord[rand() % goodWord.size()]);
+    ui->messageLbl->setStyleSheet(messageStyle + "color:rgb(255,20,0)");
+    // update text
+    ui->currentScoreLbl->setText(QString::number(bonus));
+  }
+
+  ind->setPeriod(-1);
+}
+
+void GameDialog::changeBrush(QBrush *brush, int count) {
+  if (colorChangetCounter > 0) {
+
+  } else {
+    eqwidget->setBrush(*brush);
+    this->colorChangetCounter = count;
+  }
 }
 
 void GameDialog::paintEvent(QPaintEvent *event) {
   ui->totalScoreLbl->setText(
       QString::number(environment->getUser()->getScore()));
+  colorChangetCounter--;
+  changeBrush(eqDefBrush, 0);
+}
+
+void GameDialog::on_indicator0_clicked() {
+  indicatorEnded(indicators[0], indicators[0]->isBusy());
+}
+
+void GameDialog::on_indicator1_clicked() {
+  indicatorEnded(indicators[1], indicators[1]->isBusy());
+}
+
+void GameDialog::on_indicator2_clicked() {
+  indicatorEnded(indicators[2], indicators[2]->isBusy());
+}
+
+void GameDialog::on_indicator3_clicked() {
+  indicatorEnded(indicators[3], indicators[3]->isBusy());
 }

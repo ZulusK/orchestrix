@@ -13,7 +13,7 @@ long inline currentTime() {
 }
 
 Indicator::Indicator(int id, const QString &style, QPushButton *button,
-                     GameDialog *parent) {
+                     Controller *controller, GameDialog *parent) {
   this->id = id;
   this->button = button;
   this->parent = parent;
@@ -21,6 +21,7 @@ Indicator::Indicator(int id, const QString &style, QPushButton *button,
   this->timePeriod = -1;
   this->buttonStyle = style;
   this->button->hide();
+  this->controller = controller;
   update();
 }
 
@@ -46,6 +47,7 @@ QString getColor(float progress) {
   int a;
   if (progress > 1) {
     progress = 1;
+//      return "rgb( 255, 20, 0 )";
   }
 
   r = color(RED_START, BLUE_END, progress);
@@ -74,7 +76,7 @@ bool Indicator::update() {
       return true;
     }
   } else {
-    button->setStyleSheet(buttonStyle + getColor(2) + ";\n" + getRadius(0) +
+    button->setStyleSheet(buttonStyle + getColor(0.99) + ";\n" + getRadius(0) +
                           ";\n");
   }
   return false;
@@ -99,6 +101,11 @@ void Indicator::setButton(QPushButton *value) { button = value; }
 void Indicator::setPeriod(long value) {
   timePeriod = value;
   this->createdTime = currentTime();
+  if (value > 0) {
+    controller->turnOnLed(id);
+  } else {
+    controller->turnOffLed(id);
+  }
 }
 
 bool Indicator::isBusy() { return timePeriod > 0; }

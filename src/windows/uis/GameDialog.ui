@@ -149,13 +149,13 @@ outline:none;
            </property>
            <property name="font">
             <font>
-             <pointsize>15</pointsize>
+             <pointsize>25</pointsize>
             </font>
            </property>
            <property name="styleSheet">
             <string notr="true">background-color: rgba(255, 255, 255,0);
-color: rgb(255,255,255);
 selection-background-color: rgb(252, 233, 79);
+color: rgb(255,255,255);
 </string>
            </property>
            <property name="frameShape">
@@ -169,6 +169,9 @@ selection-background-color: rgb(252, 233, 79);
            </property>
            <property name="alignment">
             <set>Qt::AlignCenter</set>
+           </property>
+           <property name="wordWrap">
+            <bool>true</bool>
            </property>
           </widget>
          </item>
@@ -221,6 +224,9 @@ border-radius: 75%;
 color: rgb(255,255,255);</string>
            </property>
            <property name="text">
+            <string>1</string>
+           </property>
+           <property name="shortcut">
             <string>1</string>
            </property>
            <property name="default">
@@ -282,6 +288,9 @@ color: rgb(255,255,255);</string>
            <property name="text">
             <string>2</string>
            </property>
+           <property name="shortcut">
+            <string>2</string>
+           </property>
            <property name="flat">
             <bool>false</bool>
            </property>
@@ -338,6 +347,9 @@ color: rgb(255,255,255);</string>
            <property name="text">
             <string>3</string>
            </property>
+           <property name="shortcut">
+            <string>3</string>
+           </property>
            <property name="flat">
             <bool>false</bool>
            </property>
@@ -392,6 +404,9 @@ border-radius: 75%;
 color: rgb(255,255,255);</string>
            </property>
            <property name="text">
+            <string>4</string>
+           </property>
+           <property name="shortcut">
             <string>4</string>
            </property>
            <property name="flat">
