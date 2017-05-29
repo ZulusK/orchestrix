@@ -28,6 +28,9 @@ StartWindow::~StartWindow() {
 }
 
 void StartWindow::on_startBtn_clicked() {
+    if(environment->getUser()==NULL){
+        on_loginBtn_clicked();
+    }
   GameDialog *game_d = new GameDialog(environment);
   this->hide();
   if (!game_d->exec()) {
@@ -36,17 +39,15 @@ void StartWindow::on_startBtn_clicked() {
   game_d->hide();
   this->show();
   delete game_d;
-  cout<<"E"<<endl;
-//  QMessageBox::StandardButton reply;
-//  reply = QMessageBox::question(this, "Saving", "Save your result?",
-//                                QMessageBox::Yes | QMessageBox::No);
-//  if (reply == QMessageBox::Yes) {
-//    cout << "Yes was clicked" << endl;
-//    ui->saveBtn->click();
-//  } else {
-//    cout << "Yes was *not* clicked" << endl;
-//  }
-  cout<<"F"<<endl;
+  QMessageBox::StandardButton reply;
+  reply = QMessageBox::question(this, "Saving", "Save your result?",
+                                QMessageBox::Yes | QMessageBox::No);
+  if (reply == QMessageBox::Yes) {
+    cout << "Yes was clicked" << endl;
+    ui->saveBtn->click();
+  } else {
+    cout << "Yes was *not* clicked" << endl;
+  }
 }
 
 void StartWindow::on_resultsBtn_clicked() {

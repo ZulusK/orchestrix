@@ -80,16 +80,12 @@ DEPENDPATH += /usr/local/include
 INCLUDEPATH += $$PWD/libs
 DEPENDPATH += $$PWD/libs
 
-macx: LIBS += -L/usr/local/opt/openssl/lib/ -lssl
-unix:!macx: LIBS += -L/usr/local/lib -lssl
 unix:!macx: LIBS +=  -L$$PWD/libs/x64 -lbass
 LIBS +=  -L$$PWD/libs -lbass
 
 LIBS+= -L/usr/local/lib -lopenal
 LIBS+= -L/usr/local/lib -lsndfile
 LIBS+= -L/usr/local/lib -lpthread
-LIBS+= -L/usr/local/lib -lprogbase-cpp
-LIBS+= -L/usr/local/lib -lprogbase
 
 RESOURCES += \
     res.qrc

@@ -48,7 +48,7 @@ bool Game::loadSound(const QString &soundName) {
 
   auto sound = AudioData::load(soundName.toStdString());
   if (sound == NULL) {
-    cout << "not loaded " << soundName.toStdString() << endl;
+    cout << "Can't load " << soundName.toStdString() << endl;
     return false;
   }
   audioEffects[name].first = sound;

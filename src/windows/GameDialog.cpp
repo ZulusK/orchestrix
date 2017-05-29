@@ -27,7 +27,7 @@ QString GameDialog::loadSound() {
       new AudioPlayer(environment->getAudioManager(), audioData, 2);
 
   this->analyzer = new SpectrumAnalyzer(audioData, SAMPLE_1024, 50);
-  this->environment->getUser()->setSoundName(soundPath.split("/").constLast());
+  this->environment->getUser()->setSoundName(soundPath.split("/").last());
   return soundPath;
 }
 void GameDialog::addWords() {
@@ -119,7 +119,9 @@ GameDialog::GameDialog(Game *game, QWidget *parent)
   this->setWindowFlags(Qt::Window);
   this->showFullScreen();
   this->environment = game;
-  game->addUser(new User("Vasya"));
+    if(environment->getUser()==NULL){
+        environment->addUser(new User("No name"));
+    }
   ui->setupUi(this);
   {
     ui->playerNameLbl->setText(game->getUser()->getName());
@@ -132,7 +134,7 @@ GameDialog::GameDialog(Game *game, QWidget *parent)
     ui->totalScoreLbl->setText("0");
 
     ui->messageLbl->hide();
-    ui->messageLbl->setText("PLAY!!!!!!!!!");
+    ui->messageLbl->setText("Start new game");
 
     ui->scoreLbl->hide();
     ui->songNameLbl->hide();
