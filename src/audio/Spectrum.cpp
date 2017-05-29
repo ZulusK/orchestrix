@@ -28,12 +28,12 @@ int inline getFFTSize(long mode) {
   return size;
 }
 
-Spectrum::Spectrum(HCHANNEL hchannel, double offset, int mode, int bars) {
+Spectrum::Spectrum(HCHANNEL hchannel, double offset, long mode, int bars) {
   this->length = bars;
   execute(hchannel, offset, mode, bars);
 }
 
-float *getFFT(HCHANNEL hchannel, double offset, int size, int mode) {
+float *getFFT(HCHANNEL hchannel, double offset, int size, long mode) {
   float *fft = new float[size];
   for (int i = 0; i < size; i++) {
     fft[i] = 0;
@@ -48,7 +48,7 @@ float *getFFT(HCHANNEL hchannel, double offset, int size, int mode) {
   return fft;
 }
 
-void Spectrum::execute(HCHANNEL hchannel, double offset, int mode, int bars) {
+void Spectrum::execute(HCHANNEL hchannel, double offset, long mode, int bars) {
   int size = getFFTSize(mode);
   float *fft = getFFT(hchannel, offset, size, mode);
   calculateBars(fft, size);

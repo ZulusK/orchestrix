@@ -27,7 +27,7 @@ public:
 private:
     float *calculateBars(float *fft, int size);
 
-    void execute(HCHANNEL hchannel, double offset, int mode, int bars);
+    void execute(HCHANNEL hchannel, double offset, long mode, int bars);
 
 public:
 
@@ -35,7 +35,7 @@ public:
 
     int getLength() const;
 
-    Spectrum(HSTREAM hchannel, double offset, int mode, int bars);
+    Spectrum(HSTREAM hchannel, double offset, long mode, int bars);
 
     ~Spectrum();
 

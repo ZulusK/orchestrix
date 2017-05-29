@@ -1,6 +1,7 @@
 #ifndef GAMEDIALOG_H
 #define GAMEDIALOG_H
 
+#include <Controller.h>
 #include <EQWidget.h>
 #include <Game.h>
 #include <Indicator.h>
@@ -9,9 +10,11 @@
 #include <QPen>
 #include <QStringList>
 #include <QTimer>
+#include <QVector>
 #include <SoundHistogramm.h>
 #include <User.h>
-#include <Controller.h>
+
+enum { COUNT_OF_INDICATORS = 4 };
 class Indicator;
 
 namespace Ui {
@@ -21,56 +24,74 @@ class GameDialog;
 class GameDialog : public QDialog {
   Q_OBJECT
 private:
-  bool addIndicator(unsigned long pos, unsigned long curr);
-  QString loadSound();
-  void init();
+  void setup();
   void start();
-  void reject();
-  void createIndicators();
+  void init();
   void addWords();
   void updateInput();
+  void reject();
+  void createIndicators();
+  bool initIndicator(QVector<Indicator *> freeIndicators,
+                     unsigned long shootPos, unsigned long currPos);
+  void indicatorEnded(Indicator *ind);
+  QVector<Indicator *> getFreeIndicators();
+  QString loadSound();
 
 public:
   explicit GameDialog(Game *game, QWidget *parent = 0);
   ~GameDialog();
-  void indicatorEnd(Indicator *ind);
 
 private slots:
   void on_stopBtn_clicked();
-  void gameUpdate();
+  void updateGame();
 
 protected:
   void paintEvent(QPaintEvent *event) override;
 
 private:
-  int brushUsedIteration;
+  // lists of game messages
   QStringList badWord;
   QStringList goodWord;
+
   bool closeGame;
-  unsigned long lastAddedShoot;
+  // last processed spectrum position
+  unsigned long lastProcessedSpectrum;
+  // time of last updating
   long lastUpdate;
+
   Ui::GameDialog *ui;
   Game *environment;
+  // widgets
   EQWidget *eqwidget;
   SoundHistogramm *histogramm;
+  // sound player
   AudioPlayer *audioPlayer;
+  // sound data
   AudioData *audioData;
+  // sound analyzer
   SpectrumAnalyzer *analyzer;
 
+  // array of indicators
   Indicator **indicators;
 
-  QBrush *histDefBrush;
-  QPen *histDefPen;
-
+  // custom brushes and pens
+  // for equalizer
   QPen *eqDefPen;
+  QBrush *histDefBrush;
+  // for histogramm
+  QPen *histDefPen;
   QBrush *eqDefBrush;
   QBrush *eqGoodBrush;
   QBrush *eqBadBrush;
+
+  // timer to update game
   QTimer *updator;
 
+  // style of indicators
   QString indicatorStyle;
 
-  Controller * controller;
+  // controller orchestriX
+  Controller *controller;
 };
 
 #endif // GAMEDIALOG_H

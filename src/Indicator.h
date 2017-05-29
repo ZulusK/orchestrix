@@ -40,7 +40,7 @@ private:
   void buttonSetColor(double val);
 
 public slots:
-  void update();
+  bool update();
 
 private:
   unsigned long curPos;
