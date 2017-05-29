@@ -45,19 +45,28 @@ void User::addToScore(int val) {
 
 User::~User() {}
 
-QJsonObject *User::toJSON() {
-  QJsonObject *jobj = new QJsonObject();
-  (*jobj)[QString("name")] = this->name;
-  (*jobj)[QString("sound")] = this->soundName;
-  (*jobj)[QString("date")] = QDateTime::currentDateTime().toString();
-  (*jobj)[QString("score")] = this->score;
+QJsonObject User::toJSON() {
+  QJsonObject jobj;
+  jobj[QString("name")] = this->name;
+  jobj[QString("sound")] = this->soundName;
+  jobj[QString("date")] = QDateTime::currentDateTime().toString();
+  jobj[QString("score")] = this->score;
   return jobj;
 }
 
 QString User::toString() {
   auto jobj = toJSON();
-  QJsonDocument doc(*jobj);
+  QJsonDocument doc(jobj);
   QString jstr(doc.toJson(QJsonDocument::Compact));
-  delete jobj;
   return jstr;
+}
+
+bool User::equals(User *u) {
+  if (!u) {
+    return false;
+  } else {
+    auto j1 = u->toString();
+    auto j2 = this->toString();
+    return j1.compare(j2) == 0;
+  }
 }

@@ -8,10 +8,14 @@
 class FileProcessing {
 public:
   FileProcessing();
-
+~FileProcessing();
   QString read(const QString &filename);
   void write(const QString &filename);
-  std::vector<User *> users;
+  void load(const QString &filename);
+  std::vector<User *> *getUsers() const;
+
+private:
+  std::vector<User *>  *users;
 };
 
 #endif // FILEPROCESSING_H

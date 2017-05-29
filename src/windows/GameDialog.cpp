@@ -52,17 +52,16 @@ void GameDialog::init() {
 
   srand(time(NULL));
   // load sound
+  qDebug() << "00000000000000000";
   loadSound();
   addWords();
   // load standart sounds
   environment->loadSound("../orchestrix/res/sound effects/bad.wav");
   environment->loadSound("../orchestrix/res/sound effects/good.wav");
-
   // create equlizer view
   this->eqDefPen = new QPen(QColor("#2196F3"), 10, Qt::SolidLine, Qt::RoundCap,
                             Qt::RoundJoin);
-  //this->eqDefBrush = new QBrush(QColor("#2196F3"), Qt::Dense6Pattern);
-  this->eqDefBrush = new QBrush(QColor(20,255,20), Qt::Dense6Pattern);
+  this->eqDefBrush = new QBrush(QColor(20, 255, 20), Qt::Dense6Pattern);
   this->eqBadBrush = new QBrush(QColor(255, 20, 0), Qt::Dense6Pattern);
   this->eqGoodBrush = new QBrush(QColor(0, 255, 20), Qt::Dense6Pattern);
 
@@ -96,7 +95,7 @@ void GameDialog::init() {
   connect(updator, SIGNAL(timeout()), this, SLOT(gameUpdate()));
   // create conroller
   this->controller = new Controller();
-  cout<<"controller"<<controller->isConnected()<<endl;
+  cout << "controller" << controller->isConnected() << endl;
 }
 
 void GameDialog::createIndicators() {
@@ -119,9 +118,9 @@ GameDialog::GameDialog(Game *game, QWidget *parent)
   this->setWindowFlags(Qt::Window);
   this->showFullScreen();
   this->environment = game;
-    if(environment->getUser()==NULL){
-        environment->addUser(new User("No name"));
-    }
+  if (environment->getUser() == NULL) {
+    environment->addUser(new User("No name"));
+  }
   ui->setupUi(this);
   {
     ui->playerNameLbl->setText(game->getUser()->getName());

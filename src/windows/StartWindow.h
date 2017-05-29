@@ -4,7 +4,6 @@
 #include <Game.h>
 #include <QMainWindow>
 #include <User.h>
-
 namespace Ui {
 class StartWindow;
 }
@@ -29,6 +28,8 @@ private slots:
   void on_loginBtn_clicked();
 
   void on_saveBtn_clicked();
+
+  void on_logoutBtn_clicked();
 
 private:
   Ui::StartWindow *ui;

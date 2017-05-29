@@ -58,6 +58,9 @@ color:white;
    
                    </string>
        </property>
+       <property name="maxLength">
+        <number>10</number>
+       </property>
       </widget>
      </item>
      <item row="2" column="0" colspan="2">
@@ -68,21 +71,23 @@ color:white;
    <item>
     <layout class="QHBoxLayout" name="horizontalLayout_2">
      <item>
-      <widget class="QPushButton" name="pushButton_2">
+      <widget class="QPushButton" name="cancelBtn">
        <property name="styleSheet">
         <string notr="true">QPushButton{
 font: 75 30pt &quot;URW Bookman L&quot;;
-background-color: rgb(52, 101, 164);
+background-color: rgb(0, 126, 255);
  border-style: outset;
  border-width: 2px;
 color:white;
  border-radius: 20%;
  border-color: rgba(0,0,0,0);
+outline:none;
 }
 QPushButton:hover{
 border-width: 0px;
 background-color: rgb(255,20,0);
 border-radius: 20%;
+outline:none;
 }
 </string>
        </property>
@@ -92,7 +97,7 @@ border-radius: 20%;
       </widget>
      </item>
      <item>
-      <widget class="QPushButton" name="pushButton">
+      <widget class="QPushButton" name="createBtn">
        <property name="styleSheet">
         <string notr="true">QPushButton{
 font: 75 30pt &quot;URW Bookman L&quot;;
@@ -102,10 +107,12 @@ background-color: white;
 color:rgb(52, 101, 164);
  border-radius: 20%;
  border-color: rgba(0,0,0,0);
+outline:none;
 }
 QPushButton:hover{
 border-width: 0px;
 background-color: rgb(255,20,0);
+outline:none;
 border-radius: 20%;
 }
 </string>
@@ -132,5 +139,38 @@ border-radius: 20%;
  <resources>
   <include location="../../../res.qrc"/>
  </resources>
- <connections/>
+ <connections>
+  <connection>
+   <sender>cancelBtn</sender>
+   <signal>clicked()</signal>
+   <receiver>LoginDialog</receiver>
+   <slot>reject()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>90</x>
+     <y>201</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>178</x>
+     <y>118</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>createBtn</sender>
+   <signal>clicked()</signal>
+   <receiver>LoginDialog</receiver>
+   <slot>accept()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>261</x>
+     <y>201</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>178</x>
+     <y>118</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
 </ui>

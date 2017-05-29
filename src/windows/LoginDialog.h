@@ -17,10 +17,8 @@ public:
   ~LoginDialog();
 
 private slots:
-    void on_pushButton_2_clicked();
-
-    void on_pushButton_clicked();
-
+    void accept();
+    void reject();
 private:
   Ui::LoginDialog *ui;
   Game *environment;

@@ -5,25 +5,28 @@ using namespace std;
 Game::Game(AudioManager *manager) {
   this->audioManager = manager;
   this->user = NULL;
+  this->storage = new FileProcessing();
+  updateStorage();
 }
 
 Game::~Game() {
+  storage->write(STORAGE_PATH);
+  delete storage;
   for (auto it = audioEffects.begin(); it != audioEffects.end(); it++) {
     delete it.value().second;
     delete it.value().first;
   }
   delete this->audioManager;
+}
+
+void Game::addUser(User *user) {
   if (user) {
-    delete this->user;
+    this->user = user;
+    storage->getUsers()->push_back(user);
   }
 }
 
-void Game::addUser(User *user) { this->user = user; }
-
 void Game::removeUser() {
-  if (this->user != NULL) {
-    delete this->user;
-  }
   this->user = NULL;
 }
 
@@ -31,7 +34,8 @@ User *Game::getUser() { return this->user; }
 
 void Game::play(const QString &soundName) {
   cout << soundName.toStdString() << endl;
-  if (audioEffects.contains(soundName) && !audioEffects[soundName].second->isPlaying()) {
+  if (audioEffects.contains(soundName) &&
+      !audioEffects[soundName].second->isPlaying()) {
     audioEffects[soundName].second->play();
   }
 }
@@ -63,3 +67,13 @@ Game *Game::init() {
   else
     return NULL;
 }
+
+bool Game::saveStorage() {
+    cout<<storage->getUsers()->size()<<endl;
+    updateStorage();
+    this->storage->write(STORAGE_PATH);
+}
+
+bool Game::updateStorage() { this->storage->load(STORAGE_PATH); }
+
+FileProcessing *Game::getStorage() { return this->storage; }
