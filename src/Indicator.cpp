@@ -13,7 +13,7 @@ long inline currentTime() {
 }
 
 Indicator::Indicator(int id, const QString &style, QPushButton *button,
-                     GameDialog *parent) {
+                     Controller *controller, GameDialog *parent) {
   this->id = id;
   this->button = button;
   this->parent = parent;
@@ -21,6 +21,7 @@ Indicator::Indicator(int id, const QString &style, QPushButton *button,
   this->timePeriod = -1;
   this->buttonStyle = style;
   this->button->hide();
+  this->controller = controller;
   update();
 }
 
@@ -46,16 +47,16 @@ QString getColor(float progress) {
   int a;
   if (progress > 1) {
     progress = 1;
+//      return "rgb( 255, 20, 0 )";
   }
 
   r = color(RED_START, BLUE_END, progress);
   g = color(GREEN_START, GREEN_END, progress);
   b = color(BLUE_START, BLUE_END, progress);
-  a = color(0, 255, progress);
+  a = color(255, 255, progress);
 
   QString s = "rgba(" + QString::number(r) + "," + QString::number(250) + "," +
               QString::number(b) + "," + QString::number(255) + ")";
-  cout << s.toStdString() << endl;
   return s;
 }
 
@@ -66,21 +67,19 @@ QString getRadius(float progress) {
   return "border-radius: " + QString::number((100 * progress)) + "%";
 }
 
-void Indicator::update() {
+bool Indicator::update() {
   if (timePeriod >= 0) {
     float progress = (currentTime() - createdTime) / (float)timePeriod;
-    button->show();
     button->setStyleSheet(buttonStyle + getColor(progress) + ";\n" +
                           getRadius(progress) + ";\n");
     if (progress > 1) {
-      parent->indicatorEnd(this);
-      return;
+      return true;
     }
   } else {
-    //    button->hide();
-    button->setStyleSheet(buttonStyle + getColor(2) + ";\n" + getRadius(0) +
+    button->setStyleSheet(buttonStyle + getColor(0.99) + ";\n" + getRadius(0) +
                           ";\n");
   }
+  return false;
 }
 
 long Indicator::getTimePeriod() const { return timePeriod; }
@@ -102,6 +101,11 @@ void Indicator::setButton(QPushButton *value) { button = value; }
 void Indicator::setPeriod(long value) {
   timePeriod = value;
   this->createdTime = currentTime();
+  if (value > 0) {
+    controller->turnOnLed(id);
+  } else {
+    controller->turnOffLed(id);
+  }
 }
 
 bool Indicator::isBusy() { return timePeriod > 0; }
