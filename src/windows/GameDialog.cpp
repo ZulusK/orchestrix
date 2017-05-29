@@ -52,12 +52,12 @@ void GameDialog::init() {
 
   srand(time(NULL));
   // load sound
-  loadSound();
+  qDebug() << "00000000000000000";
+  // loadSound();
   addWords();
   // load standart sounds
   environment->loadSound("../orchestrix/res/sound effects/bad.wav");
   environment->loadSound("../orchestrix/res/sound effects/good.wav");
-
   // create equlizer view
   this->eqDefPen = new QPen(QColor("#2196F3"), 10, Qt::SolidLine, Qt::RoundCap,
                             Qt::RoundJoin);
@@ -117,9 +117,10 @@ void GameDialog::createIndicators() {
 GameDialog::GameDialog(Game *game, QWidget *parent)
     : QDialog(parent), ui(new Ui::GameDialog) {
   this->setWindowFlags(Qt::Window);
-  this->showFullScreen();
+  qDebug() << "555";
+  // this->showFullScreen();
+  qDebug() << "6666666";
   this->environment = game;
-  game->addUser(new User("Vasya"));
   ui->setupUi(this);
   {
     ui->playerNameLbl->setText(game->getUser()->getName());

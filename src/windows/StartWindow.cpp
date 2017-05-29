@@ -1,5 +1,6 @@
 #include "StartWindow.h"
 #include "ui_StartWindow.h"
+#include <FileProcessing.h>
 #include <GameDialog.h>
 #include <HelpDialog.h>
 #include <LoginDialog.h>
@@ -8,6 +9,7 @@
 #include <QMessageBox>
 #include <ResultsDialog.h>
 #include <iostream>
+#include <qDebug>
 using namespace std;
 
 StartWindow::StartWindow(Game *game, QWidget *parent)
@@ -28,25 +30,32 @@ StartWindow::~StartWindow() {
 }
 
 void StartWindow::on_startBtn_clicked() {
+  //  if (environment->getUser() == NULL) {
+  on_loginBtn_clicked();
+
+  qDebug() << "99999999";
   GameDialog *game_d = new GameDialog(environment);
+  qDebug() << "888888888888";
   this->hide();
+
   if (!game_d->exec()) {
     this->close();
   }
+
   game_d->hide();
   this->show();
   delete game_d;
-  cout<<"E"<<endl;
-//  QMessageBox::StandardButton reply;
-//  reply = QMessageBox::question(this, "Saving", "Save your result?",
-//                                QMessageBox::Yes | QMessageBox::No);
-//  if (reply == QMessageBox::Yes) {
-//    cout << "Yes was clicked" << endl;
-//    ui->saveBtn->click();
-//  } else {
-//    cout << "Yes was *not* clicked" << endl;
-//  }
-  cout<<"F"<<endl;
+  QMessageBox::StandardButton reply;
+  qDebug() << "yco ne horosho";
+  reply = QMessageBox::question(this, "Saving", "Save your result?",
+                                QMessageBox::Yes | QMessageBox::No);
+
+  if (reply == QMessageBox::Yes) {
+    qDebug() << "хорошо";
+    ui->saveBtn->click();
+  } else {
+    qDebug() << "плохо";
+  }
 }
 
 void StartWindow::on_resultsBtn_clicked() {
@@ -69,13 +78,24 @@ void StartWindow::on_helpBtn_clicked() {
 }
 
 void StartWindow::on_loginBtn_clicked() {
+  qDebug() << "+++++++++++++";
   LoginDialog log_d(environment);
-  if (!log_d.exec()) {
-    this->close();
+  log_d.exec();
+  qDebug() << environment->getUser()->getName();
+}
+
+void StartWindow::on_saveBtn_clicked() {
+  qDebug() << "fhgfgjhfjhgf";
+  FileProcessing *f = new FileProcessing;
+  f->load("/Users/lena/projectX/res/results.json");
+  users = f->users;
+
+  auto user = environment->getUser();
+
+  if (user != NULL) {
+    users.push_back(user);
+    f->write("/Users/lena/projectX/res/results.json");
   }
 }
 
-void StartWindow::on_saveBtn_clicked()
-{
-
-}
+void StartWindow::on_logoutBtn_clicked() { environment->removeUser(); }
