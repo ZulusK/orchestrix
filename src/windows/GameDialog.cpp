@@ -153,7 +153,7 @@ void GameDialog::init() {
 
   // for histogramm
   this->histDefBrush = new QBrush(QColor("#2196F3"));
-  this->histDefPen = new QPen(QColor(255, 255, 255));
+  this->histDefPen = new QPen(QColor(255,255,255));
 
   // create equalizer
   this->eqwidget = new EQWidget(audioPlayer, analyzer, this);
