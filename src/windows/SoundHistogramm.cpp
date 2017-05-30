@@ -6,57 +6,27 @@
 #include <iostream>
 using namespace std;
 
-double getPoint8(char *data, int heigth, int range, int channels) {
-//  double val = 0;
-//  int max = CHAR_MAX;
-//  val = data[0];
-//  val /= max;
-//  val /= 2.1;
-//  return heigth / 2 + val * heigth;
-    double val = 0;
-    double pos = 0;
-    double neg = 0;
-    for (long i = 0; i < range * channels; i++) {
-      if (data[i] > CHAR_MAX/2) {
-        pos += data[i];
-      } else {
-        neg -= data[i];
-      }
-    }
-    val = pos - neg;
-    if (pos < -neg) {
-      val *= -1;
-    }
-    val /= range;
-    val /= CHAR_MAX/2;
-    val /= 2.1;
-    return heigth / 2 + val * heigth;
+double getPoint16(short *data, int heigth, int channels) {
+  double val = 0;
+  int max = SHRT_MAX;
+  for (int i = 0; i < channels; i++) {
+    val += data[i];
+  }
+  val /= channels;
+  val /= max;
+  val /= 2.1;
+  return heigth / 2 + val * heigth;
 }
 
-double getPoint16(short *data, int heigth, int range, int channels) {
-  //  double val = 0;
-  //  int max = SHRT_MAX;
-  //  val = data[0];
-  //  val /= max;
-  //  val /= 2.1;
-  //  return heigth / 2 + val * heigth;
-
+double getPoint8(char *data, int heigth, int channels) {
   double val = 0;
-  double pos = 0;
-  double neg = 0;
-  for (long i = 0; i < range * channels; i++) {
-    if (data[i] > 0) {
-      pos += data[i];
-    } else {
-      neg += data[i];
-    }
+  int max = CHAR_MAX / 2;
+  for (int i = 0; i < channels; i++) {
+    val += data[i];
   }
-  val = pos - neg;
-  if (pos < -neg) {
-    val *= -1;
-  }
-  val /= range;
-  val /= SHRT_MAX;
+  val /= channels;
+  val -= CHAR_MAX;
+  val /= max;
   val /= 2.1;
   return heigth / 2 + val * heigth;
 }
@@ -70,29 +40,34 @@ QPixmap *SoundHistogramm::createImage() {
   painter.drawRect(0, 0, image->width(), image->height());
   painter.setRenderHint(QPainter::Antialiasing, true);
 
-  double oldPos = image->height() / 2;
-  double currPos = 0;
-  int width = image->width() - image->height() / 3;
-  int range = sound->get_samples() / width;
+  double oldPosVertical = image->height() / 2;
+  double currPosVertical = oldPosVertical;
+
+  int width = image->width() - image->height() / 4;
+
+  float pointShift = width / (float)sound->get_samples();
+  int leftShift = image->height() / 4;
   int channels = sound->get_channels();
-  int imHeigth = image->height();
 
   painter.setPen(this->pen);
 
   if (sound->get_bitsPerSample() == 16) {
-    short *data = (short *)sound->get_source();
-    for (int i = image->height() / 3, j = 0; i < image->width(); i++, j++) {
-      currPos = getPoint16(data + j * range * channels, imHeigth, range, channels);
-      painter.drawLine(i - 1, oldPos, i, currPos);
-      oldPos = currPos;
+    short *data = (short*)sound->get_source();
+    for (int i = channels; i < sound->get_samples(); i++) {
+      currPosVertical =
+          getPoint16(data + i * channels, image->height(), channels);
+      painter.drawLine(leftShift + (i - 1) * pointShift, oldPosVertical,
+                       leftShift + (i - 1) * pointShift, currPosVertical);
+      oldPosVertical = currPosVertical;
     }
   } else {
-    char *data = (char *)sound->get_source();
-    for (int i = image->height() / 3, j = 0; i < image->width(); i++, j++) {
-      currPos =
-          getPoint8(data + j * range * channels, imHeigth, range, channels);
-      painter.drawLine(i - 1, oldPos, i, currPos);
-      oldPos = currPos;
+    char *data = (char*)sound->get_source();
+    for (int i = channels; i < sound->get_samples(); i++) {
+      currPosVertical =
+          getPoint8(data + i * channels, image->height(), channels);
+      painter.drawLine(leftShift + (i - 1) * pointShift, oldPosVertical,
+                       leftShift + (i - 1) * pointShift, currPosVertical);
+      oldPosVertical = currPosVertical;
     }
   }
 
@@ -112,7 +87,8 @@ SoundHistogramm::SoundHistogramm(const QPen &pen, AudioPlayer *player,
   this->player = player;
   this->sound = sound;
   this->setPen(pen);
-  this->remainingTime = sound->get_samples() / (double)sound->get_sampleRate() * 1000;
+  this->remainingTime =
+      sound->get_samples() / (double)sound->get_sampleRate() * 1000;
 }
 
 void SoundHistogramm::start() { timer->start(); }

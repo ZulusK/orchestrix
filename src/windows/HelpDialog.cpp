@@ -16,9 +16,8 @@ HelpDialog::HelpDialog(Game * game,QWidget *parent) :
     palette->setBrush(this->backgroundRole(), QBrush(QPixmap(":/res/fon.jpg")));
     this->setPalette(*palette);
 
-    QFont serifFont("Times", 16, QFont::Bold);
+    QFont serifFont("URW Bookman L", 25, QFont::Normal);
     ui->textEdit->setFont(serifFont);
-    ui->textEdit->setTextColor(Qt::darkGray);
 
     QFile file(":/res/help.txt");
     QByteArray data;
