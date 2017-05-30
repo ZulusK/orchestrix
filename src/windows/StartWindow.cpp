@@ -11,7 +11,8 @@
 #include <iostream>
 using namespace std;
 
-StartWindow::StartWindow(Game *game, QWidget *parent)
+StartWindow::StartWindow(Game *game, const QString &backgroundSound,
+                         QWidget *parent)
     : QMainWindow(parent), ui(new Ui::StartWindow) {
   ui->setupUi(this);
   this->showFullScreen();
@@ -21,10 +22,14 @@ StartWindow::StartWindow(Game *game, QWidget *parent)
   palette->setBrush(this->backgroundRole(), QBrush(QPixmap(":/res/fon.jpg")));
   this->setPalette(*palette);
   updateContent();
+  environment->loadSound(backgroundSound);
+  this->backgroundSound = backgroundSound.split("/").last();
+  environment->play(this->backgroundSound);
 }
 
 StartWindow::~StartWindow() {
   delete ui;
+  environment->stop(backgroundSound);
 }
 
 void StartWindow::on_startBtn_clicked() {
@@ -37,10 +42,12 @@ void StartWindow::on_startBtn_clicked() {
   GameDialog *game_d = new GameDialog(environment);
   // execute game
   this->hide();
+  environment->stop(backgroundSound);
   game_d->exec();
   this->show();
   // delete window (stop playing music)
   delete game_d;
+  environment->play(backgroundSound);
   // update labels on window
   updateContent();
   // ask, is user wont to save result
@@ -79,7 +86,6 @@ void StartWindow::on_helpBtn_clicked() {
 void StartWindow::on_loginBtn_clicked() {
   LoginDialog log_d(environment);
   log_d.exec();
-  qDebug() << environment->getUser()->getName();
   // update labels on window
   updateContent();
 }
@@ -87,7 +93,7 @@ void StartWindow::on_loginBtn_clicked() {
 void StartWindow::on_saveBtn_clicked() {
   auto user = environment->getUser();
   if (user != NULL) {
-     environment->saveStorage();
+    environment->saveStorage();
   }
 }
 

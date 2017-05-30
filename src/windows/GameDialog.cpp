@@ -80,12 +80,12 @@ void GameDialog::setup() {
 QString GameDialog::loadSound() {
   // get user choose
   QString soundPath = QFileDialog::getOpenFileName(
-      this, QString::fromUtf8("Choose your sound file"), QDir::currentPath(),
+      this, QString::fromUtf8("Choose your sound file"), QDir::homePath(),
       "Sounds (*.wav);");
   // if user doesn't select any sound
   // than use default sound
   if (soundPath.length() == 0) {
-    soundPath = "../orchestrix/res/we will rock u.wav";
+    soundPath = environment->getHomepath()+"res/we will rock u.wav";
   }
   // load sound
   this->audioData = AudioData::load(soundPath.toStdString());
@@ -138,8 +138,8 @@ void GameDialog::init() {
   // load sound
   loadSound();
   // load standart sounds to game's environment
-  environment->loadSound("../orchestrix/res/sound effects/bad.wav");
-  environment->loadSound("../orchestrix/res/sound effects/good.wav");
+  //  environment->loadSound(environment->getHomepath()+"res/sound effects/bad.wav");
+  //  environment->loadSound(environment->getHomepath()+"res/sound effects/good.wav");
 
   // create custom brushes and pens
   // for equalizer

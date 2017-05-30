@@ -3,13 +3,13 @@
 #include <AudioData.h>
 #include <AudioManager.h>
 #include <AudioPlayer.h>
+#include <FileProcessing.h>
 #include <QMap>
 #include <QPair>
 #include <QString>
 #include <User.h>
-#include <FileProcessing.h>
 
-#define STORAGE_PATH "../orchestrix/res/results.json"
+#define STORAGE_PATH "res/results.json"
 /**
  * @brief The Game class defines class of game's environment
  */
@@ -18,18 +18,19 @@ private:
   AudioManager *audioManager;
   QMap<QString, QPair<AudioData *, AudioPlayer *>> audioEffects;
   User *user;
-  FileProcessing * storage;
+  FileProcessing *storage;
+  QString homepath;
   /**
    * @brief Game constructor
    */
-  Game(AudioManager *manager);
+  Game(AudioManager *manager, const QString &homepath);
 
 public:
   /**
    * @brief init initialize game's environment
    * @return created game's env or null
    */
-  static Game *init();
+  static Game *init(const QString & homepath);
   /**
    *@brief ~Game  destructor
    */
@@ -53,6 +54,8 @@ public:
    * @param soundName name of sound
    */
   void play(const QString &soundName);
+
+  void pause(const QString &soundName);
   /**
    * @brief getAudioManager get game's audio manager
    * @return game's audio manager
@@ -67,7 +70,10 @@ public:
 
   bool saveStorage();
   bool updateStorage();
-  FileProcessing * getStorage();
+  FileProcessing *getStorage();
+  QString getHomepath() const;
+  void setHomepath(const QString &value);
+  void stop(const QString &soundName);
 };
 
 #endif // GAME_H

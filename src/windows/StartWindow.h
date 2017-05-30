@@ -12,7 +12,8 @@ class StartWindow : public QMainWindow {
   Q_OBJECT
 
 public:
-  explicit StartWindow(Game *game, QWidget *parent = 0);
+  explicit StartWindow(Game *game, const QString &backgroundSound,
+                       QWidget *parent = 0);
   ~StartWindow();
 signals:
   void updateWindow();
@@ -34,6 +35,7 @@ private slots:
 private:
   Ui::StartWindow *ui;
   Game *environment;
+  QString backgroundSound;
 };
 
 #endif // STARTWINDOW_H
