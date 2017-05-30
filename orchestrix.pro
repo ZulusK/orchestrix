@@ -26,6 +26,7 @@ INCLUDEPATH += src/windows \
                src/        \
                src/include  \
                src/Controller/byUSB/
+               src/libs/
 
 
 SOURCES += src/main.cpp\
