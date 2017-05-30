@@ -1,5 +1,8 @@
 #include "HelpDialog.h"
 #include "ui_HelpDialog.h"
+#include "QFile"
+#include <QByteArray>
+
 
 HelpDialog::HelpDialog(Game * game,QWidget *parent) :
     QDialog(parent),
@@ -12,6 +15,21 @@ HelpDialog::HelpDialog(Game * game,QWidget *parent) :
     QPalette * palette = new QPalette();
     palette->setBrush(this->backgroundRole(), QBrush(QPixmap(":/res/fon.jpg")));
     this->setPalette(*palette);
+
+    QFont serifFont("Times", 16, QFont::Bold);
+    ui->textEdit->setFont(serifFont);
+    ui->textEdit->setTextColor(Qt::darkGray);
+
+    QFile file(":/res/help.txt");
+    QByteArray data;
+    if (!file.open(QIODevice::ReadOnly)) {
+        return;
+    }
+
+    data = file.readAll();
+
+    ui->textEdit->setText(QString::fromStdString(data.toStdString()));
+    ui->textEdit->setReadOnly(true);
 }
 
 HelpDialog::~HelpDialog()
