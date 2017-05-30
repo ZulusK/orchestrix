@@ -2,28 +2,33 @@
 <ui version="4.0">
  <class>HelpDialog</class>
  <widget class="QDialog" name="HelpDialog">
+  <property name="enabled">
+   <bool>true</bool>
+  </property>
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>433</width>
-    <height>338</height>
+    <width>1332</width>
+    <height>674</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
-  <widget class="QPushButton" name="backBtn">
-   <property name="geometry">
-    <rect>
-     <x>10</x>
-     <y>10</y>
-     <width>111</width>
-     <height>71</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">QPushButton{
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <item>
+      <widget class="QPushButton" name="backBtn">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton{
 font: 75 30pt &quot;URW Bookman L&quot;;
 background-color: white;
  border-style: outset;
@@ -41,21 +46,49 @@ border-radius: 20%;
 outline:none;
 }
 </string>
-   </property>
-   <property name="text">
-    <string/>
-   </property>
-   <property name="icon">
-    <iconset resource="../../../res.qrc">
-     <normaloff>:/res/w512h5121390846445leftround512.png</normaloff>:/res/w512h5121390846445leftround512.png</iconset>
-   </property>
-   <property name="iconSize">
-    <size>
-     <width>60</width>
-     <height>60</height>
-    </size>
-   </property>
-  </widget>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="icon">
+        <iconset resource="../../../res.qrc">
+         <normaloff>:/res/w512h5121390846445leftround512.png</normaloff>:/res/w512h5121390846445leftround512.png</iconset>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>60</width>
+         <height>60</height>
+        </size>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="label">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="text">
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:26pt; color:#ffffff;&quot;&gt;Frequently asked questions&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <widget class="QTextEdit" name="textEdit">
+     <property name="styleSheet">
+      <string notr="true">background-color: rgba(255, 255, 255,150);
+color: rgb(30, 30, 158);
+border-radius:10%;
+border-color:rgba(0,0,0,0);
+</string>
+     </property>
+    </widget>
+   </item>
+  </layout>
  </widget>
  <resources>
   <include location="../../../res.qrc"/>

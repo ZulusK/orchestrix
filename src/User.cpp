@@ -12,11 +12,13 @@ void User::setSoundName(const QString &value) { soundName = value; }
 
 User::User(QString name) {
   this->name = name;
+  this->date = QDateTime::currentDateTime().toString();
   this->soundName = "Not selected";
   this->score = 0;
 }
 //
 User::User(QString name, int score) {
+  this->date = QDateTime::currentDateTime().toString();
   this->name = name;
   this->soundName = "Not selected";
   this->score = score;
@@ -49,7 +51,7 @@ QJsonObject User::toJSON() {
   QJsonObject jobj;
   jobj[QString("name")] = this->name;
   jobj[QString("sound")] = this->soundName;
-  jobj[QString("date")] = QDateTime::currentDateTime().toString();
+  jobj[QString("date")] = this->date;
   jobj[QString("score")] = this->score;
   return jobj;
 }

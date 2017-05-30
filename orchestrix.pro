@@ -24,13 +24,12 @@ QMAKE_CXXFLAGS += -std=c++14
 INCLUDEPATH += src/windows \
                src/audio   \
                src/        \
-                src/Controller/byUSB/
+               src/include  \
+               src/Controller/byUSB/
 
 
 SOURCES += src/main.cpp\
         src/windows/StartWindow.cpp \
-    src/User.cpp \
-    src/Game.cpp \
     src/windows/HelpDialog.cpp \
     src/windows/ResultsDialog.cpp \
     src/windows/LoginDialog.cpp \
@@ -39,17 +38,19 @@ SOURCES += src/main.cpp\
     src/audio/AudioPlayer.cpp \
     src/audio/Spectrum.cpp \
     src/audio/SpectrumAnalyzer.cpp \
-    src/windows/GameDialog.cpp \
-    src/EQWidget.cpp \
-    src/SoundHistogramm.cpp \
-    FileProcessing.cpp \
+    src/windows/GameDialog.cpp  \
+    src/windows/SoundHistogramm.cpp \
+    src/windows/EQWidget.cpp \
     src/Indicator.cpp \
-    TableModel.cpp \
-  src/Controller/byUSB/Controller.cpp
+    src/Controller/byUSB/Controller.cpp   \
+    src/Game.cpp \
+    src/FileProcessing.cpp  \
+    src/TableModel.cpp  \
+    src/User.cpp \
 
 HEADERS  += src/windows/StartWindow.h \
-    src/User.h \
-    src/Game.h \
+    src/include/User.h \
+    src/include/Game.h \
     src/windows/HelpDialog.h \
     src/windows/ResultsDialog.h \
     src/windows/LoginDialog.h \
@@ -60,20 +61,20 @@ HEADERS  += src/windows/StartWindow.h \
     src/audio/Spectrum.h \
     src/audio/SpectrumAnalyzer.h \
     src/windows/GameDialog.h \
-    src/EQWidget.h \
-    src/SoundHistogramm.h \
-    FileProcessing.h \
-    src/Indicator.h \
-    TableModel.h \
-    src/Controller/byUSB/Controller.h
+    src/windows/EQWidget.h \
+    src/windows/SoundHistogramm.h \
+    src/include/Indicator.h \
+    src/include/FileProcessing.h  \
+    src/include/TableModel.h  \
+    src/Controller/byUSB/Controller.h \
 
 FORMS    += src/windows/uis/StartWindow.ui \
     src/windows/uis/HelpDialog.ui \
     src/windows/uis/ResultsDialog.ui \
     src/windows/uis/LoginDialog.ui \
     src/windows/uis/GameDialog.ui \
-    src/EQWidget.ui \
-    src/SoundHistogramm.ui
+    src/windows/uis/EQWidget.ui \
+    src/windows/uis/SoundHistogramm.ui
 
 INCLUDEPATH += /usr/local/include
 DEPENDPATH += /usr/local/include

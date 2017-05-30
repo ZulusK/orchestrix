@@ -81,11 +81,11 @@ QString GameDialog::loadSound() {
   // get user choose
   QString soundPath = QFileDialog::getOpenFileName(
       this, QString::fromUtf8("Choose your sound file"), QDir::homePath(),
-      "Sounds (*.wav);");
+      "Sounds (*.wav);;");
   // if user doesn't select any sound
   // than use default sound
   if (soundPath.length() == 0) {
-    soundPath = environment->getHomepath()+"res/we will rock u.wav";
+    soundPath = environment->getHomepath() + "res/we will rock u.wav";
   }
   // load sound
   this->audioData = AudioData::load(soundPath.toStdString());
@@ -124,8 +124,10 @@ void GameDialog::init() {
   // load sound
   loadSound();
   // load standart sounds to game's environment
-  //  environment->loadSound(environment->getHomepath()+"res/sound effects/bad.wav");
-  //  environment->loadSound(environment->getHomepath()+"res/sound effects/good.wav");
+//  environment->loadSound(environment->getHomepath() +
+//                         "res/sound effects/bad.wav");
+//  environment->loadSound(environment->getHomepath() +
+//                         "res/sound effects/good.wav");
 
   // create custom brushes and pens
   // for equalizer
@@ -137,7 +139,7 @@ void GameDialog::init() {
 
   // for histogramm
   this->histDefBrush = new QBrush(QColor("#2196F3"));
-  this->histDefPen = new QPen(QColor(255, 255, 255));
+  this->histDefPen = new QPen(QColor(255,255,255));
 
   // create equalizer
   this->eqwidget = new EQWidget(audioPlayer, analyzer, this);
@@ -160,7 +162,7 @@ void GameDialog::init() {
 
   // create timer to update
   this->updator = new QTimer();
-  updator->setInterval(20);
+  updator->setInterval(40);
   // connect slot to timer's signal
   connect(updator, SIGNAL(timeout()), this, SLOT(updateGame()));
 
