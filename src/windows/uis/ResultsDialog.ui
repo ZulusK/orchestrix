@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>ResultsDialog</class>
+ <widget class="QDialog" name="ResultsDialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1253</width>
+    <height>354</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>orchestriX</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <layout class="QGridLayout" name="gridLayout">
+     <item row="1" column="0" colspan="3">
+      <widget class="QTableView" name="tableView">
+       <property name="styleSheet">
+        <string notr="true">background-color: rgba(255,255,255,170);
+border-radius: 20%;
+border-color:rgba(0,0,0,0);
+font: 75 23pt &quot;URW Bookman L&quot; ;
+QHeaderView {
+ background-color:red;
+ }</string>
+       </property>
+       <property name="editTriggers">
+        <set>QAbstractItemView::NoEditTriggers</set>
+       </property>
+       <property name="selectionMode">
+        <enum>QAbstractItemView::NoSelection</enum>
+       </property>
+       <property name="selectionBehavior">
+        <enum>QAbstractItemView::SelectRows</enum>
+       </property>
+       <property name="gridStyle">
+        <enum>Qt::NoPen</enum>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="1">
+      <widget class="QLabel" name="label">
+       <property name="font">
+        <font>
+         <family>URW Bookman L</family>
+         <pointsize>40</pointsize>
+         <weight>9</weight>
+         <italic>false</italic>
+         <bold>false</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">font: 75 40pt &quot;URW Bookman L&quot;;
+color:white;</string>
+       </property>
+       <property name="text">
+        <string>                                        ★★ Results ★★</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="0">
+      <widget class="QPushButton" name="backBtn">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>120</width>
+         <height>50</height>
+        </size>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton{
+font: 75 30pt &quot;URW Bookman L&quot;;
+background-color: white;
+ border-style: outset;
+ border-width: 2px;
+color:white;
+ border-radius: 20%;
+ border-color: rgba(0,0,0,0);
+background-color: rgb(0, 126, 255);
+outline:none;
+}
+QPushButton:hover{
+border-width: 0px;
+background-color: rgb(255,20,0);
+border-radius: 20%;
+outline:none;
+}
+</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="icon">
+        <iconset resource="../../../res.qrc">
+         <normaloff>:/res/w512h5121390846445leftround512.png</normaloff>:/res/w512h5121390846445leftround512.png</iconset>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>25</width>
+         <height>25</height>
+        </size>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <resources>
+  <include location="../../../res.qrc"/>
+ </resources>
+ <connections>
+  <connection>
+   <sender>backBtn</sender>
+   <signal>clicked()</signal>
+   <receiver>ResultsDialog</receiver>
+   <slot>accept()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>64</x>
+     <y>22</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>199</x>
+     <y>149</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

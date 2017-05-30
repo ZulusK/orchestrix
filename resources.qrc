@@ -1,0 +1,10 @@
+<RCC>
+    <qresource prefix="/">
+        <file>res/21pilots.wav</file>
+        <file>res/chameleon.wav</file>
+        <file>res/gymno.wav</file>
+        <file>res/mySound.wav</file>
+        <file>res/ppl.wav</file>
+        <file>res/sintra.wav</file>
+    </qresource>
+</RCC>
