@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1253</width>
+    <width>1269</width>
     <height>354</height>
    </rect>
   </property>
@@ -22,10 +22,7 @@
         <string notr="true">background-color: rgba(255,255,255,170);
 border-radius: 20%;
 border-color:rgba(0,0,0,0);
-font: 75 23pt &quot;URW Bookman L&quot; ;
-QHeaderView {
- background-color:red;
- }</string>
+font: 75 23pt &quot;URW Bookman L&quot; ;</string>
        </property>
        <property name="editTriggers">
         <set>QAbstractItemView::NoEditTriggers</set>

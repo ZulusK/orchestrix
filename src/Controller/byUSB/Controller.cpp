@@ -90,6 +90,7 @@ bool * Controller::getInput(){
 	m.lock();
 	for(int i = 0; i < 4; i++){
 		ret[i] = values[i];
+        values[i]=false;
 	}
 	m.unlock();
 

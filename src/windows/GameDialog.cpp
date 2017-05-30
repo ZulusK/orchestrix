@@ -8,7 +8,7 @@
 #include <iostream>
 using namespace std;
 
-#define TIME_INTERVAL 1000
+#define TIME_INTERVAL 1500
 
 GameDialog::GameDialog(Game *game, QWidget *parent)
     : QDialog(parent), ui(new Ui::GameDialog) {
@@ -22,6 +22,9 @@ GameDialog::GameDialog(Game *game, QWidget *parent)
   if (environment->getUser() == NULL) {
     environment->addUser(new User("No name"));
   }
+  environment->getUser()->setScore(0);
+  this->eqwidget=NULL;
+  this->histogramm=NULL;
   this->setup();
 }
 
@@ -242,6 +245,7 @@ GameDialog::~GameDialog() {
   // delete indicators
   for (int i = 0; i < 4; i++) {
     delete indicators[i];
+    controller->turnOffLed(i);
   }
   delete[] indicators;
 
@@ -359,9 +363,11 @@ void GameDialog::updateGame() {
     auto currSpectrum = eqwidget->getSpectrumPos();
     // if last processed spectrum's number is late,
     // update it before continue
-    if (lastProcessedSpectrum < currSpectrum) {
-      lastProcessedSpectrum = currSpectrum;
+    auto shift=TIME_INTERVAL/analyzer->getTimeBound()/10;
+    if (lastProcessedSpectrum < currSpectrum+shift) {
+      lastProcessedSpectrum = currSpectrum+shift;
     }
+
     // get next left bound of spectrums
     unsigned long bound =
         currSpectrum + (TIME_INTERVAL) / analyzer->getTimeBound();
@@ -397,7 +403,6 @@ void GameDialog::updateInput() {
   if (controller->isConnected()) {
     bool *input = controller->getInput();
     for (int i = 0; i < COUNT_OF_INDICATORS; i++) {
-      input[i] = !rand() % 10;
       // if user influenced the sensor
       if (input[i]) {
         // if indicator is used, then input is correct
@@ -413,6 +418,8 @@ void GameDialog::indicatorEnded(Indicator *ind, bool success) {
   int bonus = 100 * ind->getTimePeriod() / (float)TIME_INTERVAL;
   if (!success) {
     bonus *= -1;
+  }else{
+      bonus*=10;
   }
   // add bonus to user
   environment->getUser()->addToScore(bonus);
@@ -451,6 +458,7 @@ void GameDialog::paintEvent(QPaintEvent *event) {
   ui->totalScoreLbl->setText(
       QString::number(environment->getUser()->getScore()));
   colorChangetCounter--;
+  if(eqwidget!=NULL)
   changeBrush(eqDefBrush, 0);
 }
 
