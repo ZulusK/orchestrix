@@ -107,7 +107,46 @@ QString GameDialog::loadSound() {
 }
 
 void GameDialog::addWords() {
+    this->badWord << "Try again";
+      this->badWord << "Sad";
+      this->badWord << "Bad";
+      this->badWord << "Are you playing?";
+      this->badWord << "My sister plays better";
+      this->badWord << "Legeza would be ashamed";
+      this->badWord << "Did you get the rules?";
+      this->badWord << "*Sad cat picture*";
+      this->badWord << "Close the game, please";
+      this->badWord << "Stop torturing me and yourself";
+      this->badWord << "Better go play outside";
+      this->badWord << "This is not your thing, man";
+      this->badWord << "You chicken?";
+      this->badWord << "Sloppy";
+      this->badWord << "Try harder";
+      this->badWord << "Stop embarrassing yourself";
+      this->badWord << "OUCH";
+      this->badWord << "Edward Scissorhands, is that you?";
+      this->badWord << "Go kill yourself";
 
+
+      this->goodWord << "Crazy";
+      this->goodWord << "Wooo";
+      this->goodWord << "Amazing";
+      this->goodWord << "Like Sikorskiy";
+      this->goodWord << "May be you are God?";
+      this->goodWord << "I like it";
+      this->goodWord << "Continue!";
+      this->goodWord << "=)";
+      this->goodWord << ")))))0))";
+      this->goodWord << "Fatality";
+      this->goodWord << "Combo";
+      this->goodWord << "Ultra kill";
+      this->goodWord << "Maestro";
+      this->goodWord << "How are you doing this?";
+      this->goodWord << "Legeza would be proud";
+      this->goodWord << "Prodigy";
+      this->goodWord << "OOOOH YEEEAH";
+      this->goodWord << "Fantastic!";
+      this->goodWord << "";
 }
 
 void GameDialog::init() {
