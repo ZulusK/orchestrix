@@ -40,7 +40,7 @@ void FileProcessing::write(const QString &filename) {
   QJsonDocument saveDoc(jUsers);
   QFile saveFile(filename);
   if (!saveFile.open(QIODevice::WriteOnly)) {
-    qWarning("Error: unable to open save file");
+    qWarning(("Error: unable to open save file " + filename.toStdString()).c_str());
     return;
   }
   saveFile.write(saveDoc.toJson());

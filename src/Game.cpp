@@ -2,15 +2,20 @@
 #include <QStringList>
 #include <iostream>
 using namespace std;
-Game::Game(AudioManager *manager) {
+Game::Game(AudioManager *manager, const QString &homepath) {
   this->audioManager = manager;
   this->user = NULL;
   this->storage = new FileProcessing();
+  this->homepath = homepath;
   updateStorage();
 }
 
+QString Game::getHomepath() const { return homepath; }
+
+void Game::setHomepath(const QString &value) { homepath = value; }
+
 Game::~Game() {
-  storage->write(STORAGE_PATH);
+  storage->write(homepath + STORAGE_PATH);
   delete storage;
   for (auto it = audioEffects.begin(); it != audioEffects.end(); it++) {
     delete it.value().second;
@@ -26,20 +31,27 @@ void Game::addUser(User *user) {
   }
 }
 
-void Game::removeUser() {
-  this->user = NULL;
-}
+void Game::removeUser() { this->user = NULL; }
 
 User *Game::getUser() { return this->user; }
 
 void Game::play(const QString &soundName) {
-  cout << soundName.toStdString() << endl;
-  if (audioEffects.contains(soundName) &&
-      !audioEffects[soundName].second->isPlaying()) {
+  if (audioEffects.contains(soundName)) {
     audioEffects[soundName].second->play();
   }
 }
 
+void Game::stop(const QString &soundName) {
+  if (audioEffects.contains(soundName)) {
+    audioEffects[soundName].second->stop();
+  }
+}
+
+void Game::pause(const QString &soundName) {
+  if (audioEffects.contains(soundName)) {
+    audioEffects[soundName].second->pause();
+  }
+}
 AudioManager *Game::getAudioManager() { return this->audioManager; }
 
 bool Game::loadSound(const QString &soundName) {
@@ -60,20 +72,20 @@ bool Game::loadSound(const QString &soundName) {
   return true;
 }
 
-Game *Game::init() {
+Game *Game::init(const QString &homepath) {
   AudioManager *manager = AudioManager::init(20, 120);
   if (manager != NULL)
-    return new Game(manager);
+    return new Game(manager, homepath);
   else
     return NULL;
 }
 
 bool Game::saveStorage() {
-    cout<<storage->getUsers()->size()<<endl;
-    updateStorage();
-    this->storage->write(STORAGE_PATH);
+  cout << storage->getUsers()->size() << endl;
+  updateStorage();
+  this->storage->write(homepath + STORAGE_PATH);
 }
 
-bool Game::updateStorage() { this->storage->load(STORAGE_PATH); }
+bool Game::updateStorage() { this->storage->load(homepath + STORAGE_PATH); }
 
 FileProcessing *Game::getStorage() { return this->storage; }
