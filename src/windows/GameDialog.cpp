@@ -107,21 +107,7 @@ QString GameDialog::loadSound() {
 }
 
 void GameDialog::addWords() {
-  this->badWord << "Try again";
-  this->badWord << "Sad";
-  this->badWord << "Bad";
-  this->badWord << "Are you playing?";
-  this->badWord << "My sister playes better";
 
-  this->goodWord << "Crazy";
-  this->goodWord << "Wooo";
-  this->goodWord << "Amazing";
-  this->goodWord << "Like Sikorskiy";
-  this->goodWord << "May be you are God?";
-  this->goodWord << "I like it";
-  this->goodWord << "Continue!";
-  this->goodWord << "=)";
-  this->goodWord << ")))))0))";
 }
 
 void GameDialog::init() {
