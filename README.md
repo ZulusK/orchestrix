@@ -6,10 +6,6 @@
 
 *' A revolutionary device destined to break the ice for the new era of electronic music '*
 
-[Presentation](https://www.youtube.com/watch?v=bbECb8-yqBs)
-
-[Demonstration](https://www.youtube.com/watch?v=kcXB8zQvjzA)
-
 <img align="right" src="https://cs7058.vk.me/c604628/v604628378/36002/pfC2TuEIqWw.jpg">
 
 ### Developer : *ReservoirCode Inc*
