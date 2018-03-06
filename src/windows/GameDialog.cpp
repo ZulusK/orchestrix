@@ -8,7 +8,7 @@
 #include <iostream>
 using namespace std;
 
-#define TIME_INTERVAL 1000
+#define TIME_INTERVAL 1500
 
 GameDialog::GameDialog(Game *game, QWidget *parent)
     : QDialog(parent), ui(new Ui::GameDialog) {
@@ -22,6 +22,9 @@ GameDialog::GameDialog(Game *game, QWidget *parent)
   if (environment->getUser() == NULL) {
     environment->addUser(new User("No name"));
   }
+  environment->getUser()->setScore(0);
+  this->eqwidget=NULL;
+  this->histogramm=NULL;
   this->setup();
 }
 
@@ -107,21 +110,46 @@ QString GameDialog::loadSound() {
 }
 
 void GameDialog::addWords() {
-  this->badWord << "Try again";
-  this->badWord << "Sad";
-  this->badWord << "Bad";
-  this->badWord << "Are you playing?";
-  this->badWord << "My sister playes better";
+    this->badWord << "Try again";
+      this->badWord << "Sad";
+      this->badWord << "Bad";
+      this->badWord << "Are you playing?";
+      this->badWord << "My sister plays better";
+      this->badWord << "Legeza would be ashamed";
+      this->badWord << "Did you get the rules?";
+      this->badWord << "*Sad cat picture*";
+      this->badWord << "Close the game, please";
+      this->badWord << "Stop torturing me and yourself";
+      this->badWord << "Better go play outside";
+      this->badWord << "This is not your thing, man";
+      this->badWord << "You chicken?";
+      this->badWord << "Sloppy";
+      this->badWord << "Try harder";
+      this->badWord << "Stop embarrassing yourself";
+      this->badWord << "OUCH";
+      this->badWord << "Edward Scissorhands, is that you?";
+      this->badWord << "Go kill yourself";
 
-  this->goodWord << "Crazy";
-  this->goodWord << "Wooo";
-  this->goodWord << "Amazing";
-  this->goodWord << "Like Sikorskiy";
-  this->goodWord << "May be you are God?";
-  this->goodWord << "I like it";
-  this->goodWord << "Continue!";
-  this->goodWord << "=)";
-  this->goodWord << ")))))0))";
+
+      this->goodWord << "Crazy";
+      this->goodWord << "Wooo";
+      this->goodWord << "Amazing";
+      this->goodWord << "Like Sikorskiy";
+      this->goodWord << "May be you are God?";
+      this->goodWord << "I like it";
+      this->goodWord << "Continue!";
+      this->goodWord << "=)";
+      this->goodWord << ")))))0))";
+      this->goodWord << "Fatality";
+      this->goodWord << "Combo";
+      this->goodWord << "Ultra kill";
+      this->goodWord << "Maestro";
+      this->goodWord << "How are you doing this?";
+      this->goodWord << "Legeza would be proud";
+      this->goodWord << "Prodigy";
+      this->goodWord << "OOOOH YEEEAH";
+      this->goodWord << "Fantastic!";
+      this->goodWord << "";
 }
 
 void GameDialog::init() {
@@ -217,6 +245,7 @@ GameDialog::~GameDialog() {
   // delete indicators
   for (int i = 0; i < 4; i++) {
     delete indicators[i];
+    controller->turnOffLed(i);
   }
   delete[] indicators;
 
@@ -334,9 +363,11 @@ void GameDialog::updateGame() {
     auto currSpectrum = eqwidget->getSpectrumPos();
     // if last processed spectrum's number is late,
     // update it before continue
-    if (lastProcessedSpectrum < currSpectrum) {
-      lastProcessedSpectrum = currSpectrum;
+    auto shift=TIME_INTERVAL/analyzer->getTimeBound()/10;
+    if (lastProcessedSpectrum < currSpectrum+shift) {
+      lastProcessedSpectrum = currSpectrum+shift;
     }
+
     // get next left bound of spectrums
     unsigned long bound =
         currSpectrum + (TIME_INTERVAL) / analyzer->getTimeBound();
@@ -372,7 +403,6 @@ void GameDialog::updateInput() {
   if (controller->isConnected()) {
     bool *input = controller->getInput();
     for (int i = 0; i < COUNT_OF_INDICATORS; i++) {
-      input[i] = !rand() % 10;
       // if user influenced the sensor
       if (input[i]) {
         // if indicator is used, then input is correct
@@ -388,6 +418,8 @@ void GameDialog::indicatorEnded(Indicator *ind, bool success) {
   int bonus = 100 * ind->getTimePeriod() / (float)TIME_INTERVAL;
   if (!success) {
     bonus *= -1;
+  }else{
+      bonus*=10;
   }
   // add bonus to user
   environment->getUser()->addToScore(bonus);
@@ -426,6 +458,7 @@ void GameDialog::paintEvent(QPaintEvent *event) {
   ui->totalScoreLbl->setText(
       QString::number(environment->getUser()->getScore()));
   colorChangetCounter--;
+  if(eqwidget!=NULL)
   changeBrush(eqDefBrush, 0);
 }
 

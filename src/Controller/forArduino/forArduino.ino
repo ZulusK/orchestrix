@@ -9,7 +9,6 @@ void setup() {
     pinMode(echoPin[i], INPUT);
     pinMode(ledPin[i], OUTPUT);
   }
-  delay(2000);
   Serial.begin(115200);
 }
 
@@ -21,22 +20,12 @@ int findDistance(int trig, int echo) {
   digitalWrite(trig, LOW);
   return pulseIn(echo, HIGH) / 58;
 }
-
-void loop() {
-  
-  char buff[100];
-  if(Serial.available()){
-    int i = 0;
-    delay(100);
-    while( Serial.available() && i< 99) {
-      buff[i++] = Serial.read();
-    }
-    buff[i++]='\0';
-  }
-  else return;
-  
+void ledSwitch(int led, int isEnable){
+  if(isEnable == 1) digitalWrite(ledPin[led], HIGH);
+    else digitalWrite(ledPin[led], LOW);
+}
+void processInput(char *buff){
   int command = atoi(buff);
-
   if(command == 0){
     buff[0] = '\0';
     for(int i = 0; i < 4; i++){
@@ -45,6 +34,9 @@ void loop() {
         distance[i] = findDistance(trigPin[i],echoPin[i]) > 30 ? 0 : 1;
       }
       sprintf(buff, "%i%i%i%i", distance[0],distance[1],distance[2],distance[3]);
+      for(int i=0; i<4;i++){
+        ledSwitch(i,distance[i]);
+      }
     }
     Serial.print(buff);
   }
@@ -58,7 +50,22 @@ void loop() {
     for(; buff[i] != '\0' && buff[i - 1] != ';'; i++);
     int status = atoi(buff + i);
 
-    if(status == 1) digitalWrite(ledPin[led], HIGH);
-    else digitalWrite(ledPin[led], LOW);
+    ledSwitch(led,status);
   }
+}
+void loop() {
+  
+  if(Serial.available()){
+    do{
+      int i = 0;
+      char c;
+      char buff[100];
+      while( Serial.available() && i< 99 && (c = Serial.read()) != '\0') {
+        buff[i++] = c;
+      }
+      buff[i++]='\0';
+      processInput(buff);
+    }while(Serial.available());
+  }
+  else return;
 }
