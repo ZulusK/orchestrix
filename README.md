@@ -8,8 +8,6 @@
 
 <img align="right" src="https://cs7058.vk.me/c604628/v604628378/36002/pfC2TuEIqWw.jpg">
 
-![demo of gameplay](https://drive.google.com/open?id=1esy_jZynVGqBhWkxZI1xmmk_p7bmffC7)
-![demo of menu](https://drive.google.com/file/d/1esy_jZynVGqBhWkxZI1xmmk_p7bmffC7/view?usp=sharing)
 ### Developer : *ReservoirCode Inc*
 ### Release : *2017*
 ### Platform : *Linux*
