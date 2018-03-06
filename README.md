@@ -2,8 +2,13 @@
 
 *' A revolutionary device destined to break the ice for the new era of electronic music '*
 
+[Presentation](https://www.youtube.com/watch?v=bbECb8-yqBs)
+[Demonstration](https://www.youtube.com/watch?v=kcXB8zQvjzA)
+
 <img align="right" src="https://cs7058.vk.me/c604628/v604628378/36002/pfC2TuEIqWw.jpg">
 
+![demo of gameplay](https://drive.google.com/file/d/1HpVmRYnuaP5m631hfYvscNc_q6iQ7RUE/view?usp=sharing)
+![demo of menu](https://drive.google.com/file/d/1esy_jZynVGqBhWkxZI1xmmk_p7bmffC7/view?usp=sharing)
 ### Developer : *ReservoirCode Inc*
 ### Release : *2017*
 ### Platform : *Linux*
